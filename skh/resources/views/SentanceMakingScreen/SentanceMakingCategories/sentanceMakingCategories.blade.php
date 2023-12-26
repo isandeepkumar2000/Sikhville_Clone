@@ -9,11 +9,12 @@
     <meta name="author" content="">
 
     <title>Sentance_Making_Categories</title>
-    <link href="{{ env('APP_URL') }}vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="{{ env('APP_FILE_URL') }}storage/admin/assets/fontawesome-free/css/all.min.css" rel="stylesheet"
+        type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
-    <link href="{{ env('APP_URL') }}css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="{{ env('APP_FILE_URL') }}storage/admin/assets/css/sb-admin-2.min.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
@@ -80,21 +81,23 @@
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="{{ env('APP_URL') }}vendor/jquery/jquery.min.js"></script>
-    <script src="{{ env('APP_URL') }}vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ env('APP_FILE_URL') }}storage/admin/assets/jquery/jquery.min.js"></script>
+    <script src="{{ env('APP_FILE_URL') }}storage/admin/assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="{{ env('APP_URL') }}vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="{{ env('APP_FILE_URL') }}storage/admin/assets/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="{{ env('APP_URL') }}js/sb-admin-2.min.js"></script>
+    <script src="{{ env('APP_FILE_URL') }}storage/admin/assets/js/sb-admin-2.min.js"></script>
 
     <!-- Page level plugins -->
-    <script src="{{ env('APP_URL') }}vendor/chart.js/Chart.min.js"></script>
+    <script src="{{ env('APP_FILE_URL') }}storage/admin/assets/chart.js/Chart.min.js"></script>
 
     <!-- Page level custom scripts -->
-    <script src="{{ env('APP_URL') }}js/demo/chart-area-demo.js"></script>
-    <script src="{{ env('APP_URL') }}js/demo/chart-pie-demo.js"></script>
+    <script src="{{ env('APP_FILE_URL') }}storage/admin/assets/js/demo/chart-area-demo.js"></script>
+    <script src="{{ env('APP_FILE_URL') }}storage/admin/assets/js/demo/chart-pie-demo.js"></script>
+
+
 
 </body>
 

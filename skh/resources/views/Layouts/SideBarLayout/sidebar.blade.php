@@ -19,7 +19,6 @@
 
     <hr class="sidebar-divider">
 
-
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseNine"
             aria-expanded="true" aria-controls="collapseNine">
@@ -30,7 +29,7 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Website Content:</h6>
                 <a class="collapse-item text-dark" href="{{ route('websitecontentlist') }}"
-                    style="background-color: #30cf35; margin-bottom: 5px; font-weight: 700;">
+                    style="margin-bottom: 5px; font-weight: 700;">
                     Website Content
                 </a>
             </div>
