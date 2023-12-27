@@ -35,7 +35,7 @@
 
                             <div class="card">
                                 <div class="card-header">
-                                    <h4>Add Download Categories Here</h4>
+                                    <h4>Add Download Here</h4>
                                 </div>
                                 <div class="card-body">
                                     <form action="{{ url('add_post_download_list') }}" method="POST">
@@ -46,7 +46,7 @@
                                                 <select class="form-control select2" name="categoryid" required
                                                     id="categoryid">
                                                     <option value="option_select" disabled selected>Choose the Download
-                                                        Categories</option>
+                                                    </option>
                                                     @foreach ($download as $item)
                                                         <option value="{{ $item->id }}">{{ $item->name }}
                                                         </option>
@@ -76,7 +76,7 @@
                                         <div class="row">
                                             <div class="col-12 mb-3">
                                                 <button style="margin-top: 10px" class="btn btn-primary"
-                                                    type="submit">Submit</button>
+                                                    type="submit">Submit Download</button>
                                             </div>
                                         </div>
                                     </form>

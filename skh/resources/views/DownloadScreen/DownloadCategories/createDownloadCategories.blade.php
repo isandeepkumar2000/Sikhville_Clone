@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>download_Categories_Create</title>
+    <title>Download_Category_Create</title>
     <link href="{{ env('APP_FILE_URL') }}storage/admin/assets/fontawesome-free/css/all.min.css" rel="stylesheet"
         type="text/css">
     <link
@@ -36,7 +36,7 @@
 
                             <div class="card">
                                 <div class="card-header">
-                                    <h4>Add Categories Here</h4>
+                                    <h4>Add Category Here</h4>
                                 </div>
                                 <div class="card-body">
 

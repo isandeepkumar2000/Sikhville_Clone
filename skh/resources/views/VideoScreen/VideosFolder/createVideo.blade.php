@@ -34,7 +34,7 @@
                             @endif
                             <div class="card">
                                 <div class="card-header">
-                                    <h4>Add video categories Here</h4>
+                                    <h4>Add video Category Here</h4>
                                 </div>
                                 <div class="card-body">
                                     <form action="{{ url('add_post_video_list') }}" method="POST"
@@ -54,7 +54,7 @@
                                                 </select>
                                             </div>
                                             <div class="col-md-6">
-                                                <label for="thumbnail_image">Upload Image:</label>
+                                                <label for="thumbnail_image">Upload Image</label>
                                                 <input type="file" class="form-control-file" id="thumbnail_image"
                                                     name="thumbnail_image" required>
                                             </div>

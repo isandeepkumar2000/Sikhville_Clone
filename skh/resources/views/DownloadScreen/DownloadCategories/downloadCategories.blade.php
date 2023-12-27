@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>download_Categories</title>
+    <title>Download_Category</title>
     <link href="{{ env('APP_FILE_URL') }}storage/admin/assets/fontawesome-free/css/all.min.css" rel="stylesheet"
         type="text/css">
     <link
@@ -31,7 +31,7 @@
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4>How to Edit and Update Data in Laravel
+                                    <h4>Edit and Update Download Category
                                         <a style="margin-left: 45%" href="{{ url('add_download_categories_list') }}"
                                             class="btn btn-primary float-end">Add
                                             Categories</a>

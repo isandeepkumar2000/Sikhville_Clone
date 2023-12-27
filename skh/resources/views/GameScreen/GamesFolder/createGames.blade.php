@@ -35,7 +35,7 @@
 
                             <div class="card">
                                 <div class="card-header">
-                                    <h4>Add Download Categories Here</h4>
+                                    <h4>Add Game Here</h4>
                                 </div>
                                 <div class="card-body">
                                     <form action="{{ url('add_post_games_list') }}" method="POST"
@@ -44,7 +44,7 @@
                                         <div class="form-group">
                                             <select class="js-states form-control select2" name="gameCategoriesid"
                                                 required id="shopping_id">
-                                                <option value="option_select" disabled selected>Choose the name
+                                                <option value="option_select" disabled selected>Choose the Game
                                                 </option>
                                                 @foreach ($game as $item)
                                                     <option value="{{ $item->id }}">{{ $item->name }}</option>
@@ -71,7 +71,7 @@
                                             <label for="textAreaExample1">Details</label>
                                             <textarea class="form-control" required id="textAreaExample1" rows="4" name="details"></textarea>
                                         </div>
-                                        <button class="btn btn-primary" type="submit">Submit</button>
+                                        <button class="btn btn-primary" type="submit">Submit Game</button>
                                     </form>
                                 </div>
                             </div>

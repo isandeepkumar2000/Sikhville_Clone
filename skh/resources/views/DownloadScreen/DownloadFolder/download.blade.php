@@ -29,9 +29,9 @@
                 <div class="container-fluid">
                     <div class="card mb-4">
                         <div class="card-header d-flex justify-content-between align-items-center">
-                            <h4>Edit and Update Download Data in Laravel</h4>
-                            <a href="{{ url('add_download_list') }}" class="btn btn-primary float-end">Add download
-                                categories</a>
+                            <h4>Edit and Update Download Data</h4>
+                            <a href="{{ url('add_download_list') }}" class="btn btn-primary float-end">Add Download
+                            </a>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">

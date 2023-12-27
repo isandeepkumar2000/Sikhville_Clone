@@ -46,7 +46,7 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Games Components:</h6>
                 <a class="collapse-item" href="{{ route('gamesfolder') }}">Games</a>
-                <a class="collapse-item" href="{{ route('gamesCategories') }}">Games Categories</a>
+                <a class="collapse-item" href="{{ route('gamesCategories') }}">Games Category</a>
             </div>
         </div>
     </li>
@@ -61,7 +61,7 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Video Components:</h6>
                 <a class="collapse-item" href="{{ route('videofolder') }}">Video</a>
-                <a class="collapse-item" href="{{ route('videoCategories') }}">Video Categories</a>
+                <a class="collapse-item" href="{{ route('videoCategories') }}">Video Category</a>
             </div>
         </div>
     </li>
@@ -76,7 +76,7 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Music Components:</h6>
                 <a class="collapse-item" href="{{ route('musicfolder') }}">Music</a>
-                <a class="collapse-item" href="{{ route('musicCategories') }}">Music Categories</a>
+                <a class="collapse-item" href="{{ route('musicCategories') }}">Music Category</a>
                 <a class="collapse-item" href="{{ route('musicSong') }}">Music Song</a>
             </div>
         </div>
@@ -93,7 +93,7 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Download Components:</h6>
                 <a class="collapse-item" href="{{ route('downloadfolder') }}">Download</a>
-                <a class="collapse-item" href="{{ route('downloadCategories') }}">Download Categories</a>
+                <a class="collapse-item" href="{{ route('downloadCategories') }}">Download Category</a>
             </div>
         </div>
     </li>
@@ -115,7 +115,7 @@
                     <a class="collapse-item  text-dark" href="{{ route('punjabireadingFolder') }}">Punjabi
                     </a>
                     <a class="collapse-item  text-dark" href="{{ route('punjabireadingCategories') }}">Punjabi
-                        Categories</a>
+                        Category</a>
                 </div>
 
                 <a class="collapse-item text-dark " data-toggle="collapse" href="#folderOne"
@@ -125,7 +125,7 @@
                 <div class="collapse" id="folderOne">
                     <a class="collapse-item  text-dark" href="{{ route('sentancemakingFolder') }}">Sentence</a>
                     <a class="collapse-item  text-dark" href="{{ route('sentancemakingCategories') }}">Sentence
-                        Categories</a>
+                        Category</a>
                 </div>
 
                 <a class="collapse-item text-dark " data-toggle="collapse" href="#folderTwo"

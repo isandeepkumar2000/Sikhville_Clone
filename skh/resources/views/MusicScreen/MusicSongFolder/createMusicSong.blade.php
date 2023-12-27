@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Music_Create</title>
+    <title>Music_Song_Create</title>
     <link href="{{ env('APP_FILE_URL') }}storage/admin/assets/fontawesome-free/css/all.min.css" rel="stylesheet"
         type="text/css">
     <link
@@ -46,7 +46,8 @@
                                                 <label for="musicid">Music Song</label>
                                                 <select class="form-control select2" name="musicid" required
                                                     id="musicid">
-                                                    <option value="option_select" disabled selected>Choose the name
+                                                    <option value="option_select" disabled selected>Choose the Music
+                                                        Song
                                                     </option>
                                                     @foreach ($musicSong as $item)
                                                         <option value="{{ $item->id }}">
@@ -84,8 +85,8 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <button style="margin-top: 10px" class="btn btn-primary"
-                                            type="submit">Submit</button>
+                                        <button style="margin-top: 10px" class="btn btn-primary" type="submit">Submit
+                                            Music Song</button>
                                     </form>
                                 </div>
                             </div>

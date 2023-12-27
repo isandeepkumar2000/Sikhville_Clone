@@ -28,7 +28,7 @@
 
                 <div class="container">
                     <div class="row justify-content-center">
-                        <div class="col-md-8">
+                        <div class="col-md-10">
                             @if (session('status'))
                                 <div class="alert alert-success">{{ session('status') }}</div>
                             @endif
@@ -47,23 +47,44 @@
                                         @csrf
                                         @method('PUT')
 
-                                        <div class="mb-3">
-                                            <label for="title" class="form-label">Title</label>
-                                            <input type="text" id="title" name="title"
-                                                value="{{ $websiteContent->title }}" class="form-control" required
-                                                placeholder="enter the title">
+                                        <div class="row mb-3">
+                                            <div class="col-md-6">
+                                                <label for="type" class="form-label">Website Content Type</label>
+                                                <select class="form-control select2" name="type" required
+                                                    id="type">
+                                                    <option value="" disabled>Choose the Type</option>
+                                                    <option value="game"
+                                                        @if ($websiteContent->type === 'game') selected @endif>Games</option>
+                                                    <option value="download"
+                                                        @if ($websiteContent->type === 'download') selected @endif>Download
+                                                    </option>
+                                                    <option value="music"
+                                                        @if ($websiteContent->type === 'music') selected @endif>Music</option>
+                                                    <option value="video"
+                                                        @if ($websiteContent->type === 'video') selected @endif>Video</option>
+                                                    <option value="punjabi_reading"
+                                                        @if ($websiteContent->type === 'punjabi_reading') selected @endif>Punjabi
+                                                        Reading</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="title" class="form-label">Title</label>
+                                                <input type="text" id="title" name="title"
+                                                    value="{{ $websiteContent->title }}" class="form-control" required
+                                                    placeholder="Enter the title">
+                                            </div>
                                         </div>
 
-                                        <div class="form-group">
-                                            <label for="textAreaExample1">Content Details</label>
+                                        <div class="mb-3">
+                                            <label for="textAreaExample1" class="form-label">Content Details</label>
                                             <textarea class="form-control" required id="textAreaExample1" rows="4" name="content"
-                                                placeholder="Please enter the Content Details"> {{ $websiteContent->content }}</textarea>
+                                                placeholder="Please enter the Content Details">{{ $websiteContent->content }}</textarea>
                                         </div>
+
                                         <div class="mb-3">
                                             <button type="submit" class="btn btn-primary">Update Website
                                                 Content</button>
                                         </div>
-
                                     </form>
 
                                 </div>
@@ -71,6 +92,7 @@
                         </div>
                     </div>
                 </div>
+
             </div>
             @include('Layouts.FooterLayout.footer')
         </div>

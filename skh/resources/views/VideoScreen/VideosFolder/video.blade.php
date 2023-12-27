@@ -33,18 +33,18 @@
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="card-header d-flex justify-content-between align-items-center">
-                                    <h4>Edit and Update Games Data in Laravel
+                                    <h4>Edit and Update Video Data
 
                                     </h4>
-                                    <a href="{{ url('add_video_list') }}" class="btn btn-primary float-end">Add video
-                                        categories</a>
+                                    <a href="{{ url('add_video_list') }}" class="btn btn-primary float-end">Add Video
+                                        Category</a>
                                 </div>
                                 <div class="card-body">
                                     <div class="table-responsive">
                                         <table class="table table-bordered table-striped">
                                             <thead>
                                                 <tr>
-                                                    <th>Categorie</th>
+                                                    <th>Category</th>
                                                     <th>Thumbnail Image Url</th>
                                                     <th>Featured Video Url</th>
                                                     <th>Title</th>

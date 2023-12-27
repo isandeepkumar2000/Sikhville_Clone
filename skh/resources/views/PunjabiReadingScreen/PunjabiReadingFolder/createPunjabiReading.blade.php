@@ -75,7 +75,7 @@
                                             </div>
                                         </div>
 
-                                        <button class="btn btn-primary" type="submit">Submit</button>
+                                        <button class="btn btn-primary" type="submit">Submit Punjabi Reading</button>
                                     </form>
                                 </div>
                             </div>

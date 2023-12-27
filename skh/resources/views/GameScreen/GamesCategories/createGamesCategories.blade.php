@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Games_Categories</title>
+    <title>Games_Category</title>
     <link href="{{ env('APP_FILE_URL') }}storage/admin/assets/fontawesome-free/css/all.min.css" rel="stylesheet"
         type="text/css">
     <link
@@ -35,7 +35,7 @@
 
                             <div class="card">
                                 <div class="card-header">
-                                    <h4>Add Games Categories Here</h4>
+                                    <h4>Add Games Category Here</h4>
                                 </div>
                                 <div class="card-body">
                                     <form action="{{ url('add_post_games_categories_list') }}" method="POST">
@@ -52,7 +52,7 @@
                                         </div>
 
                                         <div class="form-group mb-3">
-                                            <button type="submit" class="btn btn-primary">Save Categories</button>
+                                            <button type="submit" class="btn btn-primary">Save Category</button>
                                         </div>
                                     </form>
                                 </div>

@@ -39,7 +39,7 @@
                                 <div class="card-header d-flex justify-content-between align-items-center">
                                     <h4>Edit and Update Games
                                     </h4>
-                                    <a href="{{ url('add_games_list') }}" class="btn btn-primary float-end">Add games
+                                    <a href="{{ url('add_games_list') }}" class="btn btn-primary float-end">Add Games
                                     </a>
                                 </div>
                                 <div class="card-body">

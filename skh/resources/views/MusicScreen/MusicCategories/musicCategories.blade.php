@@ -31,19 +31,19 @@
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="card-header d-flex justify-content-between align-items-center">
-                                    <h4>Edit and Update Music Categories
+                                    <h4>Edit and Update Music Category
 
                                     </h4>
                                     <a href="{{ url('add_music_categories_list') }}"
                                         class="btn btn-primary float-end">Add
-                                        Music Categories</a>
+                                        Music Category</a>
                                 </div>
                                 <div class="card-body">
                                     <div class="table-responsive">
                                         <table class="table table-bordered table-striped">
                                             <thead>
                                                 <tr>
-                                                    <th>Music Categories</th>
+                                                    <th>Music Category</th>
                                                     <th>Edit</th>
                                                     <th>Delete</th>
                                                 </tr>

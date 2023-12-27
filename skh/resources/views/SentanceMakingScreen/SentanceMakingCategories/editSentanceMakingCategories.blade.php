@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Sentance_Making_Categories_Edit</title>
+    <title>Sentance_Making_Category_Edit</title>
     <link href="{{ env('APP_FILE_URL') }}storage/admin/assets/fontawesome-free/css/all.min.css" rel="stylesheet"
         type="text/css">
     <link
@@ -36,7 +36,7 @@
 
                             <div class="card">
                                 <div class="card-header">
-                                    <h4>Edit & Update Categories
+                                    <h4>Edit & Update Sentance Making Category
                                         <a href="{{ url('sentance_making_categories_list') }}"
                                             class="btn btn-danger float-end">BACK</a>
                                     </h4>
@@ -56,7 +56,7 @@
                                                 required>
                                         </div>
                                         <div class="form-group mb-3">
-                                            <button type="submit" class="btn btn-primary">Update Categories</button>
+                                            <button type="submit" class="btn btn-primary">Update Category</button>
                                         </div>
 
                                     </form>

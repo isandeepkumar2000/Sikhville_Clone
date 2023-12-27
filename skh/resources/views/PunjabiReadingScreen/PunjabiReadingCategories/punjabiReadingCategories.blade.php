@@ -31,10 +31,10 @@
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="card-header d-flex justify-content-between align-items-center">
-                                    <h4>How to Edit and Update Data in Laravel</h4>
+                                    <h4>Edit and Update Punjabi Reading Data</h4>
                                     <a href="{{ url('add_punjabi_reading_categories_list') }}"
                                         class="btn btn-primary float-end">Add
-                                        Punjabi Reading Categories</a>
+                                        Punjabi Reading Category</a>
                                 </div>
                                 <div class="card-body">
 

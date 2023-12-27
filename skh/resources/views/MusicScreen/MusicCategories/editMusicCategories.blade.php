@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Music_Edit</title>
+    <title>Music_Category_Edit</title>
     <link href="{{ env('APP_FILE_URL') }}storage/admin/assets/fontawesome-free/css/all.min.css" rel="stylesheet"
         type="text/css">
     <link
@@ -36,7 +36,7 @@
 
                             <div class="card">
                                 <div class="card-header">
-                                    <h4>Edit & Update Categories
+                                    <h4>Edit & Update Category
                                         <a href="{{ url('music_categories_list') }}"
                                             class="btn btn-danger float-end">BACK</a>
                                     </h4>
@@ -49,12 +49,12 @@
                                         @method('PUT')
 
                                         <div class="form-group mb-3">
-                                            <label for="">Categories Name</label>
+                                            <label for="">Music Category Name</label>
                                             <input type="text" name="name" value="{{ $musicCategories->name }}"
                                                 class="form-control" required>
                                         </div>
                                         <div class="form-group mb-3">
-                                            <button type="submit" class="btn btn-primary">Update Categories</button>
+                                            <button type="submit" class="btn btn-primary">Update Category</button>
                                         </div>
 
                                     </form>

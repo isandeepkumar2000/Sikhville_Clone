@@ -31,7 +31,7 @@
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-header d-flex justify-content-between align-items-center">
-                                    <h4>How to Edit and Update Website Content
+                                    <h4>Edit and Update Website Content
 
                                     </h4>
                                     <a href="{{ url('add_website_content_list') }}"
@@ -42,6 +42,7 @@
                                         <table class="table table-bordered table-striped">
                                             <thead>
                                                 <tr>
+                                                    <th>Type</th>
                                                     <th>Title</th>
                                                     <th>Contant</th>
                                                     <th>Edit</th>
@@ -51,6 +52,7 @@
                                             <tbody>
                                                 @foreach ($websiteContent as $item)
                                                     <tr>
+                                                        <td>{{ $item->type }}</td>
                                                         <td>{{ $item->title }}</td>
                                                         <td>{{ $item->content }}</td>
                                                         <td>

@@ -36,17 +36,18 @@
 
                             <div class="card">
                                 <div class="card-header">
-                                    <h4>Add Sentance making categories Here</h4>
+                                    <h4>Add Sentance Making Here</h4>
                                 </div>
                                 <div class="card-body">
                                     <form action="{{ url('add_post_sentance_making_list') }}" method="POST">
                                         @csrf
                                         <div class="form-row">
                                             <div class="col-md-6 mb-3">
-                                                <label for="sentancemakingCategoriesid">Music </label>
+                                                <label for="sentancemakingCategoriesid">Sentance Making</label>
                                                 <select class="form-control select2" name="sentancemakingCategoriesid"
                                                     required id="sentancemakingCategoriesid">
-                                                    <option value="option_select" disabled selected>Choose the Music
+                                                    <option value="option_select" disabled selected>Choose the Sentance
+                                                        Making
                                                     </option>
                                                     @foreach ($sentancemaking as $item)
                                                         <option value="{{ $item->id }}">{{ $item->name }}
@@ -84,8 +85,8 @@
                                                     name="short_description" required>
                                             </div>
                                         </div>
-                                        <button style="margin-top: 10px" class="btn btn-primary"
-                                            type="submit">Submit</button>
+                                        <button style="margin-top: 10px" class="btn btn-primary" type="submit">Submit
+                                            Category</button>
                                     </form>
                                 </div>
                             </div>

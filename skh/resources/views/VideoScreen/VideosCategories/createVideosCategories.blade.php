@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Video_Categories</title>
+    <title>Video_Category</title>
     <link href="{{ env('APP_FILE_URL') }}storage/admin/assets/fontawesome-free/css/all.min.css" rel="stylesheet"
         type="text/css">
     <link
@@ -36,7 +36,7 @@
 
                             <div class="card">
                                 <div class="card-header">
-                                    <h4>Add Games Categories Here</h4>
+                                    <h4>Add Video Category Here</h4>
                                 </div>
                                 <div class="card-body">
 
@@ -44,12 +44,12 @@
                                         @csrf
 
                                         <div class="form-group mb-3">
-                                            <label for="">Video Categorties</label>
+                                            <label for="">Video Category</label>
                                             <input type="text" name="name" class="form-control" required>
                                         </div>
 
                                         <div class="form-group mb-3">
-                                            <button type="submit" class="btn btn-primary">Save Categorties</button>
+                                            <button type="submit" class="btn btn-primary">Save Category</button>
                                         </div>
 
                                     </form>

@@ -23,6 +23,7 @@ class WebsiteContentFolderController extends Controller
 
         $websiteContent->title = $request->input('title');
         $websiteContent->content = $request->input('content');
+        $websiteContent->type = $request->input('type');
         $websiteContent->save();
         return redirect('website_content_list')->with('status', 'Student Added Successfully');
     }
@@ -37,6 +38,7 @@ class WebsiteContentFolderController extends Controller
         $websiteContent = Websitecontent::find($id);
         $websiteContent->title = $request->input('title');
         $websiteContent->content = $request->input('content');
+        $websiteContent->type = $request->input('type');
         $websiteContent->update();
         return redirect()->back()->with('status', 'Student Updated Successfully');
     }

@@ -36,7 +36,7 @@
 
                             <div class="card">
                                 <div class="card-header">
-                                    <h4>Edit & Update Shabdkosh Categories
+                                    <h4>Edit & Update Shabdkosh
                                         <a href="{{ url('shabdkosh_list') }}" class="btn btn-danger float-end">BACK</a>
                                     </h4>
                                 </div>
@@ -74,7 +74,7 @@
                                         </div>
 
                                         <div class="mb-3">
-                                            <button type="submit" class="btn btn-primary">Update Categories</button>
+                                            <button type="submit" class="btn btn-primary">Update Shabdkosh</button>
                                         </div>
 
                                     </form>

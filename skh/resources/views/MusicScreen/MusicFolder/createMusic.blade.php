@@ -36,7 +36,7 @@
 
                             <div class="card">
                                 <div class="card-header">
-                                    <h4>Add Music categories Here</h4>
+                                    <h4>Add Music Here</h4>
                                 </div>
                                 <div class="card-body">
                                     <form action="{{ url('add_post_music_list') }}" method="POST">

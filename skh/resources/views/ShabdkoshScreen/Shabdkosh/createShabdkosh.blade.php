@@ -68,7 +68,7 @@
 
                                         <div class="mb-3">
                                             <button type="submit" class="btn btn-primary">Save Shabdkosh
-                                                Categories</button>
+                                            </button>
                                         </div>
 
                                     </form>

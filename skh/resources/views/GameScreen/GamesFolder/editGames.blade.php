@@ -45,10 +45,10 @@
                                         @method('PUT')
                                         <div class="row mb-3">
                                             <div class="col-md-12 mb-3">
-                                                <label for="shopping_id">Select Game Category</label>
+                                                <label for="shopping_id">Select Game</label>
                                                 <select class="form-control select2" name="gameCategoriesid" required
                                                     id="gameCategoriesid">
-                                                    <option value="option_select">Choose a category</option>
+                                                    <option value="option_select">Choose a Game</option>
                                                     @foreach ($gamecategories as $item)
                                                         <option value="{{ $item->id }}"
                                                             @if ($item->id == $game->gameCategoriesid) selected @endif>

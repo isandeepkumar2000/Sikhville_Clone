@@ -11,6 +11,6 @@ class Websitecontent extends Model
     public $table = 'website_content';
 
     protected $fillable = [
-        'title', 'content'
+        'title', 'content', 'type'
     ];
 }

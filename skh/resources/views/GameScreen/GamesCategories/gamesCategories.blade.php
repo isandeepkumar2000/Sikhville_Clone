@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Games Categories</title>
+    <title>Games Category</title>
     <link href="{{ env('APP_FILE_URL') }}storage/admin/assets/fontawesome-free/css/all.min.css" rel="stylesheet"
         type="text/css">
     <link
@@ -31,11 +31,11 @@
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-header d-flex justify-content-between align-items-center">
-                                    <h4>How to Edit and Update Games Categories
+                                    <h4>Edit and Update Games Category
 
                                     </h4>
                                     <a href="{{ url('add_games_categories_list') }}"
-                                        class="btn btn-primary float-end">Add Games Categories</a>
+                                        class="btn btn-primary float-end">Add Games Category</a>
                                 </div>
                                 <div class="card-body">
                                     <div class="table-responsive">

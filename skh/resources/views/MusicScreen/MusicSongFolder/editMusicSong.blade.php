@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Music_Edit</title>
+    <title>Music_Song_Edit</title>
     <link href="{{ env('APP_FILE_URL') }}storage/admin/assets/fontawesome-free/css/all.min.css" rel="stylesheet"
         type="text/css">
     <link
@@ -34,7 +34,7 @@
                             @endif
                             <div class="card">
                                 <div class="card-header">
-                                    <h4>Edit & Update Student
+                                    <h4>Edit & Update Music Song
                                         <a href="{{ url('music_song_list') }}" class="btn btn-danger float-end">BACK</a>
                                     </h4>
                                 </div>
@@ -44,9 +44,9 @@
                                         @method('PUT')
 
                                         <div class="mb-3">
-                                            <label for="musicid" class="form-label">Music Categories</label>
+                                            <label for="musicid" class="form-label">Music Song</label>
                                             <select class="form-control select2" name="musicid" required id="musicid">
-                                                <option value="option_select">Choose a Music category</option>
+                                                <option value="option_select">Choose a Music Song</option>
                                                 @foreach ($music as $item)
                                                     <option value="{{ $item->id }}"
                                                         @if ($item->id == $musicSong->musicid) selected @endif>
@@ -82,7 +82,7 @@
                                             </div>
                                         </div>
                                         <div class="mb-3">
-                                            <button type="submit" class="btn btn-primary">Update Music</button>
+                                            <button type="submit" class="btn btn-primary">Update Music Song</button>
                                         </div>
                                     </form>
                                 </div>

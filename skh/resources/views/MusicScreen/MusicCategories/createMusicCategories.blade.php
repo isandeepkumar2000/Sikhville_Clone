@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Music_Create</title>
+    <title>Music_Category_Create</title>
     <link href="{{ env('APP_FILE_URL') }}storage/admin/assets/fontawesome-free/css/all.min.css" rel="stylesheet"
         type="text/css">
     <link
@@ -29,31 +29,24 @@
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-md-6">
-
                             @if (session('status'))
                                 <h6 class="alert alert-success">{{ session('status') }}</h6>
                             @endif
-
                             <div class="card">
                                 <div class="card-header">
-                                    <h4>Add Music Categories Here</h4>
+                                    <h4>Add Music Category Here</h4>
                                 </div>
                                 <div class="card-body">
-
                                     <form action="{{ url('add_post_music_categories_list') }}" method="POST">
                                         @csrf
-
                                         <div class="form-group mb-3">
-                                            <label for="">Music Categories List</label>
+                                            <label for="">Music Category List</label>
                                             <input type="text" name="name" class="form-control" required>
                                         </div>
-
                                         <div class="form-group mb-3">
-                                            <button type="submit" class="btn btn-primary">Save Music</button>
+                                            <button type="submit" class="btn btn-primary">Save Music Category</button>
                                         </div>
-
                                     </form>
-
                                 </div>
                             </div>
                         </div>

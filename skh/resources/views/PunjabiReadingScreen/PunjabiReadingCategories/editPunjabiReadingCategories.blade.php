@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Punjabi_Reading_Categories_Edit</title>
+    <title>Punjabi_Reading_Category_Edit</title>
     <link href="{{ env('APP_FILE_URL') }}storage/admin/assets/fontawesome-free/css/all.min.css" rel="stylesheet"
         type="text/css">
     <link
@@ -35,7 +35,7 @@
                             <div class="card">
                                 <div class="card-header">
                                     <h4 class="d-flex justify-content-between align-items-center">
-                                        Edit & Update Punjabi Reading Categories
+                                        Edit & Update Punjabi Reading Category
                                         <a href="{{ url('punjabi_reading_categories_list') }}"
                                             class="btn btn-danger">BACK</a>
                                     </h4>
@@ -69,7 +69,8 @@
                                                 required>
                                         </div>
                                         <div class="mb-3">
-                                            <button type="submit" class="btn btn-primary">Update Categories</button>
+                                            <button type="submit" class="btn btn-primary">Update Punjabi Reading
+                                                Category</button>
                                         </div>
                                     </form>
 

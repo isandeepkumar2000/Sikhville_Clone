@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Video Categories</title>
+    <title>Video Category</title>
     <link href="{{ env('APP_FILE_URL') }}storage/admin/assets/fontawesome-free/css/all.min.css" rel="stylesheet"
         type="text/css">
     <link
@@ -31,19 +31,19 @@
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="card-header d-flex justify-content-between align-items-center">
-                                    <h4>How to Edit and Update video
+                                    <h4>Edit and Update Video Category
 
                                     </h4>
                                     <a href="{{ url('add_video_categories_list') }}"
                                         class="btn btn-primary float-end">Add
-                                        Video Categories</a>
+                                        Video Category</a>
                                 </div>
                                 <div class="card-body">
 
                                     <table class="table table-bordered table-striped">
                                         <thead>
                                             <tr>
-                                                <th>Name</th>
+                                                <th>Category</th>
                                                 <th>Edit</th>
                                                 <th>Delete</th>
 
