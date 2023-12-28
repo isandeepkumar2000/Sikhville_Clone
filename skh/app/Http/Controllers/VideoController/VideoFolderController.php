@@ -83,6 +83,7 @@ class VideoFolderController extends Controller
                 $video->thumbnail_image = $folderName . '/' . $fileName;
             }
         }
+
         $video->update();
         return redirect()->back()->with('status', 'Student Updated Successfully');
     }

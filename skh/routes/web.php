@@ -149,7 +149,4 @@ Route::middleware("isLoggedIn")->group(function () {
     Route::get('edit_website_content_list/{id}', [App\Http\Controllers\WebsiteContentController\WebsiteContentFolderController::class, 'edit']);
     Route::put('update_website_content_list/{id}', [App\Http\Controllers\WebsiteContentController\WebsiteContentFolderController::class, 'update']);
     Route::delete('delete_website_content_list/{id}', [App\Http\Controllers\WebsiteContentController\WebsiteContentFolderController::class, 'destroy']);
-
-
-    // Route::post('view_log_list', [App\Http\Controllers\ViewLogsController\ViewLogsController::class, 'store']);
 });

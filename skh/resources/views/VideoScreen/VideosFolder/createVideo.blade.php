@@ -43,7 +43,7 @@
                                         <div class="row mb-3">
                                             <div class="col-md-6">
                                                 <label for="videoCategoriesid">Select Video Category</label>
-                                                <select class="form-control select2" name="videoCategoriesid" required
+                                                <select class="form-control select2" name="videoCategoriesid"
                                                     id="videoCategoriesid">
                                                     <option value="option_select" disabled selected>Choose the name
                                                     </option>
@@ -56,7 +56,7 @@
                                             <div class="col-md-6">
                                                 <label for="thumbnail_image">Upload Image</label>
                                                 <input type="file" class="form-control-file" id="thumbnail_image"
-                                                    name="thumbnail_image" required>
+                                                    name="thumbnail_image">
                                             </div>
                                         </div>
                                         <div class="row mb-3">
@@ -74,42 +74,37 @@
                                             </div>
                                             <div class="col-md-4">
                                                 <label for="validationCustom05">Donating Link</label>
-                                                <input type="text" class="form-control" required
-                                                    id="validationCustom05" placeholder="Donating Link"
-                                                    name="donating_link" required>
+                                                <input type="text" class="form-control" id="validationCustom05"
+                                                    placeholder="Donating Link" name="donating_link">
                                             </div>
                                         </div>
                                         <div class="row mb-3">
                                             <div class="col-md-4">
                                                 <label for="validationCustom06">Play Now Link</label>
-                                                <input type="text" class="form-control" required
-                                                    id="validationCustom06" placeholder="Play Now Link"
-                                                    name="playnow_link" required>
+                                                <input type="text" class="form-control" id="validationCustom06"
+                                                    placeholder="Play Now Link" name="playnow_link">
                                             </div>
                                             <div class="col-md-4">
                                                 <label for="validationCustom07">Start Easy Quiz Link</label>
-                                                <input type="text" class="form-control" required
-                                                    id="validationCustom07" placeholder="Start Easy Quiz Link"
-                                                    name="startquiz_easy" required>
+                                                <input type="text" class="form-control" id="validationCustom07"
+                                                    placeholder="Start Easy Quiz Link" name="startquiz_easy">
                                             </div>
                                             <div class="col-md-4">
                                                 <label for="validationCustom08">Start Hard Quiz Link</label>
-                                                <input type="text" class="form-control" required
-                                                    id="validationCustom08" placeholder="Start Hard Quiz Link"
-                                                    name="startquiz_hard" required>
+                                                <input type="text" class="form-control" id="validationCustom08"
+                                                    placeholder="Start Hard Quiz Link" name="startquiz_hard">
                                             </div>
                                         </div>
                                         <div class="row mb-3">
                                             <div class="col-md-12">
                                                 <label for="validationCustom09">Download Pdf Link</label>
-                                                <input type="text" class="form-control" required
-                                                    id="validationCustom09" placeholder="Download Pdf Link"
-                                                    name="downloadpdf_link" required>
+                                                <input type="text" class="form-control" id="validationCustom09"
+                                                    placeholder="Download Pdf Link" name="downloadpdf_link">
                                             </div>
                                         </div>
                                         <div class="form-group mb-3">
                                             <label for="textAreaExample1">Details</label>
-                                            <textarea class="form-control" required id="textAreaExample1" rows="4" name="details"></textarea>
+                                            <textarea class="form-control" id="textAreaExample1" rows="4" name="details"></textarea>
                                         </div>
                                         <button class="btn btn-primary" type="submit">Submit</button>
                                     </form>

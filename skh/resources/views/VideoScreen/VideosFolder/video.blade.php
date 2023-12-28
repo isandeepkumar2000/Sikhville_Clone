@@ -73,8 +73,8 @@
                                                         <td>
                                                             @if (!empty($item->thumbnail_image))
                                                                 <img src="{{ url('skh/public/' . $item->thumbnail_image) }}"
-                                                                    alt="Featured Video Image" width="80px"
-                                                                    height="80px">
+                                                                    alt="Featured Video Image" width="100px"
+                                                                    height="100px">
                                                             @else
                                                                 <p>Video image available</p>
                                                             @endif
@@ -82,30 +82,31 @@
                                                         <td>
                                                             @if (!empty($item->featured_video_Image_Url))
                                                                 <img src="{{ url('skh/public/' . $item->featured_video_Image_Url) }}"
-                                                                    alt="Featured Video Image" width="80px"
-                                                                    height="80px">
+                                                                    alt="Featured Video Image" width="100px"
+                                                                    height="100px">
                                                             @else
                                                                 <p>youtube image available</p>
                                                             @endif
                                                         </td>
                                                         <td>
                                                             @if (!empty($item->youtube_video_url))
-                                                                <iframe width="120" height="120"
-                                                                    src="{{ $item->youtube_video_url }}" frameborder="0"
-                                                                    allow="autoplay; encrypted-media"
+                                                                <iframe width="100" height="100"
+                                                                    src="https://www.youtube.com/embed/{{ $item->youtube_video_url }}"
+                                                                    frameborder="0" allow="autoplay; encrypted-media"
                                                                     allowfullscreen></iframe>
                                                             @else
                                                                 <p>Invalid YouTube video URL</p>
                                                             @endif
                                                         </td>
 
-
                                                         <td>{{ $item->donating_link }}</td>
                                                         <td>{{ $item->playnow_link }}</td>
                                                         <td>{{ $item->startquiz_easy }}</td>
                                                         <td>{{ $item->startquiz_hard }}</td>
                                                         <td>{{ $item->downloadpdf_link }}</td>
-                                                        <td>{{ $item->details }}</td>
+                                                        <td
+                                                            style=" display: block;width: 100px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis">
+                                                            {{ $item->details }}</td>
                                                         <td>
                                                             <a href="top_video/{{ $item->id }}"
                                                                 class="btn btn-sm btn-{{ $item->top_video ? 'success' : 'primary' }}">
