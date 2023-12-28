@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-
     <title>Website_Content</title>
     <link href="{{ env('APP_FILE_URL') }}storage/admin/assets/fontawesome-free/css/all.min.css" rel="stylesheet"
         type="text/css">
@@ -29,10 +28,22 @@
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-md-10">
-                            @if (session('status'))
-                                <div class="alert alert-success">{{ session('status') }}</div>
+                            @if ($errors->any() || session('error'))
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @if ($errors->any())
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        @endif
+                                    </ul>
+                                </div>
                             @endif
-
+                            @if (session('status'))
+                                <div class="alert alert-success">
+                                    {{ session('status') }}
+                                </div>
+                            @endif
                             <div class="card">
                                 <div class="card-header">
                                     <h4 class="d-flex justify-content-between align-items-center">
@@ -41,12 +52,10 @@
                                     </h4>
                                 </div>
                                 <div class="card-body">
-
                                     <form action="{{ url('update_website_content_list/' . $websiteContent->id) }}"
                                         method="POST">
                                         @csrf
                                         @method('PUT')
-
                                         <div class="row mb-3">
                                             <div class="col-md-6">
                                                 <label for="type" class="form-label">Website Content Type</label>
@@ -74,19 +83,16 @@
                                                     placeholder="Enter the title">
                                             </div>
                                         </div>
-
                                         <div class="mb-3">
                                             <label for="textAreaExample1" class="form-label">Content Details</label>
                                             <textarea class="form-control" required id="textAreaExample1" rows="4" name="content"
                                                 placeholder="Please enter the Content Details">{{ $websiteContent->content }}</textarea>
                                         </div>
-
                                         <div class="mb-3">
                                             <button type="submit" class="btn btn-primary">Update Website
                                                 Content</button>
                                         </div>
                                     </form>
-
                                 </div>
                             </div>
                         </div>

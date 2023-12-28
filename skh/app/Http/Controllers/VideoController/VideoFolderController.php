@@ -27,7 +27,6 @@ class VideoFolderController extends Controller
         // die;
         $video = new Video;
         $video->videoCategoriesid = $request->input('videoCategoriesid');
-        // $video->thumbnail_image = $request->input('thumbnail_image');
         $video->short_description = $request->input('short_description');
         $video->details = $request->input('details');
         $video->donating_link = $request->input('donating_link');
@@ -39,22 +38,14 @@ class VideoFolderController extends Controller
 
         if ($request->hasFile('thumbnail_image')) {
             $file = $request->file('thumbnail_image');
-            $extension = $file->getClientOriginalExtension();
-            $fileName = time() . '.' . $extension;
+            $fileName = time() . '.' . $file->getClientOriginalExtension();
             $folderName = 'VideoImagefolder';
             $path = public_path($folderName);
-            if (!file_exists($path)) {
-                mkdir($path, 0777, true);
-            }
             $upload = $file->move($path, $fileName);
+
             if ($upload) {
                 $video->thumbnail_image = $folderName . '/' . $fileName;
             }
-        }
-        $appUrl = env('APP_URL');
-        if (!empty($video->thumbnail_image)) {
-            $imageUrl = $appUrl . '/' . $video->thumbnail_image;
-            $video->thumbnail_image = $imageUrl;
         }
 
         $video->save();
@@ -83,22 +74,14 @@ class VideoFolderController extends Controller
 
         if ($request->hasFile('thumbnail_image')) {
             $file = $request->file('thumbnail_image');
-            $extension = $file->getClientOriginalExtension();
-            $fileName = time() . '.' . $extension;
+            $fileName = time() . '.' . $file->getClientOriginalExtension();
             $folderName = 'VideoImagefolder';
             $path = public_path($folderName);
-            if (!file_exists($path)) {
-                mkdir($path, 0777, true);
-            }
             $upload = $file->move($path, $fileName);
+
             if ($upload) {
                 $video->thumbnail_image = $folderName . '/' . $fileName;
             }
-        }
-        $appUrl = env('APP_URL');
-        if (!empty($video->thumbnail_image)) {
-            $imageUrl = $appUrl . '/' . $video->thumbnail_image;
-            $video->thumbnail_image = $imageUrl;
         }
         $video->update();
         return redirect()->back()->with('status', 'Student Updated Successfully');
@@ -122,22 +105,14 @@ class VideoFolderController extends Controller
                 $video->featured_video = 1;
                 if ($request->hasFile('featured_video_Image_Url')) {
                     $file = $request->file('featured_video_Image_Url');
-                    $extension = $file->getClientOriginalExtension();
-                    $fileName = time() . '.' . $extension;
+                    $fileName = time() . '.' . $file->getClientOriginalExtension();
                     $folderName = 'VideoFeaturedImagefolder';
                     $path = public_path($folderName);
-                    if (!file_exists($path)) {
-                        mkdir($path, 0777, true);
-                    }
                     $upload = $file->move($path, $fileName);
+
                     if ($upload) {
                         $video->featured_video_Image_Url = $folderName . '/' . $fileName;
                     }
-                }
-                $appUrl = env('APP_URL');
-                if (!empty($video->featured_video_Image_Url)) {
-                    $imageUrl = $appUrl . '/' . $video->featured_video_Image_Url;
-                    $video->featured_video_Image_Url = $imageUrl;
                 }
             }
         }

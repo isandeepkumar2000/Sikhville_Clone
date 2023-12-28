@@ -33,9 +33,9 @@
                             <div class="card">
                                 <div class="card-header">
                                     <h4 class="d-flex justify-content-between align-items-center">
-                                        Edit and Update Sentance Making
-                                        <a href="{{ url('add_sentance_making_list') }}" class="btn btn-primary">Add
-                                            Sentance Making</a>
+                                        Edit and Update Sentence Making
+                                        <a href="{{ url('add_sentence_making_list') }}" class="btn btn-primary">Add
+                                            Sentence Making</a>
                                     </h4>
                                 </div>
                                 <div class="card-body">
@@ -46,7 +46,7 @@
                                                     <th>Name</th>
                                                     <th>Video Game Play</th>
                                                     <th>Thumbnail Image Url</th>
-                                                    <th>Sentance Making Vismaad Title</th>
+                                                    <th>Sentence Making Vismaad Title</th>
                                                     <th>Short Description</th>
                                                     <th>Edit</th>
                                                     <th>Delete</th>
@@ -65,20 +65,20 @@
                                                         <td>{{ $item->sentance_making_vismaad_title }}</td>
                                                         <td>{{ $item->short_description }}</td>
                                                         <td>
-                                                            <div
-                                                                class="d-flex justify-content-between align-items-center">
-                                                                <a href="{{ url('edit_sentance_making_list/' . $item->id) }}"
-                                                                    class="btn btn-primary btn-sm me-2">Edit</a>
-                                                                <form
-                                                                    action="{{ url('delete_sentance_making_list', $item->id) }}"
-                                                                    method="POST">
-                                                                    @csrf
-                                                                    @method('delete')
-                                                                    <button type="submit"
-                                                                        class="btn btn-outline-danger btn-sm">Delete
-                                                                    </button>
-                                                                </form>
-                                                            </div>
+                                                            <a href="{{ url('edit_sentance_making_list/' . $item->id) }}"
+                                                                class="btn btn-primary btn-sm">Edit</a>
+                                                        </td>
+                                                        <td>
+                                                            @component('Layouts.DeleteLayout.DeleteConfirmationModal', [
+                                                                'modalId' => 'deleteConfirmationModal_' . $item->id,
+                                                                'deleteUrl' => url('delete_sentance_making_list', $item->id),
+                                                            ])
+                                                            @endcomponent
+                                                            <button type="button" class="btn btn-outline-danger"
+                                                                data-toggle="modal"
+                                                                data-target="#deleteConfirmationModal_{{ $item->id }}">
+                                                                <i class="fas fa-trash-alt"></i>
+                                                            </button>
                                                         </td>
                                                     </tr>
                                                 @endforeach
@@ -90,6 +90,7 @@
                         </div>
                     </div>
                 </div>
+
             </div>
             @include('Layouts.FooterLayout.footer')
         </div>

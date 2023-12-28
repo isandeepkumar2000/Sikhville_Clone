@@ -33,10 +33,9 @@
                                 <div class="alert alert-success">{{ session('status') }}</div>
                             @endif
                             <div class="card">
-                                <div class="card-header">
-                                    <h4>Edit & Update
-                                        <a href="{{ url('games_list') }}" class="btn btn-danger float-end">BACK</a>
-                                    </h4>
+                                <div class="card-header d-flex justify-content-between align-items-center">
+                                    <h4>Edit & Update</h4>
+                                    <a href="{{ url('games_list') }}" class="btn btn-danger">BACK</a>
                                 </div>
                                 <div class="card-body">
                                     <form action="{{ url('update_games_list/' . $game->id) }}" method="POST"
@@ -60,8 +59,7 @@
                                         </div>
                                         <div class="row mb-3">
                                             <div class="col-md-6">
-                                                <!-- Adjust column size for medium screens -->
-                                                <label for="validationCustom02">Image URL</label>
+                                                <label for="thumbnail_image">Image URL</label>
                                                 <input type="file" class="form-control" required
                                                     id="validationCustom02" placeholder="Image URL"
                                                     value="{{ $game->thumbnail_image }}" name="thumbnail_image"
@@ -78,7 +76,8 @@
                                             <label for="textAreaExample1">Details</label>
                                             <textarea class="form-control" required id="textAreaExample1" rows="4" name="details">{{ $game->details }}</textarea>
                                         </div>
-                                        <div class="form-group mb-3">
+                                        <div class="form-group mb-3 d-flex justify-content-between">
+
                                             <button type="submit" class="btn btn-primary">Update Game</button>
                                         </div>
                                     </form>
@@ -87,6 +86,7 @@
                         </div>
                     </div>
                 </div>
+
             </div>
             @include('Layouts.FooterLayout.footer')
         </div>

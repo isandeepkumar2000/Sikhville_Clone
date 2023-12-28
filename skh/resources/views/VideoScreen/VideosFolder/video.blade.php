@@ -34,10 +34,10 @@
                             <div class="card">
                                 <div class="card-header d-flex justify-content-between align-items-center">
                                     <h4>Edit and Update Video Data
-
                                     </h4>
-                                    <a href="{{ url('add_video_list') }}" class="btn btn-primary float-end">Add Video
-                                        Category</a>
+                                    <a href="{{ url('add_video_list') }}" class="btn btn-primary float-end">
+                                        <i class="fas fa-plus-circle me-1"></i>Add Video Category
+                                    </a>
                                 </div>
                                 <div class="card-body">
                                     <div class="table-responsive">
@@ -45,9 +45,9 @@
                                             <thead>
                                                 <tr>
                                                     <th>Category</th>
+                                                    <th>Title</th>
                                                     <th>Thumbnail Image Url</th>
                                                     <th>Featured Video Url</th>
-                                                    <th>Title</th>
                                                     <th>Youtube Video Url </th>
                                                     <th>Donating Link </th>
                                                     <th>PlayNow Link </th>
@@ -69,57 +69,76 @@
                                                                 {{ $item->videoCategoryDetails->name }}
                                                             @endif
                                                         </td>
+                                                        <td>{{ $item->short_description }}</td>
                                                         <td>
                                                             @if (!empty($item->thumbnail_image))
-                                                                <img src="{{ asset($item->thumbnail_image) }}"
-                                                                    alt="Featured Game Image" width="150px"
-                                                                    height="150px">
+                                                                <img src="{{ url('skh/public/' . $item->thumbnail_image) }}"
+                                                                    alt="Featured Video Image" width="80px"
+                                                                    height="80px">
                                                             @else
-                                                                <p>No featured Video image available</p>
+                                                                <p>Video image available</p>
                                                             @endif
                                                         </td>
                                                         <td>
                                                             @if (!empty($item->featured_video_Image_Url))
-                                                                <img src="{{ asset($item->featured_video_Image_Url) }}"
-                                                                    alt="Featured Game Image" width="150px"
-                                                                    height="150px">
+                                                                <img src="{{ url('skh/public/' . $item->featured_video_Image_Url) }}"
+                                                                    alt="Featured Video Image" width="80px"
+                                                                    height="80px">
                                                             @else
-                                                                <p>No featured featured image available</p>
+                                                                <p>youtube image available</p>
                                                             @endif
                                                         </td>
-                                                        <td>{{ $item->short_description }}</td>
+                                                        <td>
+                                                            @if (!empty($item->youtube_video_url))
+                                                                <iframe width="120" height="120"
+                                                                    src="{{ $item->youtube_video_url }}" frameborder="0"
+                                                                    allow="autoplay; encrypted-media"
+                                                                    allowfullscreen></iframe>
+                                                            @else
+                                                                <p>Invalid YouTube video URL</p>
+                                                            @endif
+                                                        </td>
+
+
                                                         <td>{{ $item->donating_link }}</td>
                                                         <td>{{ $item->playnow_link }}</td>
-                                                        <td>{{ $item->youtube_video_url }}</td>
                                                         <td>{{ $item->startquiz_easy }}</td>
                                                         <td>{{ $item->startquiz_hard }}</td>
                                                         <td>{{ $item->downloadpdf_link }}</td>
                                                         <td>{{ $item->details }}</td>
                                                         <td>
                                                             <a href="top_video/{{ $item->id }}"
-                                                                class="btn btn-sm btn-{{ $item->top_video ? 'success' : 'danger' }}">{{ $item->top_video ? 'Added' : 'Not Added' }}</a>
+                                                                class="btn btn-sm btn-{{ $item->top_video ? 'success' : 'primary' }}">
+                                                                <i class="fas fa-video me-1"
+                                                                    style="margin-right: 2px;"></i>{{ $item->top_video ? 'Added' : 'Not Added' }}
+                                                            </a>
                                                         </td>
                                                         <td>
                                                             <button
-                                                                class="btn btn-sm btn-{{ $item->featured_video ? 'success' : 'danger' }} featured-games-btn"
+                                                                class="btn btn-sm btn-{{ $item->featured_video ? 'success' : 'primary' }} featured-games-btn"
                                                                 data-toggle="modal"
                                                                 data-target="#featuredGamesModal_{{ $item->id }}">
-                                                                {{ $item->featured_video ? 'Added' : 'Not Added' }}
+                                                                <i class="fas fa-star me-1"
+                                                                    style="margin-right: 2px;"></i>{{ $item->featured_video ? 'Added' : 'Not Added' }}
                                                             </button>
                                                         </td>
-
                                                         <td>
                                                             <a href="{{ url('edit_video_list/' . $item->id) }}"
-                                                                class="btn btn-primary btn-sm">Edit</a>
+                                                                class="btn btn-primary btn-sm">
+                                                                <i class="fas fa-edit me-1"></i>
+                                                            </a>
                                                         </td>
                                                         <td>
-                                                            <form action="{{ url('delete_video_list', $item->id) }}"
-                                                                method="POST">
-                                                                @csrf
-                                                                @method('delete')
-                                                                <button type="submit"
-                                                                    class="btn btn-outline-danger">Delete</button>
-                                                            </form>
+                                                            @component('Layouts.DeleteLayout.DeleteConfirmationModal', [
+                                                                'modalId' => 'deleteConfirmationModal_' . $item->id,
+                                                                'deleteUrl' => url('delete_video_list', $item->id),
+                                                            ])
+                                                            @endcomponent
+                                                            <button type="button" class="btn btn-outline-danger"
+                                                                data-toggle="modal"
+                                                                data-target="#deleteConfirmationModal_{{ $item->id }}">
+                                                                <i class="fas fa-trash-alt"></i>
+                                                            </button>
                                                         </td>
                                                     </tr>
                                                     <div class="modal fade" id="featuredGamesModal_{{ $item->id }}"
@@ -144,7 +163,7 @@
                                                                     <div class="modal-body">
                                                                         <div class="form-group">
                                                                             <label for="featuredGameImage">Upload
-                                                                                Image:</label>
+                                                                                Image</label>
                                                                             <input type="file"
                                                                                 class="form-control-file"
                                                                                 id="featuredGameImage"
@@ -154,7 +173,8 @@
                                                                     </div>
                                                                     <div class="modal-footer">
                                                                         <button type="submit"
-                                                                            class="btn btn-primary">Add Featured
+                                                                            class="btn btn-primary">Add
+                                                                            Featured
                                                                             Video</button>
                                                                     </div>
                                                                 </form>

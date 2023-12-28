@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\ApiController;
 
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -29,3 +30,4 @@ Route::get("punjabireading_details", [ApiController::class, "showpunjabireadingL
 Route::get("sentancemaking_details", [ApiController::class, "showsentancemakingList"]);
 Route::get("shabdkosh_details", [ApiController::class, "showshabdkoshList"]);
 Route::get("websitecontent_details", [ApiController::class, "showwebsitecontentList"]);
+Route::post("viewlog_details", [ApiController::class, "showViewLoglist"]);

@@ -37,32 +37,11 @@ class LoginController extends Controller
 
     public function registerUser(Request $request)
     {
-        // $request->validate([
-        //     'email'         =>  'required|string|email',
-        //     'password'      =>  'required|string|min:6'
-        // ]);
-        // $User = Admin::where('email', '=', $request->email)->first();
-
-        // if ($User) {
-        //     $credentials = $request->only('email', 'password');
-        //     if (Auth::guard('admin')->attempt($credentials)) {
-        //         // $request->session()->put('loginId', $User->id);
-        //         return redirect(route('dashboard'));
-        //     }
-        // } else {
-        //     return back()->withErrors([
-        //         'email' => 'Email is required.',
-        //         'password' => 'Password is required.',
-        //     ]);
-        // }
-
-
-
         $validator = Validator::make($request->all(), [
             'email'         =>  'required|string|email',
             'password'      =>  'required|string|min:6'
         ]);
-        $User = Admin::where('email', '=', $request->email)->first();
+
 
         if ($validator->fails()) {
             return back()->withErrors([
@@ -73,7 +52,6 @@ class LoginController extends Controller
             $credentials = $request->only('email', 'password');
             if (Auth::guard('admin')->attempt($credentials)) {
                 return redirect(route('dashboard'));
-                // return response()->json(['status' => 'Fail', 'message' => 'Invalid Credentials. Please try again with correct credentials.']);
             }
         }
     }

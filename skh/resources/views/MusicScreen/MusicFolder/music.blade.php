@@ -69,14 +69,18 @@
                                                                 class="btn btn-primary btn-sm">Edit</a>
                                                         </td>
                                                         <td>
-                                                            <form action="{{ url('delete_music_list', $item->id) }}"
-                                                                method="POST">
-                                                                @csrf
-                                                                @method('delete')
-                                                                <button type="submit"
-                                                                    class="btn btn-outline-danger">Delete</button>
-                                                            </form>
+                                                            @component('Layouts.DeleteLayout.DeleteConfirmationModal', [
+                                                                'modalId' => 'deleteConfirmationModal_' . $item->id,
+                                                                'deleteUrl' => url('delete_music_list', $item->id),
+                                                            ])
+                                                            @endcomponent
+                                                            <button type="button" class="btn btn-outline-danger"
+                                                                data-toggle="modal"
+                                                                data-target="#deleteConfirmationModal_{{ $item->id }}">
+                                                                <i class="fas fa-trash-alt"></i>
+                                                            </button>
                                                         </td>
+
                                                     </tr>
                                                 @endforeach
                                             </tbody>
