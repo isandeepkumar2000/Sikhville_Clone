@@ -98,7 +98,6 @@ class VideoFolderController extends Controller
     public function featuredvideo($id, Request $request)
     {
         $video = Video::find($id);
-
         if ($video) {
             if ($video->featured_video) {
                 $video->featured_video = 0;
@@ -125,7 +124,6 @@ class VideoFolderController extends Controller
     public function topvideoUpdate($id)
     {
         $maxTopVideos = 3;
-
         $currentTopVideosCount = Video::where('top_video', 1)->count();
         $video = Video::find($id);
 
