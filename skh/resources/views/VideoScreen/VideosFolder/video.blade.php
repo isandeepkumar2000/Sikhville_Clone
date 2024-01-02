@@ -75,10 +75,10 @@
                                                         <td>
                                                             @if (!empty($item->thumbnail_image))
                                                                 <img src="{{ url('skh/public/' . $item->thumbnail_image) }}"
-                                                                    alt="Featured Video Image" width="100px"
+                                                                    alt="thumbnail image Image" width="100px"
                                                                     height="100px">
                                                             @else
-                                                                <p>Video image available</p>
+                                                                <p>Thumbnail image available</p>
                                                             @endif
                                                         </td>
                                                         <td>
