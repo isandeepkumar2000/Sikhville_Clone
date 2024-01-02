@@ -61,8 +61,6 @@
                                         </div>
                                         <div class="row mb-3">
                                             <div class="col-md-4">
-
-
                                                 <label for="thumbnail_image">Upload Image</label>
                                                 <input type="file" class="form-control-file" id="thumbnail_image"
                                                     value="{{ $video->thumbnail_image }}" name="thumbnail_image">
@@ -112,6 +110,21 @@
                                                 <input type="text" class="form-control" id="validationCustom09"
                                                     value="{{ $video->downloadpdf_link }}"
                                                     placeholder="Download Pdf Link" name="downloadpdf_link">
+                                            </div>
+
+                                            <div class="col-md-4">
+                                                <label for="highlighting_video_Image">Upload Hightlighting
+                                                    Image</label>
+                                                <input type="file" class="form-control-file"
+                                                    value="{{ $video->highlighting_video_Image }}"
+                                                    id="highlighting_video_Image" name="highlighting_video_Image">
+                                            </div>
+
+                                            <div class="col-md-4">
+                                                <label for="video_duration">Video Durection</label>
+                                                <input type="text" class="form-control" id="video_duration"
+                                                    value="{{ $video->video_duration }}"
+                                                    placeholder="Video Durection" name="video_duration">
                                             </div>
                                         </div>
                                         <div class="form-group mb-3">

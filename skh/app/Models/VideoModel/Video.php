@@ -11,7 +11,7 @@ class Video extends Model
     public $table = 'video';
 
     protected $fillable = [
-        'videoCategoriesid', 'thumbnail_image', 'short_description', 'details', 'youtube_video_url', 'donating_link', 'playnow_link', 'startquiz_easy', 'startquiz_hard', 'downlordpdf_link', 'featured_video_Image_Url',  'featured_video',   'top_video',
+        'videoCategoriesid', 'thumbnail_image', 'short_description', 'details', 'youtube_video_url', 'donating_link', 'playnow_link', 'startquiz_easy', 'startquiz_hard', 'downlordpdf_link', 'featured_video_Image_Url',  'featured_video',   'top_video', 'video_duration', 'highlighting_video_Image',
     ];
     public function videoCategoryDetails()
     {

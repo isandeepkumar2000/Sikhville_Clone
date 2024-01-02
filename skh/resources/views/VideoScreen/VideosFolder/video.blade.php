@@ -47,6 +47,7 @@
                                                     <th>Category</th>
                                                     <th>Title</th>
                                                     <th>Thumbnail Image Url</th>
+                                                    <th>Highlighting Image Url</th>
                                                     <th>Featured Video Url</th>
                                                     <th>Youtube Video Url </th>
                                                     <th>Donating Link </th>
@@ -54,6 +55,7 @@
                                                     <th>Start Quiz Easy Link </th>
                                                     <th>Start Quiz Hard Link </th>
                                                     <th>Download Pdf Link </th>
+                                                    <th>Highlighting video Duration</th>
                                                     <th>Details</th>
                                                     <th>Top Video</th>
                                                     <th>Featured Video</th>
@@ -77,6 +79,15 @@
                                                                     height="100px">
                                                             @else
                                                                 <p>Video image available</p>
+                                                            @endif
+                                                        </td>
+                                                        <td>
+                                                            @if (!empty($item->highlighting_video_Image))
+                                                                <img src="{{ url('skh/public/' . $item->highlighting_video_Image) }}"
+                                                                    alt="highlighting Video Image" width="100px"
+                                                                    height="100px">
+                                                            @else
+                                                                <p>highlighting Video image available</p>
                                                             @endif
                                                         </td>
                                                         <td>
@@ -104,6 +115,8 @@
                                                         <td>{{ $item->startquiz_easy }}</td>
                                                         <td>{{ $item->startquiz_hard }}</td>
                                                         <td>{{ $item->downloadpdf_link }}</td>
+                                                        <td>{{ $item->video_duration }}</td>
+
                                                         <td
                                                             style=" display: block;width: 100px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis">
                                                             {{ $item->details }}</td>

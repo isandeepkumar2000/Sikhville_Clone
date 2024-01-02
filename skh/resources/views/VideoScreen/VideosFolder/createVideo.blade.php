@@ -15,6 +15,34 @@
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
     <link href="{{ env('APP_FILE_URL') }}storage/admin/assets/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Custom styles for icons and colors */
+        .card-header {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .card-header h4 {
+            margin-bottom: 0;
+        }
+
+        .card-body label {
+            font-weight: bold;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+    </style>
 </head>
 
 <body id="page-top">
@@ -34,7 +62,7 @@
                             @endif
                             <div class="card">
                                 <div class="card-header">
-                                    <h4>Add video Category Here</h4>
+                                    <h4><i class="fas fa-video"></i> Add Video Category Here</h4>
                                 </div>
                                 <div class="card-body">
                                     <form action="{{ url('add_post_video_list') }}" method="POST"
@@ -79,7 +107,7 @@
                                             </div>
                                         </div>
                                         <div class="row mb-3">
-                                            <div class="col-md-4">
+                                            <div class="form-group mb-3">
                                                 <label for="validationCustom06">Play Now Link</label>
                                                 <input type="text" class="form-control" id="validationCustom06"
                                                     placeholder="Play Now Link" name="playnow_link">
@@ -96,17 +124,31 @@
                                             </div>
                                         </div>
                                         <div class="row mb-3">
-                                            <div class="col-md-12">
+                                            <div class="col-md-4">
                                                 <label for="validationCustom09">Download Pdf Link</label>
                                                 <input type="text" class="form-control" id="validationCustom09"
                                                     placeholder="Download Pdf Link" name="downloadpdf_link">
                                             </div>
+
+                                            <div class="col-md-4">
+                                                <label for="highlighting_video_Image">Upload Hightlighting
+                                                    Image</label>
+                                                <input type="file" class="form-control-file"
+                                                    id="highlighting_video_Image" name="highlighting_video_Image">
+                                            </div>
+                                            <div class="form-group mb-3">
+                                                <label for="video_duration">Video Duration</label>
+                                                <input type="text" class="form-control" id="video_duration"
+                                                    placeholder="Video Duration" name="video_duration" readonly>
+                                            </div>
+
                                         </div>
                                         <div class="form-group mb-3">
                                             <label for="textAreaExample1">Details</label>
-                                            <textarea class="form-control" id="textAreaExample1" rows="4" name="details"></textarea>
+                                            <textarea class="form-control" id="textAreaExample1" rows="4" name="details" placeholder="write Details"></textarea>
                                         </div>
-                                        <button class="btn btn-primary" type="submit">Submit</button>
+                                        <button class="btn btn-primary" type="submit"><i class="fas fa-upload"></i>
+                                            Submit</button>
                                     </form>
                                 </div>
                             </div>
@@ -117,6 +159,14 @@
             @include('Layouts.FooterLayout.footer')
         </div>
     </div>
+
+
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Font Awesome JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
 
     <!-- Bootstrap core JavaScript-->
     <script src="{{ env('APP_FILE_URL') }}storage/admin/assets/jquery/jquery.min.js"></script>
