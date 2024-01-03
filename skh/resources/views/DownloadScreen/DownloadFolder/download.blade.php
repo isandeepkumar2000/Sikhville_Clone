@@ -1,11 +1,12 @@
 @extends('Layouts.master')
 
+
 @section('content')
     <div class="container-fluid">
         <div class="card mb-4">
-            <div class="card-header d-flex justify-content-between align-items-center">
+            <div class="card-header d-flex justify-content-between align-items-center bg-primary text-white">
                 <h4>Edit and Update Download Data</h4>
-                <a href="{{ url('add_download_list') }}" class="btn btn-primary float-end">Add Download
+                <a href="{{ url('add_download_list') }}" class="btn btn-success">Add Download
                 </a>
             </div>
             <div class="card-body">
@@ -40,10 +41,11 @@
                                         </a>
                                     </td>
                                     <td>
-                                        <div class="d-flex justify-content-between align-items-center">
+                                        <div class="d-flex justify-content-start align-items-center">
                                             <a href="{{ url('edit_download_list/' . $item->id) }}"
-                                                class="btn btn-primary btn-sm me-2">Edit</a>
-
+                                                class="btn btn-warning btn-sm me-2">
+                                                <i class="fas fa-edit"></i> Edit
+                                            </a>
                                         </div>
                                     </td>
                                     <td>
@@ -52,9 +54,9 @@
                                             'deleteUrl' => url('delete_download_list', $item->id),
                                         ])
                                         @endcomponent
-                                        <button type="button" class="btn btn-outline-danger" data-toggle="modal"
+                                        <button type="button" class="btn btn-danger" data-toggle="modal"
                                             data-target="#deleteConfirmationModal_{{ $item->id }}">
-                                            <i class="fas fa-trash-alt"></i>
+                                            <i class="fas fa-trash-alt"></i> Delete
                                         </button>
                                     </td>
                                 </tr>

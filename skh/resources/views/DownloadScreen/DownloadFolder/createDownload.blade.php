@@ -2,20 +2,23 @@
 
 @section('content')
     <div class="container">
-        <div class="row justify-content-center">
+        <div class="row justify-content-between align-items-center">
             <div class="col-lg-8"> <!-- Adjusted column size for larger screens -->
                 @if (session('status'))
-                    <h6 class="alert alert-success">{{ session('status') }}</h6>
+                    <div class="alert alert-success">
+                        {{ session('status') }}
+                    </div>
                 @endif
 
                 <div class="card">
-                    <div class="card-header">
-                        <h4>Add Download Here</h4>
+                    <div class="card-header d-flex justify-content-between align-items-center bg-info text-white">
+                        <h4 class="m-0">Add Download Here</h4>
+                        <a href="{{ url('download_categories_list') }}" class="btn btn-danger">BACK</a>
                     </div>
                     <div class="card-body">
                         <form action="{{ url('add_post_download_list') }}" method="POST">
                             @csrf
-                            <div class="row"> <!-- Using rows and columns for better responsiveness -->
+                            <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <label for="categoryid">Music</label>
                                     <select class="form-control select2" name="categoryid" required id="categoryid">
@@ -47,8 +50,9 @@
                             </div>
                             <div class="row">
                                 <div class="col-12 mb-3">
-                                    <button style="margin-top: 10px" class="btn btn-primary" type="submit">Submit
-                                        Download</button>
+                                    <button style="margin-top: 10px" class="btn btn-primary" type="submit">
+                                        <i class="fas fa-download me-2"></i> Submit Download
+                                    </button>
                                 </div>
                             </div>
                         </form>
