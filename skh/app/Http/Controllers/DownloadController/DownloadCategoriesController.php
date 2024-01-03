@@ -27,7 +27,18 @@ class DownloadCategoriesController extends Controller
 
         $downlordCategories = new DownloadCategories;
         $downlordCategories->name = $request->input('name');
-        $downlordCategories->downlord_categories_icons = $request->input('downlord_categories_icons');
+
+        if ($request->hasFile('downlord_categories_icons')) {
+            $file = $request->file('downlord_categories_icons');
+            $fileName = time() . '.' . $file->getClientOriginalExtension();
+            $folderName = 'DownloadIconsfolder';
+            $path = public_path($folderName);
+            $upload = $file->move($path, $fileName);
+
+            if ($upload) {
+                $downlordCategories->downlord_categories_icons = $folderName . '/' . $fileName;
+            }
+        }
         $downlordCategories->save();
         return redirect('download_categories_list')->with('status', 'Student Added Successfully');
     }
@@ -41,7 +52,17 @@ class DownloadCategoriesController extends Controller
     {
         $downlordCategories = DownloadCategories::find($id);
         $downlordCategories->name = $request->input('name');
-        $downlordCategories->downlord_categories_icons = $request->input('downlord_categories_icons');
+        if ($request->hasFile('downlord_categories_icons')) {
+            $file = $request->file('downlord_categories_icons');
+            $fileName = time() . '.' . $file->getClientOriginalExtension();
+            $folderName = 'DownloadIconsfolder';
+            $path = public_path($folderName);
+            $upload = $file->move($path, $fileName);
+
+            if ($upload) {
+                $downlordCategories->downlord_categories_icons = $folderName . '/' . $fileName;
+            }
+        }
         $downlordCategories->update();
         return redirect()->back()->with('status', 'Student Updated Successfully');
     }
