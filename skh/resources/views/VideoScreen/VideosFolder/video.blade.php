@@ -1,4 +1,4 @@
-@extends('admin.layouts.master')
+@extends('Layouts.master')
 
 @section('content')
     <div class="container-fluid">
@@ -48,8 +48,7 @@
                                             <td>
                                                 @if (!empty($item->thumbnail_image))
                                                     <img src="{{ url('skh/public/' . $item->thumbnail_image) }}"
-                                                        alt="thumbnail image Image" width="100px"
-                                                        height="100px">
+                                                        alt="thumbnail image Image" width="100px" height="100px">
                                                 @else
                                                     <p>Thumbnail image available</p>
                                                 @endif
@@ -57,8 +56,7 @@
                                             <td>
                                                 @if (!empty($item->highlighting_video_Image))
                                                     <img src="{{ url('skh/public/' . $item->highlighting_video_Image) }}"
-                                                        alt="highlighting Video Image" width="100px"
-                                                        height="100px">
+                                                        alt="highlighting Video Image" width="100px" height="100px">
                                                 @else
                                                     <p>highlighting Video image available</p>
                                                 @endif
@@ -66,8 +64,7 @@
                                             <td>
                                                 @if (!empty($item->featured_video_Image_Url))
                                                     <img src="{{ url('skh/public/' . $item->featured_video_Image_Url) }}"
-                                                        alt="Featured Video Image" width="100px"
-                                                        height="100px">
+                                                        alt="Featured Video Image" width="100px" height="100px">
                                                 @else
                                                     <p>youtube image available</p>
                                                 @endif
@@ -121,29 +118,27 @@
                                                     'deleteUrl' => url('delete_video_list', $item->id),
                                                 ])
                                                 @endcomponent
-                                                <button type="button" class="btn btn-outline-danger"
-                                                    data-toggle="modal"
+                                                <button type="button" class="btn btn-outline-danger" data-toggle="modal"
                                                     data-target="#deleteConfirmationModal_{{ $item->id }}">
                                                     <i class="fas fa-trash-alt"></i>
                                                 </button>
                                             </td>
                                         </tr>
-                                        <div class="modal fade" id="featuredGamesModal_{{ $item->id }}"
-                                            tabindex="-1" role="dialog"
-                                            aria-labelledby="featuredGamesModalLabel_{{ $item->id }}"
+                                        <div class="modal fade" id="featuredGamesModal_{{ $item->id }}" tabindex="-1"
+                                            role="dialog" aria-labelledby="featuredGamesModalLabel_{{ $item->id }}"
                                             aria-hidden="true">
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
                                                     <form id="featuredGamesForm"
-                                                        action="{{ url('featured_video/' . $item->id) }}"
-                                                        method="POST" enctype="multipart/form-data">
+                                                        action="{{ url('featured_video/' . $item->id) }}" method="POST"
+                                                        enctype="multipart/form-data">
                                                         @csrf
                                                         <div class="modal-header">
-                                                            <h5 class="modal-title"
-                                                                id="featuredGamesModalLabel">Add Featured
+                                                            <h5 class="modal-title" id="featuredGamesModalLabel">Add
+                                                                Featured
                                                                 Video</h5>
-                                                            <button type="button" class="close"
-                                                                data-dismiss="modal" aria-label="Close">
+                                                            <button type="button" class="close" data-dismiss="modal"
+                                                                aria-label="Close">
                                                                 <span aria-hidden="true">&times;</span>
                                                             </button>
                                                         </div>
@@ -151,16 +146,13 @@
                                                             <div class="form-group">
                                                                 <label for="featuredGameImage">Upload
                                                                     Image</label>
-                                                                <input type="file"
-                                                                    class="form-control-file"
-                                                                    id="featuredGameImage"
-                                                                    name="featured_video_Image_Url"
+                                                                <input type="file" class="form-control-file"
+                                                                    id="featuredGameImage" name="featured_video_Image_Url"
                                                                     required>
                                                             </div>
                                                         </div>
                                                         <div class="modal-footer">
-                                                            <button type="submit"
-                                                                class="btn btn-primary">Add
+                                                            <button type="submit" class="btn btn-primary">Add
                                                                 Featured
                                                                 Video</button>
                                                         </div>

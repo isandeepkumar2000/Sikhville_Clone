@@ -1,4 +1,4 @@
-@extends('admin.layouts.master')
+@extends('Layouts.master')
 
 @section('content')
     <div class="container-fluid">
@@ -49,8 +49,7 @@
                                                     'deleteUrl' => url('delete_music_list', $item->id),
                                                 ])
                                                 @endcomponent
-                                                <button type="button" class="btn btn-outline-danger"
-                                                    data-toggle="modal"
+                                                <button type="button" class="btn btn-outline-danger" data-toggle="modal"
                                                     data-target="#deleteConfirmationModal_{{ $item->id }}">
                                                     <i class="fas fa-trash-alt"></i>
                                                 </button>

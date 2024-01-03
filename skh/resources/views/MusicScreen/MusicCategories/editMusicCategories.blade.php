@@ -1,4 +1,4 @@
-@extends('admin.layouts.master')
+@extends('Layouts.master')
 
 @section('content')
     <div class="container">
@@ -12,14 +12,12 @@
                 <div class="card">
                     <div class="card-header">
                         <h4>Edit & Update Category
-                            <a href="{{ url('music_categories_list') }}"
-                                class="btn btn-danger float-end">BACK</a>
+                            <a href="{{ url('music_categories_list') }}" class="btn btn-danger float-end">BACK</a>
                         </h4>
                     </div>
                     <div class="card-body">
 
-                        <form action="{{ url('update_music_categories_list/' . $musicCategories->id) }}"
-                            method="POST">
+                        <form action="{{ url('update_music_categories_list/' . $musicCategories->id) }}" method="POST">
                             @csrf
                             @method('PUT')
 

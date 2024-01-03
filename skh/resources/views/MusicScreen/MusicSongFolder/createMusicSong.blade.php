@@ -1,4 +1,4 @@
-@extends('admin.layouts.master')
+@extends('Layouts.master')
 
 @section('content')
     <div class="container">
@@ -13,14 +13,12 @@
                         <h4>Add Music Song Here</h4>
                     </div>
                     <div class="card-body">
-                        <form action="{{ url('add_post_music_song_list') }}" method="POST"
-                            enctype="multipart/form-data">
+                        <form action="{{ url('add_post_music_song_list') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="form-row">
                                 <div class="col-md-6 mb-3">
                                     <label for="musicid">Music Song</label>
-                                    <select class="form-control select2" name="musicid" required
-                                        id="musicid">
+                                    <select class="form-control select2" name="musicid" required id="musicid">
                                         <option value="option_select" disabled selected>Choose the Music
                                             Song
                                         </option>
@@ -39,23 +37,22 @@
                                     <div>
                                         <div class="form-group mb-3">
                                             <label for="">Song Name </label>
-                                            <input type="text" name="song_name" class="form-control"
-                                                required required>
+                                            <input type="text" name="song_name" class="form-control" required required>
                                         </div>
                                         <div class="form-group mb-3">
                                             <label for="">Song Size </label>
-                                            <input type="text" name="song_size" class="form-control"
-                                                required required readonly>
+                                            <input type="text" name="song_size" class="form-control" required required
+                                                readonly>
                                         </div>
                                         <div class="col-md-6 mb-3">
                                             <label for="song_path">Song File</label>
-                                            <input type="file" class="form-control-file" id="song_path"
-                                                name="song_path" required>
+                                            <input type="file" class="form-control-file" id="song_path" name="song_path"
+                                                required>
                                         </div>
                                         <div class="form-group mb-3">
                                             <label for="">Song Duration Link</label>
-                                            <input type="text" name="song_duration" class="form-control"
-                                                required required readonly>
+                                            <input type="text" name="song_duration" class="form-control" required
+                                                required readonly>
                                         </div>
                                     </div>
                                 </div>

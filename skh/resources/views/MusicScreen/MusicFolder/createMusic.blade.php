@@ -1,4 +1,4 @@
-@extends('admin.layouts.master')
+@extends('Layouts.master')
 
 @section('content')
     <div class="container">
@@ -31,8 +31,8 @@
 
                                 <div class="col-md-6 mb-3">
                                     <label for="short_description">Title</label>
-                                    <input type="text" class="form-control" required id="title"
-                                        placeholder="Title" name="title" required>
+                                    <input type="text" class="form-control" required id="title" placeholder="Title"
+                                        name="title" required>
                                 </div>
                             </div>
 
@@ -44,15 +44,13 @@
                                 </div>
                                 <div class="col-md-12 mb-3">
                                     <label for="short_description">Short Description</label>
-                                    <input type="text" class="form-control" required
-                                        id="short_description" placeholder="Short Description"
-                                        name="short_description" required>
+                                    <input type="text" class="form-control" required id="short_description"
+                                        placeholder="Short Description" name="short_description" required>
                                 </div>
                             </div>
 
 
-                            <button style="margin-top: 10px" class="btn btn-primary"
-                                type="submit">Submit</button>
+                            <button style="margin-top: 10px" class="btn btn-primary" type="submit">Submit</button>
                         </form>
                     </div>
                 </div>

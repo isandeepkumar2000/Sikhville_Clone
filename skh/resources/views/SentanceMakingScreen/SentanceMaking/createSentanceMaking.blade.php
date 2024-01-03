@@ -1,4 +1,4 @@
-@extends('admin.layouts.master')
+@extends('Layouts.master')
 
 @section('content')
     <div class="container">
@@ -18,8 +18,8 @@
                             <div class="form-row">
                                 <div class="col-md-6 mb-3">
                                     <label for="sentancemakingCategoriesid">Sentance Making</label>
-                                    <select class="form-control select2" name="sentancemakingCategoriesid"
-                                        required id="sentancemakingCategoriesid">
+                                    <select class="form-control select2" name="sentancemakingCategoriesid" required
+                                        id="sentancemakingCategoriesid">
                                         <option value="option_select" disabled selected>Choose the Sentance
                                             Making
                                         </option>
@@ -46,17 +46,15 @@
                                 <div class="col-md-12 mb-3">
                                     <label for="sentance_making_vismaad_title">Sentance Making Title
                                     </label>
-                                    <input type="text" class="form-control" required
-                                        id="sentance_making_vismaad_title" placeholder="Short Description"
-                                        name="sentance_making_vismaad_title" required>
+                                    <input type="text" class="form-control" required id="sentance_making_vismaad_title"
+                                        placeholder="Short Description" name="sentance_making_vismaad_title" required>
                                 </div>
 
                                 <div class="col-md-12 mb-3">
                                     <label for="short_description">Short Description
                                     </label>
-                                    <input type="text" class="form-control" required
-                                        id="short_description" placeholder="Short Description"
-                                        name="short_description" required>
+                                    <input type="text" class="form-control" required id="short_description"
+                                        placeholder="Short Description" name="short_description" required>
                                 </div>
                             </div>
                             <button style="margin-top: 10px" class="btn btn-primary" type="submit">Submit

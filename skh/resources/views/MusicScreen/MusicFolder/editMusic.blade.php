@@ -1,4 +1,4 @@
-@extends('admin.layouts.master')
+@extends('Layouts.master')
 
 @section('content')
     <div class="container">
@@ -33,20 +33,19 @@
                                 </div>
                                 <div class="col-md-6 mb-3"> <label for="short_description">Title</label>
                                     <input type="text" class="form-control" required id="title"
-                                        value="{{ $music->title }}" placeholder="Title" name="title"
-                                        required>
+                                        value="{{ $music->title }}" placeholder="Title" name="title" required>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label for="thumbnail_image">Image Url</label>
                                     <input type="text" class="form-control" required id="thumbnail_image"
-                                        value="{{ $music->thumbnail_image }}" placeholder="Image Url"
-                                        name="thumbnail_image" required>
+                                        value="{{ $music->thumbnail_image }}" placeholder="Image Url" name="thumbnail_image"
+                                        required>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label for="short_description">Short Description</label>
-                                    <input type="text" class="form-control" required
-                                        id="short_description" value="{{ $music->short_description }}"
-                                        placeholder="Short Description" name="short_description" required>
+                                    <input type="text" class="form-control" required id="short_description"
+                                        value="{{ $music->short_description }}" placeholder="Short Description"
+                                        name="short_description" required>
                                 </div>
                             </div>
                             <button type="submit" class="btn btn-primary">Update Music</button>

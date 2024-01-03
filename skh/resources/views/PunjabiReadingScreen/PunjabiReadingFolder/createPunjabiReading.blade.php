@@ -1,4 +1,4 @@
-@extends('admin.layouts.master')
+@extends('Layouts.master')
 
 @section('content')
     <div class="container">
@@ -16,8 +16,8 @@
                         <form action="{{ url('add_post_punjabi_reading_list') }}" method="POST">
                             @csrf
                             <div class="form-group">
-                                <select class="js-states form-control select2"
-                                    name="punjabireadingCategoriesid" required id="shopping_id">
+                                <select class="js-states form-control select2" name="punjabireadingCategoriesid" required
+                                    id="shopping_id">
                                     <option value="option_select" disabled selected>Choose the name
                                     </option>
                                     @foreach ($punjabireading as $item)
@@ -29,24 +29,21 @@
                                 <div class="form-group col-md-6">
 
                                     <label for="thumbnail_big_image">Thumbnail Image</label>
-                                    <input type="text" class="form-control" required
-                                        id="thumbnail_big_image" placeholder="Thumbnail Image"
-                                        name="thumbnail_big_image" required>
+                                    <input type="text" class="form-control" required id="thumbnail_big_image"
+                                        placeholder="Thumbnail Image" name="thumbnail_big_image" required>
                                 </div>
                                 <div class="form-group col-md-6">
 
                                     <label for="reading_summary_pdf">Reading Summary Pdf</label>
-                                    <input type="text" class="form-control" required
-                                        id="reading_summary_pdf" placeholder="Reading Summary"
-                                        name="reading_summary_pdf" required>
+                                    <input type="text" class="form-control" required id="reading_summary_pdf"
+                                        placeholder="Reading Summary" name="reading_summary_pdf" required>
                                 </div>
 
                                 <div class="form-group col-md-6">
 
                                     <label for="reading_video_url">Reading Video Url</label>
-                                    <input type="text" class="form-control" required
-                                        id="reading_video_url" placeholder="Reading Video"
-                                        name="reading_video_url" required>
+                                    <input type="text" class="form-control" required id="reading_video_url"
+                                        placeholder="Reading Video" name="reading_video_url" required>
                                 </div>
                             </div>
 

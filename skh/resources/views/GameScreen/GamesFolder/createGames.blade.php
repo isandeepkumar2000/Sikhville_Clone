@@ -1,4 +1,4 @@
-@extends('admin.layouts.master')
+@extends('Layouts.master')
 
 @section('content')
     <div class="container">
@@ -13,12 +13,11 @@
                         <h4>Add Game Here</h4>
                     </div>
                     <div class="card-body">
-                        <form action="{{ url('add_post_games_list') }}" method="POST"
-                            enctype="multipart/form-data">
+                        <form action="{{ url('add_post_games_list') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
-                                <select class="js-states form-control select2" name="gameCategoriesid"
-                                    required id="shopping_id">
+                                <select class="js-states form-control select2" name="gameCategoriesid" required
+                                    id="shopping_id">
                                     <option value="option_select" disabled selected>Choose the Game
                                     </option>
                                     @foreach ($game as $item)
@@ -37,9 +36,8 @@
                                 <div class="form-group col-md-6">
                                     <!-- Adjust column size for medium screens -->
                                     <label for="validationCustom03">Short Description</label>
-                                    <input type="text" class="form-control" required
-                                        id="validationCustom03" placeholder="Short Description"
-                                        name="short_description" required>
+                                    <input type="text" class="form-control" required id="validationCustom03"
+                                        placeholder="Short Description" name="short_description" required>
                                 </div>
                             </div>
                             <div class="form-group">

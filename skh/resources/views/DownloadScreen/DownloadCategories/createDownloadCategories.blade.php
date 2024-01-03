@@ -1,4 +1,4 @@
-@extends('admin.layouts.master')
+@extends('Layouts.master')
 
 @section('content')
     <div class="container">
@@ -25,8 +25,7 @@
 
                             <div class="form-group mb-3">
                                 <label for="">Icons</label>
-                                <input type="text" name="downlord_categories_icons" class="form-control"
-                                    required>
+                                <input type="text" name="downlord_categories_icons" class="form-control" required>
                             </div>
 
                             <div class="form-group mb-3">
@@ -41,4 +40,3 @@
         </div>
     </div>
 @endsection
-            

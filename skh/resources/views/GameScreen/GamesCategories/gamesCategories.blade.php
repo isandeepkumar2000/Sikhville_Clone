@@ -1,4 +1,4 @@
-@extends('admin.layouts.master')
+@extends('Layouts.master')
 
 @section('content')
     <div class="container">
@@ -9,8 +9,8 @@
                         <h4>Edit and Update Games Category
 
                         </h4>
-                        <a href="{{ url('add_games_categories_list') }}"
-                            class="btn btn-primary float-end">Add Games Category</a>
+                        <a href="{{ url('add_games_categories_list') }}" class="btn btn-primary float-end">Add Games
+                            Category</a>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -38,8 +38,7 @@
                                                     'deleteUrl' => url('delete_games_categories_list', $item->id),
                                                 ])
                                                 @endcomponent
-                                                <button type="button" class="btn btn-outline-danger"
-                                                    data-toggle="modal"
+                                                <button type="button" class="btn btn-outline-danger" data-toggle="modal"
                                                     data-target="#deleteConfirmationModal_{{ $item->id }}">
                                                     <i class="fas fa-trash-alt"></i>
                                                 </button>

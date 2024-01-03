@@ -1,4 +1,4 @@
-@extends('admin.layouts.master')
+@extends('Layouts.master')
 
 @section('content')
     <div class="container">
@@ -10,14 +10,12 @@
                 <div class="card">
                     <div class="card-header">
                         <h4>Edit & Update Video Category
-                            <a href="{{ url('video_categories_list') }}"
-                                class="btn btn-danger float-end">BACK</a>
+                            <a href="{{ url('video_categories_list') }}" class="btn btn-danger float-end">BACK</a>
                         </h4>
                     </div>
                     <div class="card-body">
 
-                        <form action="{{ url('update_video_categories_list/' . $videoCategories->id) }}"
-                            method="POST">
+                        <form action="{{ url('update_video_categories_list/' . $videoCategories->id) }}" method="POST">
                             @csrf
                             @method('PUT')
 

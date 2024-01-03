@@ -1,4 +1,4 @@
-@extends('admin.layouts.master')
+@extends('Layouts.master')
 
 @section('content')
     <div class="container">
@@ -35,8 +35,7 @@
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <label for="type">Website Content Type</label>
-                                    <select
-                                        class="form-control select2 {{ $errors->has('type') ? 'is-invalid' : '' }}"
+                                    <select class="form-control select2 {{ $errors->has('type') ? 'is-invalid' : '' }}"
                                         name="type" required id="type">
                                         <option value="" disabled selected>Choose the Type</option>
                                         <option value="game">Games</option>
@@ -54,8 +53,8 @@
                                 <div class="col-md-6 mb-3">
                                     <label for="title">Title</label>
                                     <input type="text" name="title"
-                                        class="form-control {{ $errors->has('title') ? 'is-invalid' : '' }}"
-                                        required id="title" placeholder="Enter the Title">
+                                        class="form-control {{ $errors->has('title') ? 'is-invalid' : '' }}" required
+                                        id="title" placeholder="Enter the Title">
                                     @if ($errors->has('title'))
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $errors->first('title') }}</strong>
@@ -67,8 +66,8 @@
                             <div class="form-group">
                                 <label for="textAreaExample1">Content Details</label>
                                 <textarea placeholder="Please enter the Content Details"
-                                    class="form-control {{ $errors->has('content') ? 'is-invalid' : '' }}" required id="textAreaExample1"
-                                    rows="4" name="content"></textarea>
+                                    class="form-control {{ $errors->has('content') ? 'is-invalid' : '' }}" required id="textAreaExample1" rows="4"
+                                    name="content"></textarea>
                                 @if ($errors->has('content'))
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('content') }}</strong>
