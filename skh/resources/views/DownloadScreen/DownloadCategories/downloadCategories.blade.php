@@ -27,7 +27,17 @@
                                 @foreach ($downlordCategories as $item)
                                     <tr>
                                         <td>{{ $item->name }}</td>
-                                        <td>{{ $item->downlord_categories_icons }}</td>
+                                        <td>
+                                            @if (!empty($item->downlord_categories_icons))
+                                                <img src="{{ url('skh/public/' . $item->downlord_categories_icons) }}"
+                                                    alt="Thumbnail Image" width="60px" height="60px">
+                                            @else
+                                                <p>No Thumbnail available</p>
+                                            @endif
+                                        </td>
+
+
+
                                         <td>
                                             <a href="{{ url('edit_download_categories_list/' . $item->id) }}"
                                                 class="btn btn-primary btn-sm">Edit</a>

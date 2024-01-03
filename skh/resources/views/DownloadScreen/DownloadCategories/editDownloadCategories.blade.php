@@ -17,8 +17,8 @@
                     </div>
                     <div class="card-body">
 
-                        <form action="{{ url('update_download_categories_list/' . $downlordCategories->id) }}"
-                            method="POST">
+                        <form action="{{ url('update_download_categories_list/' . $downlordCategories->id) }}" method="POST"
+                            enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
 
@@ -28,12 +28,15 @@
                                     class="form-control" required>
                             </div>
 
-                            <div class="form-group mb-3">
-                                <label for="">Icons</label>
-                                <input type="text" name="downlord_categories_icons"
-                                    value="{{ $downlordCategories->downlord_categories_icons }}" class="form-control"
-                                    required>
+
+                            <div class="form-group col-md-3">
+                                <label for="downlord_categories_icons">Icons </label>
+                                <input type="file" class="form-control" required id="validationCustom02"
+                                    placeholder="Image URL" value="{{ $downlordCategories->downlord_categories_icons }}"
+                                    name="downlord_categories_icons" required>
                             </div>
+
+
                             <div class="form-group mb-3">
                                 <button type="submit" class="btn btn-primary">Update Downlord
                                     Category</button>
