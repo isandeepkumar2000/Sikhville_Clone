@@ -1,4 +1,4 @@
-@extends('admin.layouts.master')
+@extends('Layouts.master')
 
 @section('content')
     <div class="container">
@@ -17,15 +17,14 @@
                     </div>
                     <div class="card-body">
 
-                        <form action="{{ url('update_games_categories_list/' . $gameCategories->id) }}"
-                            method="POST">
+                        <form action="{{ url('update_games_categories_list/' . $gameCategories->id) }}" method="POST">
                             @csrf
                             @method('PUT')
 
                             <div class="mb-3">
                                 <label for="name" class="form-label">Game Name</label>
-                                <input type="text" id="name" name="name"
-                                    value="{{ $gameCategories->name }}" class="form-control" required>
+                                <input type="text" id="name" name="name" value="{{ $gameCategories->name }}"
+                                    class="form-control" required>
                             </div>
 
                             <div class="mb-3">

@@ -1,4 +1,4 @@
-@extends('admin.layouts.master')
+@extends('Layouts.master')
 
 @section('content')
     <div class="container">
@@ -19,20 +19,20 @@
                             <div class="mb-3">
                                 <label for="name" class="form-label">Punjabi Reading
                                     Category</label>
-                                <input type="text" name="name" class="form-control" required
-                                    id="name" placeholder="Name">
+                                <input type="text" name="name" class="form-control" required id="name"
+                                    placeholder="Name">
                             </div>
 
                             <div class="mb-3">
                                 <label for="thumbnail_image" class="form-label">Thumbnail Image</label>
-                                <input type="text" name="thumbnail_ishort_image" class="form-control"
-                                    required id="thumbnail_image" placeholder="Thumbnail Image">
+                                <input type="text" name="thumbnail_ishort_image" class="form-control" required
+                                    id="thumbnail_image" placeholder="Thumbnail Image">
                             </div>
 
                             <div class="mb-3">
                                 <label for="reading_title" class="form-label">Reading Title</label>
-                                <input type="text" name="reading_title" class="form-control" required
-                                    id="reading_title" placeholder="Reading Title">
+                                <input type="text" name="reading_title" class="form-control" required id="reading_title"
+                                    placeholder="Reading Title">
                             </div>
 
                             <div class="mb-3">

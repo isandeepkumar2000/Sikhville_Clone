@@ -1,4 +1,4 @@
-@extends('admin.layouts.master')
+@extends('Layouts.master')
 
 @section('content')
     <div class="container">
@@ -10,8 +10,8 @@
                         <h4>Edit and Update Website Content
 
                         </h4>
-                        <a href="{{ url('add_website_content_list') }}"
-                            class="btn btn-primary float-end">Add Website Content</a>
+                        <a href="{{ url('add_website_content_list') }}" class="btn btn-primary float-end">Add Website
+                            Content</a>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -36,8 +36,7 @@
                                                     class="btn btn-primary btn-sm">Edit</a>
                                             </td>
                                             <td>
-                                                <form
-                                                    action="{{ url('delete_website_content_list', $item->id) }}"
+                                                <form action="{{ url('delete_website_content_list', $item->id) }}"
                                                     method="POST">
                                                     @csrf
                                                     @method('delete')

@@ -1,4 +1,4 @@
-@extends('admin.layouts.master')
+@extends('Layouts.master')
 
 @section('content')
     <div class="container">
@@ -17,13 +17,11 @@
                             @csrf
                             <div class="form-group mb-3">
                                 <label for="name">Game Name</label>
-                                <input type="text" name="name" class="form-control" required
-                                    id="name">
+                                <input type="text" name="name" class="form-control" required id="name">
                             </div>
                             <div class="form-group mb-3">
                                 <label for="name">Game Logo</label>
-                                <input type="text" name="games_logo" class="form-control" required
-                                    id="games_logo">
+                                <input type="text" name="games_logo" class="form-control" required id="games_logo">
                             </div>
 
                             <div class="form-group mb-3">

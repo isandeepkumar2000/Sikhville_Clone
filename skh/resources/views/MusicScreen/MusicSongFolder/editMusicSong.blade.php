@@ -1,4 +1,4 @@
-@extends('admin.layouts.master')
+@extends('Layouts.master')
 
 @section('content')
     <div class="container-fluid">
@@ -47,8 +47,8 @@
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label for="song_path">Song File</label>
-                                    <input type="file" class="form-control-file" id="song_path"
-                                        name="song_path" required value="{{ $musicSong->song_path }}">
+                                    <input type="file" class="form-control-file" id="song_path" name="song_path" required
+                                        value="{{ $musicSong->song_path }}">
                                 </div>
                                 <div class="form-group mb-3">
                                     <label for="">Song Duration Link</label>

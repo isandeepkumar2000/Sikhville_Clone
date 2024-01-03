@@ -1,4 +1,4 @@
-@extends('admin.layouts.master')
+@extends('Layouts.master')
 
 @section('content')
     <div class="container">
@@ -35,16 +35,15 @@
                             <div class="row mb-3">
                                 <div class="col-md-6">
                                     <label for="thumbnail_image">Image URL</label>
-                                    <input type="file" class="form-control" required
-                                        id="validationCustom02" placeholder="Image URL"
-                                        value="{{ $game->thumbnail_image }}" name="thumbnail_image"
+                                    <input type="file" class="form-control" required id="validationCustom02"
+                                        placeholder="Image URL" value="{{ $game->thumbnail_image }}" name="thumbnail_image"
                                         required>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="validationCustom03">Short Description</label>
-                                    <input type="text" class="form-control" required
-                                        id="validationCustom03" value="{{ $game->short_description }}"
-                                        placeholder="Short Description" name="short_description" required>
+                                    <input type="text" class="form-control" required id="validationCustom03"
+                                        value="{{ $game->short_description }}" placeholder="Short Description"
+                                        name="short_description" required>
                                 </div>
                             </div>
                             <div class="form-group mb-3">

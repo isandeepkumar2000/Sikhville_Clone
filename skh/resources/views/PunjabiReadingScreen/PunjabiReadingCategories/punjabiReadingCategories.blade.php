@@ -1,4 +1,4 @@
-@extends('admin.layouts.master')
+@extends('Layouts.master')
 
 @section('content')
     <div class="container">
@@ -7,8 +7,7 @@
                 <div class="card">
                     <div class="card-header d-flex justify-content-between align-items-center">
                         <h4>Edit and Update Punjabi Reading Data</h4>
-                        <a href="{{ url('add_punjabi_reading_categories_list') }}"
-                            class="btn btn-primary float-end">Add
+                        <a href="{{ url('add_punjabi_reading_categories_list') }}" class="btn btn-primary float-end">Add
                             Punjabi Reading Category</a>
                     </div>
                     <div class="card-body">
@@ -39,8 +38,7 @@
                                                 'deleteUrl' => url('delete_punjabi_reading_categories_list', $item->id),
                                             ])
                                             @endcomponent
-                                            <button type="button" class="btn btn-outline-danger"
-                                                data-toggle="modal"
+                                            <button type="button" class="btn btn-outline-danger" data-toggle="modal"
                                                 data-target="#deleteConfirmationModal_{{ $item->id }}">
                                                 <i class="fas fa-trash-alt"></i>
                                             </button>

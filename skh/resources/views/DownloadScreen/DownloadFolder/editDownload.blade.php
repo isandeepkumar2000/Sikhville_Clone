@@ -1,4 +1,4 @@
-@extends('admin.layouts.master')
+@extends('Layouts.master')
 
 @section('content')
     <div class="container">
@@ -22,14 +22,13 @@
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <label for="validationCustom02">Image Url</label>
-                                    <input type="text" class="form-control" required
-                                        id="validationCustom02" value="{{ $download->thumbnail_image }}"
-                                        placeholder="Image URL" name="thumbnail_image" required>
+                                    <input type="text" class="form-control" required id="validationCustom02"
+                                        value="{{ $download->thumbnail_image }}" placeholder="Image URL"
+                                        name="thumbnail_image" required>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label for="shopping_id">Category</label>
-                                    <select class="js-states form-control" name="categoryid" required
-                                        id="shopping_id">
+                                    <select class="js-states form-control" name="categoryid" required id="shopping_id">
                                         <option value="option_select" selected>Shoppings</option>
                                         @foreach ($downloadcategories as $item)
                                             <option value="{{ $item->id }}">{{ $item->name }}
@@ -39,15 +38,15 @@
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label for="validationCustom03">Download PDF Link</label>
-                                    <input type="text" class="form-control" required
-                                        id="validationCustom03" value="{{ $download->downloadpdf_url }}"
-                                        placeholder="Paste Link" name="downloadpdf_url" required>
+                                    <input type="text" class="form-control" required id="validationCustom03"
+                                        value="{{ $download->downloadpdf_url }}" placeholder="Paste Link"
+                                        name="downloadpdf_url" required>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label for="validationCustom04">Title</label>
-                                    <input type="text" class="form-control" required
-                                        id="validationCustom04" value="{{ $download->short_title }}"
-                                        placeholder="Title" name="short_title" required>
+                                    <input type="text" class="form-control" required id="validationCustom04"
+                                        value="{{ $download->short_title }}" placeholder="Title" name="short_title"
+                                        required>
                                 </div>
                             </div>
                             <div class="text-center">

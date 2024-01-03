@@ -1,4 +1,4 @@
-@extends('admin.layouts.master')
+@extends('Layouts.master')
 
 
 @push('style')
@@ -40,14 +40,12 @@
                         <h4><i class="fas fa-video"></i> Add Video Category Here</h4>
                     </div>
                     <div class="card-body">
-                        <form action="{{ url('add_post_video_list') }}" method="POST"
-                            enctype="multipart/form-data">
+                        <form action="{{ url('add_post_video_list') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="row mb-3">
                                 <div class="col-md-6">
                                     <label for="videoCategoriesid">Select Video Category</label>
-                                    <select class="form-control select2" name="videoCategoriesid"
-                                        id="videoCategoriesid">
+                                    <select class="form-control select2" name="videoCategoriesid" id="videoCategoriesid">
                                         <option value="option_select" disabled selected>Choose the name
                                         </option>
                                         @foreach ($video as $item)
@@ -65,15 +63,13 @@
                             <div class="row mb-3">
                                 <div class="col-md-4">
                                     <label for="validationCustom03">Title</label>
-                                    <input type="text" class="form-control" required
-                                        id="validationCustom03" placeholder="Title" name="short_description"
-                                        required>
+                                    <input type="text" class="form-control" required id="validationCustom03"
+                                        placeholder="Title" name="short_description" required>
                                 </div>
                                 <div class="col-md-4">
                                     <label for="validationCustom04">YouTube Video Url</label>
-                                    <input type="text" class="form-control" required
-                                        id="validationCustom04" placeholder="YouTube Video Url"
-                                        name="youtube_video_url" required>
+                                    <input type="text" class="form-control" required id="validationCustom04"
+                                        placeholder="YouTube Video Url" name="youtube_video_url" required>
                                 </div>
                                 <div class="col-md-4">
                                     <label for="validationCustom05">Donating Link</label>
@@ -108,8 +104,8 @@
                                 <div class="col-md-4">
                                     <label for="highlighting_video_Image">Upload Hightlighting
                                         Image</label>
-                                    <input type="file" class="form-control-file"
-                                        id="highlighting_video_Image" name="highlighting_video_Image">
+                                    <input type="file" class="form-control-file" id="highlighting_video_Image"
+                                        name="highlighting_video_Image">
                                 </div>
                                 <div class="form-group mb-3">
                                     <label for="video_duration">Video Duration</label>

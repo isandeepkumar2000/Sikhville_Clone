@@ -1,4 +1,4 @@
-@extends('admin.layouts.master')
+@extends('Layouts.master')
 
 @section('content')
     <div class="container">
@@ -28,35 +28,31 @@
                         </h4>
                     </div>
                     <div class="card-body">
-                        <form action="{{ url('update_website_content_list/' . $websiteContent->id) }}"
-                            method="POST">
+                        <form action="{{ url('update_website_content_list/' . $websiteContent->id) }}" method="POST">
                             @csrf
                             @method('PUT')
                             <div class="row mb-3">
                                 <div class="col-md-6">
                                     <label for="type" class="form-label">Website Content Type</label>
-                                    <select class="form-control select2" name="type" required
-                                        id="type">
+                                    <select class="form-control select2" name="type" required id="type">
                                         <option value="" disabled>Choose the Type</option>
-                                        <option value="game"
-                                            @if ($websiteContent->type === 'game') selected @endif>Games</option>
-                                        <option value="download"
-                                            @if ($websiteContent->type === 'download') selected @endif>Download
+                                        <option value="game" @if ($websiteContent->type === 'game') selected @endif>Games
                                         </option>
-                                        <option value="music"
-                                            @if ($websiteContent->type === 'music') selected @endif>Music</option>
-                                        <option value="video"
-                                            @if ($websiteContent->type === 'video') selected @endif>Video</option>
-                                        <option value="punjabi_reading"
-                                            @if ($websiteContent->type === 'punjabi_reading') selected @endif>Punjabi
+                                        <option value="download" @if ($websiteContent->type === 'download') selected @endif>Download
+                                        </option>
+                                        <option value="music" @if ($websiteContent->type === 'music') selected @endif>Music
+                                        </option>
+                                        <option value="video" @if ($websiteContent->type === 'video') selected @endif>Video
+                                        </option>
+                                        <option value="punjabi_reading" @if ($websiteContent->type === 'punjabi_reading') selected @endif>
+                                            Punjabi
                                             Reading</option>
                                     </select>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="title" class="form-label">Title</label>
-                                    <input type="text" id="title" name="title"
-                                        value="{{ $websiteContent->title }}" class="form-control" required
-                                        placeholder="Enter the title">
+                                    <input type="text" id="title" name="title" value="{{ $websiteContent->title }}"
+                                        class="form-control" required placeholder="Enter the title">
                                 </div>
                             </div>
                             <div class="mb-3">
