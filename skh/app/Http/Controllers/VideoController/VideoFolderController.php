@@ -35,6 +35,19 @@ class VideoFolderController extends Controller
         $video->startquiz_easy = $request->input('startquiz_easy');
         $video->startquiz_hard = $request->input('startquiz_hard');
         $video->downloadpdf_link = $request->input('downloadpdf_link');
+        $video->video_duration = $request->input('video_duration');
+
+        if ($request->hasFile('highlighting_video_Image')) {
+            $file = $request->file('highlighting_video_Image');
+            $fileName = time() . '.' . $file->getClientOriginalExtension();
+            $folderName = 'HighlightingVideoImagefolder';
+            $path = public_path($folderName);
+            $upload = $file->move($path, $fileName);
+
+            if ($upload) {
+                $video->highlighting_video_Image = $folderName . '/' . $fileName;
+            }
+        }
 
         if ($request->hasFile('thumbnail_image')) {
             $file = $request->file('thumbnail_image');
@@ -71,6 +84,19 @@ class VideoFolderController extends Controller
         $video->startquiz_easy = $request->input('startquiz_easy');
         $video->startquiz_hard = $request->input('startquiz_hard');
         $video->downloadpdf_link = $request->input('downloadpdf_link');
+        $video->video_duration = $request->input('video_duration');
+
+        if ($request->hasFile('highlighting_video_Image')) {
+            $file = $request->file('highlighting_video_Image');
+            $fileName = time() . '.' . $file->getClientOriginalExtension();
+            $folderName = 'HighlightingVideoImagefolder';
+            $path = public_path($folderName);
+            $upload = $file->move($path, $fileName);
+
+            if ($upload) {
+                $video->highlighting_video_Image = $folderName . '/' . $fileName;
+            }
+        }
 
         if ($request->hasFile('thumbnail_image')) {
             $file = $request->file('thumbnail_image');
