@@ -24,10 +24,21 @@ class DownloadFolderController extends Controller
     {
         $download = new Download;
         $download->categoryid = $request->input('categoryid');
-        $download->featured_download = 0;
-        $download->thumbnail_image = $request->input('thumbnail_image');
         $download->downloadpdf_url = $request->input('downloadpdf_url');
         $download->short_title = $request->input('short_title');
+
+
+        if ($request->hasFile('thumbnail_image')) {
+            $file = $request->file('thumbnail_image');
+            $fileName = time() . '.' . $file->getClientOriginalExtension();
+            $folderName = 'DownloadImagefolder';
+            $path = public_path($folderName);
+            $upload = $file->move($path, $fileName);
+
+            if ($upload) {
+                $download->thumbnail_image = $folderName . '/' . $fileName;
+            }
+        }
         $download->save();
         return redirect('download_list')->with('status', 'Student Added Successfully');
     }
@@ -42,10 +53,20 @@ class DownloadFolderController extends Controller
     {
         $download = Download::find($id);
         $download->categoryid = $request->input('categoryid');
-        $download->featured_download = 0;
-        $download->thumbnail_image = $request->input('thumbnail_image');
         $download->downloadpdf_url = $request->input('downloadpdf_url');
         $download->short_title = $request->input('short_title');
+
+        if ($request->hasFile('thumbnail_image')) {
+            $file = $request->file('thumbnail_image');
+            $fileName = time() . '.' . $file->getClientOriginalExtension();
+            $folderName = 'DownloadImagefolder';
+            $path = public_path($folderName);
+            $upload = $file->move($path, $fileName);
+
+            if ($upload) {
+                $download->thumbnail_image = $folderName . '/' . $fileName;
+            }
+        }
         $download->update();
         return redirect()->back()->with('status', 'Student Updated Successfully');
     }
@@ -57,20 +78,29 @@ class DownloadFolderController extends Controller
         return redirect()->back()->with('status', 'Student Deleted Successfully');
     }
 
-    public function featured_download($id)
+    public function featureddownload($id, Request $request)
     {
         $download = Download::find($id);
 
         if ($download) {
-            if ($download->featured_download) {
-                $download->featured_download = 0;
-            } else {
+            if ($request->hasFile('featured_download_Image_Url')) {
+                if ($download->featured_download) {
+                    $download->featured_download = 0;
+                } else {
+                    $download->featured_download = 1;
 
-                $download->featured_download = 1;
+                    $file = $request->file('featured_download_Image_Url');
+                    $fileName = time() . '.' . $file->getClientOriginalExtension();
+                    $folderName = 'DownloadFeaturedImagefolder';
+                    $path = public_path($folderName);
+                    $upload = $file->move($path, $fileName);
+                    if ($upload) {
+                        $download->featured_download_Image_Url = $folderName . '/' . $fileName;
+                    }
+                }
             }
-
-            $download->save();
         }
-        return redirect()->back()->with('status', 'Student Updated Successfully');
+        $download->save();
+        return redirect()->back()->with('status', 'Download Updated Successfully');
     }
 }

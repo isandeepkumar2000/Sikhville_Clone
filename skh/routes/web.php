@@ -22,7 +22,7 @@ Route::middleware("isLoggedIn")->group(function () {
     Route::get('edit_download_list/{id}', [App\Http\Controllers\DownloadController\DownloadFolderController::class, 'edit']);
     Route::put('update_download_list/{id}', [App\Http\Controllers\DownloadController\DownloadFolderController::class, 'update']);
     Route::delete('delete_download_list/{id}', [App\Http\Controllers\DownloadController\DownloadFolderController::class, 'destroy']);
-    Route::get('featured_download_list/{id}', [App\Http\Controllers\DownloadController\DownloadFolderController::class, 'featured_download']);
+    Route::post('featured_download/{id}', [App\Http\Controllers\DownloadController\DownloadFolderController::class, 'featureddownload']);
 
     // Download_Categories_Route 
     Route::get('download_categories_list', [App\Http\Controllers\DownloadController\DownloadCategoriesController::class, 'showdownloadCategories'])->name('downloadCategories');
