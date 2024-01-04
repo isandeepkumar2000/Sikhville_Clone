@@ -11,7 +11,7 @@ class Punjabireading extends Model
 
     public $table = 'punjabi_reading';
     protected $fillable = [
-        'punjabireadingCategoriesid', 'thumbnail_big_image', 'reading_summary_pdf', 'reading_video_url', 'featured_punabi_reading',
+        'punjabireadingCategoriesid', 'thumbnail_big_image', 'reading_summary_pdf', 'reading_video_url', 'featured_punjabi_reading', 'featured_punjabi_reading_Image_Url',
     ];
 
     public function PunjabireadingCategoryDetails()

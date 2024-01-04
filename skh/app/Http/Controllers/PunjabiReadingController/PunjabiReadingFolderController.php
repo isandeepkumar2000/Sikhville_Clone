@@ -23,10 +23,21 @@ class PunjabiReadingFolderController extends Controller
     {
         $punjabireading = new Punjabireading;
         $punjabireading->punjabireadingCategoriesid = $request->input('punjabireadingCategoriesid');
-        $punjabireading->thumbnail_big_image = $request->input('thumbnail_big_image');
-        $punjabireading->featured_punabi_reading = 0;
         $punjabireading->reading_summary_pdf = $request->input('reading_summary_pdf');
         $punjabireading->reading_video_url = $request->input('reading_video_url');
+
+        if ($request->hasFile('thumbnail_big_image')) {
+            $file = $request->file('thumbnail_big_image');
+            $fileName = time() . '.' . $file->getClientOriginalExtension();
+            $folderName = 'PunjabiReadingImagefolder';
+            $path = public_path($folderName);
+            $upload = $file->move($path, $fileName);
+
+            if ($upload) {
+                $punjabireading->thumbnail_big_image = $folderName . '/' . $fileName;
+            }
+        }
+
         $punjabireading->save();
         return redirect('punjabi_reading_list')->with('status', 'Student Added Successfully');
     }
@@ -41,10 +52,21 @@ class PunjabiReadingFolderController extends Controller
     {
         $punjabireading = Punjabireading::find($id);
         $punjabireading->punjabireadingCategoriesid = $request->input('punjabireadingCategoriesid');
-        $punjabireading->featured_punabi_reading = 0;
-        $punjabireading->thumbnail_big_image = $request->input('thumbnail_big_image');
         $punjabireading->reading_summary_pdf = $request->input('reading_summary_pdf');
         $punjabireading->reading_video_url = $request->input('reading_video_url');
+
+        if ($request->hasFile('thumbnail_big_image')) {
+            $file = $request->file('thumbnail_big_image');
+            $fileName = time() . '.' . $file->getClientOriginalExtension();
+            $folderName = 'PunjabiReadingImagefolder';
+            $path = public_path($folderName);
+            $upload = $file->move($path, $fileName);
+
+            if ($upload) {
+                $punjabireading->thumbnail_big_image = $folderName . '/' . $fileName;
+            }
+        }
+
         $punjabireading->update();
         return redirect('punjabi_reading_list')->with('status', 'Student Added Successfully');
     }
@@ -56,19 +78,29 @@ class PunjabiReadingFolderController extends Controller
         return redirect('punjabi_reading_list')->with('status', 'Student Added Successfully');
     }
 
-    public function featured_punjabi_reading($id)
+
+    public function featuredpunjabireading($id, Request $request)
     {
         $punjabireading = Punjabireading::find($id);
         if ($punjabireading) {
-            if ($punjabireading->featured_punabi_reading) {
-                $punjabireading->featured_punabi_reading = 0;
+            if ($punjabireading->featured_punjabi_reading) {
+                $punjabireading->featured_punjabi_reading = 0;
             } else {
+                $punjabireading->featured_punjabi_reading = 1;
+                if ($request->hasFile('featured_punjabi_reading_Image_Url')) {
+                    $file = $request->file('featured_punjabi_reading_Image_Url');
+                    $fileName = time() . '.' . $file->getClientOriginalExtension();
+                    $folderName = 'PunjabiReadingFeaturedImagefolder';
+                    $path = public_path($folderName);
+                    $upload = $file->move($path, $fileName);
 
-                $punjabireading->featured_punabi_reading = 1;
+                    if ($upload) {
+                        $punjabireading->featured_punjabi_reading_Image_Url = $folderName . '/' . $fileName;
+                    }
+                }
             }
-
-            $punjabireading->save();
         }
-        return redirect()->back()->with('status', 'Student Updated Successfully');
+        $punjabireading->save();
+        return redirect()->back()->with('status', 'Punjabi Reading Updated Successfully');
     }
 }

@@ -21,8 +21,20 @@ class PunjabiReadingCategoriesController extends Controller
     {
         $punjabireadingCategories = new Punjabireadingcategories();
         $punjabireadingCategories->name = $request->input('name');
-        $punjabireadingCategories->thumbnail_ishort_image = $request->input('thumbnail_ishort_image');
         $punjabireadingCategories->reading_title = $request->input('reading_title');
+
+        if ($request->hasFile('thumbnail_ishort_image')) {
+            $file = $request->file('thumbnail_ishort_image');
+            $fileName = time() . '.' . $file->getClientOriginalExtension();
+            $folderName = 'PunjabiReadingCategoriesImagefolder';
+            $path = public_path($folderName);
+            $upload = $file->move($path, $fileName);
+
+            if ($upload) {
+                $punjabireadingCategories->thumbnail_ishort_image = $folderName . '/' . $fileName;
+            }
+        }
+
         $punjabireadingCategories->save();
         return redirect('punjabi_reading_categories_list')->with('status', 'Student Added Successfully');
     }
@@ -36,8 +48,20 @@ class PunjabiReadingCategoriesController extends Controller
     {
         $punjabireadingCategories = Punjabireadingcategories::find($id);
         $punjabireadingCategories->name = $request->input('name');
-        $punjabireadingCategories->thumbnail_ishort_image = $request->input('thumbnail_ishort_image');
         $punjabireadingCategories->reading_title = $request->input('reading_title');
+
+        if ($request->hasFile('thumbnail_ishort_image')) {
+            $file = $request->file('thumbnail_ishort_image');
+            $fileName = time() . '.' . $file->getClientOriginalExtension();
+            $folderName = 'PunjabiReadingCategoriesImagefolder';
+            $path = public_path($folderName);
+            $upload = $file->move($path, $fileName);
+
+            if ($upload) {
+                $punjabireadingCategories->thumbnail_ishort_image = $folderName . '/' . $fileName;
+            }
+        }
+
         $punjabireadingCategories->update();
         return redirect()->back()->with('status', 'Student Updated Successfully');
     }
