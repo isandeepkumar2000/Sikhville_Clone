@@ -30,7 +30,6 @@
                                         <th>Top Games</th>
                                         <th>Featured Games</th>
                                         <th>Edit</th>
-                                        <th>Delete</th>
                                     </tr>
                                 </thead>
                                 <tbody>
