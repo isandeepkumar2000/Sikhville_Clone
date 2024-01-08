@@ -12,8 +12,6 @@ class MusicSongController extends Controller
     public function showmusicsongList()
     {
         $musicSong = MusicSong::with('musicfolderDetails')->get();
-        // print_r($musicSong->toArray());
-        // die;
 
         return view('MusicScreen.MusicSongFolder.musicSong', compact('musicSong'));
     }
@@ -34,7 +32,7 @@ class MusicSongController extends Controller
         if ($request->hasFile('song_path')) {
             $file = $request->file('song_path');
             $fileName = time() . '.' . $file->getClientOriginalExtension();
-            $folderName = 'UplordMusicfolder';
+            $folderName = 'UplordMusicSongfolder';
             $path = public_path($folderName);
             $upload = $file->move($path, $fileName);
 
@@ -64,12 +62,10 @@ class MusicSongController extends Controller
         $musicSong->song_size = $request->input('song_size');
         $musicSong->song_duration = $request->input('song_duration');
 
-
-
         if ($request->hasFile('song_path')) {
             $file = $request->file('song_path');
             $fileName = time() . '.' . $file->getClientOriginalExtension();
-            $folderName = 'UplordMusicfolder';
+            $folderName = 'UplordMusicSongfolder';
             $path = public_path($folderName);
             $upload = $file->move($path, $fileName);
 
