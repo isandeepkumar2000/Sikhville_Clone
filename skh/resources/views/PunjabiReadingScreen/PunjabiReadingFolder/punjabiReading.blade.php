@@ -69,7 +69,6 @@
                                         </button>
                                     </td>
                                 </tr>
-
                                 @include('Layouts.FeaturedModelLayout.featuredModelLayout', [
                                 'id' => $item->id,
                                 'action' => url('featured_punjabi_reading/' . $item->id),

@@ -19,7 +19,6 @@
                     <form action="{{ url('update_punjabi_reading_categories_list/' . $punjabireadingCategories->id) }}" method="POST">
                         @csrf
                         @method('PUT')
-
                         <div class="mb-3">
                             <label for="category_name" class="form-label">Category Name</label>
                             <input type="text" id="category_name" name="name" value="{{ $punjabireadingCategories->name }}" class="form-control" required placeholder="Enter Category Name" required>
@@ -37,7 +36,6 @@
                                 Category</button>
                         </div>
                     </form>
-
                 </div>
             </div>
         </div>
