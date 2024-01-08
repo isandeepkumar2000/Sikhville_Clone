@@ -25,29 +25,26 @@ class MusicFolderController extends Controller
         $music = new Music;
         $music->musicCategoriesid = $request->input('musicCategoriesid');
         $music->title = $request->input('title');
-        $music->featured_music = 0;
-        $music->thumbnail_image = $request->input('thumbnail_image');
         $music->short_description = $request->input('short_description');
+
+        if ($request->hasFile('thumbnail_image')) {
+            $file = $request->file('thumbnail_image');
+            $fileName = time() . '.' . $file->getClientOriginalExtension();
+            $folderName = 'MusicImagefolder';
+            $path = public_path($folderName);
+            $upload = $file->move($path, $fileName);
+
+            if ($upload) {
+                $music->thumbnail_image = $folderName . '/' . $fileName;
+            }
+        }
+
+
         $music->save();
         return redirect('music_list')->with('status', 'Student Added Successfully');
     }
 
-    public function feartured_music($id)
-    {
-        $music = Music::find($id);
 
-        if ($music) {
-            if ($music->featured_music) {
-                $music->featured_music = 0;
-            } else {
-
-                $music->featured_music = 1;
-            }
-
-            $music->save();
-        }
-        return redirect()->back()->with('status', 'Student Updated Successfully');
-    }
 
     public function edit($id)
     {
@@ -60,9 +57,22 @@ class MusicFolderController extends Controller
         $music = Music::find($id);
         $music->musicCategoriesid = $request->input('musicCategoriesid');
         $music->title = $request->input('title');
-        $music->featured_music = 0;
-        $music->thumbnail_image = $request->input('thumbnail_image');
         $music->short_description = $request->input('short_description');
+
+
+        if ($request->hasFile('thumbnail_image')) {
+            $file = $request->file('thumbnail_image');
+            $fileName = time() . '.' . $file->getClientOriginalExtension();
+            $folderName = 'MusicImagefolder';
+            $path = public_path($folderName);
+            $upload = $file->move($path, $fileName);
+
+            if ($upload) {
+                $music->thumbnail_image = $folderName . '/' . $fileName;
+            }
+        }
+
+
         $music->update();
         return redirect()->back()->with('status', 'Student Updated Successfully');
     }
@@ -72,5 +82,32 @@ class MusicFolderController extends Controller
         $music = Music::find($id);
         $music->delete();
         return redirect()->back()->with('status', 'Student Deleted Successfully');
+    }
+
+    public function feartured_music(Request $request, $id)
+    {
+        $music = Music::find($id);
+
+        if ($music) {
+            if ($music->featured_music) {
+                $music->featured_music = 0;
+            } else {
+                $music->featured_music = 1;
+                if ($request->hasFile('featured_music_Image_Url')) {
+                    $file = $request->file('featured_music_Image_Url');
+                    $fileName = time() . '.' . $file->getClientOriginalExtension();
+                    $folderName = 'MusicFeaturedImagefolder';
+                    $path = public_path($folderName);
+                    $upload = $file->move($path, $fileName);
+
+                    if ($upload) {
+                        $music->featured_music_Image_Url = $folderName . '/' . $fileName;
+                    }
+                }
+            }
+
+            $music->save();
+        }
+        return redirect()->back()->with('status', 'Student Updated Successfully');
     }
 }

@@ -77,7 +77,7 @@ Route::middleware("isLoggedIn")->group(function () {
     Route::get('edit_music_list/{id}', [App\Http\Controllers\MusicController\MusicFolderController::class, 'edit']);
     Route::put('update_music_list/{id}', [App\Http\Controllers\MusicController\MusicFolderController::class, 'update']);
     Route::delete('delete_music_list/{id}', [App\Http\Controllers\MusicController\MusicFolderController::class, 'destroy']);
-    Route::get('featured_music_list/{id}', [App\Http\Controllers\MusicController\MusicFolderController::class, 'feartured_music']);
+    Route::post('featured_music_list/{id}', [App\Http\Controllers\MusicController\MusicFolderController::class, 'feartured_music']);
 
     // Music_Categories_Route
     Route::get('music_categories_list', [App\Http\Controllers\MusicController\MusicCategoryController::class, 'showmusicList'])->name('musicCategories');

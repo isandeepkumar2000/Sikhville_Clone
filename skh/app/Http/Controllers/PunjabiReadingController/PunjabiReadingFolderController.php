@@ -81,7 +81,11 @@ class PunjabiReadingFolderController extends Controller
 
     public function featuredpunjabireading($id, Request $request)
     {
+        // print_r($_POST);
+        // print_r($_FILES);
+        // print_r($request->all());
         $punjabireading = Punjabireading::find($id);
+
         if ($punjabireading) {
             if ($punjabireading->featured_punjabi_reading) {
                 $punjabireading->featured_punjabi_reading = 0;
@@ -93,7 +97,6 @@ class PunjabiReadingFolderController extends Controller
                     $folderName = 'PunjabiReadingFeaturedImagefolder';
                     $path = public_path($folderName);
                     $upload = $file->move($path, $fileName);
-
                     if ($upload) {
                         $punjabireading->featured_punjabi_reading_Image_Url = $folderName . '/' . $fileName;
                     }
