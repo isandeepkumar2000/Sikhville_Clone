@@ -113,7 +113,7 @@ Route::middleware("isLoggedIn")->group(function () {
     Route::get('edit_punjabi_reading_list/{id}', [App\Http\Controllers\PunjabiReadingController\PunjabiReadingFolderController::class, 'edit']);
     Route::put('update_punjabi_reading_list/{id}', [App\Http\Controllers\PunjabiReadingController\PunjabiReadingFolderController::class, 'update']);
     Route::delete('delete_punjabi_reading_list/{id}', [App\Http\Controllers\PunjabiReadingController\PunjabiReadingFolderController::class, 'destroy']);
-    Route::get('featured_punjabi_reading_list/{id}', [App\Http\Controllers\PunjabiReadingController\PunjabiReadingFolderController::class, 'featured_punjabi_reading']);
+    Route::post('featured_punjabi_reading/{id}', [App\Http\Controllers\PunjabiReadingController\PunjabiReadingFolderController::class, 'featuredpunjabireading']);
 
 
     // Sentance_Making_Categories_Route
