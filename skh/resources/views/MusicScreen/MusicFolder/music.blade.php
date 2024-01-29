@@ -1,48 +1,6 @@
 @extends('Layouts.master')
 
 @section('content')
-<<<<<<< HEAD
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="card">
-                <div class="card-header d-flex justify-content-between align-items-center">
-                    <h4>All Music List </h4>
-                    <a href="{{ url('add_music_list') }}" class="btn btn-primary float-end">Add Music
-                    </a>
-                </div>
-                <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table table-bordered table-striped">
-                            <thead>
-                                <tr>
-                                    <th>Music</th>
-                                    <th>Title</th>
-                                    <th>Thumbnail Image Url</th>
-                                    <th>Featured Banner </th>
-                                    <th>Short Description</th>
-                                    <th>Featured Music</th>
-                                    <th>Edit</th>
-                                    <th>Delete</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($music as $item)
-                                <tr>
-                                    <td>
-                                        @if (!empty($item->musicCategoryDetails))
-                                        {{ $item->musicCategoryDetails->name }}
-                                        @endif
-                                    </td>
-                                    <td>{{ $item->title }}</td>
-                                    <td>
-                                        @if (!empty($item->thumbnail_image))
-                                        <img src="{{ url('skh/public/' . $item->thumbnail_image) }}" alt="Thumbnail Image" width="80px" height="80px">
-                                        @else
-                                        <p>No Thumbnail available</p>
-                                        @endif
-                                    </td>
-=======
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
@@ -84,7 +42,7 @@
                                                     <p>No Thumbnail available</p>
                                                 @endif
                                             </td>
->>>>>>> f5535b288f6a77c58b640c8d6e21888fa4bab59b
+
 
                                             <td>
                                                 @if (!empty($item->featured_music_Image_Url))

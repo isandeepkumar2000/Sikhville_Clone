@@ -39,7 +39,6 @@
                                             <td>
                                                 @if (!empty($item->song_path))
                                                     <audio controls>
-
                                                         <source src="{{ url($item->song_path) }}" type="audio/mpeg">
                                                         Your browser does not support the audio element.
                                                     </audio>
