@@ -30,16 +30,16 @@
                                 </select>
                             </div>
                             <div class="col-md-6 mb-3"> <label for="short_description">Title</label>
-                                <input type="text" class="form-control" required id="title" value="{{ $music->title }}" placeholder="Title" name="title" required>
+                                <input type="text" class="form-control" id="title" value="{{ $music->title }}" placeholder="Title" name="title" >
                             </div>
                             <div class="col-md-6">
                                 <label for="thumbnail_image">Image URL</label>
-                                <input type="file" class="form-control" required id="validationCustom02" placeholder="Image URL" value="{{ $music->thumbnail_image }}" name="thumbnail_image" required>
+                                <input type="file" class="form-control"  id="validationCustom02" placeholder="Image URL" value="{{ $music->thumbnail_image }}" name="thumbnail_image" >
                             </div>
 
                             <div class="col-md-6 mb-3">
                                 <label for="short_description">Short Description</label>
-                                <input type="text" class="form-control" required id="short_description" value="{{ $music->short_description }}" placeholder="Short Description" name="short_description" required>
+                                <input type="text" class="form-control" id="short_description" value="{{ $music->short_description }}" placeholder="Short Description" name="short_description">
                             </div>
                         </div>
                         <button type="submit" class="btn btn-primary">Update Music</button>

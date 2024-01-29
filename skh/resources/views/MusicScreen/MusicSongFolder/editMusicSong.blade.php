@@ -32,19 +32,19 @@
                         <div>
                             <div class="form-group mb-3">
                                 <label for="">Song Name </label>
-                                <input type="text" name="song_name" class="form-control" value="{{ $musicSong->song_name }}" required>
+                                <input type="text" name="song_name" class="form-control" value="{{ $musicSong->song_name }}" >
                             </div>
                             <div class="form-group mb-3">
                                 <label for="">Song Size </label>
-                                <input type="text" name="song_size" class="form-control" value="{{ $musicSong->song_size }}" required readonly>
+                                <input type="text" name="song_size" class="form-control" value="{{ $musicSong->song_size }}"  readonly>
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="song_path">Song File</label>
-                                <input type="file" class="form-control-file" id="song_path" name="song_path" required value="{{ $musicSong->song_path }}">
+                                <input type="file" class="form-control-file" id="song_path" name="song_path" value="{{ $musicSong->song_path }}">
                             </div>
                             <div class="form-group mb-3">
                                 <label for="">Song Duration Link</label>
-                                <input type="text" name="song_duration" class="form-control" value="{{ $musicSong->song_duration }}" required readonly>
+                                <input type="text" name="song_duration" class="form-control" value="{{ $musicSong->song_duration }}"  readonly>
                             </div>
                         </div>
                         <div class="mb-3">

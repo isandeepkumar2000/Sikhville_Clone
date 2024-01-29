@@ -6,7 +6,7 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header d-flex justify-content-between align-items-center">
-                    <h4>Edit and Update Music </h4>
+                    <h4>All Music List </h4>
                     <a href="{{ url('add_music_list') }}" class="btn btn-primary float-end">Add Music
                     </a>
                 </div>
@@ -17,7 +17,7 @@
                                 <tr>
                                     <th>Music</th>
                                     <th>Title</th>
-                                    <th>Thumbnail Image Url</th>\
+                                    <th>Thumbnail Image Url</th>
                                     <th>Featured Banner </th>
                                     <th>Short Description</th>
                                     <th>Featured Music</th>

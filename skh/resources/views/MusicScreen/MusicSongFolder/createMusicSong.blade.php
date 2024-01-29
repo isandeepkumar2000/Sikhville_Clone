@@ -47,6 +47,7 @@
                                         <label for="song_path">Song File</label>
                                         <input type="file" class="form-control-file" id="song_path" name="song_path" required>
                                     </div>
+
                                     <div class="form-group mb-3">
                                         <label for="">Song Duration Link</label>
                                         <input type="text" name="song_duration" class="form-control" required required readonly>
