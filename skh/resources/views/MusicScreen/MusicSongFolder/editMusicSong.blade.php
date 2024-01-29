@@ -19,7 +19,6 @@
                             enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
-
                             <div class="mb-3">
                                 <label for="musicid" class="form-label">Music Song</label>
                                 <select class="form-control select2" name="musicid" required id="musicid">
@@ -58,7 +57,6 @@
                                         value="{{ $musicSong->song_duration }}">
                                 </div>
                             </div>
-
                             <div class="mb-3">
                                 <button type="submit" class="btn btn-success">
                                     <i class="fas fa-save"></i> Update Music Song

@@ -1,70 +1,32 @@
 @extends('Layouts.master')
 
 @section('content')
-<<<<<<< HEAD
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            @if (session('status'))
-            <h6 class="alert alert-success">{{ session('status') }}</h6>
-            @endif
-            <div class="card">
-                <div class="card-header">
-                    <h4>Edit & Update Music
-                        <a href="{{ url('music_list') }}" class="btn btn-danger float-end">BACK</a>
-                    </h4>
-                </div>
-                <div class="card-body">
-                    <form action="{{ url('update_music_list/' . $music->id) }}" method="POST" enctype="multipart/form-data">
-                        @csrf
-                        @method('PUT')
-                        <div class="form-row">
-                            <div class="col-md-6 mb-3">
-                                <label for="musicCategoriesid">Music </label>
-                                <select class="form-control select2" name="musicCategoriesid" required id="musicCategoriesid">
-                                    <option value="option_select">Choose a Music</option>
-                                    @foreach ($musiccategories as $item)
-                                    <option value="{{ $item->id }}" @if ($item->id == $music->musicCategoriesid) selected @endif>
-                                        {{ $item->name }}
-                                    </option>
-                                    @endforeach
-                                </select>
-                            </div>
-                            <div class="col-md-6 mb-3"> <label for="short_description">Title</label>
-                                <input type="text" class="form-control" id="title" value="{{ $music->title }}" placeholder="Title" name="title" >
-                            </div>
-                            <div class="col-md-6">
-                                <label for="thumbnail_image">Image URL</label>
-                                <input type="file" class="form-control"  id="validationCustom02" placeholder="Image URL" value="{{ $music->thumbnail_image }}" name="thumbnail_image" >
-                            </div>
-
-                            <div class="col-md-6 mb-3">
-                                <label for="short_description">Short Description</label>
-                                <input type="text" class="form-control" id="short_description" value="{{ $music->short_description }}" placeholder="Short Description" name="short_description">
-=======
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
-                @if (session('status'))
-                    <h6 class="alert alert-success">{{ session('status') }}</h6>
-                @endif
+            <div class="col-md-6 offset-md-3">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Edit & Update Music
-                            <a href="{{ url('music_list') }}" class="btn btn-danger float-end">BACK</a>
-                        </h4>
+                        <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                            <h4><i class="fas fa-music mr-2"></i>Edit & Update Music Song</h4>
+                            <a href="{{ url('music_song_list') }}" class="btn btn-danger">
+                                <i class="fas fa-arrow-left"></i> Back
+                            </a>
+                        </div>
                     </div>
                     <div class="card-body">
+                        @if (session('status'))
+                            <div class="alert alert-success">{{ session('status') }}</div>
+                        @endif
                         <form action="{{ url('update_music_list/' . $music->id) }}" method="POST"
                             enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
                             <div class="form-row">
-                                <div class="col-md-6 mb-3">
-                                    <label for="musicCategoriesid">Music </label>
+                                <div class="col-md-12 mb-3">
+                                    <label for="musicCategoriesid">Music Category</label>
                                     <select class="form-control select2" name="musicCategoriesid" required
                                         id="musicCategoriesid">
-                                        <option value="option_select">Choose a Music</option>
+                                        <option value="option_select">Choose a Music Category</option>
                                         @foreach ($musiccategories as $item)
                                             <option value="{{ $item->id }}"
                                                 @if ($item->id == $music->musicCategoriesid) selected @endif>
@@ -73,26 +35,26 @@
                                         @endforeach
                                     </select>
                                 </div>
-                                <div class="col-md-6 mb-3"> <label for="short_description">Title</label>
+                                <div class="col-md-12 mb-3">
+                                    <label for="title">Title</label>
                                     <input type="text" class="form-control" id="title" value="{{ $music->title }}"
                                         placeholder="Title" name="title">
                                 </div>
-                                <div class="col-md-6">
-                                    <label for="thumbnail_image">Image URL</label>
-                                    <input type="file" class="form-control" id="validationCustom02"
-                                        placeholder="Image URL" value="{{ $music->thumbnail_image }}"
-                                        name="thumbnail_image">
+                                <div class="col-md-12 mb-3">
+                                    <label for="thumbnail_image">Thumbnail Image</label>
+                                    <input type="file" class="form-control" id="thumbnail_image"
+                                        value="{{ $music->thumbnail_image }}" name="thumbnail_image">
                                 </div>
-
-                                <div class="col-md-6 mb-3">
+                                <div class="col-md-12 mb-3">
                                     <label for="short_description">Short Description</label>
                                     <input type="text" class="form-control" id="short_description"
                                         value="{{ $music->short_description }}" placeholder="Short Description"
                                         name="short_description">
                                 </div>
->>>>>>> f5535b288f6a77c58b640c8d6e21888fa4bab59b
                             </div>
-                            <button type="submit" class="btn btn-primary">Update Music</button>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-save"></i> Update Music
+                            </button>
                         </form>
                     </div>
                 </div>

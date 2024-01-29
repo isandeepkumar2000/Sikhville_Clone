@@ -12,7 +12,6 @@ class MusicFolderController extends Controller
     public function musicfolder()
     {
         $music = Music::with('musicCategoryDetails')->get();
-        print_r($music->toArray());
         return view('MusicScreen.MusicFolder.music', compact('music'));
     }
     public function create()

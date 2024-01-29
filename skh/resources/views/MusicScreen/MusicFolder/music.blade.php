@@ -5,10 +5,9 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="card">
-                    <div class="card-header d-flex justify-content-between align-items-center">
+                    <div class="card-header d-flex justify-content-between align-items-center bg-primary text-white">
                         <h4>All Music List </h4>
-                        <a href="{{ url('add_music_list') }}" class="btn btn-primary float-end">Add Music
-                        </a>
+                        <a href="{{ url('add_music_list') }}" class="btn btn-light">Add Music</a>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -17,8 +16,13 @@
                                     <tr>
                                         <th>Music</th>
                                         <th>Title</th>
+<<<<<<< HEAD
                                         <th>Thumbnail Image Url</th>
                                         <th>Featured Banner </th>
+=======
+                                        <th>Thumbnail</th>
+                                        <th>Featured Banner</th>
+>>>>>>> 29054f47a173941cf7123736e7d3766f0047b27d
                                         <th>Short Description</th>
                                         <th>Featured Music</th>
                                         <th>Edit</th>
@@ -37,37 +41,36 @@
                                             <td>
                                                 @if (!empty($item->thumbnail_image))
                                                     <img src="{{ url('skh/public/' . $item->thumbnail_image) }}"
-                                                        alt="Thumbnail Image" width="80px" height="80px">
+                                                        alt="Thumbnail Image" class="img-thumbnail">
                                                 @else
-                                                    <p>No Thumbnail available</p>
+                                                    <p class="text-muted">No Thumbnail available</p>
                                                 @endif
                                             </td>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 29054f47a173941cf7123736e7d3766f0047b27d
                                             <td>
                                                 @if (!empty($item->featured_music_Image_Url))
                                                     <img src="{{ url('skh/public/' . $item->featured_music_Image_Url) }}"
-                                                        alt="Featured Image" width="80px" height="80px">
+                                                        alt="Featured Image" class="img-thumbnail" width="200px"
+                                                        height="200px">
                                                 @else
-                                                    <p>No featured image available</p>
+                                                    <p class="text-muted">No featured image available</p>
                                                 @endif
                                             </td>
-
-
                                             <td>{{ $item->short_description }}</td>
-
                                             <td>
                                                 <button
                                                     class="btn btn-sm {{ $item->featured_music ? 'btn-success' : 'btn-primary' }} featured-games-btn"
                                                     data-toggle="modal" data-target="#featuredModal_{{ $item->id }}">
-
                                                     <i class="fas fa-heart"></i>
                                                     {{ $item->featured_music ? 'Added' : 'Not Added' }}
-
                                                 </button>
                                             </td>
                                             <td>
                                                 <a href="{{ url('edit_music_list/' . $item->id) }}"
-                                                    class="btn btn-primary btn-sm">Edit</a>
+                                                    class="btn btn-warning btn-sm">Edit</a>
                                             </td>
                                             <td>
                                                 @component('Layouts.DeleteLayout.DeleteConfirmationModal', [
@@ -75,7 +78,7 @@
                                                     'deleteUrl' => url('delete_music_list', $item->id),
                                                 ])
                                                 @endcomponent
-                                                <button type="button" class="btn btn-outline-danger" data-toggle="modal"
+                                                <button type="button" class="btn btn-danger btn-sm" data-toggle="modal"
                                                     data-target="#deleteConfirmationModal_{{ $item->id }}">
                                                     <i class="fas fa-trash-alt"></i>
                                                 </button>

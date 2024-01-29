@@ -27,8 +27,12 @@ class MusicSongController extends Controller
         $musicSong->song_name = $request->input('song_name');
         $musicSong->song_size = $request->input('song_size');
         $musicSong->song_duration = $request->input('song_duration');
+<<<<<<< HEAD
          $musicSong->song_path = $request->input('song_path');
 
+=======
+        $musicSong->song_path = $request->input('song_path');
+>>>>>>> 29054f47a173941cf7123736e7d3766f0047b27d
         $musicSong->save();
         return redirect('music_song_list')->with('status', 'Student Added Successfully');
     }
@@ -47,8 +51,12 @@ class MusicSongController extends Controller
         $musicSong->song_name = $request->input('song_name');
         $musicSong->song_size = $request->input('song_size');
         $musicSong->song_duration = $request->input('song_duration');
+<<<<<<< HEAD
          $musicSong->song_path = $request->input('song_path');
 
+=======
+        $musicSong->song_path = $request->input('song_path');
+>>>>>>> 29054f47a173941cf7123736e7d3766f0047b27d
         $musicSong->update();
         return redirect('music_song_list')->with('status', 'Student Added Successfully');
     }

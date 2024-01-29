@@ -5,12 +5,9 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header d-flex justify-content-between align-items-center">
-                        <h4>All Music Song
-
-                        </h4>
-                        <a href="{{ url('add_music_song_list') }}" class="btn btn-primary float-end">Add
-                            Music Songs</a>
+                    <div class="card-header d-flex justify-content-between align-items-center bg-primary text-white">
+                        <h4>All Music Songs</h4>
+                        <a href="{{ url('add_music_song_list') }}" class="btn btn-light">Add Music Songs</a>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -38,20 +35,22 @@
                                             <td>{{ $item->song_size }}</td>
                                             <td>
                                                 @if (!empty($item->song_path))
-                                                    <audio controls>
-
-                                                        <source src="{{ url($item->song_path) }}" type="audio/mpeg">
-                                                        Your browser does not support the audio element.
-                                                    </audio>
+                                                    <div class="audio-player">
+                                                        <audio controls>
+                                                            <source src="{{ url($item->song_path) }}" type="audio/mpeg">
+                                                            Your browser does not support the audio element.
+                                                        </audio>
+                                                    </div>
                                                 @else
                                                     <p>No song available.</p>
                                                 @endif
                                             </td>
-
                                             <td>{{ $item->song_duration }}</td>
                                             <td>
                                                 <a href="{{ url('edit_music_song_list/' . $item->id) }}"
-                                                    class="btn btn-primary btn-sm">Edit</a>
+                                                    class="btn btn-warning btn-sm">
+                                                    <i class="fas fa-edit"></i> Edit
+                                                </a>
                                             </td>
                                             <td>
                                                 @component('Layouts.DeleteLayout.DeleteConfirmationModal', [
@@ -59,9 +58,9 @@
                                                     'deleteUrl' => url('delete_music_song_list', $item->id),
                                                 ])
                                                 @endcomponent
-                                                <button type="button" class="btn btn-outline-danger" data-toggle="modal"
+                                                <button type="button" class="btn btn-danger btn-sm" data-toggle="modal"
                                                     data-target="#deleteConfirmationModal_{{ $item->id }}">
-                                                    <i class="fas fa-trash-alt"></i>
+                                                    <i class="fas fa-trash-alt"></i> Delete
                                                 </button>
                                             </td>
                                         </tr>
