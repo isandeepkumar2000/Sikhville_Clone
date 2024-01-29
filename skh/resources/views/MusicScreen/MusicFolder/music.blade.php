@@ -17,7 +17,7 @@
                                     <tr>
                                         <th>Music</th>
                                         <th>Title</th>
-                                        <th>Thumbnail Image Url</th>\
+                                        <th>Thumbnail Image Url</th>
                                         <th>Featured Banner </th>
                                         <th>Short Description</th>
                                         <th>Featured Music</th>
