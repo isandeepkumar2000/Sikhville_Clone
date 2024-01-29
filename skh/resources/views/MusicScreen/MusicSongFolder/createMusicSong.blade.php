@@ -35,10 +35,7 @@
 
                             <div class="form-row">
                                 <div class="col-md-12 mb-3">
-<<<<<<< HEAD
 
-=======
->>>>>>> 29054f47a173941cf7123736e7d3766f0047b27d
                                     <div>
                                         <div class="form-group mb-3">
                                             <label for="song_name">Song Name</label>
