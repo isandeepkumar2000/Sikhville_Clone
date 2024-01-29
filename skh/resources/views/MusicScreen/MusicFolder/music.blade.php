@@ -16,13 +16,8 @@
                                     <tr>
                                         <th>Music</th>
                                         <th>Title</th>
-<<<<<<< HEAD
-                                        <th>Thumbnail Image Url</th>
-                                        <th>Featured Banner </th>
-=======
                                         <th>Thumbnail</th>
                                         <th>Featured Banner</th>
->>>>>>> 29054f47a173941cf7123736e7d3766f0047b27d
                                         <th>Short Description</th>
                                         <th>Featured Music</th>
                                         <th>Edit</th>
@@ -46,10 +41,6 @@
                                                     <p class="text-muted">No Thumbnail available</p>
                                                 @endif
                                             </td>
-<<<<<<< HEAD
-
-=======
->>>>>>> 29054f47a173941cf7123736e7d3766f0047b27d
                                             <td>
                                                 @if (!empty($item->featured_music_Image_Url))
                                                     <img src="{{ url('skh/public/' . $item->featured_music_Image_Url) }}"
