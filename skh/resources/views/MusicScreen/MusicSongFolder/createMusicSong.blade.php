@@ -34,25 +34,6 @@
                             <div class="form-row">
                                 <div class="col-md-12 mb-3">
 
-<<<<<<< HEAD
-                                <div>
-                                    <div class="form-group mb-3">
-                                        <label for="">Song Name </label>
-                                        <input type="text" name="song_name" class="form-control" required required>
-                                    </div>
-                                    <div class="form-group mb-3">
-                                        <label for="">Song Size </label>
-                                        <input type="text" name="song_size" class="form-control" required required readonly>
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <label for="song_path">Song File</label>
-                                        <input type="file" class="form-control-file" id="song_path" name="song_path" required>
-                                    </div>
-
-                                    <div class="form-group mb-3">
-                                        <label for="">Song Duration Link</label>
-                                        <input type="text" name="song_duration" class="form-control" required required readonly>
-=======
                                     <div>
                                         <div class="form-group mb-3">
                                             <label for="">Song Name </label>
@@ -70,7 +51,6 @@
                                             <label for="">Song Duration Link</label>
                                             <input type="text" name="song_duration" class="form-control">
                                         </div>
->>>>>>> f5535b288f6a77c58b640c8d6e21888fa4bab59b
                                     </div>
                                 </div>
                             </div>
