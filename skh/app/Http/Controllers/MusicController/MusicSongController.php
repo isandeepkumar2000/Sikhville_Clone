@@ -27,6 +27,7 @@ class MusicSongController extends Controller
         $musicSong->song_name = $request->input('song_name');
         $musicSong->song_size = $request->input('song_size');
         $musicSong->song_duration = $request->input('song_duration');
+<<<<<<< HEAD
 
         if ($request->hasFile('song_path')) {
 
@@ -39,6 +40,9 @@ class MusicSongController extends Controller
                 $musicSong->song_path = $folderName . '/' . $fileName;
             }
         }
+=======
+        $musicSong->song_path = $request->input('song_path');
+>>>>>>> f5535b288f6a77c58b640c8d6e21888fa4bab59b
         $musicSong->save();
         return redirect('music_song_list')->with('status', 'Student Added Successfully');
     }
@@ -57,6 +61,7 @@ class MusicSongController extends Controller
         $musicSong->song_name = $request->input('song_name');
         $musicSong->song_size = $request->input('song_size');
         $musicSong->song_duration = $request->input('song_duration');
+<<<<<<< HEAD
 
         if ($request->hasFile('song_path')) {
             $file = $request->file('song_path');
@@ -69,8 +74,11 @@ class MusicSongController extends Controller
                 $musicSong->song_path = $folderName . '/' . $fileName;
             }
         }
+=======
+        $musicSong->song_path = $request->input('song_path');
+>>>>>>> f5535b288f6a77c58b640c8d6e21888fa4bab59b
         $musicSong->update();
-        return redirect()->back()->with('status', 'Student Updated Successfully');
+        return redirect('music_song_list')->with('status', 'Student Added Successfully');
     }
 
     public function destroy($id)
