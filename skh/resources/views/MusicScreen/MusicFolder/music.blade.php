@@ -36,7 +36,8 @@
                                             <td>
                                                 @if (!empty($item->thumbnail_image))
                                                     <img src="{{ url('skh/public/' . $item->thumbnail_image) }}"
-                                                        alt="Thumbnail Image" class="img-thumbnail">
+                                                        alt="Thumbnail Image" class="img-thumbnail" width="100px"
+                                                        height="100px">
                                                 @else
                                                     <p class="text-muted">No Thumbnail available</p>
                                                 @endif
