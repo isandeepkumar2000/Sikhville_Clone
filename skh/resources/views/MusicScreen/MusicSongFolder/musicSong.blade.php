@@ -19,10 +19,7 @@
                                         <th>Song Size</th>
                                         <th>Song Path</th>
                                         <th>Song Duration</th>
-                                        <th>Music Song Description</th>
                                         <th>Music Song Image</th>
-                                        <th>Music Song Banner</th>
-
                                         <th>Edit</th>
                                         <th>Delete</th>
                                     </tr>
@@ -51,7 +48,7 @@
                                             </td>
                                             <td>{{ $item->song_duration }}</td>
 
-                                            <td>{{ $item->music_details_description }}</td>
+
                                             <td>
                                                 @if (!empty($item->music_song_details_image))
                                                     <img src="{{ url('skh/public/' . $item->music_song_details_image) }}"
@@ -61,23 +58,6 @@
                                                     <p class="text-muted">No Music Song Image available</p>
                                                 @endif
                                             </td>
-                                            <td>
-                                                @if (!empty($item->music_song_details_banner))
-                                                    <img src="{{ url('skh/public/' . $item->music_song_details_banner) }}"
-                                                        alt="Thumbnail Image" class="img-thumbnail" width="100px"
-                                                        height="100px">
-                                                @else
-                                                    <p class="text-muted">No Music Song Banner available</p>
-                                                @endif
-                                            </td>
-
-
-
-
-
-
-
-
 
 
                                             <td>

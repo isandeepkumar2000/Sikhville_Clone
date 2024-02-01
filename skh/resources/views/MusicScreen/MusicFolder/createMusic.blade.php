@@ -42,6 +42,14 @@
                                         name="thumbnail_image" required>
                                 </div>
 
+                                <div class="form-group col-md-6">
+                                    <label for="music_song_details_banner" class="font-weight-bold">Upload Music
+                                        Song
+                                        Banner</label>
+                                    <input type="file" class="form-control-file" id="music_song_details_banner"
+                                        name="music_song_details_banner" required>
+                                </div>
+
                                 <div class="col-md-12 mb-3">
                                     <label for="short_description" class="font-weight-bold">Short Description</label>
                                     <input type="text" class="form-control" required id="short_description"

@@ -18,6 +18,7 @@
                                         <th>Title</th>
                                         <th>Thumbnail</th>
                                         <th>Featured Banner</th>
+                                        <th>Music Song Banner</th>
                                         <th>Short Description</th>
                                         <th>Featured Music</th>
                                         <th>Edit</th>
@@ -49,6 +50,16 @@
                                                         height="200px">
                                                 @else
                                                     <p class="text-muted">No featured image available</p>
+                                                @endif
+                                            </td>
+
+                                            <td>
+                                                @if (!empty($item->music_song_details_banner))
+                                                    <img src="{{ url('skh/public/' . $item->music_song_details_banner) }}"
+                                                        alt="Thumbnail Image" class="img-thumbnail" width="100px"
+                                                        height="100px">
+                                                @else
+                                                    <p class="text-muted">No Music Song Banner available</p>
                                                 @endif
                                             </td>
                                             <td>{{ $item->short_description }}</td>

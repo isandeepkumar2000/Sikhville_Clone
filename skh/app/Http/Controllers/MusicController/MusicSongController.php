@@ -29,7 +29,7 @@ class MusicSongController extends Controller
         $musicSong->song_size = $request->input('song_size');
         $musicSong->song_duration = $request->input('song_duration');
         $musicSong->song_path = $request->input('song_path');
-        $musicSong->music_details_description = $request->input('music_details_description');
+    
 
   if ($request->hasFile('music_song_details_image')) {
             $file = $request->file('music_song_details_image');
@@ -43,17 +43,7 @@ class MusicSongController extends Controller
             }
         }
 
-          if ($request->hasFile('music_song_details_banner')) {
-            $file = $request->file('music_song_details_banner');
-            $fileName = time() . '.' . $file->getClientOriginalExtension();
-            $folderName = 'MusicSongDetailsBannerfolder';
-            $path = public_path($folderName);
-            $upload = $file->move($path, $fileName);
-
-            if ($upload) {
-                $musicSong->music_song_details_banner = $folderName . '/' . $fileName;
-            }
-        }
+        
 
 
 
@@ -76,7 +66,7 @@ class MusicSongController extends Controller
         $musicSong->song_size = $request->input('song_size');
         $musicSong->song_duration = $request->input('song_duration');
         $musicSong->song_path = $request->input('song_path');
-        $musicSong->music_details_description = $request->input('music_details_description');
+     
 
           if ($request->hasFile('music_song_details_image')) {
             $file = $request->file('music_song_details_image');
@@ -90,17 +80,7 @@ class MusicSongController extends Controller
             }
         }
 
-          if ($request->hasFile('music_song_details_banner')) {
-            $file = $request->file('music_song_details_banner');
-            $fileName = time() . '.' . $file->getClientOriginalExtension();
-            $folderName = 'MusicSongDetailsBannerfolder';
-            $path = public_path($folderName);
-            $upload = $file->move($path, $fileName);
-
-            if ($upload) {
-                $musicSong->music_song_details_banner = $folderName . '/' . $fileName;
-            }
-        }
+        
 
         $musicSong->update();
         return redirect('music_song_list')->with('status', 'Student Added Successfully');

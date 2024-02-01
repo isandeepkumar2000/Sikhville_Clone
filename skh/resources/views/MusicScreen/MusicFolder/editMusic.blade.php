@@ -45,6 +45,14 @@
                                     <input type="file" class="form-control" id="thumbnail_image"
                                         value="{{ $music->thumbnail_image }}" name="thumbnail_image">
                                 </div>
+
+                                <div class="form-group col-md-6">
+                                    <label for="music_song_details_banner" class="font-weight-bold">Upload Music
+                                        Song
+                                        Banner</label>
+                                    <input type="file" class="form-control-file" id="music_song_details_banner"
+                                        name="music_song_details_banner" value="{{ $music->music_song_details_banner }}">
+                                </div>
                                 <div class="col-md-12 mb-3">
                                     <label for="short_description">Short Description</label>
                                     <input type="text" class="form-control" id="short_description"
