@@ -63,6 +63,7 @@ class ApiController extends Controller
             return response()->json($download, 200);
         } catch (\Exception $e) {
             return response('An error occurred', 500);
+            return response('An error occurred', 500);
         }
     }
 
@@ -78,6 +79,7 @@ class ApiController extends Controller
 
     public function showmusicSongList()
     {
+
         try {
             $musicSong = MusicSong::with('musicfolderDetails')->get();
             return response()->json($musicSong, 200);
