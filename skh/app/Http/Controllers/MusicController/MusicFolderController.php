@@ -38,6 +38,19 @@ class MusicFolderController extends Controller
             }
         }
 
+          if ($request->hasFile('music_song_details_banner')) {
+            $file = $request->file('music_song_details_banner');
+            $fileName = time() . '.' . $file->getClientOriginalExtension();
+            $folderName = 'MusicSongDetailsBannerfolder';
+            $path = public_path($folderName);
+            $upload = $file->move($path, $fileName);
+
+            if ($upload) {
+                $music->music_song_details_banner = $folderName . '/' . $fileName;
+            }
+        }
+
+
 
         $music->save();
         return redirect('music_list')->with('status', 'Student Added Successfully');
@@ -68,6 +81,18 @@ class MusicFolderController extends Controller
 
             if ($upload) {
                 $music->thumbnail_image = $folderName . '/' . $fileName;
+            }
+        }
+
+           if ($request->hasFile('music_song_details_banner')) {
+            $file = $request->file('music_song_details_banner');
+            $fileName = time() . '.' . $file->getClientOriginalExtension();
+            $folderName = 'MusicSongDetailsBannerfolder';
+            $path = public_path($folderName);
+            $upload = $file->move($path, $fileName);
+
+            if ($upload) {
+                $music->music_song_details_banner = $folderName . '/' . $fileName;
             }
         }
 
