@@ -56,6 +56,26 @@
                                     <input type="text" name="song_duration" class="form-control"
                                         value="{{ $musicSong->song_duration }}">
                                 </div>
+                                <div class="form-group mb-3">
+                                    <label for="song_duration">Music Details Description</label>
+                                    <input type="text" name="music_details_description" class="form-control"
+                                        value="{{ $musicSong->music_details_description }}">
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <label for="music_song_details_image" class="font-weight-bold">Upload Music Song
+                                        Image</label>
+                                    <input type="file" class="form-control-file" id="music_song_details_image"
+                                        name="music_song_details_image">
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <label for="music_song_details_banner" class="font-weight-bold">Upload Music
+                                        Song
+                                        Banner</label>
+                                    <input type="file" class="form-control-file" id="music_song_details_banner"
+                                        name="music_song_details_banner">
+                                </div>
                             </div>
                             <div class="mb-3">
                                 <button type="submit" class="btn btn-success">
