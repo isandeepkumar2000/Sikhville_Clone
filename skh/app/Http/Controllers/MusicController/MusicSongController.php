@@ -22,16 +22,16 @@ class MusicSongController extends Controller
     }
     public function store(Request $request)
     {
-      
+
         $musicSong = new MusicSong;
         $musicSong->musicid = $request->input('musicid');
         $musicSong->song_name = $request->input('song_name');
         $musicSong->song_size = $request->input('song_size');
         $musicSong->song_duration = $request->input('song_duration');
         $musicSong->song_path = $request->input('song_path');
-    
 
-  if ($request->hasFile('music_song_details_image')) {
+
+        if ($request->hasFile('music_song_details_image')) {
             $file = $request->file('music_song_details_image');
             $fileName = time() . '.' . $file->getClientOriginalExtension();
             $folderName = 'MusicSongDetailsImagefolder';
@@ -42,10 +42,6 @@ class MusicSongController extends Controller
                 $musicSong->music_song_details_image = $folderName . '/' . $fileName;
             }
         }
-
-        
-
-
 
         $musicSong->save();
         return redirect('music_song_list')->with('status', 'Student Added Successfully');
@@ -60,15 +56,15 @@ class MusicSongController extends Controller
     public function update(Request $request, $id)
     {
 
-        $musicSong = MusicSong::find($id);
-        $musicSong->musicid = $request->input('musicid');
-        $musicSong->song_name = $request->input('song_name');
-        $musicSong->song_size = $request->input('song_size');
+        $musicSong                = MusicSong::find($id);
+        $musicSong->musicid       = $request->input('musicid');
+        $musicSong->song_name     = $request->input('song_name');
+        $musicSong->song_size     = $request->input('song_size');
         $musicSong->song_duration = $request->input('song_duration');
-        $musicSong->song_path = $request->input('song_path');
-     
+        $musicSong->song_path     = $request->input('song_path');
 
-          if ($request->hasFile('music_song_details_image')) {
+
+        if ($request->hasFile('music_song_details_image')) {
             $file = $request->file('music_song_details_image');
             $fileName = time() . '.' . $file->getClientOriginalExtension();
             $folderName = 'MusicSongDetailsImagefolder';
@@ -80,7 +76,7 @@ class MusicSongController extends Controller
             }
         }
 
-        
+
 
         $musicSong->update();
         return redirect('music_song_list')->with('status', 'Student Added Successfully');

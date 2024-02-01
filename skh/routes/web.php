@@ -24,7 +24,7 @@ Route::middleware("isLoggedIn")->group(function () {
     Route::delete('delete_download_list/{id}', [App\Http\Controllers\DownloadController\DownloadFolderController::class, 'destroy']);
     Route::post('featured_download/{id}', [App\Http\Controllers\DownloadController\DownloadFolderController::class, 'featureddownload']);
 
-    // Download_Categories_Route 
+    // Download_Categories_Route
     Route::get('download_categories_list', [App\Http\Controllers\DownloadController\DownloadCategoriesController::class, 'showdownloadCategories'])->name('downloadCategories');
     Route::get('add_download_categories_list', [App\Http\Controllers\DownloadController\DownloadCategoriesController::class, 'create']);
     Route::post('add_post_download_categories_list', [App\Http\Controllers\DownloadController\DownloadCategoriesController::class, 'store']);

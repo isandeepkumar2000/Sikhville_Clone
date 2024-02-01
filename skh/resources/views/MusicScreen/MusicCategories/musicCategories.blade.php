@@ -27,7 +27,8 @@
                                 <tr>
                                     <td>{{ $item->name }}</td>
                                     <td>
-                                        <a href="{{ url('edit_music_categories_list/' . $item->id) }}" class="btn btn-primary btn-sm">Edit</a>
+                                        <a href="{{ url('edit_music_categories_list/' . $item->id) }}"
+                                            class="btn btn-primary btn-sm">Edit</a>
                                     </td>
                                     <td>
                                         @component('Layouts.DeleteLayout.DeleteConfirmationModal', [
@@ -35,7 +36,8 @@
                                         'deleteUrl' => url('delete_music_categories_list', $item->id),
                                         ])
                                         @endcomponent
-                                        <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#deleteConfirmationModal_{{ $item->id }}">
+                                        <button type="button" class="btn btn-outline-danger" data-toggle="modal"
+                                            data-target="#deleteConfirmationModal_{{ $item->id }}">
                                             <i class="fas fa-trash-alt"></i>
                                         </button>
                                     </td>

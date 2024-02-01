@@ -38,7 +38,7 @@ class MusicFolderController extends Controller
             }
         }
 
-          if ($request->hasFile('music_song_details_banner')) {
+        if ($request->hasFile('music_song_details_banner')) {
             $file = $request->file('music_song_details_banner');
             $fileName = time() . '.' . $file->getClientOriginalExtension();
             $folderName = 'MusicSongDetailsBannerfolder';
@@ -84,7 +84,7 @@ class MusicFolderController extends Controller
             }
         }
 
-           if ($request->hasFile('music_song_details_banner')) {
+        if ($request->hasFile('music_song_details_banner')) {
             $file = $request->file('music_song_details_banner');
             $fileName = time() . '.' . $file->getClientOriginalExtension();
             $folderName = 'MusicSongDetailsBannerfolder';
