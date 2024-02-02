@@ -30,7 +30,6 @@ class MusicSongController extends Controller
         $musicSong->song_duration = $request->input('song_duration');
         $musicSong->song_path = $request->input('song_path');
 
-
         if ($request->hasFile('music_song_details_image')) {
             $file = $request->file('music_song_details_image');
             $fileName = time() . '.' . $file->getClientOriginalExtension();
@@ -75,9 +74,6 @@ class MusicSongController extends Controller
                 $musicSong->music_song_details_image = $folderName . '/' . $fileName;
             }
         }
-
-
-
         $musicSong->update();
         return redirect('music_song_list')->with('status', 'Student Added Successfully');
     }
@@ -86,6 +82,6 @@ class MusicSongController extends Controller
     {
         $musicSong = MusicSong::find($id);
         $musicSong->delete();
-        return redirect()->back()->with('status', 'Student Deleted Successfully');
+        return redirect('music_song_list')->with('status', 'Student Added Successfully');
     }
 }

@@ -40,7 +40,6 @@ class ApiController extends Controller
 
             return response()->json($games, 200);
         } catch (\Exception $e) {
-
             Log::error('Error occurred: ' . $e->getMessage());
             return response('An error occurred', 500);
         }
@@ -77,14 +76,18 @@ class ApiController extends Controller
         }
     }
 
-    public function showmusicSongList()
+    public function showmusicSongList($musicUuid)
     {
-
         try {
-            $musicSong = MusicSong::with('musicfolderDetails')->get();
-            return response()->json($musicSong, 200);
+            $music = Music::where('uuid', $musicUuid)->first();
+
+            if (!$music) {
+                return response()->json(['message' => 'Music not found'], 404);
+            }
+            $musicSongs = MusicSong::where('musicid', $music->id)->get();
+            return response()->json(["album_detail" => $music, "song_list" => $musicSongs], 200);
         } catch (\Exception $e) {
-            return response('An error occurred', 500);
+            return response()->json(['message' => 'An error occurred'], 500);
         }
     }
 

@@ -57,13 +57,13 @@
                             </div>
                         </div>
 
-                        <div class="form-row">
+                        {{-- <div class="form-row">
                             <div class="col-md-12 mb-3">
                                 <label for="song_path" class="font-weight-bold">Song Path</label>
                                 <input type="text" class="form-control" id="song_path" placeholder="Song Path"
                                     name="song_path">
                             </div>
-                        </div>
+                        </div> --}}
 
                         <div class="form-row">
                             <div class="col-md-6">

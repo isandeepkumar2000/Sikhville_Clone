@@ -35,13 +35,13 @@ class MusicCategoryController extends Controller
         $musicCategories = MusicCategories::find($id);
         $musicCategories->name = $request->input('name');
         $musicCategories->update();
-        return redirect()->back()->with('status', 'Student Updated Successfully');
+        return redirect('music_categories_list')->with('status', 'Student Added Successfully');
     }
 
     public function destroy($id)
     {
         $musicCategories = MusicCategories::find($id);
         $musicCategories->delete();
-        return redirect()->back()->with('status', 'Student Deleted Successfully');
+        return redirect('music_categories_list')->with('status', 'Student Added Successfully');
     }
 }
