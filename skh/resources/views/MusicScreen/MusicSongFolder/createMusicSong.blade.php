@@ -33,47 +33,12 @@
                             </div>
                         </div>
 
-<<<<<<< HEAD
-                            <div class="form-row">
-                                <div class="col-md-12 mb-3">
-
-                                    <div>
-                                        <div class="form-group mb-3">
-                                            <label for="song_name">Song Name</label>
-                                            <input type="text" name="song_name" class="form-control" required>
-                                        </div>
-                                        <div class="form-group mb-3">
-                                            <label for="song_size">Song Size</label>
-                                            <input type="text" name="song_size" class="form-control" required>
-                                        </div>
-                                        <div class="form-group mb-3">
-                                            <label for="song_path">Song Link</label>
-                                            <div class="input-group">
-                                                <input type="text" name="song_path" class="form-control" required>
-                                            </div>
-                                        </div>
-                                        <div class="form-group mb-3">
-                                            <label for="song_duration">Song Duration Link</label>
-                                            <input type="text" name="song_duration" class="form-control">
-                                        </div>
-
-
-                                        <div class="form-group col-md-6">
-                                            <label for="music_song_details_image" class="font-weight-bold">Upload Music Song
-                                                Image</label>
-                                            <input type="file" class="form-control-file" id="music_song_details_image"
-                                                name="music_song_details_image" required>
-                                        </div>
-
-
-=======
                         <div class="form-row">
                             <div class="col-md-12 mb-3">
                                 <div>
                                     <div class="form-group mb-3">
                                         <label for="song_name">Song Name</label>
                                         <input type="text" name="song_name" class="form-control" required>
->>>>>>> dddadf41a58baf294a6f0c1009073f02b377468c
                                     </div>
                                     <div class="form-group mb-3">
                                         <label for="song_size">Song Size</label>
