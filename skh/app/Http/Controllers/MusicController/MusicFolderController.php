@@ -98,14 +98,14 @@ class MusicFolderController extends Controller
 
 
         $music->update();
-        return redirect()->back()->with('status', 'Student Updated Successfully');
+        return redirect('music_list')->with('status', 'Student Added Successfully');
     }
 
     public function destroy($id)
     {
         $music = Music::find($id);
         $music->delete();
-        return redirect()->back()->with('status', 'Student Deleted Successfully');
+        return redirect('music_list')->with('status', 'Student Added Successfully');
     }
 
     public function feartured_music(Request $request, $id)
@@ -132,6 +132,6 @@ class MusicFolderController extends Controller
 
             $music->save();
         }
-        return redirect()->back()->with('status', 'Student Updated Successfully');
+        return redirect('music_list')->with('status', 'Student Added Successfully');
     }
 }
