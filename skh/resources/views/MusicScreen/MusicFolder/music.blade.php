@@ -19,6 +19,7 @@
                                     <th>Thumbnail</th>
                                     <th>Featured Banner</th>
                                     <th>Music Song Banner</th>
+                                    <th>Recommended Music Song</th>
                                     <th>Short Description</th>
                                     <th>Featured Music</th>
                                     <th>Edit</th>
