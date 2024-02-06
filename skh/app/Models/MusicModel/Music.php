@@ -13,7 +13,7 @@ class Music extends Model
     public $table = 'music';
 
     protected $fillable = [
-        'uuid', 'musicCategoriesid', 'thumbnail_image', 'short_description', 'title', 'featured_music', 'featured_music_Image_Url', 'music_song_details_banner',
+        'uuid', 'musicCategoriesid', 'thumbnail_image', 'short_description', 'title', 'featured_music', 'featured_music_Image_Url', 'music_song_details_banner', 'recommended_album_image',
     ];
 
     public function musicCategoryDetails()

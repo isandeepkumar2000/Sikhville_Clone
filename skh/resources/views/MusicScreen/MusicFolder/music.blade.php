@@ -59,6 +59,15 @@
                                         <p class="text-muted">No Music Song Banner available</p>
                                         @endif
                                     </td>
+
+                                    <td>
+                                        @if (!empty($item->recommended_album_image))
+                                        <img src="{{ url('skh/public/' . $item->recommended_album_image) }}"
+                                            alt="Thumbnail Image" class="img-thumbnail" width="100px" height="100px">
+                                        @else
+                                        <p class="text-muted">No Recommended Music Song available</p>
+                                        @endif
+                                    </td>
                                     <td>{{ $item->short_description }}</td>
                                     <td>
                                         <button

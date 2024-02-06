@@ -50,6 +50,15 @@
                                     name="music_song_details_banner" required>
                             </div>
 
+                            <div class="form-group col-md-6">
+                                <label for="recommended_album_image" class="font-weight-bold">Upload Recommended Music
+                                    Song
+                                </label>
+                                <input type="file" class="form-control-file" id="recommended_album_image"
+                                    name="recommended_album_image" required>
+                            </div>
+
+
                             <div class="col-md-12 mb-3">
                                 <label for="short_description" class="font-weight-bold">Short Description</label>
                                 <input type="text" class="form-control" required id="short_description"

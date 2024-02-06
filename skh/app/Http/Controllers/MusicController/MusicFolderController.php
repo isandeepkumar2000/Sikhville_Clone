@@ -21,17 +21,18 @@ class MusicFolderController extends Controller
     }
     public function store(Request $request)
     {
-        $music = new Music;
+        $music                    = new Music;
         $music->musicCategoriesid = $request->input('musicCategoriesid');
-        $music->title = $request->input('title');
+        $music->title             = $request->input('title');
         $music->short_description = $request->input('short_description');
 
+
         if ($request->hasFile('thumbnail_image')) {
-            $file = $request->file('thumbnail_image');
-            $fileName = time() . '.' . $file->getClientOriginalExtension();
+            $file       = $request->file('thumbnail_image');
+            $fileName   = time() . '.' . $file->getClientOriginalExtension();
             $folderName = 'MusicImagefolder';
-            $path = public_path($folderName);
-            $upload = $file->move($path, $fileName);
+            $path       = public_path($folderName);
+            $upload     = $file->move($path, $fileName);
 
             if ($upload) {
                 $music->thumbnail_image = $folderName . '/' . $fileName;
@@ -39,14 +40,26 @@ class MusicFolderController extends Controller
         }
 
         if ($request->hasFile('music_song_details_banner')) {
-            $file = $request->file('music_song_details_banner');
-            $fileName = time() . '.' . $file->getClientOriginalExtension();
+            $file       = $request->file('music_song_details_banner');
+            $fileName   = time() . '.' . $file->getClientOriginalExtension();
             $folderName = 'MusicSongDetailsBannerfolder';
-            $path = public_path($folderName);
-            $upload = $file->move($path, $fileName);
+            $path       = public_path($folderName);
+            $upload     = $file->move($path, $fileName);
 
             if ($upload) {
                 $music->music_song_details_banner = $folderName . '/' . $fileName;
+            }
+        }
+
+        if ($request->hasFile('recommended_album_image')) {
+            $file       = $request->file('recommended_album_image');
+            $fileName   = time() . '.' . $file->getClientOriginalExtension();
+            $folderName = 'Music_Recommended_Album_Image_folder';
+            $path       = public_path($folderName);
+            $upload     = $file->move($path, $fileName);
+
+            if ($upload) {
+                $music->recommended_album_image = $folderName . '/' . $fileName;
             }
         }
 
@@ -61,23 +74,23 @@ class MusicFolderController extends Controller
     public function edit($id)
     {
         $musiccategories = MusicCategories::all();
-        $music = Music::find($id);
+        $music           = Music::find($id);
         return view('MusicScreen.MusicFolder.editMusic', compact('music', 'musiccategories'));
     }
     public function update(Request $request, $id)
     {
-        $music = Music::find($id);
+        $music                    = Music::find($id);
         $music->musicCategoriesid = $request->input('musicCategoriesid');
-        $music->title = $request->input('title');
+        $music->title             = $request->input('title');
         $music->short_description = $request->input('short_description');
 
 
         if ($request->hasFile('thumbnail_image')) {
-            $file = $request->file('thumbnail_image');
-            $fileName = time() . '.' . $file->getClientOriginalExtension();
+            $file       = $request->file('thumbnail_image');
+            $fileName   = time() . '.' . $file->getClientOriginalExtension();
             $folderName = 'MusicImagefolder';
-            $path = public_path($folderName);
-            $upload = $file->move($path, $fileName);
+            $path       = public_path($folderName);
+            $upload     = $file->move($path, $fileName);
 
             if ($upload) {
                 $music->thumbnail_image = $folderName . '/' . $fileName;
@@ -85,14 +98,26 @@ class MusicFolderController extends Controller
         }
 
         if ($request->hasFile('music_song_details_banner')) {
-            $file = $request->file('music_song_details_banner');
-            $fileName = time() . '.' . $file->getClientOriginalExtension();
+            $file       = $request->file('music_song_details_banner');
+            $fileName   = time() . '.' . $file->getClientOriginalExtension();
             $folderName = 'MusicSongDetailsBannerfolder';
-            $path = public_path($folderName);
-            $upload = $file->move($path, $fileName);
+            $path       = public_path($folderName);
+            $upload     = $file->move($path, $fileName);
 
             if ($upload) {
                 $music->music_song_details_banner = $folderName . '/' . $fileName;
+            }
+        }
+
+        if ($request->hasFile('recommended_album_image')) {
+            $file       = $request->file('recommended_album_image');
+            $fileName   = time() . '.' . $file->getClientOriginalExtension();
+            $folderName = 'Music_Recommended_Album_Image_folder';
+            $path       = public_path($folderName);
+            $upload     = $file->move($path, $fileName);
+
+            if ($upload) {
+                $music->recommended_album_image = $folderName . '/' . $fileName;
             }
         }
 
