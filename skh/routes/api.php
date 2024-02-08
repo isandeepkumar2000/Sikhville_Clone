@@ -31,4 +31,4 @@ Route::get("sentancemaking_details", [ApiController::class, "showsentancemakingL
 Route::get("shabdkosh_details", [ApiController::class, "showshabdkoshList"]);
 Route::get("websitecontent_details", [ApiController::class, "showwebsitecontentList"]);
 Route::post("viewlog_details", [ApiController::class, "showViewLoglist"]);
-Route::post("homepage_imageslider_list", [ApiController::class, "showhomepageslidercontentList"]);
+Route::get("homepage_imageslider_list", [ApiController::class, "showhomepageslidercontentList"]);
