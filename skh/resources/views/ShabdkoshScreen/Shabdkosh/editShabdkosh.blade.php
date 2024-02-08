@@ -24,25 +24,25 @@
                             <div class="mb-3">
                                 <label for="title" class="form-label">Shabdkosh Title</label>
                                 <input type="text" id="title" name="title" value="{{ $shabdkosh->title }}"
-                                    class="form-control" required required>
+                                    class="form-control"  >
                             </div>
 
                             <div class="mb-3">
                                 <label for="thumbnail" class="form-label">Thumbnail Image</label>
                                 <input type="text" id="thumbnail" name="thumbnail_short_image"
-                                    value="{{ $shabdkosh->thumbnail_short_image }}" class="form-control" required required>
+                                    value="{{ $shabdkosh->thumbnail_short_image }}" class="form-control"  >
                             </div>
 
                             <div class="mb-3">
                                 <label for="videoUrl" class="form-label">Shabdkosh Video Url</label>
                                 <input type="text" id="videoUrl" name="shabdkosh_video_url"
-                                    value="{{ $shabdkosh->shabdkosh_video_url }}" class="form-control" required required>
+                                    value="{{ $shabdkosh->shabdkosh_video_url }}" class="form-control"  >
                             </div>
 
                             <div class="mb-3">
                                 <label for="description" class="form-label">Short Description</label>
                                 <input type="text" id="description" name="short_description"
-                                    value="{{ $shabdkosh->short_description }}" class="form-control" required required>
+                                    value="{{ $shabdkosh->short_description }}" class="form-control"  >
                             </div>
 
                             <div class="mb-3">

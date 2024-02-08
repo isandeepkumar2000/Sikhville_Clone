@@ -19,10 +19,10 @@
                             @csrf
                             @method('PUT')
 
-                            <div class="form-group mb-3">
-                                <label for="">Video Category</label>
-                                <input type="text" name="name" value="{{ $videoCategories->name }}"
-                                    class="form-control" required>
+                            <div   class = "form-group mb-3">
+                            <label for   = "">Video Category</label>
+                            <input type  = "text" name = "name" value = "{{ $videoCategories->name }}"
+                                   class = "form-control" >
                             </div>
                             <div class="form-group mb-3">
                                 <button type="submit" class="btn btn-primary">Update Category</button>

@@ -19,10 +19,10 @@
                         enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
-                        <div class="mb-3">
-                            <label for="musicid" class="form-label">Music Song</label>
-                            <select class="form-control select2" name="musicid" required id="musicid">
-                                <option value="option_select">Choose a Music Song</option>
+                        <div    class = "mb-3">
+                        <label  for   = "musicid" class             = "form-label">Music Song</label>
+                        <select class = "form-control select2" name = "musicid"  id = "musicid">
+                        <option value = "option_select">Choose a Music Song</option>
                                 @foreach ($music as $item)
                                 <option value="{{ $item->id }}" @if ($item->id == $musicSong->musicid) selected @endif>
                                     {{ $item->title }}

@@ -41,15 +41,15 @@
                             </div>
                             <div class="col-md-4">
                                 <label for="validationCustom03">Short Description</label>
-                                <input type="text" class="form-control" required id="validationCustom03"
+                                <input type="text" class="form-control"  id="validationCustom03"
                                     value="{{ $video->short_description }}" placeholder="Short Description"
-                                    name="short_description" required>
+                                    name="short_description" >
                             </div>
                             <div class="col-md-4">
                                 <label for="validationCustom04">Youtube Video Url</label>
-                                <input type="text" class="form-control" required id="validationCustom04"
+                                <input type="text" class="form-control"  id="validationCustom04"
                                     value="{{ $video->youtube_video_url }}" placeholder="Youtube Video Url"
-                                    name="youtube_video_url" required>
+                                    name="youtube_video_url" >
                             </div>
                         </div>
                         <div class="row mb-3">
@@ -63,7 +63,7 @@
                                 <label for="validationCustom06">Play Now Link</label>
                                 <input type="text" class="form-control" id="validationCustom06"
                                     value="{{ $video->playnow_link }}" placeholder="Play Now Link" name="playnow_link"
-                                    required>
+                                    >
                             </div>
                             <div class="col-md-4">
                                 <label for="validationCustom07">Start Easy Quiz Link</label>

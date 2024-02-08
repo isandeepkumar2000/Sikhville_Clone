@@ -21,15 +21,15 @@
                         @method('PUT')
                         <div class="mb-3">
                             <label for="category_name" class="form-label">Category Name</label>
-                            <input type="text" id="category_name" name="name" value="{{ $punjabireadingCategories->name }}" class="form-control" required placeholder="Enter Category Name" required>
+                            <input type="text" id="category_name" name="name" value="{{ $punjabireadingCategories->name }}" class="form-control" placeholder="Enter Category Name">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="thumbnail_ishort_image">Upload Image:</label>
-                            <input type="file" class="form-control-file" id="thumbnail_ishort_image" name="thumbnail_ishort_image" value="{{ $punjabireadingCategories->thumbnail_ishort_image }}" required>
+                            <input type="file" class="form-control-file" id="thumbnail_ishort_image" name="thumbnail_ishort_image" value="{{ $punjabireadingCategories->thumbnail_ishort_image }}">
                         </div>
                         <div class="mb-3">
                             <label for="reading_title" class="form-label">Reading Title</label>
-                            <input type="text" id="reading_title" name="reading_title" value="{{ $punjabireadingCategories->reading_title }}" class="form-control" required placeholder="Enter Reading Title" required>
+                            <input type="text" id="reading_title" name="reading_title" value="{{ $punjabireadingCategories->reading_title }}" class="form-control" placeholder="Enter Reading Title">
                         </div>
                         <div class="mb-3">
                             <button type="submit" class="btn btn-primary">Update Punjabi Reading

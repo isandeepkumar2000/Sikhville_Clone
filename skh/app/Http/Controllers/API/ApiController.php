@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Log;
 // Models
 use App\Models\DownloadModel\Download;
 use App\Models\GamesModel\Games;
+use App\Models\HomePageImageSliderModel\HomePageImageSlider;
 use App\Models\MusicModel\Music;
 use App\Models\MusicModel\MusicSong;
 use App\Models\PunjabiReadingModel\Punjabireading;
@@ -125,6 +126,16 @@ class ApiController extends Controller
         try {
             $websitecontent = Websitecontent::get();
             return response()->json($websitecontent, 200);
+        } catch (\Exception $e) {
+            return response('An error occurred', 500);
+        }
+    }
+
+    public function showhomepageslidercontentList()
+    {
+        try {
+            $homepagesliderlist = HomePageImageSlider::get();
+            return response()->json($homepagesliderlist, 200);
         } catch (\Exception $e) {
             return response('An error occurred', 500);
         }

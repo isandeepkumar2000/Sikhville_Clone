@@ -18,11 +18,11 @@
                         enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
-                        <div class="row mb-3">
-                            <div class="col-md-12 mb-3">
-                                <label for="categoryid">Select Download</label>
-                                <select class="form-control select2" name="categoryid" required id="categoryid">
-                                    <option value="option_select">Choose a Game</option>
+                        <div    class = "row mb-3">
+                        <div    class = "col-md-12 mb-3">
+                        <label  for   = "categoryid">Select Download</label>
+                        <select class = "form-control select2" name = "categoryid" required id = "categoryid">
+                        <option value = "option_select">Choose a Game</option>
                                     @foreach ($downloadcategories as $item)
                                     <option value="{{ $item->id }}" @if ($item->id == $download->categoryid)
                                         selected
@@ -36,21 +36,21 @@
                         <div class="row mb-3">
                             <div class="col-md-6">
                                 <label for="thumbnail_image">Image URL</label>
-                                <input type="file" class="form-control" required id="validationCustom02"
+                                <input type="file" class="form-control"  id="validationCustom02"
                                     placeholder="Image URL" value="{{ $download->thumbnail_image }}"
-                                    name="thumbnail_image" required>
+                                    name="thumbnail_image" >
                             </div>
                             <div class="col-md-6">
                                 <label for="validationCustom03">Download Url</label>
-                                <input type="text" class="form-control" required id="validationCustom03"
+                                <input type="text" class="form-control"  id="validationCustom03"
                                     value="{{ $download->downloadpdf_url }}" placeholder="Short Description"
-                                    name="downloadpdf_url" required>
+                                    name="downloadpdf_url" >
                             </div>
                         </div>
                         <div class="form-group mb-3">
                             <label for="textAreaExample1">Title</label>
-                            <input type="text" class="form-control" required id="validationCustom04"
-                                value="{{ $download->short_title }}" placeholder="Title" name="short_title" required>
+                            <input type="text" class="form-control"  id="validationCustom04"
+                                value="{{ $download->short_title }}" placeholder="Title" name="short_title" >
                         </div>
                         <div class="form-group mb-3 d-flex justify-content-end">
                             <button type="submit" class="btn btn-primary">Update Game</button>

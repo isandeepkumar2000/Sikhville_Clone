@@ -24,7 +24,7 @@
                         <div class="form-group mb-3">
                             <label for="">Music Category Name</label>
                             <input type="text" name="name" value="{{ $musicCategories->name }}" class="form-control"
-                                required>
+                                >
                         </div>
                         <div class="form-group mb-3">
                             <button type="submit" class="btn btn-primary">Update Category</button>

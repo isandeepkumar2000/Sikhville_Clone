@@ -52,12 +52,12 @@
                                 <div class="col-md-6">
                                     <label for="title" class="form-label">Title</label>
                                     <input type="text" id="title" name="title" value="{{ $websiteContent->title }}"
-                                        class="form-control" required placeholder="Enter the title">
+                                        class="form-control"  placeholder="Enter the title">
                                 </div>
                             </div>
                             <div class="mb-3">
                                 <label for="textAreaExample1" class="form-label">Content Details</label>
-                                <textarea class="form-control" required id="textAreaExample1" rows="4" name="content"
+                                <textarea class="form-control"  id="textAreaExample1" rows="4" name="content"
                                     placeholder="Please enter the Content Details">{{ $websiteContent->content }}</textarea>
                             </div>
                             <div class="mb-3">

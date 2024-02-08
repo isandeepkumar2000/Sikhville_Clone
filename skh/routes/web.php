@@ -149,4 +149,14 @@ Route::middleware("isLoggedIn")->group(function () {
     Route::get('edit_website_content_list/{id}', [App\Http\Controllers\WebsiteContentController\WebsiteContentFolderController::class, 'edit']);
     Route::put('update_website_content_list/{id}', [App\Http\Controllers\WebsiteContentController\WebsiteContentFolderController::class, 'update']);
     Route::delete('delete_website_content_list/{id}', [App\Http\Controllers\WebsiteContentController\WebsiteContentFolderController::class, 'destroy']);
+
+
+    // Homepage_Slider_Image_Route
+    Route::get('homepage_imageslider_list', [App\Http\Controllers\HomePageImageSliderController\HomePageSliderController::class, 'showHomePageImageSlider'])->name('homepage_imageslider_route');
+    Route::get('add_homepage_imageslider_list', [App\Http\Controllers\HomePageImageSliderController\HomePageSliderController::class, 'create']);
+    Route::post('add_post_homepage_imageslider_list', [App\Http\Controllers\HomePageImageSliderController\HomePageSliderController::class, 'store']);
+    Route::get('edit_homepage_imageslider_list/{id}', [App\Http\Controllers\HomePageImageSliderController\HomePageSliderController::class, 'edit']);
+    Route::put('update_homepage_imageslider_list/{id}', [App\Http\Controllers\HomePageImageSliderController\HomePageSliderController::class, 'update']);
+    Route::delete('delete_homepage_imageslider_list/{id}', [App\Http\Controllers\HomePageImageSliderController\HomePageSliderController::class, 'destroy']);
+
 });

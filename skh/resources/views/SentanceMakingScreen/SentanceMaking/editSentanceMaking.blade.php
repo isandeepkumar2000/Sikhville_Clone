@@ -33,29 +33,29 @@
                                 </div>
                                 <div class="col-md-6 mb-3"> <label for="short_description">Video Game
                                         Play</label>
-                                    <input type="text" class="form-control" required id="video_game_play"
+                                    <input type="text" class="form-control"  id="video_game_play"
                                         value="{{ $sentancemaking->video_game_play }}" placeholder="Title"
-                                        name="video_game_play" required>
+                                        name="video_game_play" >
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label for="thumbnail_image">Thumbnail Image Url</label>
-                                    <input type="text" class="form-control" required id="thumbnail_image"
+                                    <input type="text" class="form-control"  id="thumbnail_image"
                                         value="{{ $sentancemaking->thumbnail_image }}" placeholder="Image Url"
-                                        name="thumbnail_image" required>
+                                        name="thumbnail_image" >
                                 </div>
 
                                 <div class="col-md-6 mb-3">
                                     <label for="short_description">Sentance Making Title</label>
-                                    <input type="text" class="form-control" required id="sentance_making_vismaad_title"
+                                    <input type="text" class="form-control"  id="sentance_making_vismaad_title"
                                         value="{{ $sentancemaking->sentance_making_vismaad_title }}"
-                                        placeholder="Short Description" name="sentance_making_vismaad_title" required>
+                                        placeholder="Short Description" name="sentance_making_vismaad_title" >
                                 </div>
 
                                 <div class="col-md-6 mb-3">
                                     <label for="short_description">Short Description</label>
-                                    <input type="text" class="form-control" required id="short_description"
+                                    <input type="text" class="form-control"  id="short_description"
                                         value="{{ $sentancemaking->short_description }}" placeholder="Short Description"
-                                        name="short_description" required>
+                                        name="short_description" >
                                 </div>
                             </div>
                             <button type="submit" class="btn btn-primary">Update Sentance Making</button>
