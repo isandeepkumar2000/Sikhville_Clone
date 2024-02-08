@@ -14,7 +14,7 @@
             <div class="card">
                 <div class="card-header d-flex justify-content-between align-items-center bg-info text-white">
                     <h4 class="m-0">Add Download Here</h4>
-                    <a href="{{ url('download_categories_list') }}" class="btn btn-danger">BACK</a>
+                    <a href="{{ url('download_list') }}" class="btn btn-danger">BACK</a>
                 </div>
                 <div class="card-body">
                     <form action="{{ url('add_post_download_list') }}" method="POST" enctype="multipart/form-data">

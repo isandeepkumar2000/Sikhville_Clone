@@ -132,8 +132,8 @@
                     style="background-color: #778beb; margin-bottom: 5px; font-weight: 700;">
                     Shabadkosh
                 </a>
-                <div class="collapse" id="folderTwo">
-                    <a class="collapse-item  text-dark" href="{{ route('shabdkoshFolder') }}">Shabadkosh</a>
+                <div class = "collapse" id                   = "folderTwo">
+                <a   class = "collapse-item  text-dark" href = "{{ route('shabdkoshFolder') }}">Shabadkosh</a>
                 </div>
             </div>
         </div>

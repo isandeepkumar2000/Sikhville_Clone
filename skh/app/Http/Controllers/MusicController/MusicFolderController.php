@@ -63,8 +63,6 @@ class MusicFolderController extends Controller
             }
         }
 
-
-
         $music->save();
         return redirect('music_list')->with('status', 'Student Added Successfully');
     }

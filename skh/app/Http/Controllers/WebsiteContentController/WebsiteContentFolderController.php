@@ -12,7 +12,7 @@ class WebsiteContentFolderController extends Controller
     public function showwebsitecontentlist()
     {
         $websiteContent = Websitecontent::all();
-        print_r($websiteContent->toArray());
+
         return view('WebsiteContentScreen.WebsiteContent.websiteContent', compact('websiteContent'));
     }
     public function create()

@@ -28,7 +28,7 @@
                                     <th>Start Quiz Easy Link </th>
                                     <th>Start Quiz Hard Link </th>
                                     <th>Download Pdf Link </th>
-                                    <th>Highlighting video Duration</th>
+                                     <th>Highlighting video Duration</th>
                                     <th>Details</th>
                                     <th>Top Video</th>
                                     <th>Featured Video</th>
@@ -47,28 +47,34 @@
                                     <td>{{ $item->short_description }}</td>
                                     <td>
                                         @if (!empty($item->thumbnail_image))
-                                        <img src="{{ url('skh/public/' . $item->thumbnail_image) }}" alt="thumbnail image Image" width="100px" height="100px">
+                                        <img src="{{ url('skh/public/' . $item->thumbnail_image) }}"
+                                            alt="thumbnail image Image" width="100px" height="100px">
                                         @else
                                         <p>Thumbnail image available</p>
                                         @endif
                                     </td>
                                     <td>
                                         @if (!empty($item->highlighting_video_Image))
-                                        <img src="{{ url('skh/public/' . $item->highlighting_video_Image) }}" alt="highlighting Video Image" width="100px" height="100px">
+                                        <img src="{{ url('skh/public/' . $item->highlighting_video_Image) }}"
+                                            alt="highlighting Video Image" width="100px" height="100px">
                                         @else
                                         <p>highlighting Video image available</p>
                                         @endif
                                     </td>
                                     <td>
                                         @if (!empty($item->featured_video_Image_Url))
-                                        <img src="{{ url('skh/public/' . $item->featured_video_Image_Url) }}" alt="Featured Video Image" width="100px" height="100px">
+                                        <img src="{{ url('skh/public/' . $item->featured_video_Image_Url) }}"
+                                            alt="Featured Video Image" width="100px" height="100px">
                                         @else
                                         <p>youtube image available</p>
                                         @endif
                                     </td>
                                     <td>
                                         @if (!empty($item->youtube_video_url))
-                                        <iframe width="100" height="100" src="https://www.youtube.com/embed/{{ $item->youtube_video_url }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                                        <iframe width="200" height="100"
+                                            src="https://www.youtube.com/embed/{{ $item->youtube_video_url }}"
+                                            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;
+                                        web-share" allowfullscreen></iframe>
                                         @else
                                         <p>Invalid YouTube video URL</p>
                                         @endif
@@ -79,22 +85,29 @@
                                     <td>{{ $item->startquiz_easy }}</td>
                                     <td>{{ $item->startquiz_hard }}</td>
                                     <td>{{ $item->downloadpdf_link }}</td>
-                                    <td>{{ $item->video_duration }}</td>
 
-                                    <td style=" display: block;width: 100px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis">
+
+                                    <td
+                                        style=" display: block;width: 100px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis">
                                         {{ $item->details }}</td>
                                     <td>
-                                        <a href="top_video/{{ $item->id }}" class="btn btn-sm btn-{{ $item->top_video ? 'success' : 'primary' }}">
-                                            <i class="fas fa-video me-1" style="margin-right: 2px;"></i>{{ $item->top_video ? 'Added' : 'Not Added' }}
+                                        <a href="top_video/{{ $item->id }}"
+                                            class="btn btn-sm btn-{{ $item->top_video ? 'success' : 'primary' }}">
+                                            <i class="fas fa-video me-1" style="margin-right: 2px;"></i>{{
+                                            $item->top_video ? 'Added' : 'Not Added' }}
                                         </a>
                                     </td>
                                     <td>
-                                        <button class="btn btn-sm btn-{{ $item->featured_video ? 'success' : 'primary' }} featured-games-btn" data-toggle="modal" data-target="#featuredModal_{{ $item->id }}">
-                                            <i class="fas fa-star me-1" style="margin-right: 2px;"></i>{{ $item->featured_video ? 'Added' : 'Not Added' }}
+                                        <button
+                                            class="btn btn-sm btn-{{ $item->featured_video ? 'success' : 'primary' }} featured-games-btn"
+                                            data-toggle="modal" data-target="#featuredModal_{{ $item->id }}">
+                                            <i class="fas fa-star me-1" style="margin-right: 2px;"></i>{{
+                                            $item->featured_video ? 'Added' : 'Not Added' }}
                                         </button>
                                     </td>
                                     <td>
-                                        <a href="{{ url('edit_video_list/' . $item->id) }}" class="btn btn-primary btn-sm">
+                                        <a href="{{ url('edit_video_list/' . $item->id) }}"
+                                            class="btn btn-primary btn-sm">
                                             <i class="fas fa-edit me-1"></i>
                                         </a>
                                     </td>
@@ -104,7 +117,8 @@
                                         'deleteUrl' => url('delete_video_list', $item->id),
                                         ])
                                         @endcomponent
-                                        <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#deleteConfirmationModal_{{ $item->id }}">
+                                        <button type="button" class="btn btn-outline-danger" data-toggle="modal"
+                                            data-target="#deleteConfirmationModal_{{ $item->id }}">
                                             <i class="fas fa-trash-alt"></i>
                                         </button>
                                     </td>
