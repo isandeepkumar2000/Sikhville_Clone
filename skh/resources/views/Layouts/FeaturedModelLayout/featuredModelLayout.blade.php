@@ -9,10 +9,10 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label for="featuredGameImage">Upload Image:</label>
-                        <input type="file" class="form-control-file" id="featuredGameImage" name="{{ $inputName }}" required>
+                <div   class = "modal-body">
+                <div   class = "form-group">
+                <label for   = "featuredGameImage">Upload Image:</label>
+                <input type  = "file" class = "form-control-file" id = "featuredGameImage" name = "{{ $inputName }}" required>
                     </div>
                 </div>
                 <div class="modal-footer">

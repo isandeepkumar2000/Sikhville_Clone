@@ -58,8 +58,9 @@ Route::middleware("isLoggedIn")->group(function () {
     Route::get('edit_video_list/{id}', [App\Http\Controllers\VideoController\VideoFolderController::class, 'edit']);
     Route::put('update_video_list/{id}', [App\Http\Controllers\VideoController\VideoFolderController::class, 'update']);
     Route::delete('delete_video_list/{id}', [App\Http\Controllers\VideoController\VideoFolderController::class, 'destroy']);
-    Route::get('top_video/{id}', [App\Http\Controllers\VideoController\VideoFolderController::class, 'topvideoUpdate']);
-    Route::post('featured_video/{id}', [App\Http\Controllers\VideoController\VideoFolderController::class, 'featuredvideo']);
+    Route::post('top_video_slider/{id}', [App\Http\Controllers\VideoController\VideoFolderController::class, 'topfeaturedvideo']);
+    Route::post('middle_video_slider/{id}', [App\Http\Controllers\VideoController\VideoFolderController::class, 'middlefeaturedvideo']);
+    Route::post('bottom_video_slider/{id}', [App\Http\Controllers\VideoController\VideoFolderController::class, 'bottomfeaturedvideo']);
 
 
     // video_Categories_Route

@@ -21,21 +21,28 @@ class VideoFolderController extends Controller
     }
     public function store(Request $request)
     {
-        // print_r($_POST);
-        // print_r($_FILES);
-        // print_r($request->all());
-        // die;
-        $video = new Video;
+          // print_r($_POST);
+          // print_r($_FILES);
+          // print_r($request->all());
+          // die;
+        $video                    = new Video;
         $video->videoCategoriesid = $request->input('videoCategoriesid');
         $video->short_description = $request->input('short_description');
-        $video->details = $request->input('details');
-        $video->donating_link = $request->input('donating_link');
-        $video->playnow_link = $request->input('playnow_link');
+        $video->details           = $request->input('details');
+        $video->playnow_link      = $request->input('playnow_link');
         $video->youtube_video_url = $request->input('youtube_video_url');
-        $video->startquiz_easy = $request->input('startquiz_easy');
-        $video->startquiz_hard = $request->input('startquiz_hard');
-        $video->downloadpdf_link = $request->input('downloadpdf_link');
-        $video->video_duration = $request->input('video_duration');
+        $video->startquiz_easy    = $request->input('startquiz_easy');
+        $video->startquiz_hard    = $request->input('startquiz_hard');
+        $video->downloadpdf_link  = $request->input('downloadpdf_link');
+        $video->video_duration    = $request->input('video_duration');
+        $video->move_of_the_year_content    = $request->input('move_of_the_year_content');
+        $video->video_release_type    = $request->input('video_release_type');
+        $video->film_certificate_ratings    = $request->input('film_certificate_ratings');
+        $video->video_playback_singer_by    = $request->input('video_playback_singer_by');
+        $video->video_quality_in    = $request->input('video_quality_in');
+        $video->video_genre_by    = $request->input('video_genre_by');
+        $video->video_dimension_type    = $request->input('video_dimension_type');
+
 
         if ($request->hasFile('highlighting_video_Image')) {
             $file = $request->file('highlighting_video_Image');
@@ -46,6 +53,18 @@ class VideoFolderController extends Controller
 
             if ($upload) {
                 $video->highlighting_video_Image = $folderName . '/' . $fileName;
+            }
+        }
+
+        if ($request->hasFile('highlighting_second_video_Image')) {
+            $file = $request->file('highlighting_second_video_Image');
+            $fileName = time() . '.' . $file->getClientOriginalExtension();
+            $folderName = 'HighlightingSecondVideoImagefolder';
+            $path = public_path($folderName);
+            $upload = $file->move($path, $fileName);
+
+            if ($upload) {
+                $video->highlighting_second_video_Image = $folderName . '/' . $fileName;
             }
         }
 
@@ -75,16 +94,21 @@ class VideoFolderController extends Controller
     {
         $video = Video::find($id);
         $video->videoCategoriesid = $request->input('videoCategoriesid');
-        $video->thumbnail_image = $request->input('thumbnail_image');
         $video->short_description = $request->input('short_description');
-        $video->details = $request->input('details');
-        $video->donating_link = $request->input('donating_link');
-        $video->playnow_link = $request->input('playnow_link');
+        $video->details           = $request->input('details');
+        $video->playnow_link      = $request->input('playnow_link');
         $video->youtube_video_url = $request->input('youtube_video_url');
-        $video->startquiz_easy = $request->input('startquiz_easy');
-        $video->startquiz_hard = $request->input('startquiz_hard');
-        $video->downloadpdf_link = $request->input('downloadpdf_link');
-        $video->video_duration = $request->input('video_duration');
+        $video->startquiz_easy    = $request->input('startquiz_easy');
+        $video->startquiz_hard    = $request->input('startquiz_hard');
+        $video->downloadpdf_link  = $request->input('downloadpdf_link');
+        $video->video_duration    = $request->input('video_duration');
+        $video->move_of_the_year_content    = $request->input('move_of_the_year_content');
+        $video->video_release_type    = $request->input('video_release_type');
+        $video->film_certificate_ratings    = $request->input('film_certificate_ratings');
+        $video->video_playback_singer_by    = $request->input('video_playback_singer_by');
+        $video->video_quality_in    = $request->input('video_quality_in');
+        $video->video_genre_by    = $request->input('video_genre_by');
+        $video->video_dimension_type    = $request->input('video_dimension_type');
 
         if ($request->hasFile('highlighting_video_Image')) {
             $file = $request->file('highlighting_video_Image');
@@ -95,6 +119,18 @@ class VideoFolderController extends Controller
 
             if ($upload) {
                 $video->highlighting_video_Image = $folderName . '/' . $fileName;
+            }
+        }
+
+        if ($request->hasFile('highlighting_second_video_Image')) {
+            $file = $request->file('highlighting_second_video_Image');
+            $fileName = time() . '.' . $file->getClientOriginalExtension();
+            $folderName = 'HighlightingSecondVideoImagefolder';
+            $path = public_path($folderName);
+            $upload = $file->move($path, $fileName);
+
+            if ($upload) {
+                $video->highlighting_second_video_Image = $folderName . '/' . $fileName;
             }
         }
 
@@ -121,23 +157,73 @@ class VideoFolderController extends Controller
         return redirect()->back()->with('status', 'Student Deleted Successfully');
     }
 
-    public function featuredvideo($id, Request $request)
+    public function topfeaturedvideo($id, Request $request)
     {
         $video = Video::find($id);
         if ($video) {
-            if ($video->featured_video) {
-                $video->featured_video = 0;
+            if ($video->top_video_slider) {
+                $video->top_video_slider = 0;
             } else {
-                $video->featured_video = 1;
-                if ($request->hasFile('featured_video_Image_Url')) {
-                    $file = $request->file('featured_video_Image_Url');
+                $video->top_video_slider = 1;
+                if ($request->hasFile('top_featured_video_Image_slider')) {
+                    $file = $request->file('top_featured_video_Image_slider');
                     $fileName = time() . '.' . $file->getClientOriginalExtension();
-                    $folderName = 'VideoFeaturedImagefolder';
+                    $folderName = 'TopVideoFeaturedImagefolder';
                     $path = public_path($folderName);
                     $upload = $file->move($path, $fileName);
 
                     if ($upload) {
-                        $video->featured_video_Image_Url = $folderName . '/' . $fileName;
+                        $video->top_featured_video_Image_slider = $folderName . '/' . $fileName;
+                    }
+                }
+            }
+        }
+        $video->save();
+        return redirect()->back()->with('status', 'Student Updated Successfully');
+    }
+
+    public function middlefeaturedvideo($id, Request $request)
+    {
+        $video = Video::find($id);
+        if ($video) {
+            if ($video->middle_video_slider) {
+                $video->middle_video_slider = 0;
+            } else {
+                $video->middle_video_slider = 1;
+                if ($request->hasFile('middle_featured_video_Image_slider')) {
+                    $file = $request->file('middle_featured_video_Image_slider');
+                    $fileName = time() . '.' . $file->getClientOriginalExtension();
+                    $folderName = 'MiddleVideoFeaturedImagefolder';
+                    $path = public_path($folderName);
+                    $upload = $file->move($path, $fileName);
+
+                    if ($upload) {
+                        $video->middle_featured_video_Image_slider = $folderName . '/' . $fileName;
+                    }
+                }
+            }
+        }
+        $video->save();
+        return redirect()->back()->with('status', 'Student Updated Successfully');
+    }
+
+    public function bottomfeaturedvideo($id, Request $request)
+    {
+        $video = Video::find($id);
+        if ($video) {
+            if ($video->bottom_video_slider) {
+                $video->bottom_video_slider = 0;
+            } else {
+                $video->bottom_video_slider = 1;
+                if ($request->hasFile('bottom_featured_video_Image_slider')) {
+                    $file = $request->file('bottom_featured_video_Image_slider');
+                    $fileName = time() . '.' . $file->getClientOriginalExtension();
+                    $folderName = 'BottomVideoFeaturedImagefolder';
+                    $path = public_path($folderName);
+                    $upload = $file->move($path, $fileName);
+
+                    if ($upload) {
+                        $video->bottom_featured_video_Image_slider = $folderName . '/' . $fileName;
                     }
                 }
             }
@@ -147,24 +233,53 @@ class VideoFolderController extends Controller
     }
 
 
-    public function topvideoUpdate($id)
-    {
-        $maxTopVideos          = 4;
-        $currentTopVideosCount = Video::where('top_video', 1)->count();
-        $video                 = Video::find($id);
+    // public function topvideoUpdate($id)
+    // {
+    //     $maxTopVideos          = 4;
+    //     $currentTopVideosCount = Video::where('top_video', 1)->count();
+    //     $video                 = Video::find($id);
 
-        if ($video) {
-            if ($video->top_video) {
-                $video->top_video = 0;
-            } else {
-                if ($currentTopVideosCount < $maxTopVideos) {
-                    $video->top_video = 1;
-                } else {
-                    return back()->with('error', 'You can only set ' . $maxTopVideos . ' videos as top videos.');
-                }
-            }
-            $video->save();
-        }
-        return redirect()->back()->with('status', 'Student Updated Successfully');
-    }
+    //     if ($video) {
+    //         if ($video->top_video) {
+    //             $video->top_video = 0;
+    //         } else {
+    //             if ($currentTopVideosCount < $maxTopVideos) {
+    //                 $video->top_video = 1;
+    //             } else {
+    //                 return back()->with('error', 'You can only set ' . $maxTopVideos . ' videos as top videos.');
+    //             }
+    //         }
+    //         $video->save();
+    //     }
+    //     return redirect()->back()->with('status', 'Student Updated Successfully');
+    // }
+
+
+
+    // public function feartured_music(Request $request, $id)
+    // {
+    //     $video = Video::find($id);
+
+    //     if ($video) {
+    //         if ($video->featured_music) {
+    //             $video->featured_music = 0;
+    //         } else {
+    //             $video->featured_music = 1;
+    //             if ($request->hasFile('featured_music_Image_Url')) {
+    //                 $file = $request->file('featured_music_Image_Url');
+    //                 $fileName = time() . '.' . $file->getClientOriginalExtension();
+    //                 $folderName = 'MusicFeaturedImagefolder';
+    //                 $path = public_path($folderName);
+    //                 $upload = $file->move($path, $fileName);
+
+    //                 if ($upload) {
+    //                     $video->featured_music_Image_Url = $folderName . '/' . $fileName;
+    //                 }
+    //             }
+    //         }
+
+    //         $video->save();
+    //     }
+    //     return redirect('music_list')->with('status', 'Student Added Successfully');
+    // }
 }
