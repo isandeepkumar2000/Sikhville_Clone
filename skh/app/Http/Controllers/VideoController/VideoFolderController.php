@@ -184,27 +184,40 @@ class VideoFolderController extends Controller
 
     public function middlefeaturedvideo($id, Request $request)
     {
+        $maxTopVideos = 1;
+        $currentTopVideosCount = Video::where('middle_video_slider', 1)->count();
         $video = Video::find($id);
+
         if ($video) {
             if ($video->middle_video_slider) {
-                $video->middle_video_slider = 0;
+                return redirect()->back()->with('status', 'Only one video can be selected as middle featured');
             } else {
-                $video->middle_video_slider = 1;
-                if ($request->hasFile('middle_featured_video_Image_slider')) {
-                    $file = $request->file('middle_featured_video_Image_slider');
-                    $fileName = time() . '.' . $file->getClientOriginalExtension();
-                    $folderName = 'MiddleVideoFeaturedImagefolder';
-                    $path = public_path($folderName);
-                    $upload = $file->move($path, $fileName);
 
-                    if ($upload) {
-                        $video->middle_featured_video_Image_slider = $folderName . '/' . $fileName;
+                if ($currentTopVideosCount >= $maxTopVideos) {
+
+                    return redirect()->back()->with('status', 'Only one video can be selected as middle featured');
+                } else {
+
+                    $video->middle_video_slider = 1;
+                    if ($request->hasFile('middle_featured_video_Image_slider')) {
+                        $file = $request->file('middle_featured_video_Image_slider');
+                        $fileName = time() . '.' . $file->getClientOriginalExtension();
+                        $folderName = 'MiddleVideoFeaturedImagefolder';
+                        $path = public_path($folderName);
+                        $upload = $file->move($path, $fileName);
+
+                        if ($upload) {
+                            $video->middle_featured_video_Image_slider = $folderName . '/' . $fileName;
+                        }
                     }
+                    $video->save();
+                    return redirect()->back()->with('status', 'Video updated successfully');
                 }
             }
+        } else {
+
+            return redirect()->back()->with('status', 'Video not found');
         }
-        $video->save();
-        return redirect()->back()->with('status', 'Student Updated Successfully');
     }
 
     public function bottomfeaturedvideo($id, Request $request)
