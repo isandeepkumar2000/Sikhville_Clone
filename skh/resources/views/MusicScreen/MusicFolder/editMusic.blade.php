@@ -8,7 +8,7 @@
                 <div class="card-header">
                     <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
                         <h4><i class="fas fa-music mr-2"></i>Edit & Update Music Song</h4>
-                        <a href="{{ url('music_song_list') }}" class="btn btn-danger">
+                        <a href="{{ url('music_list') }}" class="btn btn-danger">
                             <i class="fas fa-arrow-left"></i> Back
                         </a>
                     </div>
@@ -21,12 +21,12 @@
                         enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
-                        <div class="form-row">
-                            <div class="col-md-12 mb-3">
-                                <label for="musicCategoriesid">Music Category</label>
-                                <select class="form-control select2" name="musicCategoriesid" required
-                                    id="musicCategoriesid">
-                                    <option value="option_select">Choose a Music Category</option>
+                        <div    class = "form-row">
+                        <div    class = "col-md-12 mb-3">
+                        <label  for   = "musicCategoriesid">Music Category</label>
+                        <select class = "form-control select2" name = "musicCategoriesid" required
+                                id    = "musicCategoriesid">
+                        <option value = "option_select">Choose a Music Category</option>
                                     @foreach ($musiccategories as $item)
                                     <option value="{{ $item->id }}" @if ($item->id == $music->musicCategoriesid)
                                         selected @endif>
