@@ -1,20 +1,20 @@
 @extends('Layouts.master')
 
 @section('content')
-<div class = "container-fluid">
-<div class = "column">
-<div class = "col-md-12">
-<div class = "card">
-<div class = "card-header d-flex justify-content-between align-items-center">
+<div class="container-fluid">
+    <div class="column">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center">
                     <h4>Edit and Update Video Data
                     </h4>
-                    <a href  = "{{ url('add_video_list') }}" class = "btn btn-primary float-end">
-                    <i class = "fas fa-plus-circle me-1"></i>Add Video Category
+                    <a href="{{ url('add_video_list') }}" class="btn btn-primary float-end">
+                        <i class="fas fa-plus-circle me-1"></i>Add Video Category
                     </a>
                 </div>
-                <div   class = "card-body">
-                <div   class = "table-responsive">
-                <table class = "table table-bordered table-striped">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
                             <thead>
                                 <tr>
                                     <th>Category</th>
@@ -39,6 +39,7 @@
                                     <th>Video Dimension Type</th>
                                     <th>Video Duration</th>
                                     <th>Details</th>
+                                    <th>To Videos in Homepage</th>
                                     <th>Top Featured Video</th>
                                     <th>Middle Featured Video</th>
                                     <th>Bottom Featured Video</th>
@@ -82,6 +83,12 @@
                                         @else
                                         <p>highlighting Second Video image available</p>
                                         @endif
+                                    </td>
+
+                                    <td>
+                                        <a href="top_video/{{ $item->id }}" class="btn btn-sm btn-{{ $item->top_video ? 'success' : 'primary' }}">
+                                            <i class="fas fa-video me-1" style="margin-right: 2px;"></i>{{ $item->top_video ? 'Added' : 'Not Added' }}
+                                        </a>
                                     </td>
 
                                     <!-- Display top featured video image or a message if not available -->
@@ -180,24 +187,24 @@
 
 
                                 @include('Layouts.FeaturedModelLayout.featuredModelLayout', [
-                                    'id'                => $item->id,
-                                    'action'            => url('top_video_slider/' . $item->id),
-                                    'inputName'         => 'top_featured_video_Image_slider',
-                                    'submitButtonLabel' => 'Add Top Featured Video'
+                                'id' => $item->id,
+                                'action' => url('top_video_slider/' . $item->id),
+                                'inputName' => 'top_featured_video_Image_slider',
+                                'submitButtonLabel' => 'Add Top Featured Video'
                                 ])
 
                                 @include('Layouts.FeaturedModelLayout.featuredModelLayout', [
-                                    'id'                => $item->id + 1,
-                                    'action'            => url('middle_video_slider/' . $item->id),
-                                    'inputName'         => 'middle_featured_video_Image_slider',
-                                    'submitButtonLabel' => 'Add Middle Featured Video'
+                                'id' => $item->id + 1,
+                                'action' => url('middle_video_slider/' . $item->id),
+                                'inputName' => 'middle_featured_video_Image_slider',
+                                'submitButtonLabel' => 'Add Middle Featured Video'
                                 ])
 
                                 @include('Layouts.FeaturedModelLayout.featuredModelLayout', [
-                                    'id'                => $item->id + 2, // Different ID here
-                                    'action'            => url('bottom_video_slider/' . $item->id),
-                                    'inputName'         => 'bottom_featured_video_Image_slider',
-                                    'submitButtonLabel' => 'Add Bottom Featured Video'
+                                'id' => $item->id + 2, // Different ID here
+                                'action' => url('bottom_video_slider/' . $item->id),
+                                'inputName' => 'bottom_featured_video_Image_slider',
+                                'submitButtonLabel' => 'Add Bottom Featured Video'
                                 ])
 
                                 @endforeach
@@ -210,4 +217,3 @@
     </div>
 </div>
 @endsection
-

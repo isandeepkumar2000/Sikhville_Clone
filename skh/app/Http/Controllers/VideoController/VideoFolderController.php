@@ -246,26 +246,26 @@ class VideoFolderController extends Controller
     }
 
 
-    // public function topvideoUpdate($id)
-    // {
-    //     $maxTopVideos          = 4;
-    //     $currentTopVideosCount = Video::where('top_video', 1)->count();
-    //     $video                 = Video::find($id);
+    public function topvideoUpdate($id)
+    {
+        $maxTopVideos          = 4;
+        $currentTopVideosCount = Video::where('top_video', 1)->count();
+        $video                 = Video::find($id);
 
-    //     if ($video) {
-    //         if ($video->top_video) {
-    //             $video->top_video = 0;
-    //         } else {
-    //             if ($currentTopVideosCount < $maxTopVideos) {
-    //                 $video->top_video = 1;
-    //             } else {
-    //                 return back()->with('error', 'You can only set ' . $maxTopVideos . ' videos as top videos.');
-    //             }
-    //         }
-    //         $video->save();
-    //     }
-    //     return redirect()->back()->with('status', 'Student Updated Successfully');
-    // }
+        if ($video) {
+            if ($video->top_video) {
+                $video->top_video = 0;
+            } else {
+                if ($currentTopVideosCount < $maxTopVideos) {
+                    $video->top_video = 1;
+                } else {
+                    return back()->with('error', 'You can only set ' . $maxTopVideos . ' videos as top videos.');
+                }
+            }
+            $video->save();
+        }
+        return redirect()->back()->with('status', 'Student Updated Successfully');
+    }
 
 
 

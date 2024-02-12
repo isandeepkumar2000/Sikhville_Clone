@@ -34,6 +34,7 @@ class Video extends Model
         'startquiz_hard',
         'downloadpdf_link',
         'video_duration',
+        'top_video',
         'highlighting_video_Image',
         'highlighting_second_video_Image',
 
