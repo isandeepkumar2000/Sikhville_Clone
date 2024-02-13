@@ -2,8 +2,14 @@
 
 @section('content')
     <div class = "container-fluid">
+
     <div class = "column">
     <div class = "col-md-12">
+        @if(session('error'))
+        <div class="alert alert-danger" role="alert">
+            {{ session('error') }}
+        </div>
+        @endif
     <div class = "card">
     <div class = "card-header d-flex justify-content-between align-items-center">
                         <h4>Edit and Update Video Data
@@ -12,7 +18,8 @@
                         <i class = "fas fa-plus-circle me-1"></i>Add Video Category
                         </a>
                     </div>
-                    <div   class = "card-body">
+                    <div class = "card-body">
+
                     <div   class = "table-responsive">
                     <table class = "table table-bordered table-striped">
                                 <thead>
