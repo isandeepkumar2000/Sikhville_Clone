@@ -248,9 +248,9 @@ class VideoFolderController extends Controller
 
     public function topvideoUpdate($id)
     {
-        $maxTopVideos = 4;
+        $maxTopVideos          = 4;
         $currentTopVideosCount = Video::where('top_video', 1)->count();
-        $video = Video::find($id);
+        $video                 = Video::find($id);
 
         if ($video) {
             if ($video->top_video) {
