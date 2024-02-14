@@ -38,7 +38,7 @@
             @endif
             <div class="card">
                 <div class="card-header">
-                    <h4><i class="fas fa-video"></i> Add Video Category Here</h4>
+                    <h4><i class="fas fa-video"></i> Add Video Here</h4>
                 </div>
                 <div class="card-body">
                     <form action="{{ url('add_post_video_list') }}" method="POST" enctype="multipart/form-data">

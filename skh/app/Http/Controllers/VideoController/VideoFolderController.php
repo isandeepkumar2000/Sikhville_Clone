@@ -25,31 +25,31 @@ class VideoFolderController extends Controller
           // print_r($_FILES);
           // print_r($request->all());
           // die;
-        $video                    = new Video;
-        $video->videoCategoriesid = $request->input('videoCategoriesid');
-        $video->short_description = $request->input('short_description');
-        $video->details           = $request->input('details');
-        $video->playnow_link      = $request->input('playnow_link');
-        $video->youtube_video_url = $request->input('youtube_video_url');
-        $video->startquiz_easy    = $request->input('startquiz_easy');
-        $video->startquiz_hard    = $request->input('startquiz_hard');
-        $video->downloadpdf_link  = $request->input('downloadpdf_link');
-        $video->video_duration    = $request->input('video_duration');
-        $video->move_of_the_year_content    = $request->input('move_of_the_year_content');
-        $video->video_release_type    = $request->input('video_release_type');
-        $video->film_certificate_ratings    = $request->input('film_certificate_ratings');
-        $video->video_playback_singer_by    = $request->input('video_playback_singer_by');
-        $video->video_quality_in    = $request->input('video_quality_in');
-        $video->video_genre_by    = $request->input('video_genre_by');
-        $video->video_dimension_type    = $request->input('video_dimension_type');
+        $video                           = new Video;
+        $video->videoCategoriesid        = $request->input('videoCategoriesid');
+        $video->short_description        = $request->input('short_description');
+        $video->details                  = $request->input('details');
+        $video->playnow_link             = $request->input('playnow_link');
+        $video->youtube_video_url        = $request->input('youtube_video_url');
+        $video->startquiz_easy           = $request->input('startquiz_easy');
+        $video->startquiz_hard           = $request->input('startquiz_hard');
+        $video->downloadpdf_link         = $request->input('downloadpdf_link');
+        $video->video_duration           = $request->input('video_duration');
+        $video->move_of_the_year_content = $request->input('move_of_the_year_content');
+        $video->video_release_type       = $request->input('video_release_type');
+        $video->film_certificate_ratings = $request->input('film_certificate_ratings');
+        $video->video_playback_singer_by = $request->input('video_playback_singer_by');
+        $video->video_quality_in         = $request->input('video_quality_in');
+        $video->video_genre_by           = $request->input('video_genre_by');
+        $video->video_dimension_type     = $request->input('video_dimension_type');
 
 
         if ($request->hasFile('highlighting_video_Image')) {
-            $file = $request->file('highlighting_video_Image');
-            $fileName = time() . '.' . $file->getClientOriginalExtension();
+            $file       = $request->file('highlighting_video_Image');
+            $fileName   = time() . '.' . $file->getClientOriginalExtension();
             $folderName = 'HighlightingVideoImagefolder';
-            $path = public_path($folderName);
-            $upload = $file->move($path, $fileName);
+            $path       = public_path($folderName);
+            $upload     = $file->move($path, $fileName);
 
             if ($upload) {
                 $video->highlighting_video_Image = $folderName . '/' . $fileName;

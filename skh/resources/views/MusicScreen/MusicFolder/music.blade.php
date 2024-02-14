@@ -9,9 +9,9 @@
                     <h4>All Music List </h4>
                     <a href="{{ url('add_music_list') }}" class="btn btn-light">Add Music</a>
                 </div>
-                <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table table-bordered table-striped">
+                <div   class = "card-body">
+                <div   class = "table-responsive">
+                <table class = "table table-bordered table-striped">
                             <thead>
                                 <tr>
                                     <th>Music</th>

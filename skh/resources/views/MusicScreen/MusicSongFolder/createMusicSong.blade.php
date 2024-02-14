@@ -50,9 +50,9 @@
                                             <input type="text" name="song_path" class="form-control" required>
                                         </div>
                                     </div>
-                                    <div class="form-group mb-3">
-                                        <label for="song_duration">Song Duration Link</label>
-                                        <input type="text" name="song_duration" class="form-control">
+                                    <div   class = "form-group mb-3">
+                                    <label for   = "song_duration">Song Timing</label>
+                                    <input type  = "text" name = "song_duration" class = "form-control">
                                     </div>
 
 

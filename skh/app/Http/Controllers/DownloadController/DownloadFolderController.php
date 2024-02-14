@@ -22,53 +22,53 @@ class DownloadFolderController extends Controller
     }
     public function store(Request $request)
     {
-        $download = new Download;
-        $download->categoryid = $request->input('categoryid');
+        $download                  = new Download;
+        $download->categoryid      = $request->input('categoryid');
         $download->downloadpdf_url = $request->input('downloadpdf_url');
-        $download->short_title = $request->input('short_title');
+        $download->short_title     = $request->input('short_title');
 
 
         if ($request->hasFile('thumbnail_image')) {
-            $file = $request->file('thumbnail_image');
-            $fileName = time() . '.' . $file->getClientOriginalExtension();
+            $file       = $request->file('thumbnail_image');
+            $fileName   = time() . '.' . $file->getClientOriginalExtension();
             $folderName = 'DownloadImagefolder';
-            $path = public_path($folderName);
-            $upload = $file->move($path, $fileName);
+            $path       = public_path($folderName);
+            $upload     = $file->move($path, $fileName);
 
             if ($upload) {
                 $download->thumbnail_image = $folderName . '/' . $fileName;
             }
         }
         $download->save();
-        return redirect('download_list')->with('status', 'Student Added Successfully');
+        return redirect('download_list')->with('status', 'Home Page Banner Added Successfully');
     }
 
     public function edit($id)
     {
         $downloadcategories = DownloadCategories::all();
-        $download = Download::find($id);
+        $download           = Download::find($id);
         return view('DownloadScreen.DownloadFolder.editDownload', compact('download', 'downloadcategories'));
     }
     public function update(Request $request, $id)
     {
-        $download = Download::find($id);
-        $download->categoryid = $request->input('categoryid');
+        $download                  = Download::find($id);
+        $download->categoryid      = $request->input('categoryid');
         $download->downloadpdf_url = $request->input('downloadpdf_url');
-        $download->short_title = $request->input('short_title');
+        $download->short_title     = $request->input('short_title');
 
         if ($request->hasFile('thumbnail_image')) {
-            $file = $request->file('thumbnail_image');
-            $fileName = time() . '.' . $file->getClientOriginalExtension();
+            $file       = $request->file('thumbnail_image');
+            $fileName   = time() . '.' . $file->getClientOriginalExtension();
             $folderName = 'DownloadImagefolder';
-            $path = public_path($folderName);
-            $upload = $file->move($path, $fileName);
+            $path       = public_path($folderName);
+            $upload     = $file->move($path, $fileName);
 
             if ($upload) {
                 $download->thumbnail_image = $folderName . '/' . $fileName;
             }
         }
         $download->update();
-        return redirect()->back()->with('status', 'Student Updated Successfully');
+        return redirect()->back()->with('status', 'Home Page Banner Added Successfully');
     }
 
     public function destroy($id)
@@ -89,11 +89,11 @@ class DownloadFolderController extends Controller
                 } else {
                     $download->featured_download = 1;
 
-                    $file = $request->file('featured_download_Image_Url');
-                    $fileName = time() . '.' . $file->getClientOriginalExtension();
+                    $file       = $request->file('featured_download_Image_Url');
+                    $fileName   = time() . '.' . $file->getClientOriginalExtension();
                     $folderName = 'DownloadFeaturedImagefolder';
-                    $path = public_path($folderName);
-                    $upload = $file->move($path, $fileName);
+                    $path       = public_path($folderName);
+                    $upload     = $file->move($path, $fileName);
                     if ($upload) {
                         $download->featured_download_Image_Url = $folderName . '/' . $fileName;
                     }
