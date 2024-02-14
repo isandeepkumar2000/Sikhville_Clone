@@ -37,7 +37,7 @@
                                     <th>Middle Video Image </th>
                                     <th>Bottom Video Image </th>
                                     <th>Youtube Video </th>
-                                    <th>PlayNow Youtube Link </th>
+                                    {{-- <th>PlayNow Youtube Link </th> --}}
                                     <th>Start Quiz Easy Link </th>
                                     <th>Start Quiz Hard Link </th>
                                     <th>Download Pdf Link </th>
@@ -132,7 +132,7 @@
                                         @endif
                                     </td>
 
-                                    <td>{{ $item->playnow_link }}</td>
+                                    {{-- <td>{{ $item->playnow_link }}</td> --}}
                                     <td>{{ $item->startquiz_easy }}</td>
                                     <td>{{ $item->startquiz_hard }}</td>
                                     <td>{{ $item->downloadpdf_link }}</td>

@@ -72,10 +72,10 @@
                             </div>
                         </div>
                         <div class="row mb-3">
-                            <div class="form-group mb-3">
+                            {{-- <div class="form-group mb-3">
                                 <label for="validationCustom06">Play Now Link</label>
                                 <input type="text" class="form-control" id="validationCustom06" placeholder="Play Now Link" name="playnow_link">
-                            </div>
+                            </div> --}}
                             <div class="col-md-4">
                                 <label for="validationCustom07">Start Easy Quiz Link</label>
                                 <input type="text" class="form-control" id="validationCustom07" placeholder="Start Easy Quiz Link" name="startquiz_easy">

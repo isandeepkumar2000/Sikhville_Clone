@@ -49,10 +49,10 @@
                             </div>
                         </div>
                         <div class="row mb-3">
-                            <div class="col-md-4 mb-3">
+                            {{-- <div class="col-md-4 mb-3">
                                 <label for="validationCustom06">Play Now Link</label>
                                 <input type="text" class="form-control" id="validationCustom06" placeholder="Play Now Link" value="{{ $video->playnow_link }}" name="playnow_link">
-                            </div>
+                            </div> --}}
                             <div class="col-md-4 mb-3">
                                 <label for="validationCustom07">Start Easy Quiz Link</label>
                                 <input type="text" class="form-control" id="validationCustom07" placeholder="Start Easy Quiz Link" value="{{ $video->startquiz_easy }}" name="startquiz_easy">
@@ -101,7 +101,7 @@
                                 <input type="text" class="form-control" id="validationCustom13" placeholder="video_playback_singer_by" name="video_playback_singer_by" value="{{ $video->video_playback_singer_by }}">
                             </div>
                             <div class="col-md-4 mb-3">
-                                <label for="validationCustom14">Video Quality In HD/Normal</label>
+                                <label for="validationCustom14">Video Quality</label>
                                 {{-- <input type="text" class="form-control" id="validationCustom14" placeholder="video_quality_in" name="video_quality_in" value="{{ $video->video_quality_in }}">
                                  --}}
 
@@ -119,7 +119,7 @@
                                 <input type="text" class="form-control" id="validationCustom15" placeholder="video_genre_by" name="video_genre_by" value="{{ $video->video_genre_by }}">
                             </div>
                             <div class="col-md-4 mb-3">
-                                <label for="validationCustom16">video Dimension 3D/2D </label>
+                                <label for="validationCustom16">video Dimension  </label>
 
                                 <select class = "custom-select" id                                          = "validationCustom09" name = "video_dimension_type">
                                 <option value = "2D" @if($video->video_dimension_type == '2D') selected @endif>2D</option>
