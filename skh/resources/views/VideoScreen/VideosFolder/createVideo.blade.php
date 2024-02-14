@@ -117,7 +117,7 @@
                             </div>
 
                             <div class="col-md-4">
-                                <label for="validationCustom09">Video Music Singer</label>
+                                <label for="validationCustom09">Video Music </label>
                                 <input type="text" class="form-control" id="validationCustom09" placeholder="video_playback_singer_by" name="video_playback_singer_by">
                             </div>
 

@@ -45,9 +45,9 @@
                                     <th>Video Release Type </th>
                                     <th>Film Certificate Ratings </th>
                                     <th>Video Music </th>
-                                    <th>Video Dimension Type </th>
-                                    <th>Video Genre By </th>
                                     <th>Video Quality In </th>
+                                    <th>Video Genre By </th>
+                                    <th>Video Dimension Type </th>
                                     <th>Video Duration </th>
                                     <th>Full Video Details Text </th>
                                     <th>Top Video For Home Page </th>
