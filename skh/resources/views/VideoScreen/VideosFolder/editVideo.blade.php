@@ -75,18 +75,18 @@
                             <label for   = "validationCustom11">Video Release</label>
 
                             <select class = "custom-select" id                                          = "validationCustom09" name = "video_release_type">
-                                <option value = "WorldWide" @if($video->video_release_type == 'WorldWide') selected @endif>WorldWide</option>
+                                <option value = "Worldwide" @if($video->video_release_type == 'Worldwide') selected @endif>Worldwide</option>
 
                             </select>
 
-                                {{-- <input type="text" class="form-control" id="validationCustom11" placeholder="video_release_type" name="video_release_type" value="{{ $video->video_release_type }}"> --}}
+
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-md-4 mb-3">
                                 <label for="validationCustom12">Film Certificate Rating </label>
 
-                                {{-- <input type="text" class="form-control" id="validationCustom12" placeholder="film_certificate_ratings" name="film_certificate_ratings" value="{{ $video->film_certificate_ratings }}"> --}}
+
                                 <select class = "custom-select" id = "validationCustom09" name = "film_certificate_ratings">
                                 <option value = "U/A" @if($video->film_certificate_ratings == 'U/A') selected @endif>U/A</option>
                                 <option value = "U" @if($video->film_certificate_ratings == 'U') selected @endif>U</option>

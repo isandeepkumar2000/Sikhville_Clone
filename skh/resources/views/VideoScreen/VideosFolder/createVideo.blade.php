@@ -99,7 +99,7 @@
                             <div class="col-md-4">
                                 <label for="validationCustom09">Video Release</label>
                                 <select class="custom-select" id="validationCustom0111" placeholder="video_release_type" name="video_release_type">
-                                    <option value="WorldWide">WorldWide</option>
+                                    <option value="Worldwide">Worldwide</option>
                                 </select>
 
                                 {{-- <input type="text" class="form-control" id="validationCustom09" placeholder="video_release_type" name="video_release_type"> --}}
