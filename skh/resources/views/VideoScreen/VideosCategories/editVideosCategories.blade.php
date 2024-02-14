@@ -25,7 +25,7 @@
                                    class = "form-control" >
                             </div>
                             <div class="form-group mb-3">
-                                <button type="submit" class="btn btn-primary">Update Category</button>
+                                <button type="submit" class="btn btn-primary">Update </button>
                             </div>
 
                         </form>

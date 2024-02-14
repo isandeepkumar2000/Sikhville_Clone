@@ -31,7 +31,7 @@
                             <input type="text" id="games_logo" name="games_logo" value="{{ $gameCategories->games_logo }}" class="form-control">
                         </div>
                         <div class="mb-3">
-                            <button type="submit" class="btn btn-primary">Update Category</button>
+                            <button type="submit" class="btn btn-primary">Update </button>
                         </div>
 
                     </form>

@@ -7,7 +7,7 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header d-flex justify-content-between align-items-center">
-                    <h4>Edit and Update Website Content
+                    <h4>All Website Content
 
                     </h4>
                     <a href="{{ url('add_website_content_list') }}" class="btn btn-primary float-end">Add Website

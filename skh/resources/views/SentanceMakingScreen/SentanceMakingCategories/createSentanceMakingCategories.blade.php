@@ -26,8 +26,7 @@
 
                             <div class="form-group mb-3">
                                 <button type="submit" class="btn btn-primary">Save
-                                    Sentance Making
-                                    Category</button>
+                                   </button>
                             </div>
                         </form>
                     </div>

@@ -58,7 +58,7 @@
                                 </div>
                             </div>
                             <button style="margin-top: 10px" class="btn btn-primary" type="submit">Submit
-                                Category</button>
+                        </button>
                         </form>
                     </div>
                 </div>

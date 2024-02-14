@@ -68,7 +68,7 @@
                         </div>
                         <div class="mb-3">
                             <button type="submit" class="btn btn-success">
-                                <i class="fas fa-save"></i> Update Music Song
+                                <i class="fas fa-save"></i> Update
                             </button>
                         </div>
                     </form>

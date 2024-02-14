@@ -6,7 +6,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
-                        <h4>Welcome to Home Page Image Slider Section</h4>
+                        <h4>All Home Page Image Slider Section</h4>
                         <a href="{{ url('add_homepage_imageslider_list') }}" class="btn btn-success">
                             <i class="fas fa-plus"></i> Add
                         </a>

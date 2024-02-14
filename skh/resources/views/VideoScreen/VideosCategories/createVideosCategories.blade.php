@@ -23,8 +23,8 @@
                                 <input type="text" name="name" class="form-control" required>
                             </div>
 
-                            <div class="form-group mb-3">
-                                <button type="submit" class="btn btn-primary">Save Category</button>
+                            <div    class = "form-group mb-3">
+                            <button type  = "submit" class = "btn btn-primary">Save </button>
                             </div>
 
                         </form>

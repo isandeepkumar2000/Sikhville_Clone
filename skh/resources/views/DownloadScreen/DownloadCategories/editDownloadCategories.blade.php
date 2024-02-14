@@ -42,7 +42,7 @@
 
 
                             <div class="mb-3 text-end">
-                                <button type="submit" class="btn btn-primary">Update Download Category</button>
+                                <button type="submit" class="btn btn-primary">Update </button>
                             </div>
 
                         </form>

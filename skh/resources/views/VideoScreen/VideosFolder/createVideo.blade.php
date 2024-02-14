@@ -97,37 +97,54 @@
                             </div>
 
                             <div class="col-md-4">
-                                <label for="validationCustom09">Video Release Type</label>
-                                <input type="text" class="form-control" id="validationCustom09" placeholder="video_release_type" name="video_release_type">
+                                <label for="validationCustom09">Video Release</label>
+                                <select class="custom-select" id="validationCustom0111" placeholder="video_release_type" name="video_release_type">
+                                    <option value="WorldWide">WorldWide</option>
+                                </select>
+
+                                {{-- <input type="text" class="form-control" id="validationCustom09" placeholder="video_release_type" name="video_release_type"> --}}
                             </div>
                         </div>
                         <div class="row mb-3">
 
                             <div class="col-md-4">
                                 <label for="validationCustom09">Film Certificate Rating </label>
-                                <input type="text" class="form-control" id="validationCustom09" placeholder="film_certificate_ratings" name="film_certificate_ratings">
+                                <select class="custom-select" id="validationCustom0911" placeholder="film_certificate_ratings" name="film_certificate_ratings">
+                                    <option value="U/A">U/A</option>
+                                    <option value="U">U</option>
+                                </select>
+                                {{-- <input type="text" class="form-control" id="validationCustom09" placeholder="film_certificate_ratings" name="film_certificate_ratings"> --}}
                             </div>
 
                             <div class="col-md-4">
-                                <label for="validationCustom09">Video Playback Singer </label>
+                                <label for="validationCustom09">Video Music Singer</label>
                                 <input type="text" class="form-control" id="validationCustom09" placeholder="video_playback_singer_by" name="video_playback_singer_by">
                             </div>
 
-                            <div class="col-md-4">
-                                <label for="validationCustom09">Video Quality In </label>
-                                <input type="text" class="form-control" id="validationCustom09" placeholder="video_quality_in" name="video_quality_in">
+                            <div    class = "col-md-4">
+                            <label  for   = "validationCustom09">Video Quality</label>
+                            <select class = "custom-select" id = "validationCustom0922" placeholder = "video_quality_in" name = "video_quality_in">
+                            <option value = "SD">SD</option>
+                            <option value = "Full HD">Full HD</option>
+                            <option value = "HD">HD</option>
+                            </select>
+
                             </div>
                         </div>
 
                         <div class="row mb-3">
                             <div class="col-md-4">
-                                <label for="validationCustom09">Video Genre By </label>
+                                <label for="validationCustom09">Video Genre By Sikh/History </label>
                                 <input type="text" class="form-control" id="validationCustom09" placeholder="video_genre_by" name="video_genre_by">
                             </div>
 
                             <div class="col-md-4">
-                                <label for="validationCustom09">video Dimension Type </label>
-                                <input type="text" class="form-control" id="validationCustom09" placeholder="video_dimension_type" name="video_dimension_type">
+                                <label for="validationCustom09222">video Dimension </label>
+                                <select class="custom-select" id="validationCustom09" name="video_dimension_type">
+                                    <option value="2D">2D</option>
+                                    <option value="3D">3D</option>
+                                </select>
+                                {{-- <input type="text" class="form-control" id="validationCustom09" placeholder="video_dimension_type" name="video_dimension_type"> --}}
                             </div>
                             <div class="col-md-4">
                                 <label for="highlighting_video_Image">Upload Hightlighting
@@ -142,7 +159,7 @@
                                 <input type="file" class="form-control-file" id="highlighting_second_video_Image" name="highlighting_second_video_Image">
                             </div>
                             <div class="form-group mb-3">
-                                <label for="video_duration">Video Duration Timing</label>
+                                <label for="video_duration">Video Timing</label>
                                 <input type="text" class="form-control" id="video_duration" placeholder="Video Duration" name="video_duration">
                             </div>
                         </div>

@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-header d-flex justify-content-between align-items-center bg-primary text-white">
                     <h4>All Music List </h4>
-                    <a href="{{ url('add_music_list') }}" class="btn btn-light">Add Music</a>
+                    <a href="{{ url('add_music_list') }}" class="btn btn-light">Add </a>
                 </div>
                 <div   class = "card-body">
                 <div   class = "table-responsive">

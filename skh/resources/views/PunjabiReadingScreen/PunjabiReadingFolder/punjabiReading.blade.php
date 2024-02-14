@@ -6,8 +6,8 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header d-flex justify-content-between align-items-center">
-                    <h4>Edit and Update Punjabi Reading</h4>
-                    <a style="margin-left: 35%" href="{{ url('add_punjabi_reading_list') }}" class="btn btn-primary float-end">Add Punjabi Reading
+                    <h4>All Punjabi Reading</h4>
+                    <a style="margin-left: 35%" href="{{ url('add_punjabi_reading_list') }}" class="btn btn-primary float-end">Add
                     </a>
                 </div>
                 <div class="card-body">

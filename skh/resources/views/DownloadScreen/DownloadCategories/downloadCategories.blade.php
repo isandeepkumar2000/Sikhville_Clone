@@ -6,9 +6,9 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
-                        <h4>Edit and Update Download Category</h4>
+                        <h4>All Download Category</h4>
                         <a href="{{ url('add_download_categories_list') }}" class="btn btn-success">
-                            <i class="fas fa-plus"></i> Add Categories
+                            <i class="fas fa-plus"></i> Add
                         </a>
                     </div>
                     <div class="card-body">

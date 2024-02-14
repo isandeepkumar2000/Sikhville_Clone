@@ -61,8 +61,8 @@
                                     placeholder="Please enter the Content Details">{{ $websiteContent->content }}</textarea>
                             </div>
                             <div class="mb-3">
-                                <button type="submit" class="btn btn-primary">Update Website
-                                    Content</button>
+                                <button type="submit" class="btn btn-primary">Update
+                                    </button>
                             </div>
                         </form>
                     </div>

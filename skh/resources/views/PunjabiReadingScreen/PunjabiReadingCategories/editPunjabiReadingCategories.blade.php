@@ -32,8 +32,8 @@
                             <input type="text" id="reading_title" name="reading_title" value="{{ $punjabireadingCategories->reading_title }}" class="form-control" placeholder="Enter Reading Title">
                         </div>
                         <div class="mb-3">
-                            <button type="submit" class="btn btn-primary">Update Punjabi Reading
-                                Category</button>
+                            <button type="submit" class="btn btn-primary">Update
+                                </button>
                         </div>
                     </form>
                 </div>

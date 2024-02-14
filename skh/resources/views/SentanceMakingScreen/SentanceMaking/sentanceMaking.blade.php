@@ -9,7 +9,7 @@
                         <h4 class="d-flex justify-content-between align-items-center">
                             Edit and Update Sentence Making
                             <a href="{{ url('add_sentence_making_list') }}" class="btn btn-primary">Add
-                                Sentence Making</a>
+                            </a>
                         </h4>
                     </div>
                     <div class="card-body">

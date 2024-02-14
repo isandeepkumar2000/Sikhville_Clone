@@ -11,7 +11,7 @@
             <div class="card">
 
                 <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
-                    <h4><i class="fas fa-music mr-2"></i>Create Music Song Here</h4>
+                    <h4><i class="fas fa-music mr-2"></i>Add Music Song Here</h4>
                     <a href="{{ url('music_song_list') }}" class="btn btn-danger">
                         <i class="fas fa-arrow-left"></i> Back
                     </a>
@@ -69,7 +69,7 @@
                         </div>
                         <div class="d-flex justify-content-between align-items-center">
                             <button class="btn btn-primary" type="submit">
-                                <i class="fas fa-check-circle mr-2"></i> Save Music Details Song
+                                <i class="fas fa-check-circle mr-2"></i> Save
                             </button>
                         </div>
                     </form>

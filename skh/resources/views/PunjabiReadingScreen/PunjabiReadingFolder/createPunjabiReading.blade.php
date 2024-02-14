@@ -38,7 +38,7 @@
                                 <input type="text" class="form-control" required id="reading_video_url" placeholder="Reading Video" name="reading_video_url" required>
                             </div>
                         </div>
-                        <button class="btn btn-primary" type="submit">Submit Punjabi Reading</button>
+                        <button class="btn btn-primary" type="submit">Submit  </button>
                     </form>
                 </div>
             </div>

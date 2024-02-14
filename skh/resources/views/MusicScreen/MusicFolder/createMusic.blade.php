@@ -8,9 +8,9 @@
             <div class="alert alert-success">{{ session('status') }}</div>
             @endif
 
-            <div class="card">
-                <div class="card-header bg-primary text-white">
-                    <h4>Create Music Here</h4>
+            <div class = "card">
+            <div class = "card-header bg-primary text-white">
+                    <h4>Add Music Here</h4>
                 </div>
                 <div class="card-body">
                     <form action="{{ url('add_post_music_list') }}" method="POST" enctype="multipart/form-data">

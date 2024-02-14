@@ -4,8 +4,8 @@
 <div class="container-fluid">
     <div class="card mb-4">
         <div class="card-header d-flex justify-content-between align-items-center bg-primary text-white">
-            <h4>Edit and Update Download Data</h4>
-            <a href="{{ url('add_download_list') }}" class="btn btn-success">Add Download
+            <h4>All Download Data</h4>
+            <a href="{{ url('add_download_list') }}" class="btn btn-success">Add
             </a>
         </div>
         <div class="card-body">

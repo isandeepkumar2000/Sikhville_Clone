@@ -10,7 +10,7 @@
             @endif
             <div class="card">
                 <div class="card-header d-flex justify-content-between align-items-center bg-info text-white">
-                    <h4 class="m-0">Edit & Update</h4>
+                    <h4 class="m-0">Edit & Update Download</h4>
                     <a href="{{ url('download_list') }}" class="btn btn-danger">BACK</a>
                 </div>
                 <div class="card-body">

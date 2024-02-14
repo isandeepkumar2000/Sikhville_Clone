@@ -34,7 +34,7 @@
                             </div>
 
                             <div class="mb-3 text-end">
-                                <button type="submit" class="btn btn-primary">Save HomePage Slider</button>
+                                <button type="submit" class="btn btn-primary">Save</button>
                             </div>
 
                         </form>

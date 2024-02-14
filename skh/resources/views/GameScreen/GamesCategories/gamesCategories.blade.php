@@ -6,11 +6,11 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header d-flex justify-content-between align-items-center">
-                        <h4>Edit and Update Games Category
+                        <h4>All  Games Category
 
                         </h4>
-                        <a href="{{ url('add_games_categories_list') }}" class="btn btn-primary float-end">Add Games
-                            Category</a>
+                        <a href="{{ url('add_games_categories_list') }}" class="btn btn-primary float-end">Add
+                            </a>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">

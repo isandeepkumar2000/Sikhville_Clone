@@ -6,8 +6,8 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header d-flex justify-content-between align-items-center bg-primary text-white">
-                    <h4>All Music Songs</h4>
-                    <a href="{{ url('add_music_song_list') }}" class="btn btn-light">Add Music Songs</a>
+                    <h4>All Music Songs List</h4>
+                    <a href="{{ url('add_music_song_list') }}" class="btn btn-light">Add </a>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">

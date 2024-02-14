@@ -6,10 +6,10 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header d-flex justify-content-between align-items-center">
-                        <h4>Welcome to Video Category
+                        <h4>All Video Category
                         </h4>
                         <a href="{{ url('add_video_categories_list') }}" class="btn btn-primary float-end">Add
-                            Video Category</a>
+                            </a>
                     </div>
                     <div class="card-body">
 

@@ -1,16 +1,16 @@
 @extends('Layouts.master')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="card">
-                <div class="card-header d-flex justify-content-between align-items-center">
-                    <h4>Edit and Update Music Category
+<div class = "container">
+<div class = "row">
+<div class = "col-md-12">
+<div class = "card">
+<div class = "card-header d-flex justify-content-between align-items-center">
+                    <h4>All Music Category
 
                     </h4>
                     <a href="{{ url('add_music_categories_list') }}" class="btn btn-primary float-end">Add
-                        Music Category</a>
+                         </a>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">

@@ -6,7 +6,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header d-flex justify-content-between align-items-center">
-                        <h4>Edit and Update Shabdkosh </h4>
+                        <h4>All Shabdkosh List</h4>
                         <a href="{{ url('add_shabdkosh_list') }}" class="btn btn-primary">Add
                             Shabdkosh</a>
                     </div>

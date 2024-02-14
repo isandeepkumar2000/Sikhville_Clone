@@ -71,35 +71,63 @@
                                 <label for="validationCustom10">Move of the Year Content</label>
                                 <input type="text" class="form-control" id="validationCustom10" placeholder="Move of the Year Content" name="move_of_the_year_content" value="{{ $video->move_of_the_year_content }}">
                             </div>
-                            <div class="col-md-4 mb-3">
-                                <label for="validationCustom11">Video Release Type</label>
-                                <input type="text" class="form-control" id="validationCustom11" placeholder="video_release_type" name="video_release_type" value="{{ $video->video_release_type }}">
+                            <div   class = "col-md-4 mb-3">
+                            <label for   = "validationCustom11">Video Release</label>
+
+                            <select class = "custom-select" id                                          = "validationCustom09" name = "video_release_type">
+                                <option value = "WorldWide" @if($video->video_release_type == 'WorldWide') selected @endif>WorldWide</option>
+
+                            </select>
+
+                                {{-- <input type="text" class="form-control" id="validationCustom11" placeholder="video_release_type" name="video_release_type" value="{{ $video->video_release_type }}"> --}}
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-md-4 mb-3">
                                 <label for="validationCustom12">Film Certificate Rating </label>
-                                <input type="text" class="form-control" id="validationCustom12" placeholder="film_certificate_ratings" name="film_certificate_ratings" value="{{ $video->film_certificate_ratings }}">
+
+                                {{-- <input type="text" class="form-control" id="validationCustom12" placeholder="film_certificate_ratings" name="film_certificate_ratings" value="{{ $video->film_certificate_ratings }}"> --}}
+                                <select class = "custom-select" id                                          = "validationCustom09" name = "film_certificate_ratings">
+                                    <option value = "U/A" @if($video->film_certificate_ratings == 'U/A') selected @endif>U/A</option>
+                                    <option value = "U" @if($video->film_certificate_ratings == 'U') selected @endif>U</option>
+                                    <option value = "HD" @if($video->film_certificate_ratings == 'HD') selected @endif>HD</option>
+                                </select>
+
+
+
                             </div>
                             <div class="col-md-4 mb-3">
-                                <label for="validationCustom13">Video Playback Singer </label>
+                                <label for="validationCustom13">Video Music Singer </label>
                                 <input type="text" class="form-control" id="validationCustom13" placeholder="video_playback_singer_by" name="video_playback_singer_by" value="{{ $video->video_playback_singer_by }}">
                             </div>
                             <div class="col-md-4 mb-3">
-                                <label for="validationCustom14">Video Quality In </label>
-                                <input type="text" class="form-control" id="validationCustom14" placeholder="video_quality_in" name="video_quality_in" value="{{ $video->video_quality_in }}">
+                                <label for="validationCustom14">Video Quality In HD/Normal</label>
+                                {{-- <input type="text" class="form-control" id="validationCustom14" placeholder="video_quality_in" name="video_quality_in" value="{{ $video->video_quality_in }}">
+                                 --}}
+
+                                 <select class = "custom-select" id                                          = "validationCustom09" name = "video_quality_in">
+                                    <option value = "SD" @if($video->video_quality_in == 'SD') selected @endif>SD</option>
+                                    <option value = "FULL HD" @if($video->video_quality_in == 'FULL HD') selected @endif>FULL HD</option>
+                                    <option value = "HD" @if($video->video_quality_in == 'HD') selected @endif>HD</option>
+                                </select>
                             </div>
                         </div>
 
                         <div class="row mb-3">
                             <div class="col-md-4 mb-3">
-                                <label for="validationCustom15">Video Genre By </label>
+                                <label for="validationCustom15">Video Genre By Sikh/History </label>
                                 <input type="text" class="form-control" id="validationCustom15" placeholder="video_genre_by" name="video_genre_by" value="{{ $video->video_genre_by }}">
                             </div>
                             <div class="col-md-4 mb-3">
-                                <label for="validationCustom16">Video Dimension Type </label>
-                                <input type="text" class="form-control" id="validationCustom16" placeholder="video_dimension_type" name="video_dimension_type" value="{{ $video->video_dimension_type }}">
+                                <label for="validationCustom16">video Dimension 3D/2D </label>
+
+                                <select class = "custom-select" id                                          = "validationCustom09" name = "video_dimension_type">
+                                <option value = "2D" @if($video->video_dimension_type == '2D') selected @endif>2D</option>
+                                <option value = "3D" @if($video->video_dimension_type == '3D') selected @endif>3D</option>
+                                        </select>
+
                             </div>
+
                             <div class="col-md-4 mb-3">
                                 <label for="highlighting_video_Image">Upload Highlighting Image</label>
                                 <input type="file" class="form-control" id="highlighting_video_Image" name="highlighting_video_Image" value="{{ $video->highlighting_video_Image }}">
@@ -111,9 +139,9 @@
                                 </label>
                                 <input type="file" class="form-control" id="highlighting_second_video_Image" name="highlighting_second_video_Image" value="{{ $video->highlighting_second_video_Image }}">
                             </div>
-                            <div class="col-md-4 mb-3">
-                                <label for="video_duration">Video Duration Timing</label>
-                                <input type="text" class="form-control" id="video_duration" placeholder="Video Duration" name="video_duration" value="{{ $video->video_duration }}">
+                            <div   class = "col-md-4 mb-3">
+                            <label for   = "video_duration">Video Timing</label>
+                            <input type  = "text" class = "form-control" id = "video_duration" placeholder = "Video Duration" name = "video_duration" value = "{{ $video->video_duration }}">
                             </div>
                         </div>
 
@@ -121,7 +149,7 @@
                             <label for="textAreaExample1">Details</label>
                             <textarea class="form-control" id="textAreaExample1" rows="4" name="details">{{ $video->details }}</textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary"><i class="bi bi-cloud-upload"></i> Update Download</button>
+                        <button type="submit" class="btn btn-primary"><i class="bi bi-cloud-upload"></i> Update </button>
                     </form>
                 </div>
             </div>

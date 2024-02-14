@@ -8,8 +8,8 @@
                     <div class="alert alert-success">{{ session('status') }}</div>
                 @endif
 
-                <div class="card">
-                    <div class="card-header d-flex justify-content-between align-items-center bg-info text-white">
+                <div class = "card">
+                <div class = "card-header d-flex justify-content-between align-items-center bg-info text-white">
                         <h4>Add Games Category Here</h4>
                         <a href="{{ url('games_categories_list') }}" class="btn btn-danger">BACK</a>
                     </div>
@@ -26,7 +26,7 @@
                             </div>
 
                             <div class="form-group mb-3 text-end">
-                                <button type="submit" class="btn btn-primary btn-custom">Save Category</button>
+                                <button type="submit" class="btn btn-primary btn-custom">Save</button>
                             </div>
                         </form>
                     </div>

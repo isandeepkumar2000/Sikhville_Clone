@@ -7,10 +7,10 @@
                 <div class="card">
 
                     <div class="card-header d-flex justify-content-between align-items-center">
-                        <h4>Edit and Update Sentance Making Category</h4>
+                        <h4>All Sentance Making Category</h4>
                         <a style="margin-left: 35px" href="{{ url('add_sentance_making_categories_list') }}"
                             class="btn btn-primary float-end">Add
-                            Sentance Making Category</a>
+                          </a>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">

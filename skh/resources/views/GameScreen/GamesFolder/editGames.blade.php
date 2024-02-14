@@ -9,7 +9,7 @@
             @endif
             <div class="card">
                 <div class="card-header d-flex justify-content-between align-items-center bg-info text-white">
-                    <h4 class="m-0">Edit & Update</h4>
+                    <h4 class="m-0">Edit & Update Games</h4>
                     <a href="{{ url('games_list') }}" class="btn btn-danger">BACK</a>
                 </div>
                 <div class="card-body">
@@ -45,7 +45,7 @@
                             <textarea class="form-control" id="textAreaExample1" rows="4" name="details">{{ $game->details }}</textarea>
                         </div>
                         <div class="form-group mb-3 d-flex justify-content-end">
-                            <button type="submit" class="btn btn-primary">Update Game</button>
+                            <button type="submit" class="btn btn-primary">Update </button>
                         </div>
                     </form>
                 </div>

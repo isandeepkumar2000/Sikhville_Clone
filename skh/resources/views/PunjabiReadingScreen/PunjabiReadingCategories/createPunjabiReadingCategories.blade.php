@@ -29,8 +29,8 @@
                             <input type="text" name="reading_title" class="form-control" required id="reading_title" placeholder="Reading Title">
                         </div>
 
-                        <div class="mb-3">
-                            <button type="submit" class="btn btn-primary">Save Category</button>
+                        <div    class = "mb-3">
+                        <button type  = "submit" class = "btn btn-primary">Save </button>
                         </div>
                     </form>
                 </div>

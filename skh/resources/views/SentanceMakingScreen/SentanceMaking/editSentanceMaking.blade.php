@@ -58,7 +58,7 @@
                                         name="short_description" >
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-primary">Update Sentance Making</button>
+                            <button type="submit" class="btn btn-primary">Update  </button>
                         </form>
                     </div>
                 </div>

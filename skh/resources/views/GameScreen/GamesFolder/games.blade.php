@@ -12,9 +12,9 @@
             @endif
             <div class="card">
                 <div class="card-header d-flex justify-content-between align-items-center">
-                    <h4>Edit and Update Games</h4>
+                    <h4>All Games List</h4>
                     <a href="{{ url('add_games_list') }}" class="btn btn-primary float-end">
-                        <i class="fas fa-plus-circle me-1"></i>Add Games
+                        <i class="fas fa-plus-circle me-1"></i>Add
                     </a>
                 </div>
                 <div class="card-body">

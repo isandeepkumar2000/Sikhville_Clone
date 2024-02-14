@@ -42,7 +42,7 @@
                             <textarea class="form-control" required id="textAreaExample1" rows="4"
                                 name="details"></textarea>
                         </div>
-                        <button class="btn btn-primary" type="submit">Submit Game</button>
+                        <button class = "btn btn-primary" type = "submit">Save </button>
                     </form>
                 </div>
             </div>

@@ -11,7 +11,7 @@
 
             <div class="card">
                 <div class="card-header">
-                    <h4>Edit & Update Category
+                    <h4>Edit & Update Music Category
                         <a href="{{ url('music_categories_list') }}" class="btn btn-danger float-end">BACK</a>
                     </h4>
                 </div>
@@ -27,7 +27,7 @@
                                 >
                         </div>
                         <div class="form-group mb-3">
-                            <button type="submit" class="btn btn-primary">Update Category</button>
+                            <button type="submit" class="btn btn-primary">Update </button>
                         </div>
 
                     </form>
