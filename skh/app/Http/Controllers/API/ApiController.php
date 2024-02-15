@@ -51,14 +51,16 @@ class ApiController extends Controller
         try {
             $video = Video::with('videoCategoryDetails')->get();
 
-            $top    = Video::where('top_video_slider',1)->with('videoCategoryDetails')->first();
-            $middle = Video::where('middle_video_slider',1)->with('videoCategoryDetails')->first();
-            $bottom = Video::where('bottom_video_slider',1)->with('videoCategoryDetails')->first();
+            $top_Video    = Video::where('top_video',1)->with('videoCategoryDetails')->first();
+            $top_Video_Slider    = Video::where('top_video_slider',1)->with('videoCategoryDetails')->first();
+            $middle_Video_Slider = Video::where('middle_video_slider',1)->with('videoCategoryDetails')->first();
+            $bottom_Video_Slider = Video::where('bottom_video_slider',1)->with('videoCategoryDetails')->first();
             return response()->json([
                 "videos" => $video,
-                "top"    => $top,
-                "middle" => $middle,
-                "bottom" => $bottom,
+                "top_video"    => $top_Video,
+                "top_Video_Slider"    => $top_Video_Slider,
+                "middle_Video_Slider" => $middle_Video_Slider,
+                "bottom_Video_Slider" => $bottom_Video_Slider,
             ], 200);
         } catch (\Exception $e) {
             return response('An error occurred', 500);
