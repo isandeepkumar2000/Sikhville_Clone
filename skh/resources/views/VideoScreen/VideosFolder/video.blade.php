@@ -160,14 +160,14 @@
                                     </td>
 
                                     <td>
-                                        <button class="btn btn-sm btn-{{ $item->middle_video_slider ? 'success' : 'primary' }} featured-games-btn" data-toggle="modal" data-target="#featuredModal_{{ $item->id + 1 }}">
+                                        <button class="btn btn-sm btn-{{ $item->middle_video_slider ? 'success' : 'primary' }} featured-games-btn" data-toggle="modal" data-target="#featuredModal_{{ $item->id."_m" }}">
                                             <i class="fas fa-star me-1" style="margin-right: 2px;"></i>{{ $item->middle_video_slider ? 'Added' : 'Not Added' }}
                                         </button>
                                     </td>
 
                                     <td>
-                                        <button class="btn btn-sm btn-{{ $item->bottom_video_slider ? 'success' : 'primary' }} featured-games-btn" data-toggle="modal" data-target="#featuredModal_{{ $item->id + 2 }}">
-                                            <i class="fas fa-star me-1" style="margin-right: 2px;"></i>{{ $item->bottom_video_slider ? 'Added' : 'Not Added' }}
+                                        <button class = "btn btn-sm btn-{{ $item->bottom_video_slider ? 'success' : 'primary' }} featured-games-btn" data-toggle = "modal" data-target = "#featuredModal_{{ $item->id."_b" }}">
+                                        <i      class = "fas fa-star me-1" style                                                                                 = "margin-right: 2px;"></i>{{ $item->bottom_video_slider ? 'Added' : 'Not Added' }}
                                         </button>
                                     </td>
 
