@@ -55,10 +55,10 @@ class ApiController extends Controller
             $middle = Video::where('middle_video_slider',1)->with('videoCategoryDetails')->first();
             $bottom = Video::where('bottom_video_slider',1)->with('videoCategoryDetails')->first();
             return response()->json([
-                "videos": $video,
-                "top"   : $top,
-                "middle": $middle,
-                "bottom": $bottom,
+                "videos"=> $video,
+                "top" => $top,
+                "middle"=> $middle,
+                "bottom"=> $bottom,
             ], 200);
         } catch (\Exception $e) {
             return response('An error occurred', 500);
