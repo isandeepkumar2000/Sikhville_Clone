@@ -51,13 +51,13 @@ class ApiController extends Controller
         try {
             $video = Video::with('videoCategoryDetails')->get();
 
-            $top_Video    = Video::where('top_video',1)->with('videoCategoryDetails')->first();
+            $top_selected_video    = Video::where('top_video',1)->with('videoCategoryDetails')->first();
             $top_Video_Slider    = Video::where('top_video_slider',1)->with('videoCategoryDetails')->first();
             $middle_Video_Slider = Video::where('middle_video_slider',1)->with('videoCategoryDetails')->first();
             $bottom_Video_Slider = Video::where('bottom_video_slider',1)->with('videoCategoryDetails')->first();
             return response()->json([
-                "videos" => $video,
-                "top_video"    => $top_Video,
+                "videos"              => $video,
+                "top_selected_video"  => $top_selected_video,
                 "top_Video_Slider"    => $top_Video_Slider,
                 "middle_Video_Slider" => $middle_Video_Slider,
                 "bottom_Video_Slider" => $bottom_Video_Slider,
