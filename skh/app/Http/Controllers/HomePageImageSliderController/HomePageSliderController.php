@@ -35,7 +35,7 @@ class HomePageSliderController extends Controller
             }
         }
         $homepageImage->save();
-        return redirect()->back()->with('status', 'Student Updated Successfully');
+        return redirect()->back()->with('status', 'HomePage Updated Successfully');
         // return redirect('homepage_imageslider_list')->with('status', 'Home Page Banner Added Successfully');
 
     }
@@ -63,15 +63,23 @@ class HomePageSliderController extends Controller
             }
         }
         $homepageImage->update();
-        return redirect()->back()->with('status', 'Student Updated Successfully');
+        return redirect()->back()->with('status', 'HomePage Updated Successfully');
         // return redirect()->route('homepage_imageslider_list')->with('status', 'Homepage Slider Deleted Successfully');
     }
 
     public function destroy($id)
     {
         $homepageImage = HomePageImageSlider::find($id);
+
+        if ($homepageImage->banner_thumbnail_image) {
+            $filePath = public_path('skh/public/' . $video->banner_thumbnail_image);
+            if (file_exists($filePath)) {
+                unlink($filePath);
+            }
+        }
+
         $homepageImage->delete();
-        return redirect()->back()->with('status', 'Student delete Successfully');
+        return redirect()->back()->with('status', 'HomePage  delete Successfully');
 
     }
 }

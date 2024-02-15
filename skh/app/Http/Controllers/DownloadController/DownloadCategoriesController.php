@@ -3,10 +3,7 @@
 namespace App\Http\Controllers\DownloadController;
 
 use App\Http\Controllers\Controller;
-
-
 use Illuminate\Http\Request;
-// use App\Models\download;
 use App\Models\DownloadModel\DownloadCategories;
 
 class DownloadCategoriesController extends Controller
@@ -40,7 +37,7 @@ class DownloadCategoriesController extends Controller
             }
         }
         $downlordCategories->save();
-        return redirect('download_categories_list')->with('status', 'Student Added Successfully');
+        return redirect('download_categories_list')->with('status', 'Download Category Added Successfully');
     }
     public function edit($id)
     {
@@ -64,13 +61,21 @@ class DownloadCategoriesController extends Controller
             }
         }
         $downlordCategories->update();
-        return redirect()->back()->with('status', 'Student Updated Successfully');
+        return redirect()->back()->with('status', 'Download Category Updated Successfully');
     }
 
     public function destroy($id)
     {
         $downlordCategories = DownloadCategories::find($id);
+
+        if ($downlordCategories->downlord_categories_icons) {
+            $filePath = public_path('skh/public/' . $video->downlord_categories_icons);
+            if (file_exists($filePath)) {
+                unlink($filePath);
+            }
+        }
+
         $downlordCategories->delete();
-        return redirect()->back()->with('status', 'Student Deleted Successfully');
+        return redirect()->back()->with('status', 'Download Category Deleted Successfully');
     }
 }

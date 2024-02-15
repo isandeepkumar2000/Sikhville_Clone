@@ -62,6 +62,7 @@ Route::middleware("isLoggedIn")->group(function () {
     Route::post('middle_video_slider/{id}', [App\Http\Controllers\VideoController\VideoFolderController::class, 'middlefeaturedvideo']);
     Route::get('top_video/{id}', [App\Http\Controllers\VideoController\VideoFolderController::class, 'topvideoUpdate']);
     Route::post('bottom_video_slider/{id}', [App\Http\Controllers\VideoController\VideoFolderController::class, 'bottomfeaturedvideo']);
+    Route::delete('delete_highlighting_image/{id}', [App\Http\Controllers\VideoController\VideoFolderController::class, 'deleteHighlightingImage'])->name('delete_highlighting_image');
 
 
     // video_Categories_Route

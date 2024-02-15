@@ -64,7 +64,7 @@ class MusicFolderController extends Controller
         }
 
         $music->save();
-        return redirect('music_list')->with('status', 'Student Added Successfully');
+        return redirect('music_list')->with('status', 'Music Added Successfully');
     }
 
 
@@ -121,14 +121,35 @@ class MusicFolderController extends Controller
 
 
         $music->update();
-        return redirect('music_list')->with('status', 'Student Added Successfully');
+        return redirect('music_list')->with('status', 'Music Added Successfully');
     }
 
     public function destroy($id)
     {
         $music = Music::find($id);
+
+        if ($music->recommended_album_image) {
+            $filePath = public_path('skh/public/' . $video->recommended_album_image);
+            if (file_exists($filePath)) {
+                unlink($filePath);
+            }
+        }
+
+        if ($music->music_song_details_banner) {
+            $filePath = public_path('skh/public/' . $video->music_song_details_banner);
+            if (file_exists($filePath)) {
+                unlink($filePath);
+            }
+        }
+
+        if ($music->thumbnail_image) {
+            $filePath = public_path('skh/public/' . $video->thumbnail_image);
+            if (file_exists($filePath)) {
+                unlink($filePath);
+            }
+        }
         $music->delete();
-        return redirect('music_list')->with('status', 'Student Added Successfully');
+        return redirect('music_list')->with('status', 'Music Added Successfully');
     }
 
     public function feartured_music(Request $request, $id)
@@ -155,6 +176,6 @@ class MusicFolderController extends Controller
 
             $music->save();
         }
-        return redirect('music_list')->with('status', 'Student Added Successfully');
+        return redirect('music_list')->with('status', 'Music Added Successfully');
     }
 }

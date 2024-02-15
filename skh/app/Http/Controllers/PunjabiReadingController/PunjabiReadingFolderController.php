@@ -39,7 +39,7 @@ class PunjabiReadingFolderController extends Controller
         }
 
         $punjabireading->save();
-        return redirect('punjabi_reading_list')->with('status', 'Student Added Successfully');
+        return redirect('punjabi_reading_list')->with('status', 'Punjabi Reading Added Successfully');
     }
 
     public function edit($id)
@@ -68,14 +68,29 @@ class PunjabiReadingFolderController extends Controller
         }
 
         $punjabireading->update();
-        return redirect('punjabi_reading_list')->with('status', 'Student Added Successfully');
+        return redirect('punjabi_reading_list')->with('status', 'Punjabi Reading Added Successfully');
     }
 
     public function destroy($id)
     {
         $punjabireading = Punjabireading::find($id);
+
+        if ($punjabireading->thumbnail_big_image) {
+            $filePath = public_path('skh/public/' . $video->thumbnail_big_image);
+            if (file_exists($filePath)) {
+                unlink($filePath);
+            }
+        }
+
+        if ($punjabireading->featured_punjabi_reading_Image_Url) {
+            $filePath = public_path('skh/public/' . $video->featured_punjabi_reading_Image_Url);
+            if (file_exists($filePath)) {
+                unlink($filePath);
+            }
+        }
+
         $punjabireading->delete();
-        return redirect('punjabi_reading_list')->with('status', 'Student Added Successfully');
+        return redirect('punjabi_reading_list')->with('status', 'Punjabi Reading Added Successfully');
     }
 
 

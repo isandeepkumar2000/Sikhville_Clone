@@ -74,6 +74,21 @@ class DownloadFolderController extends Controller
     public function destroy($id)
     {
         $download = Download::find($id);
+
+        if ($download->thumbnail_image) {
+            $filePath = public_path('skh/public/' . $video->thumbnail_image);
+            if (file_exists($filePath)) {
+                unlink($filePath);
+            }
+        }
+
+        if ($download->featured_download_Image_Url) {
+            $filePath = public_path('skh/public/' . $video->featured_download_Image_Url);
+            if (file_exists($filePath)) {
+                unlink($filePath);
+            }
+        }
+
         $download->delete();
         return redirect()->back()->with('status', 'Student Deleted Successfully');
     }

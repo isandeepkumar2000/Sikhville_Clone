@@ -43,7 +43,7 @@ class MusicSongController extends Controller
         }
 
         $musicSong->save();
-        return redirect('music_song_list')->with('status', 'Student Added Successfully');
+        return redirect('music_song_list')->with('status', 'Music Song Added Successfully');
     }
     public function edit($id)
     {
@@ -75,13 +75,20 @@ class MusicSongController extends Controller
             }
         }
         $musicSong->update();
-        return redirect('music_song_list')->with('status', 'Student Added Successfully');
+        return redirect('music_song_list')->with('status', 'Music Song Added Successfully');
     }
 
     public function destroy($id)
     {
         $musicSong = MusicSong::find($id);
+
+        if ($musicSong->music_song_details_image) {
+            $filePath = public_path('skh/public/' . $video->music_song_details_image);
+            if (file_exists($filePath)) {
+                unlink($filePath);
+            }
+        }
         $musicSong->delete();
-        return redirect('music_song_list')->with('status', 'Student Added Successfully');
+        return redirect('music_song_list')->with('status', 'Music Song Added Successfully');
     }
 }

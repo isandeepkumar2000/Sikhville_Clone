@@ -139,7 +139,7 @@
                             </div>
 
                             <div class="col-md-4">
-                                <label for="validationCustom09222">video Dimension </label>
+                                <label for="validationCustom09222">Video Dimension </label>
                                 <select class="custom-select" id="validationCustom09" name="video_dimension_type">
                                     <option value="2D">2D</option>
                                     <option value="3D">3D</option>

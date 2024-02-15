@@ -25,7 +25,7 @@ class shabdkoshFolderController extends Controller
         $shabdkosh->shabdkosh_video_url = $request->input('shabdkosh_video_url');
         $shabdkosh->short_description = $request->input('short_description');
         $shabdkosh->save();
-        return redirect('shabdkosh_list')->with('status', 'Student Added Successfully');
+        return redirect('shabdkosh_list')->with('status', 'Shabdkosh  Added Successfully');
     }
     public function edit($id)
     {
@@ -41,13 +41,13 @@ class shabdkoshFolderController extends Controller
         $shabdkosh->shabdkosh_video_url = $request->input('shabdkosh_video_url');
         $shabdkosh->short_description = $request->input('short_description');
         $shabdkosh->update();
-        return redirect()->back()->with('status', 'Student Updated Successfully');
+        return redirect()->back()->with('status', 'Shabdkosh  Updated Successfully');
     }
 
     public function destroy($id)
     {
         $shabdkosh = Shabdkosh::find($id);
         $shabdkosh->delete();
-        return redirect()->back()->with('status', 'Student Deleted Successfully');
+        return redirect()->back()->with('status', 'Shabdkosh  Deleted Successfully');
     }
 }

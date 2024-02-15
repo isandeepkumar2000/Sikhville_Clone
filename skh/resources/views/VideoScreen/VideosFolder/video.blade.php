@@ -23,8 +23,6 @@
                     <div class="table-responsive">
                         <table class="table table-bordered table-striped">
                             <thead>
-
-
                                 <tr>
                                     <th>
                                         Category Name
@@ -205,14 +203,14 @@
                                 ])
 
                                 @include('Layouts.FeaturedModelLayout.featuredModelLayout', [
-                                'id' => $item->id + 1,
+                                'id' => $item->id.'_m',
                                 'action' => url('middle_video_slider/' . $item->id),
                                 'inputName' => 'middle_featured_video_Image_slider',
                                 'submitButtonLabel' => 'Add Middle Featured Video',
                                 ])
 
                                 @include('Layouts.FeaturedModelLayout.featuredModelLayout', [
-                                'id' => $item->id + 2, // Different ID here
+                                'id' => $item->id."_b", // Different ID here
                                 'action' => url('bottom_video_slider/' . $item->id),
                                 'inputName' => 'bottom_featured_video_Image_slider',
                                 'submitButtonLabel' => 'Add Bottom Featured Video',

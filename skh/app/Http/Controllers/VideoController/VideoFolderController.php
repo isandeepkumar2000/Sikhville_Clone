@@ -81,7 +81,7 @@ class VideoFolderController extends Controller
         }
 
         $video->save();
-        return redirect('video_list')->with('status', 'Student Added Successfully');
+        return redirect('video_list')->with('status', 'Video Added Successfully');
     }
 
     public function edit($id)
@@ -147,14 +147,59 @@ class VideoFolderController extends Controller
         }
 
         $video->update();
-        return redirect()->back()->with('status', 'Student Updated Successfully');
+        return redirect()->back()->with('status', 'Video Updated Successfully');
     }
 
     public function destroy($id)
     {
         $video = Video::find($id);
+
+        if ($video->highlighting_video_Image) {
+            $filePath = public_path('skh/public/' . $video->highlighting_video_Image);
+            if (file_exists($filePath)) {
+                unlink($filePath);
+            }
+        }
+
+        if ($video->highlighting_second_video_Image) {
+            $filePath = public_path('skh/public/' . $video->highlighting_second_video_Image);
+            if (file_exists($filePath)) {
+                unlink($filePath);
+            }
+        }
+
+        if ($video->thumbnail_image) {
+            $filePath = public_path('skh/public/' . $video->thumbnail_image);
+            if (file_exists($filePath)) {
+                unlink($filePath);
+            }
+        }
+
+        if ($video->top_featured_video_Image_slider) {
+            $filePath = public_path('skh/public/' . $video->top_featured_video_Image_slider);
+            if (file_exists($filePath)) {
+                unlink($filePath);
+            }
+        }
+
+        if ($video->middle_featured_video_Image_slider) {
+            $filePath = public_path('skh/public/' . $video->middle_featured_video_Image_slider);
+            if (file_exists($filePath)) {
+                unlink($filePath);
+            }
+        }
+
+        if ($video->bottom_featured_video_Image_slider) {
+            $filePath = public_path('skh/public/' . $video->bottom_featured_video_Image_slider);
+            if (file_exists($filePath)) {
+                unlink($filePath);
+            }
+        }
+
+
+
         $video->delete();
-        return redirect()->back()->with('status', 'Student Deleted Successfully');
+        return redirect()->back()->with('status', 'Video Deleted Successfully');
     }
 
     public function topfeaturedvideo($id, Request $request)
@@ -179,7 +224,7 @@ class VideoFolderController extends Controller
             }
         }
         $video->save();
-        return redirect()->back()->with('status', 'Student Updated Successfully');
+        return redirect()->back()->with('status', 'Video Updated Successfully');
     }
 
     public function middlefeaturedvideo($id, Request $request)
@@ -242,7 +287,7 @@ class VideoFolderController extends Controller
             }
         }
         $video->save();
-        return redirect()->back()->with('status', 'Student Updated Successfully');
+        return redirect()->back()->with('status', 'Video Updated Successfully');
     }
 
 
@@ -264,36 +309,47 @@ class VideoFolderController extends Controller
             }
             $video->save();
         }
-        return redirect()->back()->with('status', 'Student Updated Successfully');
+        return redirect()->back()->with('status', 'Video Updated Successfully');
+    }
+
+    public function deleteHighlightingImage($id)
+    {
+        $video = Video::find($id);
+
+        if ($video) {
+            if ($video->highlighting_video_Image) {
+                $filePath = public_path('skh/public/' . $video->highlighting_video_Image);
+
+                if (file_exists($filePath)) {
+                    unlink($filePath); // Delete the file from the server
+                }
+
+                // Remove the image path from the database
+                $video->highlighting_video_Image = null;
+                $video->save();
+
+                return redirect()->back()->with('status', 'Image deleted successfully');
+            }
+
+            if ($video->highlighting_second_video_Image) {
+                $filePath = public_path('skh/public/' . $video->highlighting_second_video_Image);
+
+                if (file_exists($filePath)) {
+                    unlink($filePath); // Delete the file from the server
+                }
+
+                // Remove the image path from the database
+                $video->highlighting_second_video_Image = null;
+                $video->save();
+
+                return redirect()->back()->with('status', 'Image deleted successfully');
+            }
+        }
+
+        return redirect()->back()->with('error', 'Image not found or already deleted');
     }
 
 
 
 
-    // public function feartured_music(Request $request, $id)
-    // {
-    //     $video = Video::find($id);
-
-    //     if ($video) {
-    //         if ($video->featured_music) {
-    //             $video->featured_music = 0;
-    //         } else {
-    //             $video->featured_music = 1;
-    //             if ($request->hasFile('featured_music_Image_Url')) {
-    //                 $file = $request->file('featured_music_Image_Url');
-    //                 $fileName = time() . '.' . $file->getClientOriginalExtension();
-    //                 $folderName = 'MusicFeaturedImagefolder';
-    //                 $path = public_path($folderName);
-    //                 $upload = $file->move($path, $fileName);
-
-    //                 if ($upload) {
-    //                     $video->featured_music_Image_Url = $folderName . '/' . $fileName;
-    //                 }
-    //             }
-    //         }
-
-    //         $video->save();
-    //     }
-    //     return redirect('music_list')->with('status', 'Student Added Successfully');
-    // }
 }

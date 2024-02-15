@@ -28,7 +28,7 @@ class SentanceMakingFolderController extends Controller
         $sentancemaking->sentance_making_vismaad_title = $request->input('sentance_making_vismaad_title');
         $sentancemaking->short_description = $request->input('short_description');
         $sentancemaking->save();
-        return redirect('sentance_making_list')->with('status', 'Student Added Successfully');
+        return redirect('sentance_making_list')->with('status', 'Sentance Making Added Successfully');
     }
 
     public function edit($id)
@@ -46,13 +46,13 @@ class SentanceMakingFolderController extends Controller
         $sentancemaking->sentance_making_vismaad_title = $request->input('sentance_making_vismaad_title');
         $sentancemaking->short_description = $request->input('short_description');
         $sentancemaking->update();
-        return redirect('sentance_making_list')->with('status', 'Student Added Successfully');
+        return redirect('sentance_making_list')->with('status', 'Sentance Making Added Successfully');
     }
 
     public function destroy($id)
     {
         $punjabireading = Sentancemaking::find($id);
         $punjabireading->delete();
-        return redirect('sentance_making_list')->with('status', 'Student Added Successfully');
+        return redirect('sentance_making_list')->with('status', 'Sentance Making Added Successfully');
     }
 }
