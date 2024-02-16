@@ -39,6 +39,8 @@ class VideoFolderController extends Controller
         $video->video_release_type       = $request->input('video_release_type');
         $video->film_certificate_ratings = $request->input('film_certificate_ratings');
         $video->video_playback_singer_by = $request->input('video_playback_singer_by');
+        $video->video_singer_details = $request->input('video_singer_details');
+        $video->video_lyrics_details    = $request->input('video_lyrics_details');
         $video->video_quality_in         = $request->input('video_quality_in');
         $video->video_genre_by           = $request->input('video_genre_by');
         $video->video_dimension_type     = $request->input('video_dimension_type');
@@ -93,19 +95,21 @@ class VideoFolderController extends Controller
     public function update(Request $request, $id)
     {
         $video = Video::find($id);
-        $video->videoCategoriesid = $request->input('videoCategoriesid');
-        $video->short_description = $request->input('short_description');
-        $video->details           = $request->input('details');
-        $video->playnow_link      = $request->input('playnow_link');
-        $video->youtube_video_url = $request->input('youtube_video_url');
-        $video->startquiz_easy    = $request->input('startquiz_easy');
-        $video->startquiz_hard    = $request->input('startquiz_hard');
-        $video->downloadpdf_link  = $request->input('downloadpdf_link');
-        $video->video_duration    = $request->input('video_duration');
-        $video->move_of_the_year_content    = $request->input('move_of_the_year_content');
-        $video->video_release_type    = $request->input('video_release_type');
-        $video->film_certificate_ratings    = $request->input('film_certificate_ratings');
-        $video->video_playback_singer_by    = $request->input('video_playback_singer_by');
+        $video->videoCategoriesid        = $request->input('videoCategoriesid');
+        $video->short_description        = $request->input('short_description');
+        $video->details                  = $request->input('details');
+        $video->playnow_link             = $request->input('playnow_link');
+        $video->youtube_video_url        = $request->input('youtube_video_url');
+        $video->startquiz_easy           = $request->input('startquiz_easy');
+        $video->startquiz_hard           = $request->input('startquiz_hard');
+        $video->downloadpdf_link         = $request->input('downloadpdf_link');
+        $video->video_duration           = $request->input('video_duration');
+        $video->move_of_the_year_content = $request->input('move_of_the_year_content');
+        $video->video_release_type       = $request->input('video_release_type');
+        $video->film_certificate_ratings = $request->input('film_certificate_ratings');
+        $video->video_playback_singer_by = $request->input('video_playback_singer_by');
+        $video->video_singer_details = $request->input('video_singer_details');
+        $video->video_lyrics_details    = $request->input('video_lyrics_details');
         $video->video_quality_in    = $request->input('video_quality_in');
         $video->video_genre_by    = $request->input('video_genre_by');
         $video->video_dimension_type    = $request->input('video_dimension_type');

@@ -113,12 +113,22 @@
                                     <option value="U/A">U/A</option>
                                     <option value="U">U</option>
                                 </select>
-                                {{-- <input type="text" class="form-control" id="validationCustom09" placeholder="film_certificate_ratings" name="film_certificate_ratings"> --}}
+
                             </div>
 
                             <div class="col-md-4">
                                 <label for="validationCustom09">Video Music </label>
                                 <input type="text" class="form-control" id="validationCustom09" placeholder="video_playback_singer_by" name="video_playback_singer_by">
+                            </div>
+
+                            <div   class = "col-md-4">
+                            <label for   = "validationCustom09">Video Singer </label>
+                            <input type  = "text" class = "form-control" id = "validationCustom09" placeholder = "video_playback_singer_by" name = "video_lyrics_details">
+                            </div>
+
+                            <div   class = "col-md-4">
+                            <label for   = "validationCustom09">Video Lyrics </label>
+                            <input type  = "text" class = "form-control" id = "validationCustom09" placeholder = "video_playback_singer_by" name = "video_lyrics_details">
                             </div>
 
                             <div    class = "col-md-4">

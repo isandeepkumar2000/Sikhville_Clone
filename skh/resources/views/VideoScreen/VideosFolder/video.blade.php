@@ -43,6 +43,8 @@
                                     <th>Video Release Type </th>
                                     <th>Film Certificate Ratings </th>
                                     <th>Video Music </th>
+                                    <th>Video Singer </th>
+                                    <th>Video Lyrics </th>
                                     <th>Video Quality In </th>
                                     <th>Video Genre By </th>
                                     <th>Video Dimension Type </th>
@@ -55,6 +57,7 @@
                                     <th>Edit </th>
                                     <th>Delete </th>
                                 </tr>
+
                             </thead>
                             <tbody>
                                 @foreach ($video as $item)
@@ -138,6 +141,8 @@
                                     <td>{{ $item->video_release_type }}</td>
                                     <td>{{ $item->film_certificate_ratings }}</td>
                                     <td>{{ $item->video_playback_singer_by }}</td>
+                                    <td>{{ $item->video_singer_details }}</td>
+                                    <td>{{ $item->video_lyrics_details }}</td>
                                     <td>{{ $item->video_quality_in }}</td>
                                     <td>{{ $item->video_genre_by }}</td>
                                     <td>{{ $item->video_dimension_type }}</td>

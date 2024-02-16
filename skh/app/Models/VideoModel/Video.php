@@ -25,6 +25,8 @@ class Video extends Model
         'youtube_video_url',
         'move_of_the_year_content',
         'video_release_type',
+        'video_singer_details',
+        'video_lyrics_details',
         'film_certificate_ratings',
         'video_playback_singer_by',
         'video_quality_in',
