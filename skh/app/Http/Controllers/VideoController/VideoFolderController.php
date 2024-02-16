@@ -94,7 +94,7 @@ class VideoFolderController extends Controller
     }
     public function update(Request $request, $id)
     {
-        return $request;
+        print_r($request->all());
         $video = Video::find($id);
         $video->videoCategoriesid        = $request->input('videoCategoriesid');
         $video->short_description        = $request->input('short_description');
