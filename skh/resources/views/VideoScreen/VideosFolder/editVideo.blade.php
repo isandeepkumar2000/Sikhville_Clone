@@ -89,18 +89,18 @@
                         <div class = "row mb-3">
 
                             <div class="col-md-4 mb-3">
-                                <label for="validationCustom13">Video Music </label>
-                                <input type="text" class="form-control" id="validationCustom13" placeholder="video_playback_singer_by" name="video_playback_singer_by" value="{{ $video->video_playback_singer_by }}">
+                                <label for="validationCustom185853">Video Music </label>
+                                <input type="text" class="form-control" id="validationCustom11514543" placeholder="video_playback_singer_by" name="video_playback_singer_by" value="{{ $video->video_playback_singer_by }}">
                             </div>
 
                             <div class="col-md-4 mb-3">
                                 <label for="validationCustom13">Video Singer </label>
-                                <input type="text" class="form-control" id="validationCustom13" placeholder="video_singer_details" name="video_singer_details" value="{{ $video->video_singer_details }}">
+                                <input type="text" class="form-control" id="validationCustom1528583" placeholder="video_singer_details" name="video_singer_details" value="{{ $video->video_singer_details }}">
                             </div>
 
                             <div class="col-md-4 mb-3">
-                                <label for="validationCustom13">Video Lyrics </label>
-                                <input type="text" class="form-control" id="validationCustom13" placeholder="video_lyrics_details" name="video_lyrics_details" value="{{ $video->video_lyrics_details }}">
+                                <label for="validationCustom185853">Video Lyrics </label>
+                                <input type="text" class="form-control" id="validationCustom1858583" placeholder="video_lyrics_details" name="video_lyrics_details" value="{{ $video->video_lyrics_details }}">
                             </div>
                             <div class="col-md-4 mb-3">
                                 <label for="validationCustom14">Video Quality</label>
