@@ -23,7 +23,7 @@ class VideoFolderController extends Controller
     {
           // print_r($_POST);
           // print_r($_FILES);
-          // print_r($request->all());
+        // print_r($request->all());
           // die;
         $video                           = new Video;
         $video->videoCategoriesid        = $request->input('videoCategoriesid');
@@ -94,6 +94,7 @@ class VideoFolderController extends Controller
     }
     public function update(Request $request, $id)
     {
+        return $request;
         $video = Video::find($id);
         $video->videoCategoriesid        = $request->input('videoCategoriesid');
         $video->short_description        = $request->input('short_description');
