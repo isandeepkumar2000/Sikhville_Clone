@@ -73,8 +73,9 @@
                         </div>
                         <div class="row mb-3">
                             {{-- <div class="form-group mb-3">
-                                <label for="validationCustom06">Play Now Link</label>
-                                <input type="text" class="form-control" id="validationCustom06" placeholder="Play Now Link" name="playnow_link">
+                                <label for         = "validationCustom06">Play Now Link</label>
+                                <input type        = "text" class         = "form-control" id = "validationCustom06"
+                                       placeholder = "Play Now Link" name = "playnow_link">
                             </div> --}}
                             <div class="col-md-4">
                                 <label for="validationCustom07">Start Easy Quiz Link</label>
@@ -102,7 +103,8 @@
                                     <option value="Worldwide">Worldwide</option>
                                 </select>
 
-                                {{-- <input type="text" class="form-control" id="validationCustom09" placeholder="video_release_type" name="video_release_type"> --}}
+                                {{-- <input type="text" class="form-control" id="validationCustom09"
+                                    placeholder="video_release_type" name="video_release_type"> --}}
                             </div>
                         </div>
                         <div class="row mb-3">
@@ -121,23 +123,23 @@
                                 <input type="text" class="form-control" id="validationCustom08859" placeholder="video_playback_singer_by" name="video_playback_singer_by">
                             </div>
 
-                            <div   class = "col-md-4">
-                            <label for   = "validationCustom09">Video Singer </label>
-                            <input type  = "text" class = "form-control" id = "validationCustom025829" placeholder = "video_playback_singer_by" name = "video_singer_details">
+                            <div class="col-md-4">
+                                <label for="validationCustom09">Video Singer </label>
+                                <input type="text" class="form-control" id="validationCustom025829" placeholder="video_playback_singer_by" name="video_singer_details">
                             </div>
 
-                            <div   class = "col-md-4">
-                            <label for   = "validationCustom09">Video Lyrics </label>
-                            <input type  = "text" class = "form-control" id = "validationCustom0582859" placeholder = "video_playback_singer_by" name = "video_lyrics_details">
+                            <div class="col-md-4">
+                                <label for="validationCustom09">Video Lyrics </label>
+                                <input type="text" class="form-control" id="validationCustom0582859" placeholder="video_playback_singer_by" name="video_lyrics_details">
                             </div>
 
-                            <div    class = "col-md-4">
-                            <label  for   = "validationCustom09">Video Quality</label>
-                            <select class = "custom-select" id = "validationCustom0922" placeholder = "video_quality_in" name = "video_quality_in">
-                            <option value = "SD">SD</option>
-                            <option value = "Full HD">Full HD</option>
-                            <option value = "HD">HD</option>
-                            </select>
+                            <div class="col-md-4">
+                                <label for="validationCustom09">Video Quality</label>
+                                <select class="custom-select" id="validationCustom0922" placeholder="video_quality_in" name="video_quality_in">
+                                    <option value="SD">SD</option>
+                                    <option value="Full HD">Full HD</option>
+                                    <option value="HD">HD</option>
+                                </select>
 
                             </div>
                         </div>
@@ -154,7 +156,8 @@
                                     <option value="2D">2D</option>
                                     <option value="3D">3D</option>
                                 </select>
-                                {{-- <input type="text" class="form-control" id="validationCustom09" placeholder="video_dimension_type" name="video_dimension_type"> --}}
+                                {{-- <input type="text" class="form-control" id="validationCustom09"
+                                    placeholder="video_dimension_type" name="video_dimension_type"> --}}
                             </div>
                             <div class="col-md-4">
                                 <label for="highlighting_video_Image">Upload Hightlighting

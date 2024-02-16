@@ -11,7 +11,7 @@ class VideoFolderController extends Controller
 {
     public function videofolder()
     {
-        $video = Video::with('videoCategoryDetails')->get();
+        $video = Video::with('videoCategoryDetails')->paginate(10);
         return view('VideoScreen.VideosFolder.video', compact('video'));
     }
     public function create()
