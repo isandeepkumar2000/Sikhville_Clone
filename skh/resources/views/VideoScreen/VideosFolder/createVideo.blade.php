@@ -123,7 +123,7 @@
 
                             <div   class = "col-md-4">
                             <label for   = "validationCustom09">Video Singer </label>
-                            <input type  = "text" class = "form-control" id = "validationCustom025829" placeholder = "video_playback_singer_by" name = "video_lyrics_details">
+                            <input type  = "text" class = "form-control" id = "validationCustom025829" placeholder = "video_playback_singer_by" name = "video_singer_details">
                             </div>
 
                             <div   class = "col-md-4">
