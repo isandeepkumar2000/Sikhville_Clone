@@ -9,12 +9,18 @@ use Illuminate\Http\Request;
 
 class MusicSongController extends Controller
 {
-    public function showmusicsongList()
+    public function showmusicsongList(Request $request)
     {
-        $musicSong = MusicSong::with('musicfolderDetails')->get();
+        $musicSongs = MusicSong::with('musicfolderDetails')->orderBy('id', "desc");
 
-        return view('MusicScreen.MusicSongFolder.musicSong', compact('musicSong'));
+        if ($request->has('category_id') && $request->input('category_id') != 'all') {
+            $musicSongs->where('musicid', $request->input('category_id'));
+        }
+        $musicSong  = $musicSongs->paginate(10);
+        $categories = Music::all();
+        return view('MusicScreen.MusicSongFolder.musicSong', compact('musicSong', 'categories'));
     }
+
     public function create()
     {
         $musicSong = Music::all();
@@ -22,7 +28,6 @@ class MusicSongController extends Controller
     }
     public function store(Request $request)
     {
-
         $musicSong = new MusicSong;
         $musicSong->musicid = $request->input('musicid');
         $musicSong->song_name = $request->input('song_name');
@@ -83,7 +88,7 @@ class MusicSongController extends Controller
         $musicSong = MusicSong::find($id);
 
         if ($musicSong->music_song_details_image) {
-            $filePath = public_path('skh/public/' . $video->music_song_details_image);
+            $filePath = public_path('skh/public/' . $musicSong->music_song_details_image);
             if (file_exists($filePath)) {
                 unlink($filePath);
             }

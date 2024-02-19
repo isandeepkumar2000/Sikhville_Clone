@@ -5,13 +5,34 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="card">
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <form action="{{ route('musicfolder') }}" method="GET">
+                            <div class="input-group">
+                                <select name="category_id" class="form-select">
+                                    <option value="all" {{ Request::input('category_id') == 'all' ? 'selected' : '' }}>
+                                        <i class="fas fa-globe"></i> All Categories
+                                    </option>
+                                    @foreach($categories as $category)
+                                    <option value="{{ $category->id }}" {{ Request::input('category_id') == $category->id ? 'selected' : '' }}>
+                                        <i class="fas fa-folder"></i> {{ $category->name }}
+                                    </option>
+                                    @endforeach
+                                </select>
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-filter"></i> Filter
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
                 <div class="card-header d-flex justify-content-between align-items-center bg-primary text-white">
                     <h4>All Music List </h4>
                     <a href="{{ url('add_music_list') }}" class="btn btn-light">Add </a>
                 </div>
-                <div   class = "card-body">
-                <div   class = "table-responsive">
-                <table class = "table table-bordered table-striped">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
                             <thead>
                                 <tr>
                                     <th>Music</th>
@@ -37,16 +58,14 @@
                                     <td>{{ $item->title }}</td>
                                     <td>
                                         @if (!empty($item->thumbnail_image))
-                                        <img src="{{ url('skh/public/' . $item->thumbnail_image) }}"
-                                            alt="Thumbnail Image" class="img-thumbnail" width="100px" height="100px">
+                                        <img src="{{ url('skh/public/' . $item->thumbnail_image) }}" alt="Thumbnail Image" class="img-thumbnail" width="100px" height="100px">
                                         @else
                                         <p class="text-muted">No Thumbnail available</p>
                                         @endif
                                     </td>
                                     <td>
                                         @if (!empty($item->featured_music_Image_Url))
-                                        <img src="{{ url('skh/public/' . $item->featured_music_Image_Url) }}"
-                                            alt="Featured Image" class="img-thumbnail" width="200px" height="200px">
+                                        <img src="{{ url('skh/public/' . $item->featured_music_Image_Url) }}" alt="Featured Image" class="img-thumbnail" width="200px" height="200px">
                                         @else
                                         <p class="text-muted">No featured image available</p>
                                         @endif
@@ -54,8 +73,7 @@
 
                                     <td>
                                         @if (!empty($item->music_song_details_banner))
-                                        <img src="{{ url('skh/public/' . $item->music_song_details_banner) }}"
-                                            alt="Thumbnail Image" class="img-thumbnail" width="100px" height="100px">
+                                        <img src="{{ url('skh/public/' . $item->music_song_details_banner) }}" alt="Thumbnail Image" class="img-thumbnail" width="100px" height="100px">
                                         @else
                                         <p class="text-muted">No Music Song Banner available</p>
                                         @endif
@@ -63,24 +81,20 @@
 
                                     <td>
                                         @if (!empty($item->recommended_album_image))
-                                        <img src="{{ url('skh/public/' . $item->recommended_album_image) }}"
-                                            alt="Thumbnail Image" class="img-thumbnail" width="100px" height="100px">
+                                        <img src="{{ url('skh/public/' . $item->recommended_album_image) }}" alt="Thumbnail Image" class="img-thumbnail" width="100px" height="100px">
                                         @else
                                         <p class="text-muted">No Recommended Music Song available</p>
                                         @endif
                                     </td>
                                     <td>{{ $item->short_description }}</td>
                                     <td>
-                                        <button
-                                            class="btn btn-sm {{ $item->featured_music ? 'btn-success' : 'btn-primary' }} featured-games-btn"
-                                            data-toggle="modal" data-target="#featuredModal_{{ $item->id }}">
+                                        <button class="btn btn-sm {{ $item->featured_music ? 'btn-success' : 'btn-primary' }} featured-games-btn" data-toggle="modal" data-target="#featuredModal_{{ $item->id }}">
                                             <i class="fas fa-heart"></i>
                                             {{ $item->featured_music ? 'Added' : 'Not Added' }}
                                         </button>
                                     </td>
                                     <td>
-                                        <a href="{{ url('edit_music_list/' . $item->id) }}"
-                                            class="btn btn-warning btn-sm">Edit</a>
+                                        <a href="{{ url('edit_music_list/' . $item->id) }}" class="btn btn-warning btn-sm">Edit</a>
                                     </td>
                                     <td>
                                         @component('Layouts.DeleteLayout.DeleteConfirmationModal', [
@@ -88,8 +102,7 @@
                                         'deleteUrl' => url('delete_music_list', $item->id),
                                         ])
                                         @endcomponent
-                                        <button type="button" class="btn btn-danger btn-sm" data-toggle="modal"
-                                            data-target="#deleteConfirmationModal_{{ $item->id }}">
+                                        <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteConfirmationModal_{{ $item->id }}">
                                             <i class="fas fa-trash-alt"></i>
                                         </button>
                                     </td>
@@ -104,6 +117,9 @@
                             </tbody>
                         </table>
                     </div>
+                    {{ $music->links('Pagination.default') }}
+
+
                 </div>
             </div>
         </div>

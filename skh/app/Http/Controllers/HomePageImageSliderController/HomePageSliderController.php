@@ -8,7 +8,8 @@ use Illuminate\Http\Request;
 
 class HomePageSliderController extends Controller
 {
-    public function showHomePageImageSlider(){
+    public function showHomePageImageSlider()
+    {
         $homepageImage = HomePageImageSlider::all();
         return view('HomePageImageSliderScreen.HomePageSlider.homePageSlider', compact('homepageImage'));
     }
@@ -36,14 +37,11 @@ class HomePageSliderController extends Controller
         }
         $homepageImage->save();
         return redirect()->back()->with('status', 'HomePage Updated Successfully');
-        // return redirect('homepage_imageslider_list')->with('status', 'Home Page Banner Added Successfully');
-
     }
     public function edit($id)
     {
         $homepageImage = HomePageImageSlider::find($id);
         return view('HomePageImageSliderScreen.HomePageSlider.editHomePageSlider', compact('homepageImage'));
-
     }
 
     public function update(Request $request, $id)
@@ -64,7 +62,6 @@ class HomePageSliderController extends Controller
         }
         $homepageImage->update();
         return redirect()->back()->with('status', 'HomePage Updated Successfully');
-        // return redirect()->route('homepage_imageslider_list')->with('status', 'Homepage Slider Deleted Successfully');
     }
 
     public function destroy($id)
@@ -72,7 +69,7 @@ class HomePageSliderController extends Controller
         $homepageImage = HomePageImageSlider::find($id);
 
         if ($homepageImage->banner_thumbnail_image) {
-            $filePath = public_path('skh/public/' . $video->banner_thumbnail_image);
+            $filePath = public_path('skh/public/' . $homepageImage->banner_thumbnail_image);
             if (file_exists($filePath)) {
                 unlink($filePath);
             }
@@ -80,6 +77,5 @@ class HomePageSliderController extends Controller
 
         $homepageImage->delete();
         return redirect()->back()->with('status', 'HomePage  delete Successfully');
-
     }
 }

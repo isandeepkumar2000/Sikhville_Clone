@@ -9,11 +9,18 @@ use Illuminate\Http\Request;
 
 class VideoFolderController extends Controller
 {
-    public function videofolder()
+    public function videofolder(Request $request)
     {
-        $video = Video::with('videoCategoryDetails')->orderBy('id',"desc")->paginate(10);
-        return view('VideoScreen.VideosFolder.video', compact('video'));
+        $videos = Video::with('videoCategoryDetails')->orderBy('id', "desc");
+        if ($request->has('category_id') && $request->input('category_id') != 'all') {
+            $videos->where('videoCategoriesid', $request->input('category_id'));
+        }
+        $video = $videos->paginate(10);
+        $categories = VideoCategories::all();
+        return view('VideoScreen.VideosFolder.video', compact('video', 'categories'));
     }
+
+
     public function create()
     {
         $video = VideoCategories::all();
@@ -21,10 +28,10 @@ class VideoFolderController extends Controller
     }
     public function store(Request $request)
     {
-          // print_r($_POST);
-          // print_r($_FILES);
+        // print_r($_POST);
+        // print_r($_FILES);
         // print_r($request->all());
-          // die;
+        // die;
         $video                           = new Video;
         $video->videoCategoriesid        = $request->input('videoCategoriesid');
         $video->short_description        = $request->input('short_description');
@@ -353,8 +360,4 @@ class VideoFolderController extends Controller
 
         return redirect()->back()->with('error', 'Image not found or already deleted');
     }
-
-
-
-
 }

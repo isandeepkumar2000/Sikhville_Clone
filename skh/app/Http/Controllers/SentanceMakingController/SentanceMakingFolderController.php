@@ -9,11 +9,22 @@ use Illuminate\Http\Request;
 
 class SentanceMakingFolderController extends Controller
 {
-    public function showsentancemakingList()
+    public function showsentancemakingList(Request $request)
     {
-        $sentancemaking = Sentancemaking::with('sentancemakingCategoryDetails')->get();
-        return view('SentanceMakingScreen.SentanceMaking.sentanceMaking', compact('sentancemaking'));
+        $sentancemakings = Sentancemaking::with('sentancemakingCategoryDetails')->orderBy('id', "desc");
+
+        if ($request->has('category_id') && $request->input('category_id') != 'all') {
+            $sentancemakings->where('sentancemakingCategoriesid', $request->input('category_id'));
+        }
+
+        $sentancemaking = $sentancemakings->paginate(10);
+
+        $categories = Sentancemakingcategories::all();
+
+        return view('SentanceMakingScreen.SentanceMaking.sentanceMaking', compact('sentancemaking', 'categories'));
     }
+
+
     public function create()
     {
         $sentancemaking = Sentancemakingcategories::all();

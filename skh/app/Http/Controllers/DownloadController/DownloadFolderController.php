@@ -10,15 +10,23 @@ use App\Models\DownloadModel\DownloadCategories;
 
 class DownloadFolderController extends Controller
 {
-    public function download()
+    public function download(Request $request)
     {
-        $download = Download::with('downloadcategoryDetails')->get();
-        return view('DownloadScreen.DownloadFolder.download', compact('download'));
+        $downloads = Download::with('downloadcategoryDetails')->orderBy('id', "desc");
+        if ($request->has('category_id') && $request->input('category_id') != 'all') {
+            $downloads->where('categoryid', $request->input('category_id'));
+        }
+        $download = $downloads->paginate(10);
+        $categories = DownloadCategories::all();
+
+        return view('DownloadScreen.DownloadFolder.download', compact('download', 'categories'));
     }
+
+
     public function create()
     {
         $download = DownloadCategories::all();
-        return view('DownloadScreen.DownloadFolder.createDownload', compact('download'));
+        return view('DownloadScreen.DownloadFolder.createDownload', compact('download',));
     }
     public function store(Request $request)
     {
@@ -76,14 +84,14 @@ class DownloadFolderController extends Controller
         $download = Download::find($id);
 
         if ($download->thumbnail_image) {
-            $filePath = public_path('skh/public/' . $video->thumbnail_image);
+            $filePath = public_path('skh/public/' . $download->thumbnail_image);
             if (file_exists($filePath)) {
                 unlink($filePath);
             }
         }
 
         if ($download->featured_download_Image_Url) {
-            $filePath = public_path('skh/public/' . $video->featured_download_Image_Url);
+            $filePath = public_path('skh/public/' . $download->featured_download_Image_Url);
             if (file_exists($filePath)) {
                 unlink($filePath);
             }

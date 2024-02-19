@@ -74,7 +74,6 @@ class WebsiteContentFolderController extends Controller
         return redirect()->back()->with('status', 'Website Content Updated Successfully');
     }
 
-
     public function destroy($id)
     {
         $websiteContent = Websitecontent::find($id);

@@ -5,6 +5,28 @@
     <div class="row">
         <div class="col-md-12">
             <div class="card">
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <form action="{{ route('musicSong') }}" method="GET">
+                            <div class="input-group">
+                                <select name="category_id" class="form-select">
+                                    <option value="all" {{ Request::input('category_id') == 'all' ? 'selected' : '' }}>
+                                        <i class="fas fa-globe"></i> All Categories
+                                    </option>
+                                    @foreach($categories as $category)
+                                    <option value="{{ $category->id }}" {{ Request::input('category_id') == $category->id ? 'selected' : '' }}>
+                                        <i class="fas fa-folder"></i> {{ $category->title }}
+
+                                    </option>
+                                    @endforeach
+                                </select>
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-filter"></i> Filter
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
                 <div class="card-header d-flex justify-content-between align-items-center bg-primary text-white">
                     <h4>All Music Songs List</h4>
                     <a href="{{ url('add_music_song_list') }}" class="btn btn-light">Add </a>
@@ -51,8 +73,7 @@
 
                                     <td>
                                         @if (!empty($item->music_song_details_image))
-                                        <img src="{{ url('skh/public/' . $item->music_song_details_image) }}"
-                                            alt="Thumbnail Image" class="img-thumbnail" width="100px" height="100px">
+                                        <img src="{{ url('skh/public/' . $item->music_song_details_image) }}" alt="Thumbnail Image" class="img-thumbnail" width="100px" height="100px">
                                         @else
                                         <p class="text-muted">No Music Song Image available</p>
                                         @endif
@@ -60,8 +81,7 @@
 
 
                                     <td>
-                                        <a href="{{ url('edit_music_song_list/' . $item->id) }}"
-                                            class="btn btn-warning btn-sm">
+                                        <a href="{{ url('edit_music_song_list/' . $item->id) }}" class="btn btn-warning btn-sm">
                                             <i class="fas fa-edit"></i> Edit
                                         </a>
                                     </td>
@@ -71,8 +91,7 @@
                                         'deleteUrl' => url('delete_music_song_list', $item->id),
                                         ])
                                         @endcomponent
-                                        <button type="button" class="btn btn-danger btn-sm" data-toggle="modal"
-                                            data-target="#deleteConfirmationModal_{{ $item->id }}">
+                                        <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteConfirmationModal_{{ $item->id }}">
                                             <i class="fas fa-trash-alt"></i> Delete
                                         </button>
                                     </td>
@@ -81,6 +100,7 @@
                             </tbody>
                         </table>
                     </div>
+                    {{ $musicSong->links('Pagination.default') }}
                 </div>
             </div>
         </div>

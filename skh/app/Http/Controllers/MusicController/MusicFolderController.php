@@ -9,11 +9,17 @@ use Illuminate\Http\Request;
 
 class MusicFolderController extends Controller
 {
-    public function musicfolder()
+    public function musicfolder(Request $request)
     {
-        $music = Music::with('musicCategoryDetails')->get();
-        return view('MusicScreen.MusicFolder.music', compact('music'));
+        $musics = Music::with('musicCategoryDetails')->orderBy('id', "desc");
+        if ($request->has('category_id') && $request->input('category_id') != 'all') {
+            $musics->where('musicCategoriesid', $request->input('category_id'));
+        }
+        $music = $musics->paginate(10);
+        $categories = MusicCategories::all();
+        return view('MusicScreen.MusicFolder.music', compact('music', 'categories'));
     }
+
     public function create()
     {
         $music = MusicCategories::all();
@@ -25,7 +31,6 @@ class MusicFolderController extends Controller
         $music->musicCategoriesid = $request->input('musicCategoriesid');
         $music->title             = $request->input('title');
         $music->short_description = $request->input('short_description');
-
 
         if ($request->hasFile('thumbnail_image')) {
             $file       = $request->file('thumbnail_image');
@@ -119,7 +124,6 @@ class MusicFolderController extends Controller
             }
         }
 
-
         $music->update();
         return redirect('music_list')->with('status', 'Music Added Successfully');
     }
@@ -129,21 +133,21 @@ class MusicFolderController extends Controller
         $music = Music::find($id);
 
         if ($music->recommended_album_image) {
-            $filePath = public_path('skh/public/' . $video->recommended_album_image);
+            $filePath = public_path('skh/public/' . $music->recommended_album_image);
             if (file_exists($filePath)) {
                 unlink($filePath);
             }
         }
 
         if ($music->music_song_details_banner) {
-            $filePath = public_path('skh/public/' . $video->music_song_details_banner);
+            $filePath = public_path('skh/public/' . $music->music_song_details_banner);
             if (file_exists($filePath)) {
                 unlink($filePath);
             }
         }
 
         if ($music->thumbnail_image) {
-            $filePath = public_path('skh/public/' . $video->thumbnail_image);
+            $filePath = public_path('skh/public/' . $music->thumbnail_image);
             if (file_exists($filePath)) {
                 unlink($filePath);
             }

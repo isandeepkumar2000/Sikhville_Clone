@@ -9,12 +9,20 @@ use App\Models\GamesModel\GamesCategories;
 
 class GamesFolderController extends Controller
 {
-    public function gamesfolder()
+    public function gamesfolder(Request $request)
     {
-        $game = Games::with('gamesCategoryDetails')->get();
-        // print_r($game->toArray()); // For debugging purpose
-        return view('GameScreen.GamesFolder.games', compact('game'));
+        $games = Games::with('gamesCategoryDetails')->orderBy('id', "desc");
+
+        if ($request->has('category_id') && $request->input('category_id') != 'all') {
+            $games->where('gameCategoriesid', $request->input('category_id'));
+        }
+        $game = $games->paginate(10);
+        $categories = GamesCategories::all();
+
+        return view('GameScreen.GamesFolder.games', compact('game', 'categories'));
     }
+
+
     public function create()
     {
         $game = GamesCategories::all();

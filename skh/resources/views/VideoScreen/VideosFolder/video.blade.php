@@ -11,6 +11,28 @@
             </div>
             @endif
             <div class="card">
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <form action="{{ route('videofolder') }}" method="GET">
+                            <div class="input-group">
+                                <select name="category_id" class="form-select">
+                                    <option value="all" {{ Request::input('category_id') == 'all' ? 'selected' : '' }}>
+                                        <i class="fas fa-globe"></i> All Categories
+                                    </option>
+                                    @foreach($categories as $category)
+                                    <option value="{{ $category->id }}" {{ Request::input('category_id') == $category->id ? 'selected' : '' }}>
+                                        <i class="fas fa-folder"></i> {{ $category->name }}
+                                    </option>
+                                    @endforeach
+                                </select>
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-filter"></i> Filter
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
                 <div class="card-header d-flex justify-content-between align-items-center">
                     <h4>All Video List
                     </h4>
@@ -18,8 +40,7 @@
                         <i class="fas fa-plus-circle me-1"></i>Add
                     </a>
                 </div>
-                <div class = "card-body">
-
+                <div class="card-body">
                     <div class="table-responsive">
                         <table class="table table-bordered table-striped">
                             <thead>
@@ -168,8 +189,8 @@
                                     </td>
 
                                     <td>
-                                        <button class = "btn btn-sm btn-{{ $item->bottom_video_slider ? 'success' : 'primary' }} featured-games-btn" data-toggle = "modal" data-target = "#featuredModal_{{ $item->id."_b" }}">
-                                        <i      class = "fas fa-star me-1" style                                                                                 = "margin-right: 2px;"></i>{{ $item->bottom_video_slider ? 'Added' : 'Not Added' }}
+                                        <button class="btn btn-sm btn-{{ $item->bottom_video_slider ? 'success' : 'primary' }} featured-games-btn" data-toggle="modal" data-target="#featuredModal_{{ $item->id."_b" }}">
+                                            <i class="fas fa-star me-1" style="margin-right: 2px;"></i>{{ $item->bottom_video_slider ? 'Added' : 'Not Added' }}
                                         </button>
                                     </td>
 

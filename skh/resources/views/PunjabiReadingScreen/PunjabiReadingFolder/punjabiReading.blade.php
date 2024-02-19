@@ -5,12 +5,35 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="card">
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <form action="{{ route('punjabireadingFolder') }}" method="GET">
+
+                            <div class="input-group">
+                                <select name="category_id" class="form-select">
+                                    <option value="all" {{ Request::input('category_id') == 'all' ? 'selected' : '' }}>
+                                        <i class="fas fa-globe"></i> All Categories
+                                    </option>
+                                    @foreach($categories as $category)
+                                    <option value="{{ $category->id }}" {{ Request::input('category_id') == $category->id ? 'selected' : '' }}>
+                                        <i class="fas fa-folder"></i> {{ $category->name }}
+                                    </option>
+                                    @endforeach
+                                </select>
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-filter"></i> Filter
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
                 <div class="card-header d-flex justify-content-between align-items-center">
                     <h4>All Punjabi Reading</h4>
                     <a style="margin-left: 35%" href="{{ url('add_punjabi_reading_list') }}" class="btn btn-primary float-end">Add
                     </a>
                 </div>
                 <div class="card-body">
+
                     <div class="table-responsive">
                         <table class="table table-bordered table-striped">
                             <thead>
@@ -79,6 +102,9 @@
                             </tbody>
                         </table>
                     </div>
+                    {{ $punjabireading->links('Pagination.default') }}
+
+
                 </div>
             </div>
         </div>

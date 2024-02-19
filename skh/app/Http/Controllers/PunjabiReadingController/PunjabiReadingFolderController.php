@@ -9,11 +9,18 @@ use Illuminate\Http\Request;
 
 class PunjabiReadingFolderController extends Controller
 {
-    public function showpunjabireadingList()
+    public function showpunjabireadingList(Request $request)
     {
-        $punjabireading = Punjabireading::with('punjabireadingCategoryDetails')->get();
-        return view('PunjabiReadingScreen.PunjabiReadingFolder.punjabiReading', compact('punjabireading'));
+        $punjabireadings = Punjabireading::with('punjabireadingCategoryDetails')->orderBy('id', "desc");
+        if ($request->has('category_id') && $request->input('category_id') != 'all') {
+            $punjabireadings->where('punjabireadingCategoriesid', $request->input('category_id'));
+        }
+
+        $punjabireading = $punjabireadings->paginate(10);
+        $categories = Punjabireadingcategories::all();
+        return view('PunjabiReadingScreen.PunjabiReadingFolder.punjabiReading', compact('punjabireading', 'categories'));
     }
+
     public function create()
     {
         $punjabireading = PunjabireadingCategories::all();
@@ -76,14 +83,14 @@ class PunjabiReadingFolderController extends Controller
         $punjabireading = Punjabireading::find($id);
 
         if ($punjabireading->thumbnail_big_image) {
-            $filePath = public_path('skh/public/' . $video->thumbnail_big_image);
+            $filePath = public_path('skh/public/' . $punjabireading->thumbnail_big_image);
             if (file_exists($filePath)) {
                 unlink($filePath);
             }
         }
 
         if ($punjabireading->featured_punjabi_reading_Image_Url) {
-            $filePath = public_path('skh/public/' . $video->featured_punjabi_reading_Image_Url);
+            $filePath = public_path('skh/public/' . $punjabireading->featured_punjabi_reading_Image_Url);
             if (file_exists($filePath)) {
                 unlink($filePath);
             }
