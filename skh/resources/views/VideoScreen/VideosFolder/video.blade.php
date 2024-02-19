@@ -243,7 +243,8 @@
                         </table>
 
                     </div>
-                    {{ $video->links('Pagination.default') }}
+                    {{ $video->appends(['category_id' => Request::input('category_id')])->links('Pagination.default') }}
+
                 </div>
             </div>
         </div>
