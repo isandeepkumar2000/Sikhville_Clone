@@ -118,7 +118,10 @@
                             </tbody>
                         </table>
                     </div>
-                    {{ $game->links('Pagination.default') }}
+
+                    {{ $game->appends(['category_id' => Request::input('category_id')])->links('Pagination.default') }}
+
+
 
                 </div>
             </div>

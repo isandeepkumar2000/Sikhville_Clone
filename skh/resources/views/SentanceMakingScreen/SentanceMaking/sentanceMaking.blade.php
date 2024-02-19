@@ -77,7 +77,9 @@
                             </tbody>
                         </table>
                     </div>
-                    {{ $sentancemaking->links('Pagination.default') }}
+
+
+                    {{ $sentancemaking->appends(['category_id' => Request::input('category_id')])->links('Pagination.default') }}
 
 
                 </div>

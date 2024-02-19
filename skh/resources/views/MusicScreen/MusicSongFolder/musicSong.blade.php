@@ -100,7 +100,10 @@
                             </tbody>
                         </table>
                     </div>
-                    {{ $musicSong->links('Pagination.default') }}
+                    {{ $musicSong->appends(['category_id' => Request::input('category_id')])->links('Pagination.default') }}
+
+
+
                 </div>
             </div>
         </div>

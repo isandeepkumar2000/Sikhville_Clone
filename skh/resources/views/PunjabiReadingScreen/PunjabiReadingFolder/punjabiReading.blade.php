@@ -102,7 +102,9 @@
                             </tbody>
                         </table>
                     </div>
-                    {{ $punjabireading->links('Pagination.default') }}
+
+                    {{ $punjabireading->appends(['category_id' => Request::input('category_id')])->links('Pagination.default') }}
+
 
 
                 </div>

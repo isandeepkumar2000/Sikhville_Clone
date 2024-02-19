@@ -108,7 +108,8 @@
                     </tbody>
                 </table>
             </div>
-            {{ $download->links('Pagination.default') }}
+            {{ $download->appends(['category_id' => Request::input('category_id')])->links('Pagination.default') }}
+
         </div>
     </div>
 </div>
