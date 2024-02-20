@@ -4,6 +4,7 @@ namespace App\Models\VideoModel;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Video extends Model
 {
@@ -12,6 +13,7 @@ class Video extends Model
 
     protected $fillable = [
         'videoCategoriesid',
+        'uuid',
         'top_video_slider',
         'top_featured_video_Image_slider',
         'middle_video_slider',
@@ -44,5 +46,12 @@ class Video extends Model
     public function videoCategoryDetails()
     {
         return $this->belongsTo('App\Models\VideoModel\VideoCategories', 'videoCategoriesid', 'id');
+    }
+    protected static function boot()
+    {
+        parent::boot();
+        static::creating(function ($model) {
+            $model->uuid = $model->uuid ?: Str::uuid()->toString();
+        });
     }
 }

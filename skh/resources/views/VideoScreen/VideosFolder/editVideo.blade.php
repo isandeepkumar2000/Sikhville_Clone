@@ -86,7 +86,7 @@
 
                             </div>
                         </div>
-                        <div class = "row mb-3">
+                        <div class="row mb-3">
 
                             <div class="col-md-4 mb-3">
                                 <label for="validationCustom185853">Video Music </label>

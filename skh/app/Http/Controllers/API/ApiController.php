@@ -17,6 +17,7 @@ use App\Models\SentanceMakingModel\Sentancemaking;
 use App\Models\ShabdkoshModel\Shabdkosh;
 use App\Models\WebsiteContentModel\Websitecontent;
 use App\Models\VideoModel\Video;
+use App\Models\VideoModel\VideoCategories;
 use App\Models\ViewLogsModel\ViewLogsModel;
 
 
@@ -49,8 +50,39 @@ class ApiController extends Controller
     public function showvideoList()
     {
         try {
-            $video = Video::with('videoCategoryDetails')->get();
-            return response()->json($video, 200);
+            $categoryNames = VideoCategories::get();
+            $top_Video_Slider    = Video::where('top_video_slider', 1)->with('videoCategoryDetails')->get();
+            $middle_Video_Slider = Video::where('middle_video_slider', 1)->with('videoCategoryDetails')->get();
+            $bottom_Video_Slider = Video::where('bottom_video_slider', 1)->with('videoCategoryDetails')->get();
+            $top_selected_video = Video::where('top_video_slider', 1)->with('videoCategoryDetails')->get();
+            $result = [];
+            foreach ($categoryNames as $categoryName) {
+                $videosByCategory = Video::with('videoCategoryDetails')
+                    ->where('videoCategoriesid', $categoryName->id)
+                    ->take(5)->orderBy('id', "desc")
+                    ->get();
+                $result[$categoryName->sku] = $videosByCategory;
+            }
+            $result['top_video'] = $top_selected_video;
+            $result['top_video_slider'] = $top_Video_Slider;
+            $result['middle_video_slider'] = $middle_Video_Slider;
+            $result['bottom_video_slider'] = $bottom_Video_Slider;
+            return response()->json($result, 200);
+        } catch (\Exception $e) {
+            return response('An error occurred', 500);
+        }
+    }
+
+
+    public function showVideoCategoryList($videoCategory)
+    {
+        try {
+            $videos = Video::with('videoCategoryDetails')
+                ->whereHas('videoCategoryDetails', function ($query) use ($videoCategory) {
+                    $query->where('name', $videoCategory);
+                })
+                ->get();
+            return response()->json($videos, 200);
         } catch (\Exception $e) {
             return response('An error occurred', 500);
         }
