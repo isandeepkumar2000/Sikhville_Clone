@@ -54,7 +54,7 @@ class ApiController extends Controller
             $top_Video_Slider    = Video::where('top_video_slider', 1)->with('videoCategoryDetails')->get();
             $middle_Video_Slider = Video::where('middle_video_slider', 1)->with('videoCategoryDetails')->get();
             $bottom_Video_Slider = Video::where('bottom_video_slider', 1)->with('videoCategoryDetails')->get();
-            $top_selected_video = Video::where('top_video_slider', 1)->with('videoCategoryDetails')->get();
+            $top_selected_video = Video::where('top_video', 1)->with('videoCategoryDetails')->get();
             $result = [];
             foreach ($categoryNames as $categoryName) {
                 $videosByCategory = Video::with('videoCategoryDetails')
