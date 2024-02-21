@@ -21,6 +21,8 @@ class VideoCategoryController extends Controller
     {
         $videoCategories = new VideoCategories;
         $videoCategories->name = $request->input('name');
+        $videoCategories->sku = $request->input('sku');
+
         $videoCategories->save();
         return redirect('video_categories_list')->with('status', 'Student Added Successfully');
     }
@@ -33,6 +35,7 @@ class VideoCategoryController extends Controller
     {
         $videoCategories = VideoCategories::find($id);
         $videoCategories->name = $request->input('name');
+        $videoCategories->sku = $request->input('sku');
         $videoCategories->update();
         return redirect()->back()->with('status', 'Student Updated Successfully');
     }
