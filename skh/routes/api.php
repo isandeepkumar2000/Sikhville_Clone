@@ -13,7 +13,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get("game_list", [ApiController::class, "showgameList"]);
 Route::get("video_list", [ApiController::class, "showvideoList"]);
 Route::get("video_list/{videoCategory}", [ApiController::class, "showVideoCategoryList"]);
-Route::get("download_details", [ApiController::class, "showdownloadList"]);
+Route::get("download_list", [ApiController::class, "showdownloadList"]);
 Route::get("music_list", [ApiController::class, "showmusicList"]);
 Route::get("music_details/{musicUuid}", [ApiController::class, "showmusicSongList"]);
 Route::get("punjabireading_list", [ApiController::class, "showpunjabireadingList"]);
