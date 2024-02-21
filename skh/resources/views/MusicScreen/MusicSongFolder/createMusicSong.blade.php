@@ -50,17 +50,41 @@
                                             <input type="text" name="song_path" class="form-control" required>
                                         </div>
                                     </div>
-                                    <div   class = "form-group mb-3">
-                                    <label for   = "song_duration">Song Timing</label>
-                                    <input type  = "text" name = "song_duration" class = "form-control">
+                                    <div class="form-group mb-3">
+                                        <label for="song_duration">Song Timing</label>
+                                        <input type="text" name="song_duration" class="form-control">
                                     </div>
+
+                                    <div class="form-group mb-3">
+                                        <label for="song_duration">Music Composer Name</label>
+                                        <input type="text" name="music_composers_by" class="form-control">
+
+                                    </div>
+
+
+                                    <div class="form-group mb-3">
+                                        <label for="song_duration">Music Lyrics By</label>
+
+                                        <input type="text" name="music_lyrics_by" class="form-control">
+
+                                    </div>
+
+
+                                    <div class="form-group mb-3">
+                                        <label for="song_duration">Music Artist Name</label>
+
+                                        <input type="text" name="music_artists_name" class="form-control">
+
+                                    </div>
+
+
+
 
 
                                     <div class="form-group col-md-6">
                                         <label for="music_song_details_image" class="font-weight-bold">Upload Music Song
                                             Image</label>
-                                        <input type="file" class="form-control-file" id="music_song_details_image"
-                                            name="music_song_details_image" required>
+                                        <input type="file" class="form-control-file" id="music_song_details_image" name="music_song_details_image" required>
                                     </div>
 
 

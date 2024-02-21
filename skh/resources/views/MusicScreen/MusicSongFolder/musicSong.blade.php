@@ -41,9 +41,14 @@
                                     <th>Song Size</th>
                                     <th>Song Path</th>
                                     <th>Song Duration</th>
+                                    <th>Music Composers</th>
+                                    <th>Music Lyrics</th>
+                                    <th>Music Artist Name</th>
                                     <th>Music Song Image</th>
                                     <th>Edit</th>
                                     <th>Delete</th>
+
+
                                 </tr>
                             </thead>
                             <tbody>
@@ -68,8 +73,12 @@
                                         <p>No song available.</p>
                                         @endif
                                     </td>
-                                    <td>{{ $item->song_duration }}</td>
 
+
+                                    <td>{{ $item->song_duration }}</td>
+                                    <td>{{ $item->music_composers_by }}</td>
+                                    <td>{{ $item->music_lyrics_by }}</td>
+                                    <td>{{ $item->music_artists_name }}</td>
 
                                     <td>
                                         @if (!empty($item->music_song_details_image))

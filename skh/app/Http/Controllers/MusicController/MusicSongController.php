@@ -34,6 +34,10 @@ class MusicSongController extends Controller
         $musicSong->song_size = $request->input('song_size');
         $musicSong->song_duration = $request->input('song_duration');
         $musicSong->song_path = $request->input('song_path');
+        $musicSong->music_composers_by = $request->input('music_composers_by');
+        $musicSong->music_lyrics_by = $request->input('music_lyrics_by');
+        $musicSong->music_artists_name = $request->input('music_artists_name');
+
 
         if ($request->hasFile('music_song_details_image')) {
             $file = $request->file('music_song_details_image');
@@ -66,6 +70,10 @@ class MusicSongController extends Controller
         $musicSong->song_size     = $request->input('song_size');
         $musicSong->song_duration = $request->input('song_duration');
         $musicSong->song_path     = $request->input('song_path');
+        $musicSong->music_composers_by = $request->input('music_composers_by');
+        $musicSong->music_lyrics_by = $request->input('music_lyrics_by');
+        $musicSong->music_artists_name = $request->input('music_artists_name');
+
 
 
         if ($request->hasFile('music_song_details_image')) {

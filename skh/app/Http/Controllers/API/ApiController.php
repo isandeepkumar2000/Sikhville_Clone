@@ -79,7 +79,7 @@ class ApiController extends Controller
         try {
             $videos = Video::with('videoCategoryDetails')
                 ->whereHas('videoCategoryDetails', function ($query) use ($videoCategory) {
-                    $query->where('name', $videoCategory);
+                    $query->where('sku', $videoCategory);
                 })
                 ->get();
             return response()->json($videos, 200);

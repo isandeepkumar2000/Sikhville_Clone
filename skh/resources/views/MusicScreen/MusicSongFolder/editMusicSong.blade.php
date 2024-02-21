@@ -15,14 +15,13 @@
                     </a>
                 </div>
                 <div class="card-body">
-                    <form action="{{ url('update_music_song_list/' . $musicSong->id) }}" method="POST"
-                        enctype="multipart/form-data">
+                    <form action="{{ url('update_music_song_list/' . $musicSong->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
-                        <div    class = "mb-3">
-                        <label  for   = "musicid" class             = "form-label">Music Song</label>
-                        <select class = "form-control select2" name = "musicid"  id = "musicid">
-                        <option value = "option_select">Choose a Music Song</option>
+                        <div class="mb-3">
+                            <label for="musicid" class="form-label">Music Song</label>
+                            <select class="form-control select2" name="musicid" id="musicid">
+                                <option value="option_select">Choose a Music Song</option>
                                 @foreach ($music as $item)
                                 <option value="{{ $item->id }}" @if ($item->id == $musicSong->musicid) selected @endif>
                                     {{ $item->title }}
@@ -34,34 +33,45 @@
                         <div>
                             <div class="form-group mb-3">
                                 <label for="song_name">Song Name </label>
-                                <input type="text" name="song_name" class="form-control"
-                                    value="{{ $musicSong->song_name }}">
+                                <input type="text" name="song_name" class="form-control" value="{{ $musicSong->song_name }}">
                             </div>
 
                             <div class="form-group mb-3">
                                 <label for="song_size">Song Size </label>
-                                <input type="text" name="song_size" class="form-control"
-                                    value="{{ $musicSong->song_size }}">
+                                <input type="text" name="song_size" class="form-control" value="{{ $musicSong->song_size }}">
                             </div>
 
                             <div class="form-group mb-3">
                                 <label for="song_path">Song Link</label>
-                                <input type="text" name="song_path" class="form-control"
-                                    value="{{ $musicSong->song_path }}">
+                                <input type="text" name="song_path" class="form-control" value="{{ $musicSong->song_path }}">
                             </div>
 
                             <div class="form-group mb-3">
                                 <label for="song_duration">Song Duration Link</label>
-                                <input type="text" name="song_duration" class="form-control"
-                                    value="{{ $musicSong->song_duration }}">
+                                <input type="text" name="song_duration" class="form-control" value="{{ $musicSong->song_duration }}">
                             </div>
 
+                            <div class="form-group mb-3">
+                                <label for="song_duration">Music Composer Name</label>
+                                <input type="text" name="music_composers_by" class="form-control" value="{{ $musicSong->music_composers_by }}">
+                            </div>
+
+
+                            <div class="form-group mb-3">
+                                <label for="song_duration">Music Lyrics By</label>
+                                <input type="text" name="music_lyrics_by" class="form-control" value="{{ $musicSong->music_lyrics_by }}">
+                            </div>
+
+
+                            <div class="form-group mb-3">
+                                <label for="song_duration">Music Artist Name</label>
+                                <input type="text" name="music_artists_name" class="form-control" value="{{ $musicSong->music_artists_name }}">
+                            </div>
 
                             <div class="form-group col-md-6">
                                 <label for="music_song_details_image" class="font-weight-bold">Upload Music Song
                                     Image</label>
-                                <input type="file" class="form-control-file" id="music_song_details_image"
-                                    name="music_song_details_image">
+                                <input type="file" class="form-control-file" id="music_song_details_image" name="music_song_details_image">
                             </div>
 
 
