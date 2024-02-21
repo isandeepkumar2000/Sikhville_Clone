@@ -20,12 +20,13 @@
 
                         <div class="form-group mb-3">
                             <label for="">Video Category</label>
-                            <input type="text" name="name" class="form-control" required>
+                            <input type="text" name="name" placeholder="Please write category name " class="form-control" required>
+
                         </div>
 
                         <div class="form-group mb-3">
                             <label for="">Category Shortcut Name</label>
-                            <input type="text" name="sku" class="form-control" placeholder="Please write sandeep_kumar_vismaad category format " required>
+                            <input type="text" name="sku" class="form-control" placeholder="Please write sandeep_kumar_vismaad in that format " required>
                         </div>
 
 
