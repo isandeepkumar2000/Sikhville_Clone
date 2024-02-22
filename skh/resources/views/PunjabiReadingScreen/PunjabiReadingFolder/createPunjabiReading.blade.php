@@ -10,10 +10,10 @@
 
             <div class="card">
                 <div class="card-header">
-                    <h4>Add Punjabi Reading</h4>
+                    <h4>All Punjabi Reading</h4>
                 </div>
-                <div  class  = "card-body">
-                <form action = "{{ url('add_post_punjabi_reading_list') }}" method = "POST" enctype = "multipart/form-data">
+                <div class="card-body">
+                    <form action="{{ url('add_post_punjabi_reading_list') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
                             <select class="js-states form-control select2" name="punjabireadingCategoriesid" required id="shopping_id">
@@ -38,7 +38,7 @@
                                 <input type="text" class="form-control" required id="reading_video_url" placeholder="Reading Video" name="reading_video_url" required>
                             </div>
                         </div>
-                        <button class="btn btn-primary" type="submit">Submit  </button>
+                        <button class="btn btn-primary" type="submit">Submit </button>
                     </form>
                 </div>
             </div>

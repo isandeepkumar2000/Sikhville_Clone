@@ -23,6 +23,7 @@ class PunjabiReadingCategoriesController extends Controller
         $punjabireadingCategories->name = $request->input('name');
         $punjabireadingCategories->reading_title = $request->input('reading_title');
 
+
         if ($request->hasFile('thumbnail_ishort_image')) {
             $file = $request->file('thumbnail_ishort_image');
             $fileName = time() . '.' . $file->getClientOriginalExtension();

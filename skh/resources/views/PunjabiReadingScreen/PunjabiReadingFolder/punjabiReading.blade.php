@@ -29,7 +29,8 @@
                 </div>
                 <div class="card-header d-flex justify-content-between align-items-center">
                     <h4>All Punjabi Reading</h4>
-                    <a style="margin-left: 35%" href="{{ url('add_punjabi_reading_list') }}" class="btn btn-primary float-end">Add
+                    <a style="margin-left: 35%" href="{{ url('add_punjabi_reading_list') }}" class="btn btn-primary float-end"><i class="fas fa-music mr-2"></i>Add
+
                     </a>
                 </div>
                 <div class="card-body">

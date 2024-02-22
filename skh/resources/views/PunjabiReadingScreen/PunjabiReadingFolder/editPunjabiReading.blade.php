@@ -32,25 +32,25 @@
                                 </select>
                             </div>
                         </div>
-                        <div   class = "row mb-3">
-                        <div   class = "form-group col-md-6">
-                        <label for   = "thumbnail_big_image">Upload Image:</label>
-                        <input type  = "file" class = "form-control-file" id = "thumbnail_big_image" name = "thumbnail_big_image" value = "{{ $punjabireading->thumbnail_big_image }}" >
+                        <div class="row mb-3">
+                            <div class="form-group col-md-6">
+                                <label for="thumbnail_big_image">Upload Image:</label>
+                                <input type="file" class="form-control-file" id="thumbnail_big_image" name="thumbnail_big_image" value="{{ $punjabireading->thumbnail_big_image }}">
 
                             </div>
                             <div class="col-md-6">
                                 <label for="validationCustom03">Reading Summary Pdf</label>
-                                <input type="text" class="form-control"  id="validationCustom03" value="{{ $punjabireading->reading_summary_pdf }}" placeholder="Short Description" name="reading_summary_pdf" >
+                                <input type="text" class="form-control" id="validationCustom03" value="{{ $punjabireading->reading_summary_pdf }}" placeholder="Short Description" name="reading_summary_pdf">
                             </div>
 
                             <div class="col-md-6">
                                 <label for="validationCustom03">Reading Video Url</label>
-                                <input type="text" class="form-control"  id="validationCustom03" value="{{ $punjabireading->reading_video_url }}" placeholder="Short Description" name="reading_video_url" >
+                                <input type="text" class="form-control" id="validationCustom03" value="{{ $punjabireading->reading_video_url }}" placeholder="Short Description" name="reading_video_url">
                             </div>
                         </div>
                         <div class="form-group mb-3">
                             <button type="submit" class="btn btn-primary">Update
-                                </button>
+                            </button>
                         </div>
                     </form>
                 </div>

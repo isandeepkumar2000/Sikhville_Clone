@@ -16,7 +16,8 @@
                 </div>
                 <div class="card-body">
 
-                    <form action="{{ url('update_punjabi_reading_categories_list/' . $punjabireadingCategories->id) }}" method="POST">
+                    <form action="{{ url('update_punjabi_reading_categories_list/' . $punjabireadingCategories->id) }}" method="POST" enctype="multipart/form-data">
+
                         @csrf
                         @method('PUT')
                         <div class="mb-3">
@@ -33,7 +34,7 @@
                         </div>
                         <div class="mb-3">
                             <button type="submit" class="btn btn-primary">Update
-                                </button>
+                            </button>
                         </div>
                     </form>
                 </div>
