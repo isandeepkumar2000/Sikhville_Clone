@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Log;
 // Models
 use App\Models\DownloadModel\Download;
 use App\Models\GamesModel\Games;
+use App\Models\GamesModel\GamesCategories;
 use App\Models\HomePageImageSliderModel\HomePageImageSlider;
 use App\Models\MusicModel\Music;
 use App\Models\MusicModel\MusicSong;
@@ -25,24 +26,46 @@ class ApiController extends Controller
 {
     public function showgameList()
     {
+        // try {
+        //     $games = Games::with(['gamesCategoryDetails' => function ($query) {
+        //         $query->select(['id', 'name']);
+        //     }])->get()->map(function ($game) {
+
+        //         unset($game['created_at']);
+        //         unset($game['updated_at']);
+
+        //         $game['gamesCategoryDetails']->each(function ($category) {
+        //             unset($category['created_at']);
+        //             unset($category['updated_at']);
+        //         });
+        //         return $game;
+        //     });
+
+        //     return response()->json($games, 200);
+        // } catch (\Exception $e) {
+        //     Log::error('Error occurred: ' . $e->getMessage());
+        //     return response('An error occurred', 500);
+        // }
+
         try {
-            $games = Games::with(['gamesCategoryDetails' => function ($query) {
-                $query->select(['id', 'name']);
-            }])->get()->map(function ($game) {
+            $categoryNames = GamesCategories::get();
+            $top_game    = Games::where('top_game', 1)->with('gamesCategoryDetails')->get();
+            $featured_game = Games::where('featured_game', 1)->with('gamesCategoryDetails')->get();
 
-                unset($game['created_at']);
-                unset($game['updated_at']);
+            $result = [];
+            foreach ($categoryNames as $categoryName) {
+                $videosByCategory = Games::with('gamesCategoryDetails')
+                    ->where('gameCategoriesid', $categoryName->id)
+                    ->orderBy('id', "desc")
+                    ->get();
+                $result[$categoryName->name] = $videosByCategory;
+            }
 
-                $game['gamesCategoryDetails']->each(function ($category) {
-                    unset($category['created_at']);
-                    unset($category['updated_at']);
-                });
-                return $game;
-            });
+            $result['top_game'] = $top_game;
+            $result['featured_game'] = $featured_game;
 
-            return response()->json($games, 200);
+            return response()->json($result, 200);
         } catch (\Exception $e) {
-            Log::error('Error occurred: ' . $e->getMessage());
             return response('An error occurred', 500);
         }
     }

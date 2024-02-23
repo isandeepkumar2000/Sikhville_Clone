@@ -118,7 +118,7 @@ class GamesFolderController extends Controller
 
     public function topgameUpdate($id)
     {
-        $maxTopVideos = 3;
+        $maxTopGames = 12;
         $currentTopVideosCount = Games::where('top_game', 1)->count();
         $game = Games::find($id);
 
@@ -126,10 +126,10 @@ class GamesFolderController extends Controller
             if ($game->top_game) {
                 $game->top_game = 0;
             } else {
-                if ($currentTopVideosCount < $maxTopVideos) {
+                if ($currentTopVideosCount < $maxTopGames) {
                     $game->top_game = 1;
                 } else {
-                    return back()->with('error', 'You can only set ' . $maxTopVideos . ' videos as top videos.');
+                    return back()->with('error', 'You can only set ' . $maxTopGames . ' games as top videos.');
                 }
             }
 
