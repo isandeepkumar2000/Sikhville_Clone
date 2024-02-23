@@ -17,6 +17,7 @@ Route::get("download_list", [ApiController::class, "showdownloadList"]);
 Route::get("music_list", [ApiController::class, "showmusicList"]);
 Route::get("music_details/{musicUuid}", [ApiController::class, "showmusicSongList"]);
 Route::get("punjabireading_list", [ApiController::class, "showpunjabireadingList"]);
+Route::get("punjabireading_details/{punjabireadingid}", [ApiController::class, "showpunjabireadingdetailsList"]);
 Route::get("sentancemaking_list", [ApiController::class, "showsentancemakingList"]);
 Route::get("shabdkosh_list", [ApiController::class, "showshabdkoshList"]);
 Route::get("websitecontent_list", [ApiController::class, "showwebsitecontentList"]);

@@ -134,6 +134,20 @@ class ApiController extends Controller
         }
     }
 
+    public function showpunjabireadingdetailsList($punjabireadingid)
+    {
+        try {
+            $punjabiReading = Punjabireading::where('id', $punjabireadingid)->get();
+
+            return response()->json($punjabiReading, 200);
+        } catch (\Exception $e) {
+            // Handle any exceptions and return an error response
+            return response('An error occurred', 500);
+        }
+    }
+
+
+
     public function showsentancemakingList()
     {
         try {
