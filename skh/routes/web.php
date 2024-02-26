@@ -23,6 +23,8 @@ Route::middleware("isLoggedIn")->group(function () {
     Route::put('update_download_list/{id}', [App\Http\Controllers\DownloadController\DownloadFolderController::class, 'update']);
     Route::delete('delete_download_list/{id}', [App\Http\Controllers\DownloadController\DownloadFolderController::class, 'destroy']);
     Route::post('featured_download/{id}', [App\Http\Controllers\DownloadController\DownloadFolderController::class, 'featureddownload']);
+    Route::delete('delete_download_image/{id}', [App\Http\Controllers\DownloadController\DownloadFolderController::class, 'deletedownloadImage'])->name('delete_download_image');
+
 
     // Download_Categories_Route
     Route::get('download_categories_list', [App\Http\Controllers\DownloadController\DownloadCategoriesController::class, 'showdownloadCategories'])->name('downloadCategories');
@@ -41,6 +43,7 @@ Route::middleware("isLoggedIn")->group(function () {
     Route::delete('delete_games_list/{id}', [App\Http\Controllers\GamesController\GamesFolderController::class, 'destroy']);
     Route::get('top_games/{id}', [App\Http\Controllers\GamesController\GamesFolderController::class, 'topgameUpdate']);
     Route::post('featured_games/{id}', [App\Http\Controllers\GamesController\GamesFolderController::class, 'featuredgames']);
+    Route::delete('delete_game_image/{id}', [App\Http\Controllers\GamesController\GamesFolderController::class, 'deletegameImage'])->name('delete_game_image');
 
 
     // Games_Categories_Route
@@ -81,7 +84,11 @@ Route::middleware("isLoggedIn")->group(function () {
     Route::put('update_music_list/{id}', [App\Http\Controllers\MusicController\MusicFolderController::class, 'update']);
     Route::delete('delete_music_list/{id}', [App\Http\Controllers\MusicController\MusicFolderController::class, 'destroy']);
     Route::post('featured_music_list/{id}', [App\Http\Controllers\MusicController\MusicFolderController::class, 'feartured_music']);
-    Route::get('music_list/{category?}', [App\Http\Controllers\MusicController\MusicFolderController::class, 'musicList'])->name('music_list');
+    // Route::get('music_list/{category?}', [App\Http\Controllers\MusicController\MusicFolderController::class, 'musicList'])->name('music_list');
+    Route::delete('delete_music_image/{id}', [App\Http\Controllers\MusicController\MusicFolderController::class, 'deletemusicImage'])->name('delete_music_image');
+
+
+
 
     // Music_Categories_Route
     Route::get('music_categories_list', [App\Http\Controllers\MusicController\MusicCategoryController::class, 'showmusicList'])->name('musicCategories');
@@ -99,6 +106,8 @@ Route::middleware("isLoggedIn")->group(function () {
     Route::get('edit_music_song_list/{id}', [App\Http\Controllers\MusicController\MusicSongController::class, 'edit']);
     Route::put('update_music_song_list/{id}', [App\Http\Controllers\MusicController\MusicSongController::class, 'update']);
     Route::delete('delete_music_song_list/{id}', [App\Http\Controllers\MusicController\MusicSongController::class, 'destroy']);
+    Route::delete('delete_music_song_image/{id}', [App\Http\Controllers\MusicController\MusicSongController::class, 'deletemusicSongImage'])->name('delete_music_song_image');
+
 
 
     // Punjabi_Reading_Categories_Route
@@ -118,6 +127,7 @@ Route::middleware("isLoggedIn")->group(function () {
     Route::put('update_punjabi_reading_list/{id}', [App\Http\Controllers\PunjabiReadingController\PunjabiReadingFolderController::class, 'update']);
     Route::delete('delete_punjabi_reading_list/{id}', [App\Http\Controllers\PunjabiReadingController\PunjabiReadingFolderController::class, 'destroy']);
     Route::post('featured_punjabi_reading/{id}', [App\Http\Controllers\PunjabiReadingController\PunjabiReadingFolderController::class, 'featuredpunjabireading']);
+    Route::delete('delete_image/{id}', [App\Http\Controllers\PunjabiReadingController\PunjabiReadingFolderController::class, 'deleteImage'])->name('delete_image');
 
 
     // Sentance_Making_Categories_Route
@@ -162,5 +172,5 @@ Route::middleware("isLoggedIn")->group(function () {
     Route::get('edit_homepage_imageslider_list/{id}', [App\Http\Controllers\HomePageImageSliderController\HomePageSliderController::class, 'edit']);
     Route::put('update_homepage_imageslider_list/{id}', [App\Http\Controllers\HomePageImageSliderController\HomePageSliderController::class, 'update']);
     Route::delete('delete_homepage_imageslider_list/{id}', [App\Http\Controllers\HomePageImageSliderController\HomePageSliderController::class, 'destroy']);
-
+    Route::delete('delete_homepage_image/{id}', [App\Http\Controllers\HomePageImageSliderController\HomePageSliderController::class, 'deleteHomepageImage'])->name('delete_homepage_image');
 });

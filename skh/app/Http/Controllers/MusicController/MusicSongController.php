@@ -104,4 +104,23 @@ class MusicSongController extends Controller
         $musicSong->delete();
         return redirect('music_song_list')->with('status', 'Music Song Added Successfully');
     }
+
+    public function deletemusicSongImage($id)
+    {
+        $musicSong = MusicSong::find($id);
+
+        if ($musicSong) {
+
+            if ($musicSong->music_song_details_image) {
+                $filePath = public_path('skh/public/' . $musicSong->music_song_details_image);
+                if (file_exists($filePath)) {
+                    unlink($filePath);
+                }
+                $musicSong->music_song_details_image = null;
+
+                $musicSong->save();
+                return redirect()->back()->with('status', 'Image deleted successfully');
+            }
+        }
+    }
 }

@@ -1,5 +1,4 @@
 @extends('Layouts.master')
-
 @section('content')
 <div class="container-fluid">
     <div class="row">
@@ -57,33 +56,75 @@
                                     </td>
                                     <td>{{ $item->title }}</td>
                                     <td>
-                                        @if (!empty($item->thumbnail_image))
-                                        <img src="{{ url('skh/public/' . $item->thumbnail_image) }}" alt="Thumbnail Image" class="img-thumbnail" width="100px" height="100px">
+                                        @if($item->thumbnail_image)
+                                        <div class="col-md-4 mb-3">
+                                            <div class="card">
+                                                <img src="{{ url('skh/public/' . $item->thumbnail_image) }}" class="card-img-top" alt="delete image" style="width: 200px; height: 80px;">
+                                                <div class="card-body">
+                                                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteImageModal_{{ $item->id.'musicthumb' }}">
+                                                        <i class="bi bi-trash"></i> Delete
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        @include('Layouts.DeleteImageModel.DeleteImageModel', ['itemId' => $item->id.'musicthumb', 'deleteRoute' => route('delete_music_image', $item->id.'musicthumb')])
                                         @else
-                                        <p class="text-muted">No Thumbnail available</p>
+                                        <p>No image available</p>
                                         @endif
                                     </td>
                                     <td>
-                                        @if (!empty($item->featured_music_Image_Url))
-                                        <img src="{{ url('skh/public/' . $item->featured_music_Image_Url) }}" alt="Featured Image" class="img-thumbnail" width="200px" height="200px">
-                                        @else
-                                        <p class="text-muted">No featured image available</p>
-                                        @endif
-                                    </td>
+                                        @if($item->featured_music_Image_Url)
+                                        <div class="col-md-4 mb-3">
+                                            <div class="card">
+                                                <img src="{{ url('skh/public/' . $item->featured_music_Image_Url) }}" class="card-img-top" alt="delete image" style="width: 200px; height: 80px;">
+                                                <div class="card-body">
+                                                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteImageModal_{{ $item->id.'featuredimage' }}">
+                                                        <i class="bi bi-trash"></i> Delete
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        @include('Layouts.DeleteImageModel.DeleteImageModel', ['itemId' => $item->id.'featuredimage', 'deleteRoute' => route('delete_music_image', $item->id.'featuredimage')])
 
-                                    <td>
-                                        @if (!empty($item->music_song_details_banner))
-                                        <img src="{{ url('skh/public/' . $item->music_song_details_banner) }}" alt="Thumbnail Image" class="img-thumbnail" width="100px" height="100px">
                                         @else
-                                        <p class="text-muted">No Music Song Banner available</p>
+                                        <p>No image available</p>
                                         @endif
                                     </td>
-
                                     <td>
-                                        @if (!empty($item->recommended_album_image))
-                                        <img src="{{ url('skh/public/' . $item->recommended_album_image) }}" alt="Thumbnail Image" class="img-thumbnail" width="100px" height="100px">
+
+                                        @if($item->music_song_details_banner)
+                                        <div class="col-md-4 mb-3">
+                                            <div class="card">
+                                                <img src="{{ url('skh/public/' . $item->music_song_details_banner) }}" class="card-img-top" alt="delete image" style="width: 200px; height: 80px;">
+                                                <div class="card-body">
+                                                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteImageModal_{{ $item->id.'musicdetails' }}">
+                                                        <i class="bi bi-trash"></i> Delete
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        @include('Layouts.DeleteImageModel.DeleteImageModel', ['itemId' => $item->id.'musicdetails', 'deleteRoute' => route('delete_music_image', $item->id.'musicdetails')])
                                         @else
-                                        <p class="text-muted">No Recommended Music Song available</p>
+                                        <p>No image available</p>
+                                        @endif
+                                    </td>
+                                    <td>
+
+                                        @if($item->recommended_album_image)
+                                        <div class="col-md-4 mb-3">
+                                            <div class="card">
+                                                <img src="{{ url('skh/public/' . $item->recommended_album_image) }}" class="card-img-top" alt="delete image" style="width: 200px; height: 80px;">
+                                                <div class="card-body">
+                                                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteImageModal_{{ $item->id.'recomd' }}">
+                                                        <i class="bi bi-trash"></i> Delete
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        @include('Layouts.DeleteImageModel.DeleteImageModel', ['itemId' => $item->id.'recomd', 'deleteRoute' => route('delete_music_image', $item->id.'recomd')])
+
+                                        @else
+                                        <p>No image available</p>
                                         @endif
                                     </td>
                                     <td>{{ $item->short_description }}</td>
@@ -117,11 +158,7 @@
                             </tbody>
                         </table>
                     </div>
-
                     {{ $music->appends(['category_id' => Request::input('category_id')])->links('Pagination.default') }}
-
-
-
                 </div>
             </div>
         </div>

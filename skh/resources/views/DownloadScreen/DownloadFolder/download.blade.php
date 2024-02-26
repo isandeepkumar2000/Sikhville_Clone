@@ -1,5 +1,4 @@
 @extends('Layouts.master')
-
 @section('content')
 <div class="container-fluid">
     <div class="card mb-4">
@@ -9,7 +8,6 @@
             </a>
         </div>
         <div class="card-body">
-
             <div class="row mb-3">
                 <div class="col-md-4">
                     <form action="{{ route('downloadfolder') }}" method="GET">
@@ -59,13 +57,37 @@
                                 @else
                                 <p>No Thumbnail available</p>
                                 @endif
-                            </td>
-
-                            <td>
-                                @if (!empty($item->featured_download_Image_Url))
-                                <img src="{{ url('skh/public/' . $item->featured_download_Image_Url) }}" alt="Featured Image" width="80px" height="80px">
+                                @if($item->thumbnail_image)
+                                <div class="col-md-4 mb-3">
+                                    <div class="card">
+                                        <img src="{{ url('skh/public/' . $item->thumbnail_image) }}" class="card-img-top" alt="delete image" style="width: 100px; height: 40px;">
+                                        <div class="card-body">
+                                            <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteImageModal_{{ $item->id.'downlordthumb' }}">
+                                                <i class="bi bi-trash"></i> Delete
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                @include('Layouts.DeleteImageModel.DeleteImageModel', ['itemId' => $item->id.'downlordthumb', 'deleteRoute' => route('delete_download_image', $item->id.'downlordthumb')])
                                 @else
-                                <p>No featured image available</p>
+                                <p>No image available</p>
+                                @endif
+                            </td>
+                            <td>
+                                @if($item->featured_download_Image_Url)
+                                <div class="col-md-4 mb-3">
+                                    <div class="card">
+                                        <img src="{{ url('skh/public/' . $item->featured_download_Image_Url) }}" class="card-img-top" alt="delete image" style="width: 100px; height: 40px;">
+                                        <div class="card-body">
+                                            <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteImageModal_{{ $item->id.'downlordfe' }}">
+                                                <i class="bi bi-trash"></i> Delete
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                @include('Layouts.DeleteImageModel.DeleteImageModel', ['itemId' => $item->id.'downlordfe', 'deleteRoute' => route('delete_download_image', $item->id.'gamefeature')])
+                                @else
+                                <p>No image available</p>
                                 @endif
                             </td>
                             <td>{{ $item->short_title }}</td>
@@ -105,7 +127,6 @@
                 </table>
             </div>
             {{ $download->appends(['category_id' => Request::input('category_id')])->links('Pagination.default') }}
-
         </div>
     </div>
 </div>

@@ -35,7 +35,6 @@ class DownloadFolderController extends Controller
         $download->downloadpdf_url = $request->input('downloadpdf_url');
         $download->short_title     = $request->input('short_title');
 
-
         if ($request->hasFile('thumbnail_image')) {
             $file       = $request->file('thumbnail_image');
             $fileName   = time() . '.' . $file->getClientOriginalExtension();
@@ -125,5 +124,34 @@ class DownloadFolderController extends Controller
         }
         $download->save();
         return redirect()->back()->with('status', 'Download Updated Successfully');
+    }
+
+    public function deletedownloadImage($id)
+    {
+        $download = Download::find($id);
+        if ($download) {
+            if ($download->featured_download_Image_Url) {
+                $filePath = public_path('skh/public/' . $download->featured_download_Image_Url);
+                if (file_exists($filePath)) {
+                    unlink($filePath);
+                }
+                $download->featured_download_Image_Url = null;
+                $download->featured_download = 0;
+                $download->save();
+                return redirect()->back()->with('status', 'Image deleted successfully');
+            }
+
+
+            if ($download->thumbnail_image) {
+                $filePath = public_path('skh/public/' . $download->thumbnail_image);
+                if (file_exists($filePath)) {
+                    unlink($filePath);
+                }
+                $download->thumbnail_image = null;
+
+                $download->save();
+                return redirect()->back()->with('status', 'Image deleted successfully');
+            }
+        }
     }
 }

@@ -1,8 +1,6 @@
 @extends('Layouts.master')
-
 @section('content')
 <div class="container-fluid">
-
     <div class="column">
         <div class="col-md-12">
             @if(session('error'))
@@ -32,7 +30,6 @@
                         </form>
                     </div>
                 </div>
-
                 <div class="card-header d-flex justify-content-between align-items-center">
                     <h4>All Video List
                     </h4>
@@ -77,7 +74,6 @@
                                     <th>Edit </th>
                                     <th>Delete </th>
                                 </tr>
-
                             </thead>
                             <tbody>
                                 @foreach ($video as $item)
@@ -87,63 +83,115 @@
                                         <strong>{{ $item->videoCategoryDetails->name }}</strong>
                                         @endif
                                     </td>
-
                                     <td>{{ $item->short_description }}</td>
-
                                     <!-- Display thumbnail image or a message if not available -->
                                     <td>
-                                        @if (!empty($item->thumbnail_image))
-                                        <img src="{{ url('skh/public/' . $item->thumbnail_image) }}" alt="thumbnail image Image" width="100px" height="100px">
+                                        @if($item->thumbnail_image)
+                                        <div class="col-md-4 mb-3">
+                                            <div class="card">
+                                                <img src="{{ url('skh/public/' . $item->thumbnail_image) }}" class="card-img-top" alt="delete image" style="width: 200px; height: 80px;">
+                                                <div class="card-body">
+                                                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteImageModal_{{ $item->id }}">
+                                                        <i class="bi bi-trash"></i> Delete
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        @include('Layouts.DeleteImageModel.DeleteImageModel', ['itemId' => $item->id, 'deleteRoute' => route('delete_highlighting_image', $item->id)])
                                         @else
-                                        <p>Thumbnail image available</p>
+                                        <p>No image available</p>
                                         @endif
                                     </td>
-
                                     <!-- Display highlighting video image or a message if not available -->
                                     <td>
-                                        @if (!empty($item->highlighting_video_Image))
-                                        <img src="{{ url('skh/public/' . $item->highlighting_video_Image) }}" alt="highlighting Video Image" width="100px" height="100px">
+                                        @if($item->highlighting_video_Image)
+                                        <div class="col-md-4 mb-3">
+                                            <div class="card">
+                                                <img src="{{ url('skh/public/' . $item->highlighting_video_Image) }}" class="card-img-top" alt="delete image" style="width: 200px; height: 80px;">
+                                                <div class="card-body">
+                                                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteImageModal_{{ $item->id.'high' }}">
+                                                        <i class="bi bi-trash"></i> Delete
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        @include('Layouts.DeleteImageModel.DeleteImageModel', ['itemId' => $item->id.'high', 'deleteRoute' => route('delete_highlighting_image', $item->id.'high')])
                                         @else
-                                        <p>highlighting Video image available</p>
+                                        <p>No image available</p>
                                         @endif
                                     </td>
-
                                     <!-- Display highlighting second video image or a message if not available -->
                                     <td>
-                                        @if (!empty($item->highlighting_second_video_Image))
-                                        <img src="{{ url('skh/public/' . $item->highlighting_second_video_Image) }}" alt="highlighting Video Image" width="100px" height="100px">
+                                        @if($item->highlighting_second_video_Image)
+                                        <div class="col-md-4 mb-3">
+                                            <div class="card">
+                                                <img src="{{ url('skh/public/' . $item->highlighting_second_video_Image) }}" class="card-img-top" alt="delete image" style="width: 200px; height: 80px;">
+                                                <div class="card-body">
+                                                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteImageModal_{{ $item->id }}">
+                                                        <i class="bi bi-trash"></i> Delete
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        @include('Layouts.DeleteImageModel.DeleteImageModel', ['itemId' => $item->id, 'deleteRoute' => route('delete_highlighting_image', $item->id)])
                                         @else
-                                        <p>highlighting Second Video image available</p>
+                                        <p>No image available</p>
                                         @endif
                                     </td>
-
                                     <!-- Display top featured video image or a message if not available -->
                                     <td>
-                                        @if (!empty($item->top_featured_video_Image_slider))
-                                        <img src="{{ url('skh/public/' . $item->top_featured_video_Image_slider) }}" alt="Featured Video Image" width="100px" height="100px">
+                                        @if($item->top_featured_video_Image_slider)
+                                        <div class="col-md-4 mb-3">
+                                            <div class="card">
+                                                <img src="{{ url('skh/public/' . $item->top_featured_video_Image_slider) }}" class="card-img-top" alt="delete image" style="width: 200px; height: 80px;">
+                                                <div class="card-body">
+                                                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteImageModal_{{ $item->id."_top" }}">
+                                                        <i class="bi bi-trash"></i> Delete
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        @include('Layouts.DeleteImageModel.DeleteImageModel', ['itemId' => $item->id."_top", 'deleteRoute' => route('delete_highlighting_image', $item->id."_top")])
                                         @else
-                                        <p>youtube image available</p>
+                                        <p>No image available</p>
                                         @endif
                                     </td>
-
                                     <!-- Display middle featured video image or a message if not available -->
                                     <td>
-                                        @if (!empty($item->middle_featured_video_Image_slider))
-                                        <img src="{{ url('skh/public/' . $item->middle_featured_video_Image_slider) }}" alt="Featured Video Image" width="100px" height="100px">
+                                        @if($item->middle_featured_video_Image_slider)
+                                        <div class="col-md-4 mb-3">
+                                            <div class="card">
+                                                <img src="{{ url('skh/public/' . $item->middle_featured_video_Image_slider) }}" class="card-img-top" alt="delete image" style="width: 200px; height: 80px;">
+                                                <div class="card-body">
+                                                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteImageModal_{{ $item->id."_middle" }}">
+                                                        <i class="bi bi-trash"></i> Delete
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        @include('Layouts.DeleteImageModel.DeleteImageModel', ['itemId' => $item->id."_middle", 'deleteRoute' => route('delete_highlighting_image', $item->id."_middle")])
                                         @else
-                                        <p>youtube image available</p>
+                                        <p>No image available</p>
                                         @endif
                                     </td>
-
                                     <!-- Display bottom featured video image or a message if not available -->
                                     <td>
-                                        @if (!empty($item->bottom_featured_video_Image_slider))
-                                        <img src="{{ url('skh/public/' . $item->bottom_featured_video_Image_slider) }}" alt="Featured Video Image" width="100px" height="100px">
+                                        @if($item->bottom_featured_video_Image_slider)
+                                        <div class="col-md-4 mb-3">
+                                            <div class="card">
+                                                <img src="{{ url('skh/public/' . $item->bottom_featured_video_Image_slider) }}" class="card-img-top" alt="delete image" style="width: 200px; height: 80px;">
+                                                <div class="card-body">
+                                                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteImageModal_{{ $item->id."_bottom" }}">
+                                                        <i class="bi bi-trash"></i> Delete
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        @include('Layouts.DeleteImageModel.DeleteImageModel', ['itemId' => $item->id."_bottom", 'deleteRoute' => route('delete_highlighting_image', $item->id."_bottom")])
                                         @else
-                                        <p>youtube image available</p>
+                                        <p>No image available</p>
                                         @endif
                                     </td>
-
                                     <!-- Display YouTube video iframe or a message if URL is invalid -->
                                     <td>
                                         @if (!empty($item->youtube_video_url))
@@ -174,33 +222,28 @@
                                             <i class="fas fa-video me-1" style="margin-right: 2px;"></i>{{ $item->top_video ? 'Added' : 'Not Added' }}
                                         </a>
                                     </td>
-
                                     <!-- Display buttons indicating whether the item is featured or not -->
                                     <td>
                                         <button class="btn btn-sm btn-{{ $item->top_video_slider ? 'success' : 'primary' }} featured-games-btn" data-toggle="modal" data-target="#featuredModal_{{ $item->id }}">
                                             <i class="fas fa-star me-1" style="margin-right: 2px;"></i>{{ $item->top_video_slider ? 'Added' : 'Not Added' }}
                                         </button>
                                     </td>
-
                                     <td>
                                         <button class="btn btn-sm btn-{{ $item->middle_video_slider ? 'success' : 'primary' }} featured-games-btn" data-toggle="modal" data-target="#featuredModal_{{ $item->id."_m" }}">
                                             <i class="fas fa-star me-1" style="margin-right: 2px;"></i>{{ $item->middle_video_slider ? 'Added' : 'Not Added' }}
                                         </button>
                                     </td>
-
                                     <td>
                                         <button class="btn btn-sm btn-{{ $item->bottom_video_slider ? 'success' : 'primary' }} featured-games-btn" data-toggle="modal" data-target="#featuredModal_{{ $item->id."_b" }}">
                                             <i class="fas fa-star me-1" style="margin-right: 2px;"></i>{{ $item->bottom_video_slider ? 'Added' : 'Not Added' }}
                                         </button>
                                     </td>
-
                                     <!-- Edit and delete buttons -->
                                     <td>
                                         <a href="{{ url('edit_video_list/' . $item->id) }}" class="btn btn-primary btn-sm">
                                             <i class="fas fa-edit me-1"></i>
                                         </a>
                                     </td>
-
                                     <td>
                                         <!-- Delete confirmation modal -->
                                         @component('Layouts.DeleteLayout.DeleteConfirmationModal', [
@@ -213,25 +256,19 @@
                                             <i class="fas fa-trash-alt"></i>
                                         </button>
                                     </td>
-
-
                                 </tr>
-
-
                                 @include('Layouts.FeaturedModelLayout.featuredModelLayout', [
                                 'id' => $item->id,
                                 'action' => url('top_video_slider/' . $item->id),
                                 'inputName' => 'top_featured_video_Image_slider',
                                 'submitButtonLabel' => 'Add Top Featured Video',
                                 ])
-
                                 @include('Layouts.FeaturedModelLayout.featuredModelLayout', [
                                 'id' => $item->id.'_m',
                                 'action' => url('middle_video_slider/' . $item->id),
                                 'inputName' => 'middle_featured_video_Image_slider',
                                 'submitButtonLabel' => 'Add Middle Featured Video',
                                 ])
-
                                 @include('Layouts.FeaturedModelLayout.featuredModelLayout', [
                                 'id' => $item->id."_b", // Different ID here
                                 'action' => url('bottom_video_slider/' . $item->id),
@@ -241,10 +278,8 @@
                                 @endforeach
                             </tbody>
                         </table>
-
                     </div>
                     {{ $video->appends(['category_id' => Request::input('category_id')])->links('Pagination.default') }}
-
                 </div>
             </div>
         </div>

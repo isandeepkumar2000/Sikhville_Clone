@@ -15,12 +15,10 @@ class PunjabiReadingFolderController extends Controller
         if ($request->has('category_id') && $request->input('category_id') != 'all') {
             $punjabireadings->where('punjabireadingCategoriesid', $request->input('category_id'));
         }
-
         $punjabireading = $punjabireadings->paginate(10);
         $categories = Punjabireadingcategories::all();
         return view('PunjabiReadingScreen.PunjabiReadingFolder.punjabiReading', compact('punjabireading', 'categories'));
     }
-
     public function create()
     {
         $punjabireading = PunjabireadingCategories::all();
@@ -32,23 +30,19 @@ class PunjabiReadingFolderController extends Controller
         $punjabireading->punjabireadingCategoriesid = $request->input('punjabireadingCategoriesid');
         $punjabireading->reading_summary_pdf = $request->input('reading_summary_pdf');
         $punjabireading->reading_video_url = $request->input('reading_video_url');
-
         if ($request->hasFile('thumbnail_big_image')) {
             $file = $request->file('thumbnail_big_image');
             $fileName = time() . '.' . $file->getClientOriginalExtension();
             $folderName = 'PunjabiReadingImagefolder';
             $path = public_path($folderName);
             $upload = $file->move($path, $fileName);
-
             if ($upload) {
                 $punjabireading->thumbnail_big_image = $folderName . '/' . $fileName;
             }
         }
-
         $punjabireading->save();
         return redirect('punjabi_reading_list')->with('status', 'Punjabi Reading Added Successfully');
     }
-
     public function edit($id)
     {
         $punjabireadingcategories = Punjabireadingcategories::all();
@@ -61,53 +55,43 @@ class PunjabiReadingFolderController extends Controller
         $punjabireading->punjabireadingCategoriesid = $request->input('punjabireadingCategoriesid');
         $punjabireading->reading_summary_pdf = $request->input('reading_summary_pdf');
         $punjabireading->reading_video_url = $request->input('reading_video_url');
-
         if ($request->hasFile('thumbnail_big_image')) {
             $file = $request->file('thumbnail_big_image');
             $fileName = time() . '.' . $file->getClientOriginalExtension();
             $folderName = 'PunjabiReadingImagefolder';
             $path = public_path($folderName);
             $upload = $file->move($path, $fileName);
-
             if ($upload) {
                 $punjabireading->thumbnail_big_image = $folderName . '/' . $fileName;
             }
         }
-
         $punjabireading->update();
         return redirect('punjabi_reading_list')->with('status', 'Punjabi Reading Added Successfully');
     }
-
     public function destroy($id)
     {
         $punjabireading = Punjabireading::find($id);
-
         if ($punjabireading->thumbnail_big_image) {
             $filePath = public_path('skh/public/' . $punjabireading->thumbnail_big_image);
             if (file_exists($filePath)) {
                 unlink($filePath);
             }
         }
-
         if ($punjabireading->featured_punjabi_reading_Image_Url) {
             $filePath = public_path('skh/public/' . $punjabireading->featured_punjabi_reading_Image_Url);
             if (file_exists($filePath)) {
                 unlink($filePath);
             }
         }
-
         $punjabireading->delete();
         return redirect('punjabi_reading_list')->with('status', 'Punjabi Reading Added Successfully');
     }
-
-
     public function featuredpunjabireading($id, Request $request)
     {
         // print_r($_POST);
         // print_r($_FILES);
         // print_r($request->all());
         $punjabireading = Punjabireading::find($id);
-
         if ($punjabireading) {
             if ($punjabireading->featured_punjabi_reading) {
                 $punjabireading->featured_punjabi_reading = 0;
@@ -127,5 +111,31 @@ class PunjabiReadingFolderController extends Controller
         }
         $punjabireading->save();
         return redirect()->back()->with('status', 'Punjabi Reading Updated Successfully');
+    }
+    public function deleteImage($id)
+    {
+        $punjabireading = Punjabireading::find($id);
+        if ($punjabireading) {
+            if ($punjabireading->featured_punjabi_reading_Image_Url) {
+                $filePath = public_path('skh/public/' . $punjabireading->featured_punjabi_reading_Image_Url);
+                if (file_exists($filePath)) {
+                    unlink($filePath);
+                }
+                $punjabireading->featured_punjabi_reading_Image_Url = null;
+                $punjabireading->featured_punjabi_reading = 0;
+                $punjabireading->save();
+                return redirect()->back()->with('status', 'Image deleted successfully');
+            }
+            if ($punjabireading->thumbnail_big_image) {
+                $filePath = public_path('skh/public/' . $punjabireading->thumbnail_big_image);
+                if (file_exists($filePath)) {
+                    unlink($filePath);
+                }
+                $punjabireading->thumbnail_big_image = null;
+                $punjabireading->save();
+                return redirect()->back()->with('status', 'Image deleted successfully');
+            }
+        }
+        return redirect()->back()->with('error', 'Image not found or already deleted');
     }
 }

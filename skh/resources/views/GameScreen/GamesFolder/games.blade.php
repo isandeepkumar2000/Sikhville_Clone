@@ -1,5 +1,4 @@
 @extends('Layouts.master')
-
 @section('content')
 <!-- Modal -->
 <div class="container-fluid">
@@ -14,7 +13,6 @@
                 <div class="row mb-3">
                     <div class="col-md-4">
                         <form action="{{ route('gamesfolder') }}" method="GET">
-
                             <div class="input-group">
                                 <select name="category_id" class="form-select">
                                     <option value="all" {{ Request::input('category_id') == 'all' ? 'selected' : '' }}>
@@ -63,17 +61,39 @@
                                         @endif
                                     </td>
                                     <td>
-                                        @if (!empty($item->thumbnail_image))
-                                        <img src="{{ url('skh/public/' . $item->thumbnail_image) }}" alt="Thumbnail Image" width="80px" height="80px">
+                                        @if($item->thumbnail_image)
+                                        <div class="col-md-4 mb-3">
+                                            <div class="card">
+                                                <img src="{{ url('skh/public/' . $item->thumbnail_image) }}" class="card-img-top" alt="delete image" style="width: 100px; height: 40px;">
+
+                                                <div class="card-body">
+                                                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteImageModal_{{ $item->id.'game' }}">
+                                                        <i class="bi bi-trash"></i> Delete
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        @include('Layouts.DeleteImageModel.DeleteImageModel', ['itemId' => $item->id.'game', 'deleteRoute' => route('delete_game_image', $item->id.'game')])
                                         @else
-                                        <p>No Thumbnail available</p>
+                                        <p>No image available</p>
                                         @endif
                                     </td>
                                     <td>
-                                        @if (!empty($item->featured_game_Image_Url))
-                                        <img src="{{ url('skh/public/' . $item->featured_game_Image_Url) }}" alt="Featured Image" width="80px" height="80px">
+
+                                        @if($item->featured_game_Image_Url)
+                                        <div class="col-md-4 mb-3">
+                                            <div class="card">
+                                                <img src="{{ url('skh/public/' . $item->featured_game_Image_Url) }}" class="card-img-top" alt="delete image" style="width: 100px; height: 40px;">
+                                                <div class="card-body">
+                                                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteImageModal_{{ $item->id.'gamefeature' }}">
+                                                        <i class="bi bi-trash"></i> Delete
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        @include('Layouts.DeleteImageModel.DeleteImageModel', ['itemId' => $item->id.'gamefeature', 'deleteRoute' => route('delete_game_image', $item->id.'gamefeature')])
                                         @else
-                                        <p>No featured image available</p>
+                                        <p>No image available</p>
                                         @endif
                                     </td>
                                     <td>{{ $item->short_description }}</td>
@@ -105,9 +125,7 @@
                                             <i class="fas fa-trash-alt"></i>
                                         </button>
                                     </td>
-
                                 </tr>
-
                                 @include('Layouts.FeaturedModelLayout.featuredModelLayout', [
                                 'id' => $item->id,
                                 'action' => url('featured_games/' . $item->id),
@@ -118,11 +136,7 @@
                             </tbody>
                         </table>
                     </div>
-
                     {{ $game->appends(['category_id' => Request::input('category_id')])->links('Pagination.default') }}
-
-
-
                 </div>
             </div>
         </div>

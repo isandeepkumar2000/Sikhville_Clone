@@ -85,6 +85,23 @@ class GamesFolderController extends Controller
     public function destroy($id)
     {
         $game = Games::find($id);
+
+        if ($game->featured_game_Image_Url) {
+            $filePath = public_path('skh/public/' . $game->featured_game_Image_Url);
+            if (file_exists($filePath)) {
+                unlink($filePath);
+            }
+        }
+
+        if ($game->thumbnail_image) {
+            $filePath = public_path('skh/public/' . $game->thumbnail_image);
+            if (file_exists($filePath)) {
+                unlink($filePath);
+            }
+        }
+
+
+
         $game->delete();
         return redirect()->back()->with('status', 'Game Deleted Successfully');
     }
@@ -137,5 +154,35 @@ class GamesFolderController extends Controller
         }
 
         return redirect()->back()->with('status', 'Game Updated Successfully');
+    }
+
+
+    public function deletegameImage($id)
+    {
+        $game = Games::find($id);
+        if ($game) {
+            if ($game->featured_game_Image_Url) {
+                $filePath = public_path('skh/public/' . $game->featured_game_Image_Url);
+                if (file_exists($filePath)) {
+                    unlink($filePath);
+                }
+                $game->featured_game_Image_Url = null;
+                $game->featured_game = 0;
+                $game->save();
+                return redirect()->back()->with('status', 'Image deleted successfully');
+            }
+
+
+            if ($game->thumbnail_image) {
+                $filePath = public_path('skh/public/' . $game->thumbnail_image);
+                if (file_exists($filePath)) {
+                    unlink($filePath);
+                }
+                $game->thumbnail_image = null;
+
+                $game->save();
+                return redirect()->back()->with('status', 'Image deleted successfully');
+            }
+        }
     }
 }

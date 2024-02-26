@@ -1,5 +1,4 @@
 @extends('Layouts.master')
-
 @section('content')
 <div class="container-fluid">
     <div class="row">
@@ -8,7 +7,6 @@
                 <div class="row mb-3">
                     <div class="col-md-4">
                         <form action="{{ route('punjabireadingFolder') }}" method="GET">
-
                             <div class="input-group">
                                 <select name="category_id" class="form-select">
                                     <option value="all" {{ Request::input('category_id') == 'all' ? 'selected' : '' }}>
@@ -30,11 +28,9 @@
                 <div class="card-header d-flex justify-content-between align-items-center">
                     <h4>All Punjabi Reading</h4>
                     <a style="margin-left: 35%" href="{{ url('add_punjabi_reading_list') }}" class="btn btn-primary float-end"><i class="fas fa-music mr-2"></i>Add
-
                     </a>
                 </div>
                 <div class="card-body">
-
                     <div class="table-responsive">
                         <table class="table table-bordered table-striped">
                             <thead>
@@ -58,15 +54,35 @@
                                         @endif
                                     </td>
                                     <td>
-                                        @if (!empty($item->thumbnail_big_image))
-                                        <img src="{{ url('skh/public/' . $item->thumbnail_big_image) }}" alt="Thumbnail Image" width="80px" height="80px">
+                                        @if($item->thumbnail_big_image)
+                                        <div class="col-md-4 mb-3">
+                                            <div class="card">
+                                                <img src="{{ url('skh/public/' . $item->thumbnail_big_image) }}" class="card-img-top" alt="delete image" style="width: 200px; height: 80px;">
+                                                <div class="card-body">
+                                                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteImageModal_{{ $item->id }}">
+                                                        <i class="bi bi-trash"></i> Delete
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        @include('Layouts.DeleteImageModel.DeleteImageModel', ['itemId' => $item->id, 'deleteRoute' => route('delete_image', $item->id)])
                                         @else
-                                        <p>No Thumbnail available</p>
+                                        <p>No featured image available</p>
                                         @endif
                                     </td>
                                     <td>
-                                        @if (!empty($item->featured_punjabi_reading_Image_Url))
-                                        <img src="{{ url('skh/public/' . $item->featured_punjabi_reading_Image_Url) }}" alt="Featured Image" width="80px" height="80px">
+                                        @if($item->featured_punjabi_reading_Image_Url)
+                                        <div class="col-md-4 mb-3">
+                                            <div class="card">
+                                                <img src="{{ url('skh/public/' . $item->featured_punjabi_reading_Image_Url) }}" class="card-img-top" alt="delete image" style="width: 200px; height: 80px;">
+                                                <div class="card-body">
+                                                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteImageModal_{{ $item->id }}">
+                                                        <i class="bi bi-trash"></i> Delete
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        @include('Layouts.DeleteImageModel.DeleteImageModel', ['itemId' => $item->id, 'deleteRoute' => route('delete_image', $item->id)])
                                         @else
                                         <p>No featured image available</p>
                                         @endif
@@ -103,11 +119,7 @@
                             </tbody>
                         </table>
                     </div>
-
                     {{ $punjabireading->appends(['category_id' => Request::input('category_id')])->links('Pagination.default') }}
-
-
-
                 </div>
             </div>
         </div>

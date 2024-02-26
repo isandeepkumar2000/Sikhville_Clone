@@ -111,7 +111,8 @@ class ApiController extends Controller
         }
     }
 
-    public function showdownloadList()
+    public function
+    showdownloadList()
     {
         try {
             $download = Download::with('downloadcategoryDetails')->get();

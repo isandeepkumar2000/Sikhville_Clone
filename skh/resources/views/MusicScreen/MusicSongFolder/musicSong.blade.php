@@ -1,5 +1,4 @@
 @extends('Layouts.master')
-
 @section('content')
 <div class="container-fluid">
     <div class="row">
@@ -16,7 +15,6 @@
                                     @foreach($categories as $category)
                                     <option value="{{ $category->id }}" {{ Request::input('category_id') == $category->id ? 'selected' : '' }}>
                                         <i class="fas fa-folder"></i> {{ $category->title }}
-
                                     </option>
                                     @endforeach
                                 </select>
@@ -47,8 +45,6 @@
                                     <th>Music Song Image</th>
                                     <th>Edit</th>
                                     <th>Delete</th>
-
-
                                 </tr>
                             </thead>
                             <tbody>
@@ -73,22 +69,27 @@
                                         <p>No song available.</p>
                                         @endif
                                     </td>
-
-
                                     <td>{{ $item->song_duration }}</td>
                                     <td>{{ $item->music_composers_by }}</td>
                                     <td>{{ $item->music_lyrics_by }}</td>
                                     <td>{{ $item->music_artists_name }}</td>
-
                                     <td>
-                                        @if (!empty($item->music_song_details_image))
-                                        <img src="{{ url('skh/public/' . $item->music_song_details_image) }}" alt="Thumbnail Image" class="img-thumbnail" width="100px" height="100px">
+                                        @if($item->music_song_details_image)
+                                        <div class="col-md-4 mb-3">
+                                            <div class="card">
+                                                <img src="{{ url('skh/public/' . $item->music_song_details_image) }}" class="card-img-top" alt="delete image" style="width: 200px; height: 80px;">
+                                                <div class="card-body">
+                                                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteImageModal_{{ $item->id.'musicSong' }}">
+                                                        <i class="bi bi-trash"></i> Delete
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        @include('Layouts.DeleteImageModel.DeleteImageModel', ['itemId' => $item->id.'musicSong', 'deleteRoute' => route('delete_music_song_image', $item->id.'musicSong')])
                                         @else
-                                        <p class="text-muted">No Music Song Image available</p>
+                                        <p>No image available</p>
                                         @endif
                                     </td>
-
-
                                     <td>
                                         <a href="{{ url('edit_music_song_list/' . $item->id) }}" class="btn btn-warning btn-sm">
                                             <i class="fas fa-edit"></i> Edit
@@ -110,9 +111,6 @@
                         </table>
                     </div>
                     {{ $musicSong->appends(['category_id' => Request::input('category_id')])->links('Pagination.default') }}
-
-
-
                 </div>
             </div>
         </div>
