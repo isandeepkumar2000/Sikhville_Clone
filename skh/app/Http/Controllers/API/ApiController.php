@@ -239,21 +239,21 @@ class ApiController extends Controller
                 },
                 {
                     "id":2,
-                    "name":"Game 1",
+                    "name":"Game 2",
                     "image":"http://sikhville.org/media/swf/game1/game.png",
                     "path":"http://sikhville.org/media/swf/game1/game.swf",
                     "type":"swf"
                 },
                 {
                     "id":3,
-                    "name":"Game 1",
+                    "name":"Game 3",
                     "image":"http://sikhville.org/media/swf/game1/game.png",
                     "path":"http://sikhville.org/media/swf/game1/game.swf",
                     "type":"swf"
                 },
                 {
                     "id":4,
-                    "name":"Game 1",
+                    "name":"Game 4",
                     "image":"http://sikhville.org/media/swf/game1/game.png",
                     "path":"http://sikhville.org/media/swf/game1/game.swf",
                     "type":"swf"
