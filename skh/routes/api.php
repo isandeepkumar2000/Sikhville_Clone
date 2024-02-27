@@ -23,3 +23,6 @@ Route::get("shabdkosh_list", [ApiController::class, "showshabdkoshList"]);
 Route::get("websitecontent_list", [ApiController::class, "showwebsitecontentList"]);
 Route::post("viewlog_list", [ApiController::class, "showViewLoglist"]);
 Route::get("homepage_imageslider_list", [ApiController::class, "showhomepageslidercontentList"]);
+
+
+Route::get("app-games", [ApiController::class, "appGames"]);
