@@ -259,6 +259,6 @@ class ApiController extends Controller
                     "type":"swf"
                 }
             ]`;
-            return json_decode($game);
+            return $game;
         }
 }
