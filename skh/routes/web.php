@@ -84,7 +84,6 @@ Route::middleware("isLoggedIn")->group(function () {
     Route::put('update_music_list/{id}', [App\Http\Controllers\MusicController\MusicFolderController::class, 'update']);
     Route::delete('delete_music_list/{id}', [App\Http\Controllers\MusicController\MusicFolderController::class, 'destroy']);
     Route::post('featured_music_list/{id}', [App\Http\Controllers\MusicController\MusicFolderController::class, 'feartured_music']);
-    // Route::get('music_list/{category?}', [App\Http\Controllers\MusicController\MusicFolderController::class, 'musicList'])->name('music_list');
     Route::delete('delete_music_image/{id}', [App\Http\Controllers\MusicController\MusicFolderController::class, 'deletemusicImage'])->name('delete_music_image');
 
 
@@ -137,15 +136,7 @@ Route::middleware("isLoggedIn")->group(function () {
     Route::get('edit_sentance_making_categories_list/{id}', [App\Http\Controllers\SentanceMakingController\SentanceMakingCategoriesController::class, 'edit']);
     Route::put('update_sentance_making_categories_list/{id}', [App\Http\Controllers\SentanceMakingController\SentanceMakingCategoriesController::class, 'update']);
     Route::delete('delete_sentance_making_categories_list/{id}', [App\Http\Controllers\SentanceMakingController\SentanceMakingCategoriesController::class, 'destroy']);
-
-
-    // Sentance_Making_Route
-    Route::get('sentance_making_list', [App\Http\Controllers\SentanceMakingController\SentanceMakingFolderController::class, 'showsentancemakingList'])->name('sentancemakingFolder');
-    Route::get('add_sentance_making_list', [App\Http\Controllers\SentanceMakingController\SentanceMakingFolderController::class, 'create']);
-    Route::post('add_post_sentance_making_list', [App\Http\Controllers\SentanceMakingController\SentanceMakingFolderController::class, 'store']);
-    Route::get('edit_sentance_making_list/{id}', [App\Http\Controllers\SentanceMakingController\SentanceMakingFolderController::class, 'edit']);
-    Route::put('update_sentance_making_list/{id}', [App\Http\Controllers\SentanceMakingController\SentanceMakingFolderController::class, 'update']);
-    Route::delete('delete_sentance_making_list/{id}', [App\Http\Controllers\SentanceMakingController\SentanceMakingFolderController::class, 'destroy']);
+    Route::delete('delete_image/{id}', [App\Http\Controllers\SentanceMakingController\SentanceMakingCategoriesController::class, 'deleteImage'])->name('delete_image');
 
 
     // Shabdkosh_list_Route

@@ -9,9 +9,9 @@ use Illuminate\Support\Str;
 class Sentancemakingcategories extends Model
 {
     use HasFactory;
-    public $table = 'sentance_making_categories';
+    public $table = 'sentance_making';
     protected $fillable = [
-        'name',
+        'name', 'game_play_link', 'thumbnail_image', 'long_description' ,'short_description'
     ];
 
     protected $casts = [
@@ -22,7 +22,7 @@ class Sentancemakingcategories extends Model
     {
         parent::boot();
         static::creating(function ($model) {
-            $model->id = $model->id ?: Str::uuid()->toString();
+            $model->uuid = $model->uuid ?: Str::uuid()->toString();
         });
     }
 }

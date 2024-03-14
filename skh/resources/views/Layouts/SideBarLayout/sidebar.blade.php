@@ -135,7 +135,7 @@
                     Sentence Making Screen
                 </a>
                 <div class="collapse" id="folderOne">
-                    <a class="collapse-item text-dark" href="{{ route('sentancemakingFolder') }}">Sentence</a>
+                  
                     <a class="collapse-item text-dark" href="{{ route('sentancemakingCategories') }}">Sentence
                         Category</a>
                 </div>
