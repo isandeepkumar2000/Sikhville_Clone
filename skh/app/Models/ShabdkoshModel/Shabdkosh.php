@@ -22,7 +22,7 @@ class Shabdkosh extends Model
     {
         parent::boot();
         static::creating(function ($model) {
-            $model->id = $model->id ?: Str::uuid()->toString();
+            $model->uuid = $model->uuid ?: Str::uuid()->toString();
         });
     }
 }

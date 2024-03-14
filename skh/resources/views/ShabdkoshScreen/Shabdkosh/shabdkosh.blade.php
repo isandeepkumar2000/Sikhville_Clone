@@ -27,7 +27,27 @@
                                     @foreach ($shabdkosh as $item)
                                         <tr>
                                             <td>{{ $item->title }}</td>
-                                            <td>{{ $item->thumbnail_short_image }}</td>
+                                           
+   <td>
+                                        @if($item->thumbnail_short_image)
+                                        <div class="col-md-4 mb-3">
+                                            <div class="card">
+                                                <img src="{{ url('skh/public/' . $item->thumbnail_short_image) }}" class="card-img-top" alt="delete image" style="width: 200px; height: 80px;">
+                                                <div class="card-body">
+                                                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteImageModal_{{ $item->id }}">
+                                                        <i class="bi bi-trash"></i> Delete
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        @include('Layouts.DeleteImageModel.DeleteImageModel', ['itemId' => $item->id, 'deleteRoute' => route('delete_image', $item->id)])
+                                        @else
+                                        <p>No  image available</p>
+                                        @endif
+                                    </td>
+
+
+
                                             <td>{{ $item->shabdkosh_video_url }}</td>
                                             <td>{{ $item->short_description }}</td>
                                             <td>

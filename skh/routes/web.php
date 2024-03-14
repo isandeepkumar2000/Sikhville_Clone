@@ -146,6 +146,9 @@ Route::middleware("isLoggedIn")->group(function () {
     Route::get('edit_shabdkosh_list/{id}', [App\Http\Controllers\ShabdkoshController\ShabdkoshFolderController::class, 'edit']);
     Route::put('update_shabdkosh_list/{id}', [App\Http\Controllers\ShabdkoshController\ShabdkoshFolderController::class, 'update']);
     Route::delete('delete_shabdkosh_list/{id}', [App\Http\Controllers\ShabdkoshController\ShabdkoshFolderController::class, 'destroy']);
+    Route::delete('delete_image/{id}', [App\Http\Controllers\ShabdkoshController\ShabdkoshFolderController::class, 'deleteImage'])->name('delete_image');
+
+
 
     // Website_Content_list_Route
     Route::get('website_content_list', [App\Http\Controllers\WebsiteContentController\WebsiteContentFolderController::class, 'showwebsitecontentlist'])->name('websitecontentlist');

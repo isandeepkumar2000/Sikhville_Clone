@@ -82,7 +82,6 @@ class SentanceMakingCategoriesController extends Controller
 
     public function deleteImage($id)
     {
-
         $sentancemakingCategories = Sentancemakingcategories::find($id);
         if ($sentancemakingCategories) {
 

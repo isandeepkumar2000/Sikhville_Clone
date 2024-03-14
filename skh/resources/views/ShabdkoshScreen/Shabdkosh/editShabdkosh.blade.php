@@ -17,7 +17,7 @@
                     </div>
                     <div class="card-body">
 
-                        <form action="{{ url('update_shabdkosh_list/' . $shabdkosh->id) }}" method="POST">
+                        <form action="{{ url('update_shabdkosh_list/' . $shabdkosh->id) }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
 
@@ -27,10 +27,10 @@
                                     class="form-control"  >
                             </div>
 
-                            <div class="mb-3">
-                                <label for="thumbnail" class="form-label">Thumbnail Image</label>
-                                <input type="text" id="thumbnail" name="thumbnail_short_image"
-                                    value="{{ $shabdkosh->thumbnail_short_image }}" class="form-control"  >
+                           
+                              <div class=" md-3">
+                                <label for="featuredGameImage">Upload Image:</label>
+                                <input type="file" class="form-control-file" id="thumbnail_short_image" name="thumbnail_short_image" >
                             </div>
 
                             <div class="mb-3">

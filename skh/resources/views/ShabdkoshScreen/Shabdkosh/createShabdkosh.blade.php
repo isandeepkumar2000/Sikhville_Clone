@@ -15,29 +15,29 @@
                     </div>
                     <div class="card-body">
 
-                        <form action="{{ url('add_post_shabdkosh_list_list') }}" method="POST">
+                        <form action="{{ url('add_post_shabdkosh_list_list') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="mb-3">
                                 <label for="title" class="form-label">Shabdkosh Title</label>
-                                <input type="text" id="title" name="title" class="form-control" required required>
+                                <input type="text" id="title" name="title" class="form-control"  >
                             </div>
 
                             <div class="mb-3">
                                 <label for="thumbnail" class="form-label">Thumbnail Image</label>
-                                <input type="text" id="thumbnail" name="thumbnail_short_image" class="form-control"
-                                    required required>
+                                <input type="file" id="thumbnail" name="thumbnail_short_image" class="form-control"
+                                     >
                             </div>
 
                             <div class="mb-3">
                                 <label for="videoUrl" class="form-label">Shabdkosh Video Url</label>
                                 <input type="text" id="videoUrl" name="shabdkosh_video_url" class="form-control"
-                                    required required>
+                                     >
                             </div>
 
                             <div class="mb-3">
                                 <label for="description" class="form-label">Short Description</label>
                                 <input type="text" id="description" name="short_description" class="form-control"
-                                    required required>
+                                     >
                             </div>
 
                             <div    class = "mb-3">
