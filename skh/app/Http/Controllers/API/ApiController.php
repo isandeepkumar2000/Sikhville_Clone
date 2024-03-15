@@ -4,17 +4,16 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
 
 // Models
 use App\Models\DownloadModel\Download;
+use App\Models\DynamicPageModel\DynamicPage;
 use App\Models\GamesModel\Games;
 use App\Models\GamesModel\GamesCategories;
 use App\Models\HomePageImageSliderModel\HomePageImageSlider;
 use App\Models\MusicModel\Music;
 use App\Models\MusicModel\MusicSong;
 use App\Models\PunjabiReadingModel\Punjabireading;
-use App\Models\SentanceMakingModel\Sentancemaking;
 use App\Models\SentanceMakingModel\Sentancemakingcategories;
 use App\Models\ShabdkoshModel\Shabdkosh;
 use App\Models\WebsiteContentModel\Websitecontent;
@@ -27,27 +26,6 @@ class ApiController extends Controller
 {
     public function showgameList()
     {
-        // try {
-        //     $games = Games::with(['gamesCategoryDetails' => function ($query) {
-        //         $query->select(['id', 'name']);
-        //     }])->get()->map(function ($game) {
-
-        //         unset($game['created_at']);
-        //         unset($game['updated_at']);
-
-        //         $game['gamesCategoryDetails']->each(function ($category) {
-        //             unset($category['created_at']);
-        //             unset($category['updated_at']);
-        //         });
-        //         return $game;
-        //     });
-
-        //     return response()->json($games, 200);
-        // } catch (\Exception $e) {
-        //     Log::error('Error occurred: ' . $e->getMessage());
-        //     return response('An error occurred', 500);
-        // }
-
         try {
             $categoryNames = GamesCategories::get();
             $top_game    = Games::where('top_game', 1)->with('gamesCategoryDetails')->get();
@@ -97,7 +75,6 @@ class ApiController extends Controller
         }
     }
 
-
     public function showVideoCategoryList($videoCategory)
     {
         try {
@@ -112,8 +89,7 @@ class ApiController extends Controller
         }
     }
 
-    public function
-    showdownloadList()
+    public function showdownloadList()
     {
         try {
             $download = Download::with('downloadcategoryDetails')->get();
@@ -166,7 +142,6 @@ class ApiController extends Controller
 
             return response()->json($punjabiReading, 200);
         } catch (\Exception $e) {
-            // Handle any exceptions and return an error response
             return response('An error occurred', 500);
         }
     }
@@ -227,40 +202,17 @@ class ApiController extends Controller
         }
     }
 
-    public function appGames()
+    public function showDynamicPageList()
     {
-        $game = array(
-            [
-
-                "id" => 1,
-                "name" => "Game 1",
-                "image" => "http://sikhville.org/media/swf/game1/game.png",
-                "path" => "http://sikhville.org/media/swf/game1/game.swf",
-                "type" => "swf"
-            ],
-            [
-                "id" => 2,
-                "name" => "Game 2",
-                "image" => "http://sikhville.org/media/swf/game1/game.png",
-                "path" => "http://sikhville.org/media/swf/game1/game.swf",
-                "type" => "swf"
-            ],
-            [
-                "id" => 3,
-                "name" => "Game 3",
-                "image" => "http://sikhville.org/media/swf/game1/game.png",
-                "path" => "http://sikhville.org/media/swf/game1/game.swf",
-                "type" => "swf"
-            ],
-            [
-                "id" => 4,
-                "name" => "Game 4",
-                "image" => "http://sikhville.org/media/swf/game1/game.png",
-                "path" => "http://sikhville.org/media/swf/game1/game.swf",
-                "type" => "swf"
-
-            ]
-        );
-        return response()->json($game);
+        try {
+            $dynamicpagecontent = DynamicPage::all();
+            $separatedData = [];
+            foreach ($dynamicpagecontent as $page) {
+                $separatedData[$page->slug] = $page->where('slug', $page->slug)->first();
+            }
+            return response()->json($separatedData, 200);
+        } catch (\Exception $e) {
+            return response('An error occurred', 500);
+        }
     }
 }

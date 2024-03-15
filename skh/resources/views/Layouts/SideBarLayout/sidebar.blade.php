@@ -23,13 +23,17 @@
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseNine" aria-expanded="true" aria-controls="collapseNine">
             <i class="fas fa-cog"></i>
-            <span style="color: #ffffff;">Website Content</span>
+            <span style="color: #ffffff;">Dynamic Page Content</span>
         </a>
         <div id="collapseNine" class="collapse" aria-labelledby="headingtwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header" style="color: #000000;">Website Content:</h6>
-                <a class="collapse-item" href="{{ route('websitecontentlist') }}">
-                    Website Content
+                <h6 class="collapse-header" style="color: #000000;">Dynamic Page Content:</h6>
+                
+                <a class="collapse-item" href="{{ route('dynamicpagecontent') }}">
+                    Dynamic Content
+                </a>
+                 <a class="collapse-item" href="{{ route('websitecontentlist') }}">
+                   Vismaad History Content
                 </a>
             </div>
         </div>

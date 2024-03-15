@@ -69,7 +69,7 @@ class DownloadCategoriesController extends Controller
         $downlordCategories = DownloadCategories::find($id);
 
         if ($downlordCategories->downlord_categories_icons) {
-            $filePath = public_path('skh/public/' . $video->downlord_categories_icons);
+            $filePath = public_path('skh/public/' . $downlordCategories->downlord_categories_icons);
             if (file_exists($filePath)) {
                 unlink($filePath);
             }
