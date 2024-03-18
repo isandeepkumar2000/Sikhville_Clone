@@ -206,11 +206,7 @@ class ApiController extends Controller
     {
         try {
             $dynamicpagecontent = DynamicPage::all();
-
-            // Initialize an empty array to store the result
             $result = [];
-
-            // Iterate through each dynamic page and format it into an object
             foreach ($dynamicpagecontent as $page) {
                 $result[] = (object)[
                     'slug' => $page->slug,
