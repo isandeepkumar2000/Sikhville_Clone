@@ -206,11 +206,24 @@ class ApiController extends Controller
     {
         try {
             $dynamicpagecontent = DynamicPage::all();
-            $separatedData = [];
+
+            // Initialize an empty array to store the result
+            $result = [];
+
+            // Iterate through each dynamic page and format it into an object
             foreach ($dynamicpagecontent as $page) {
-                $separatedData[$page->slug] = $page->where('slug', $page->slug)->first();
+                $result[] = (object)[
+                    'slug' => $page->slug,
+                    'id' => $page->id,
+                    'title' => $page->title,
+                    'description' => $page->description,
+                    'body' => $page->body,
+                    'created_at' => $page->created_at,
+                    'updated_at' => $page->updated_at
+                ];
             }
-            return response()->json($separatedData, 200);
+
+            return response()->json($result, 200);
         } catch (\Exception $e) {
             return response('An error occurred', 500);
         }
