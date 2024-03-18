@@ -16,6 +16,7 @@ use App\Models\MusicModel\MusicSong;
 use App\Models\PunjabiReadingModel\Punjabireading;
 use App\Models\SentanceMakingModel\Sentancemakingcategories;
 use App\Models\ShabdkoshModel\Shabdkosh;
+use App\Models\SupportReviewModel\SupportReview;
 use App\Models\WebsiteContentModel\Websitecontent;
 use App\Models\VideoModel\Video;
 use App\Models\VideoModel\VideoCategories;
@@ -202,6 +203,7 @@ class ApiController extends Controller
         }
     }
 
+
     public function showDynamicPageList()
     {
         try {
@@ -219,6 +221,27 @@ class ApiController extends Controller
                 ];
             }
 
+            return response()->json($result, 200);
+        } catch (\Exception $e) {
+            return response('An error occurred', 500);
+        }
+    }
+
+    public function showSupportReviewList()
+    {
+        try {
+            $supportreview = SupportReview::all();
+            $result = [];
+            foreach ($supportreview as $page) {
+                $result[] = (object)[
+                    'person_name' => $page->person_name,
+                    'id' => $page->id,
+                    'country_name' => $page->country_name,
+                    'review_description' => $page->review_description,
+                    'created_at' => $page->created_at,
+                    'updated_at' => $page->updated_at
+                ];
+            }
             return response()->json($result, 200);
         } catch (\Exception $e) {
             return response('An error occurred', 500);

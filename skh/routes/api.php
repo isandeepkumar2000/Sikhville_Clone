@@ -24,3 +24,4 @@ Route::get("websitecontent_list", [ApiController::class, "showwebsitecontentList
 Route::post("viewlog_list", [ApiController::class, "showViewLoglist"]);
 Route::get("homepage_imageslider_list", [ApiController::class, "showhomepageslidercontentList"]);
 Route::get("dynamicpage_list", [ApiController::class, "showDynamicPageList"]);
+Route::get("supportreview_list", [ApiController::class, "showSupportReviewList"]);

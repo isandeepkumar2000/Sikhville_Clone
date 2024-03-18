@@ -160,4 +160,12 @@ Route::middleware("isLoggedIn")->group(function () {
     Route::get('edit_dynamic_page_list/{id}', [App\Http\Controllers\DynamicPageController\DynamicPageController::class, 'edit']);
     Route::put('update_dynamic_page_list/{id}', [App\Http\Controllers\DynamicPageController\DynamicPageController::class, 'update']);
     Route::delete('delete_dynamic_page_list/{id}', [App\Http\Controllers\DynamicPageController\DynamicPageController::class, 'destroy']);
+
+    // Support_Review_list_Route
+    Route::get('support_review_list', [App\Http\Controllers\SupportReviewController\SupportReviewController::class, 'showsupportreview'])->name('supportreview');
+    Route::get('add_support_review_list', [App\Http\Controllers\SupportReviewController\SupportReviewController::class, 'create']);
+    Route::post('add_post_support_review_list', [App\Http\Controllers\SupportReviewController\SupportReviewController::class, 'store']);
+    Route::get('edit_support_review_list/{id}', [App\Http\Controllers\SupportReviewController\SupportReviewController::class, 'edit']);
+    Route::put('update_support_review_list/{id}', [App\Http\Controllers\SupportReviewController\SupportReviewController::class, 'update']);
+    Route::delete('delete_support_review_list/{id}', [App\Http\Controllers\SupportReviewController\SupportReviewController::class, 'destroy']);
 });

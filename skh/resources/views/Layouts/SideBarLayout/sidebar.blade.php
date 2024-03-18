@@ -29,6 +29,10 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header" style="color: #000000;">Dynamic Page Content:</h6>
                 
+                <a class="collapse-item" href="{{ route('supportreview') }}">
+                    Support Review Content
+                </a>
+                
                 <a class="collapse-item" href="{{ route('dynamicpagecontent') }}">
                     Dynamic Content
                 </a>
