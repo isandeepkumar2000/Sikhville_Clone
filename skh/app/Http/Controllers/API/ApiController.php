@@ -50,6 +50,23 @@ class ApiController extends Controller
         }
     }
 
+    public function showgameDetailsList($gameId)
+    {
+        try {
+
+            $gameDetails = Games::with('gamesCategoryDetails')->find($gameId);
+
+            if (!$gameDetails) {
+                return response()->json(['error' => 'Game not found'], 404);
+            }
+
+            return response()->json($gameDetails, 200);
+        } catch (\Exception $e) {
+            return response('An error occurred', 500);
+        }
+    }
+
+
     public function showvideoList()
     {
         try {
@@ -75,6 +92,8 @@ class ApiController extends Controller
             return response('An error occurred', 500);
         }
     }
+
+
 
     public function showVideoCategoryList($videoCategory)
     {

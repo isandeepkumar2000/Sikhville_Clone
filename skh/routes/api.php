@@ -9,8 +9,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-
 Route::get("game_list", [ApiController::class, "showgameList"]);
+Route::get("game_details/{gameId}", [ApiController::class, "showgameDetailsList"]);
 Route::get("video_list", [ApiController::class, "showvideoList"]);
 Route::get("video_list/{videoCategory}", [ApiController::class, "showVideoCategoryList"]);
 Route::get("download_list", [ApiController::class, "showdownloadList"]);
