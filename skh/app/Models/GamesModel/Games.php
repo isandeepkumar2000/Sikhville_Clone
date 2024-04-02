@@ -10,7 +10,7 @@ class Games extends Model
     use HasFactory;
     public $table = 'games';
     protected $fillable = [
-        'uuid', 'title', 'gameCategoriesid', 'thumbnail_image', 'short_description', 'details', 'top_game', 'featured_game', 'featured_game_Image_Url'
+        'games_link', 'uuid', 'title', 'gameCategoriesid', 'thumbnail_image', 'short_description', 'details', 'top_game', 'featured_game', 'featured_game_Image_Url'
     ];
 
     public function gamesCategoryDetails()

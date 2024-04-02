@@ -34,6 +34,7 @@ class GamesFolderController extends Controller
         $game = new Games;
         $game->gameCategoriesid = $request->input('gameCategoriesid');
         $game->short_description = $request->input('short_description');
+        $game->games_link = $request->input('games_link');
         $game->details = $request->input('details');
 
         if ($request->hasFile('thumbnail_image')) {
@@ -64,6 +65,7 @@ class GamesFolderController extends Controller
         $game = Games::find($id);
         $game->gameCategoriesid = $request->input('gameCategoriesid');
         $game->short_description = $request->input('short_description');
+        $game->games_link = $request->input('games_link');
         $game->details = $request->input('details');
 
         if ($request->hasFile('thumbnail_image')) {

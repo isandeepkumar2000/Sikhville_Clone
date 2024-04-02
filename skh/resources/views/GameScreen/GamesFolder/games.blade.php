@@ -46,6 +46,7 @@
                                     <th>Thumbnail Image</th>
                                     <th>Featured Image</th>
                                     <th>Short Description</th>
+                                      <th>Game Link</th>
                                     <th>Details</th>
                                     <th>Top Games</th>
                                     <th>Featured Games</th>
@@ -97,6 +98,12 @@
                                         @endif
                                     </td>
                                     <td>{{ $item->short_description }}</td>
+                                      <td>
+                                        
+                                        <iframe src="    {{ $item->games_link }}" frameborder="0" width="180px" height="100px"></iframe>
+                                        
+                                       </td>
+                                    
                                     <td>{{ $item->details }}</td>
                                     <td>
                                         <a href="top_games/{{ $item->id }}" class="btn btn-sm {{ $item->top_game ? 'btn-success' : 'btn-primary' }}">

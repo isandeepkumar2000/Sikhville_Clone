@@ -1,7 +1,7 @@
 @extends('Layouts.master')
 
 @section('content')
-<div class="container">
+<div class="container mt-4">
     <div class="row justify-content-center">
         <div class="col-md-8">
             @if (session('status'))
@@ -9,9 +9,9 @@
             @endif
 
             <div class="card">
-                <div class="card-header d-flex justify-content-between align-items-center bg-primary text-white">
-                    <h4 class="m-0">Add Game Here</h4>
-                    <a href="{{ url('games_list') }}" class="btn btn-danger">BACK</a>
+                <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                    <h4 class="m-0"><i class="fas fa-gamepad mr-2"></i> Add Game Here</h4>
+                    <a href="{{ url('games_list') }}" class="btn btn-danger"><i class="fas fa-arrow-left mr-2"></i> BACK</a>
                 </div>
                 <div class="card-body">
                     <form action="{{ url('add_post_games_list') }}" method="POST" enctype="multipart/form-data">
@@ -28,13 +28,19 @@
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="featuredGameImage">Upload Image:</label>
-                                <input type="file" class="form-control-file" id="thumbnail_image" name="thumbnail_image"
-                                    required>
+                                <input type="file" class="form-control-file" id="thumbnail_image" name="thumbnail_image">
                             </div>
+                            
                             <div class="form-group col-md-6">
                                 <label for="validationCustom03">Short Description</label>
                                 <input type="text" class="form-control" required id="validationCustom03"
-                                    placeholder="Short Description" name="short_description" required>
+                                    placeholder="Short Description" name="short_description">
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label for="validationCustom03">Game Link</label>
+                                <input type="text" class="form-control" required id="validationCustom03"
+                                    placeholder="Game Link" name="games_link">
                             </div>
                         </div>
                         <div class="form-group">
@@ -42,7 +48,7 @@
                             <textarea class="form-control" required id="textAreaExample1" rows="4"
                                 name="details"></textarea>
                         </div>
-                        <button class = "btn btn-primary" type = "submit">Save </button>
+                        <button class="btn btn-primary"><i class="fas fa-save mr-2"></i> Save</button>
                     </form>
                 </div>
             </div>
