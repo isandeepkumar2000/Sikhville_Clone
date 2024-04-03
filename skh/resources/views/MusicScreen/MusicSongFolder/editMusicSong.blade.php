@@ -74,6 +74,36 @@
                                 <input type="file" class="form-control-file" id="music_song_details_image" name="music_song_details_image">
                             </div>
 
+                              <div class="form-group mb-3">
+                                        <label for="sportify">Sportify</label>
+                                        <input type="text" name="sportify" class="form-control"  value="{{ $musicSong->sportify }}">
+                                    </div>
+
+                                     <div class="form-group mb-3">
+                                        <label for="wynk">Wynk</label>
+                                        <input type="text" name="wynk" class="form-control" value="{{ $musicSong->wynk }}">
+                                    </div>
+
+                                     <div class="form-group mb-3">
+                                        <label for="sound_cloud">Sound Cloud</label>
+                                        <input type="text" name="sound_cloud" class="form-control" value="{{ $musicSong->sound_cloud }}">
+                                    </div>
+
+                                      <div class="form-group mb-3">
+                                        <label for="youtube">Youtube</label>
+                                        <input type="text" name="youtube" class="form-control" value="{{ $musicSong->youtube }}">
+                                    </div>
+
+                                    <div class="form-group mb-3">
+                                        <label for="apple">Apple</label>
+                                        <input type="text" name="apple" class="form-control" value="{{ $musicSong->apple }}">
+                                    </div>
+
+                                    <div class="form-group mb-3">
+                                        <label for="amazon">Amazon</label>
+                                        <input type="text" name="amazon" class="form-control" value="{{ $musicSong->amazon }}">
+                                    </div>
+
 
                         </div>
                         <div class="mb-3">

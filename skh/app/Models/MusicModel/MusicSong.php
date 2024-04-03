@@ -11,7 +11,7 @@ class MusicSong extends Model
     use HasFactory;
     public    $table    = 'music_song';
     protected $fillable = [
-        'uuid', 'musicid', 'song_name', 'song_size', 'song_path', 'song_duration', 'music_composers_by ', 'music_lyrics_by', ' music_artists_name', 'music_song_details_image',
+        "sportify", "wynk", "sound_cloud", "youtube", "apple", "amazon", 'uuid', 'musicid', 'song_name', 'song_size', 'song_path', 'song_duration', 'music_composers_by ', 'music_lyrics_by', ' music_artists_name', 'music_song_details_image',
     ];
 
     public function musicfolderDetails()

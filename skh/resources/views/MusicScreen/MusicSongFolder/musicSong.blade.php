@@ -43,6 +43,12 @@
                                     <th>Music Lyrics</th>
                                     <th>Music Artist Name</th>
                                     <th>Music Song Image</th>
+                                    <th>Sportify</th>
+                                    <th>Wynk</th>
+                                    <th>Sound_cloud</th>
+                                    <th>Youtube</th>
+                                    <th>Apple</th>
+                                    <th>Amazon</th>
                                     <th>Edit</th>
                                     <th>Delete</th>
                                 </tr>
@@ -90,6 +96,12 @@
                                         <p>No image available</p>
                                         @endif
                                     </td>
+                                    <td>{{ $item->sportify }}</td>
+                                    <td>{{ $item->wynk }}</td>
+                                    <td>{{ $item->sound_cloud }}</td>
+                                    <td>{{ $item->youtube }}</td>
+                                    <td>{{ $item->apple }}</td>
+                                    <td>{{ $item->amazon }}</td>
                                     <td>
                                         <a href="{{ url('edit_music_song_list/' . $item->id) }}" class="btn btn-warning btn-sm">
                                             <i class="fas fa-edit"></i> Edit

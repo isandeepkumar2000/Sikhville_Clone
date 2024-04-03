@@ -32,6 +32,12 @@ class MusicSongController extends Controller
         $musicSong->musicid = $request->input('musicid');
         $musicSong->song_name = $request->input('song_name');
         $musicSong->song_size = $request->input('song_size');
+        $musicSong->sportify = $request->input('sportify');
+        $musicSong->wynk = $request->input('wynk');
+        $musicSong->sound_cloud = $request->input('sound_cloud');
+        $musicSong->youtube = $request->input('youtube');
+        $musicSong->apple = $request->input('apple');
+        $musicSong->amazon = $request->input('amazon');
         $musicSong->song_duration = $request->input('song_duration');
         $musicSong->song_path = $request->input('song_path');
         $musicSong->music_composers_by = $request->input('music_composers_by');
@@ -63,10 +69,15 @@ class MusicSongController extends Controller
 
     public function update(Request $request, $id)
     {
-
         $musicSong                = MusicSong::find($id);
         $musicSong->musicid       = $request->input('musicid');
         $musicSong->song_name     = $request->input('song_name');
+        $musicSong->sportify = $request->input('sportify');
+        $musicSong->wynk = $request->input('wynk');
+        $musicSong->sound_cloud = $request->input('sound_cloud');
+        $musicSong->youtube = $request->input('youtube');
+        $musicSong->apple = $request->input('apple');
+        $musicSong->amazon = $request->input('amazon');
         $musicSong->song_size     = $request->input('song_size');
         $musicSong->song_duration = $request->input('song_duration');
         $musicSong->song_path     = $request->input('song_path');

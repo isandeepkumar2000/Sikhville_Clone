@@ -19,9 +19,13 @@ Route::get("music_details/{musicUuid}", [ApiController::class, "showmusicSongLis
 Route::get("punjabireading_list", [ApiController::class, "showpunjabireadingList"]);
 Route::get("punjabireading_details/{punjabireadingid}", [ApiController::class, "showpunjabireadingdetailsList"]);
 Route::get("sentancemaking_list", [ApiController::class, "showsentancemakingList"]);
+Route::get("sentancemaking__details/{id}", [ApiController::class, "showsentancemakingListid"]);
 Route::get("shabdkosh_list", [ApiController::class, "showshabdkoshList"]);
+Route::get("showshabdkoshList_details/{id}", [ApiController::class, "showshabdkoshListid"]);
 Route::get("websitecontent_list", [ApiController::class, "showwebsitecontentList"]);
 Route::post("viewlog_list", [ApiController::class, "showViewLoglist"]);
 Route::get("homepage_imageslider_list", [ApiController::class, "showhomepageslidercontentList"]);
 Route::get("dynamicpage_list", [ApiController::class, "showDynamicPageList"]);
+Route::get("dynamicpage_details/{id}", [ApiController::class, "showDynamicPageListid"]);
+
 Route::get("supportreview_list", [ApiController::class, "showSupportReviewList"]);

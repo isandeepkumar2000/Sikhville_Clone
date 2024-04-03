@@ -99,9 +99,11 @@
                                     </td>
                                     <td>{{ $item->short_description }}</td>
                                       <td>
-                                        
-                                        <iframe src="    {{ $item->games_link }}" frameborder="0" width="180px" height="100px"></iframe>
-                                        
+                                        @if (!empty($item->games_link))
+                                           <span class="badge badge-success">Added</span>
+                                           @else
+                                            <span class="badge badge-danger">Not Added</span>
+                                        @endif
                                        </td>
                                     
                                     <td>{{ $item->details }}</td>

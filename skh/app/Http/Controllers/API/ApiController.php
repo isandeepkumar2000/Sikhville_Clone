@@ -159,7 +159,6 @@ class ApiController extends Controller
     {
         try {
             $punjabiReading = Punjabireading::where('id', $punjabireadingid)->get();
-
             return response()->json($punjabiReading, 200);
         } catch (\Exception $e) {
             return response('An error occurred', 500);
@@ -176,10 +175,32 @@ class ApiController extends Controller
             return response('An error occurred', 500);
         }
     }
+
+
+    public function showsentancemakingListid($id)
+    {
+        try {
+            $sentancemaking = Sentancemakingcategories::where('uuid', $id)->get();
+            return response()->json($sentancemaking, 200);
+        } catch (\Exception $e) {
+            return response('An error occurred', 500);
+        }
+    }
+
     public function showshabdkoshList()
     {
         try {
             $shabdkosh = Shabdkosh::get();
+            return response()->json($shabdkosh, 200);
+        } catch (\Exception $e) {
+            return response('An error occurred', 500);
+        }
+    }
+
+    public function showshabdkoshListid($id)
+    {
+        try {
+            $shabdkosh = Shabdkosh::where('uuid', $id)->get();
             return response()->json($shabdkosh, 200);
         } catch (\Exception $e) {
             return response('An error occurred', 500);
@@ -245,6 +266,17 @@ class ApiController extends Controller
             return response('An error occurred', 500);
         }
     }
+
+    public function showDynamicPageListid($id)
+    {
+        try {
+            $dynamicpagecontent = DynamicPage::where('id', $id)->get();
+            return response()->json($dynamicpagecontent, 200);
+        } catch (\Exception $e) {
+            return response('An error occurred', 500);
+        }
+    }
+
 
     public function showSupportReviewList()
     {
