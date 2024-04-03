@@ -7,9 +7,7 @@
             @if (session('status'))
             <div class="alert alert-success">{{ session('status') }}</div>
             @endif
-
             <div class="card">
-
                 <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
                     <h4><i class="fas fa-music mr-2"></i>Add Music Song Here</h4>
                     <a href="{{ url('music_song_list') }}" class="btn btn-danger">
@@ -58,42 +56,33 @@
                                     <div class="form-group mb-3">
                                         <label for="song_duration">Music Composer Name</label>
                                         <input type="text" name="music_composers_by" class="form-control">
-
                                     </div>
-
-
                                     <div class="form-group mb-3">
                                         <label for="song_duration">Music Lyrics By</label>
-
                                         <input type="text" name="music_lyrics_by" class="form-control">
-
                                     </div>
-
 
                                     <div class="form-group mb-3">
                                         <label for="song_duration">Music Artist Name</label>
-
                                         <input type="text" name="music_artists_name" class="form-control">
-
                                     </div>
-
 
                                     <div class="form-group mb-3">
                                         <label for="sportify">Sportify</label>
                                         <input type="text" name="sportify" class="form-control">
                                     </div>
 
-                                     <div class="form-group mb-3">
+                                    <div class="form-group mb-3">
                                         <label for="wynk">Wynk</label>
                                         <input type="text" name="wynk" class="form-control">
                                     </div>
 
-                                     <div class="form-group mb-3">
+                                    <div class="form-group mb-3">
                                         <label for="sound_cloud">Sound Cloud</label>
                                         <input type="text" name="sound_cloud" class="form-control">
                                     </div>
 
-                                      <div class="form-group mb-3">
+                                    <div class="form-group mb-3">
                                         <label for="youtube">Youtube</label>
                                         <input type="text" name="youtube" class="form-control">
                                     </div>
@@ -108,13 +97,11 @@
                                         <input type="text" name="amazon" class="form-control">
                                     </div>
 
-                                     <div class="form-group col-md-6">
+                                    <div class="form-group col-md-6">
                                         <label for="music_song_details_image" class="font-weight-bold">Upload Music Song
                                             Image</label>
                                         <input type="file" class="form-control-file" id="music_song_details_image" name="music_song_details_image" >
                                     </div>
-
-
 
                                 </div>
                             </div>
