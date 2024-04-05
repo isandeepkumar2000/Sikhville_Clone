@@ -14,6 +14,7 @@ Route::get("game_details/{gameId}", [ApiController::class, "showgameDetailsList"
 Route::get("video_list", [ApiController::class, "showvideoList"]);
 Route::get("video_list/{videoCategory}", [ApiController::class, "showVideoCategoryList"]);
 Route::get("download_list", [ApiController::class, "showdownloadList"]);
+Route::get("download_details/{downlordId}", [ApiController::class, "showdownloadDeatilsList"]);
 Route::get("music_list", [ApiController::class, "showmusicList"]);
 Route::get("music_details/{musicUuid}", [ApiController::class, "showmusicSongList"]);
 Route::get("punjabireading_list", [ApiController::class, "showpunjabireadingList"]);
@@ -27,5 +28,4 @@ Route::post("viewlog_list", [ApiController::class, "showViewLoglist"]);
 Route::get("homepage_imageslider_list", [ApiController::class, "showhomepageslidercontentList"]);
 Route::get("dynamicpage_list", [ApiController::class, "showDynamicPageList"]);
 Route::get("dynamicpage_details/{id}", [ApiController::class, "showDynamicPageListid"]);
-
 Route::get("supportreview_list", [ApiController::class, "showSupportReviewList"]);

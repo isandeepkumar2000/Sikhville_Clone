@@ -120,6 +120,20 @@ class ApiController extends Controller
         }
     }
 
+
+    public function showdownloadDeatilsList($downlordId)
+    {
+        try {
+            $download = Download::where('id', $downlordId)->get();
+            return response()->json($download, 200);
+        } catch (\Exception $e) {
+            return response('An error occurred', 500);
+        }
+    }
+
+
+
+
     public function showmusicList()
     {
         try {
