@@ -113,7 +113,9 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header" style="color: #000000;">Download Components:</h6>
                 <a class="collapse-item" href="{{ route('downloadfolder') }}">Download</a>
+                
                 <a class="collapse-item" href="{{ route('downloadCategories') }}">Download Category</a>
+            <a class="collapse-item" href="{{ route('downloadListing') }}">Download Listing</a>
             </div>
         </div>
     </li>

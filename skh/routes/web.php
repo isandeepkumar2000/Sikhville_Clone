@@ -33,6 +33,16 @@ Route::middleware("isLoggedIn")->group(function () {
     Route::put('update_download_categories_list/{id}', [App\Http\Controllers\DownloadController\DownloadCategoriesController::class, 'update']);
     Route::delete('delete_download_categories_list/{id}', [App\Http\Controllers\DownloadController\DownloadCategoriesController::class, 'destroy']);
 
+    // Download_Listing_Route
+    Route::get('download_listing', [App\Http\Controllers\DownloadController\DownlordListingController::class, 'showdownloadListingList'])->name('downloadListing');
+    Route::get('add_download_listing', [App\Http\Controllers\DownloadController\DownlordListingController::class, 'create']);
+    Route::post('add_post_download_listing', [App\Http\Controllers\DownloadController\DownlordListingController::class, 'store']);
+    Route::get('edit_download_listing/{id}', [App\Http\Controllers\DownloadController\DownlordListingController::class, 'edit']);
+    Route::put('update_download_listing/{id}', [App\Http\Controllers\DownloadController\DownlordListingController::class, 'update']);
+    Route::delete('delete_download_listing/{id}', [App\Http\Controllers\DownloadController\DownlordListingController::class, 'destroy']);
+    Route::delete('delete_listing/{id}', [App\Http\Controllers\DownloadController\DownlordListingController::class, 'deletedownloadlisting'])->name('delete_listing');
+
+
     // Games Route
     Route::get('games_list', [App\Http\Controllers\GamesController\GamesFolderController::class, 'gamesfolder'])->name('gamesfolder');
     Route::get('add_games_list', [App\Http\Controllers\GamesController\GamesFolderController::class, 'create']);

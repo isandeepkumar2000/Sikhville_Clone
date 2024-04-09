@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 // Models
 use App\Models\DownloadModel\Download;
+use App\Models\DownloadModel\DownlordModelListing;
 use App\Models\DynamicPageModel\DynamicPage;
 use App\Models\GamesModel\Games;
 use App\Models\GamesModel\GamesCategories;
@@ -124,10 +125,15 @@ class ApiController extends Controller
     public function showdownloadDeatilsList($downlordId)
     {
         try {
-            $download = Download::where('id', $downlordId)->get();
-            return response()->json($download, 200);
+            $download = Download::where('id', $downlordId)->first();
+
+            if (!$download) {
+                return response()->json(['message' => 'Music not found'], 404);
+            }
+            $downloadList = DownlordModelListing::where('downlord_section_reference', $download->id)->get();
+            return response()->json(["album_detail" => $download, "download_list" => $downloadList], 200);
         } catch (\Exception $e) {
-            return response('An error occurred', 500);
+            return response()->json(['message' => 'An error occurred'], 500);
         }
     }
 

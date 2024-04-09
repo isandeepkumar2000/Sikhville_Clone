@@ -11,7 +11,7 @@ class Download extends Model
     public $table = 'download';
 
     protected $fillable = [
-        'thumbnail_image', 'categoryid', 'short_title', 'downloadpdf_url', 'featured_download','featured_download_Image_Url',
+        'thumbnail_image', 'categoryid', 'short_title', 'downloadpdf_url', 'featured_download', 'featured_download_Image_Url',
     ];
 
     public function downloadcategoryDetails()
