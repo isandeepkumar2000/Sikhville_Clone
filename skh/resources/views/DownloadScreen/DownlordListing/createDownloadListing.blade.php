@@ -24,7 +24,7 @@
                                     <option value="option_select" disabled selected>Choose Downlord Section Reference</option>
                                     @foreach ($downloadListing as $item)
                                     <option value="{{ $item->id }}">
-                                        {{ $item->short_title }}
+                                        {{ $item->name }}
                                     </option>
                                     @endforeach
                                 </select>

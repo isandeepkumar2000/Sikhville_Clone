@@ -14,7 +14,7 @@
                                     </option>
                                     @foreach($categories as $category)
                                     <option value="{{ $category->id }}" {{ Request::input('category_id') == $category->id ? 'selected' : '' }}>
-                                        <i class="fas fa-folder"></i> {{ $category->short_title }}
+                                        <i class="fas fa-folder"></i> {{ $category->name }}
                                     </option>
                                     @endforeach
                                 </select>
@@ -47,7 +47,7 @@
                                 <tr>
                                      <td>
                                         @if (!empty($item->DownloadDetailsSection))
-                                        {{ $item->DownloadDetailsSection->short_title }}
+                                        {{ $item->DownloadDetailsSection->name }}
                                         @endif
                                     </td>                                  
  <td>
