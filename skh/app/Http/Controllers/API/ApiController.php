@@ -114,7 +114,7 @@ class ApiController extends Controller
     public function showdownloadList()
     {
         try {
-            $download = Download::with('downloadcategoryDetails')->get();
+            $download = DownloadCategories::get();
             return response()->json($download, 200);
         } catch (\Exception $e) {
             return response('An error occurred', 500);
@@ -126,12 +126,15 @@ class ApiController extends Controller
     public function showdownloadDeatilsList($downlordId)
     {
         try {
+            // echo $downlordId;
             $download = DownloadCategories::where('id', $downlordId)->first();
-
-            if (!$download) {
+            // print_r($download);
+            // die;
+            if (empty($download)) {
                 return response()->json(['message' => 'Music not found'], 404);
             }
             $downloadList = DownlordModelListing::where('downlord_section_reference', $download->id)->get();
+
             return response()->json(["album_detail" => $download, "download_list" => $downloadList], 200);
         } catch (\Exception $e) {
             return response()->json(['message' => 'An error occurred'], 500);
