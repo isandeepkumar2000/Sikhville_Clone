@@ -16,7 +16,7 @@ class DownlordModelListing extends Model
 
     public function DownloadDetailsSection()
     {
-        return $this->belongsTo('App\Models\DownloadModel\DownloadCategories', 'downlord_section_reference', 'id');
+        return $this->belongsTo('App\Models\DownloadModel\Download', 'downlord_section_reference', 'id');
     }
 
     protected $casts = [
