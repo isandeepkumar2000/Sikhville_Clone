@@ -4,6 +4,7 @@ namespace App\Http\Controllers\DownloadController;
 
 use App\Http\Controllers\Controller;
 use App\Models\DownloadModel\Download;
+use App\Models\DownloadModel\DownloadCategories;
 use App\Models\DownloadModel\DownlordModelListing;
 use Illuminate\Http\Request;
 
@@ -17,13 +18,13 @@ class DownlordListingController extends Controller
             $downloadListings->where('downlord_section_reference', $request->input('category_id'));
         }
         $downloadListing  = $downloadListings->paginate(10);
-        $categories = Download::all();
+        $categories = DownloadCategories::all();
         return view('DownloadScreen.DownlordListing.donwloadListing', compact('downloadListing', 'categories'));
     }
 
     public function create()
     {
-        $downloadListing = Download::all();
+        $downloadListing = DownloadCategories::all();
         return view('DownloadScreen.DownlordListing.createDownloadListing', compact('downloadListing'));
     }
 
@@ -49,7 +50,7 @@ class DownlordListingController extends Controller
     }
     public function edit($id)
     {
-        $download = Download::all();
+        $download = DownloadCategories::all();
         $downloadListing = DownlordModelListing::find($id);
         return view('DownloadScreen.DownlordListing.editDownloadListing', compact('downloadListing', 'download'));
     }

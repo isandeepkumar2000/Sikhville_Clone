@@ -10,13 +10,14 @@ class DownlordModelListing extends Model
 {
     use HasFactory;
     public $table = "downlord_listing";
+
     protected $fillable = [
         'image_url', 'title', 'downlord_pdf_link', 'downlord_section_reference',
     ];
 
     public function DownloadDetailsSection()
     {
-        return $this->belongsTo('App\Models\DownloadModel\Download', 'downlord_section_reference', 'id');
+        return $this->belongsTo('App\Models\DownloadModel\DownloadCategories', 'downlord_section_reference', 'id');
     }
 
     protected $casts = [

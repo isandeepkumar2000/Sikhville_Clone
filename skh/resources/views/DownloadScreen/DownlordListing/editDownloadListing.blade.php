@@ -24,7 +24,7 @@
                                 <option value="option_select">Choose a Music Song</option>
                                 @foreach ($download as $item)
                                 <option value="{{ $item->id }}" @if ($item->id == $downloadListing->downlord_section_reference) selected @endif>
-                                    {{ $item->short_title }}
+                                    {{ $item->name }}
                                 </option>
                                 @endforeach
                             </select>

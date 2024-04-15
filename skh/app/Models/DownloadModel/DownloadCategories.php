@@ -10,7 +10,6 @@ class DownloadCategories extends Model
 {
     use HasFactory;
     public $table = 'download_categories';
-
     protected $fillable = [
         'name', 'downlord_categories_icons',
     ];

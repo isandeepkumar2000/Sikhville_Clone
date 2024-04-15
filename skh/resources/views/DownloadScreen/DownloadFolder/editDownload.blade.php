@@ -40,12 +40,12 @@
                                     placeholder="Image URL" value="{{ $download->thumbnail_image }}"
                                     name="thumbnail_image" >
                             </div>
-                            <div class="col-md-6">
+                            {{-- <div class="col-md-6">
                                 <label for="validationCustom03">Download Url</label>
                                 <input type="text" class="form-control"  id="validationCustom03"
                                     value="{{ $download->downloadpdf_url }}" placeholder="Short Description"
                                     name="downloadpdf_url" >
-                            </div>
+                            </div> --}}
                         </div>
                         <div class="form-group mb-3">
                             <label for="textAreaExample1">Title</label>

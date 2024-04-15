@@ -43,12 +43,12 @@
                                 <input type="text" class="form-control" required id="validationCustom03"
                                     placeholder="Title" name="short_title">
                             </div>
-                            <div class="col-md-6 mb-3">
+                            {{-- <div class="col-md-6 mb-3">
                                 <label for="validationCustom03" class="form-label">Download PDF
                                     Link</label>
                                 <input type="text" class="form-control" required id="validationCustom03"
                                     placeholder="Paste Link" name="downloadpdf_url">
-                            </div>
+                            </div> --}}
 
                         </div>
                         <div class="row">

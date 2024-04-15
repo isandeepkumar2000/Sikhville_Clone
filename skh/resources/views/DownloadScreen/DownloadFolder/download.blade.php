@@ -37,7 +37,7 @@
                             <th>Thumbnail Image</th>
                             <th>Featured Image</th>
                             <th>Short Description</th>
-                            <th>Download Pdf Url</th>
+                            {{-- <th>Download Pdf Url</th> --}}
                             <th>Featured</th>
                             <th>Edit</th>
                             <th>Delete</th>
@@ -91,7 +91,7 @@
                                 @endif
                             </td>
                             <td>{{ $item->short_title }}</td>
-                            <td>{{ $item->downloadpdf_url }}</td>
+                            {{-- <td>{{ $item->downloadpdf_url }}</td> --}}
                             <td>
                                 <button class="btn btn-sm {{ $item->featured_download ? 'btn-success' : 'btn-primary' }} featured-games-btn" data-toggle="modal" data-target="#featuredModal_{{ $item->id }}">
                                     <i class="fas fa-heart"></i>
