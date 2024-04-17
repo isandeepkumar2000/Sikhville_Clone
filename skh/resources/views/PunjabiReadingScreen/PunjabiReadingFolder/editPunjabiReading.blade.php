@@ -38,6 +38,12 @@
                                 <input type="file" class="form-control-file" id="thumbnail_big_image" name="thumbnail_big_image" value="{{ $punjabireading->thumbnail_big_image }}">
 
                             </div>
+
+       <div class="col-md-6">
+                                <label for="validationCustom03">Title</label>
+                                <input type="text" class="form-control" id="validationCustom03" value="{{ $punjabireading->title }}" placeholder="title" name="title">
+                            </div>
+
                             <div class="col-md-6">
                                 <label for="validationCustom03">Reading Summary Pdf</label>
                                 <input type="text" class="form-control" id="validationCustom03" value="{{ $punjabireading->reading_summary_pdf }}" placeholder="Short Description" name="reading_summary_pdf">

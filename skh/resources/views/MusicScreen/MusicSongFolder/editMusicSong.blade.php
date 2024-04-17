@@ -29,7 +29,6 @@
                                 @endforeach
                             </select>
                         </div>
-
                         <div>
                             <div class="form-group mb-3">
                                 <label for="song_name">Song Name </label>
@@ -55,14 +54,10 @@
                                 <label for="song_duration">Music Composer Name</label>
                                 <input type="text" name="music_composers_by" class="form-control" value="{{ $musicSong->music_composers_by }}">
                             </div>
-
-
                             <div class="form-group mb-3">
                                 <label for="song_duration">Music Lyrics By</label>
                                 <input type="text" name="music_lyrics_by" class="form-control" value="{{ $musicSong->music_lyrics_by }}">
                             </div>
-
-
                             <div class="form-group mb-3">
                                 <label for="song_duration">Music Artist Name</label>
                                 <input type="text" name="music_artists_name" class="form-control" value="{{ $musicSong->music_artists_name }}">
@@ -104,6 +99,10 @@
                                         <input type="text" name="amazon" class="form-control" value="{{ $musicSong->amazon }}">
                                     </div>
 
+                                    <div class="form-group mb-3">
+                                        <label for="internal_music_link">Internal Music Link</label>
+                                        <input type="text" name="internal_music_link" class="form-control" value="{{ $musicSong->internal_music_link }}">
+                                    </div>
 
                         </div>
                         <div class="mb-3">

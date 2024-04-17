@@ -49,6 +49,7 @@
                                     <th>Youtube</th>
                                     <th>Apple</th>
                                     <th>Amazon</th>
+                                    <th>Internal Music Link</th>
                                     <th>Edit</th>
                                     <th>Delete</th>
                                 </tr>
@@ -102,6 +103,8 @@
                                     <td>{{ $item->youtube }}</td>
                                     <td>{{ $item->apple }}</td>
                                     <td>{{ $item->amazon }}</td>
+                                    <td>{{ $item->internal_music_link }}</td>
+                                    
                                     <td>
                                         <a href="{{ url('edit_music_song_list/' . $item->id) }}" class="btn btn-warning btn-sm">
                                             <i class="fas fa-edit"></i> Edit

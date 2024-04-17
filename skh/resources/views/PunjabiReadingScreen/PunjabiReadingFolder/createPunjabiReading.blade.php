@@ -27,15 +27,21 @@
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="thumbnail_big_image">Upload Image:</label>
-                                <input type="file" class="form-control-file" id="thumbnail_big_image" name="thumbnail_big_image" required>
+                                <input type="file" class="form-control-file" id="thumbnail_big_image" name="thumbnail_big_image" >
                             </div>
+
+ <div class="form-group col-md-6">
+                                <label for="title">Reading Summary Pdf</label>
+                                <input type="text" class="form-control"  id="title" placeholder="Reading title" name="title" >
+                            </div>
+
                             <div class="form-group col-md-6">
                                 <label for="reading_summary_pdf">Reading Summary Pdf</label>
-                                <input type="text" class="form-control" required id="reading_summary_pdf" placeholder="Reading Summary" name="reading_summary_pdf" required>
+                                <input type="text" class="form-control"  id="reading_summary_pdf" placeholder="Reading Summary" name="reading_summary_pdf" >
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="reading_video_url">Reading Video Url</label>
-                                <input type="text" class="form-control" required id="reading_video_url" placeholder="Reading Video" name="reading_video_url" required>
+                                <input type="text" class="form-control"  id="reading_video_url" placeholder="Reading Video" name="reading_video_url" >
                             </div>
                         </div>
                         <button class="btn btn-primary" type="submit">Submit </button>

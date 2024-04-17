@@ -97,6 +97,14 @@
                                         <input type="text" name="amazon" class="form-control">
                                     </div>
 
+                                     <div class="form-group mb-3">
+                                        <label for="internal_music_link">Internal Music Link</label>
+                                        <input type="text" name="internal_music_link" class="form-control">
+                                    </div>
+
+
+                                    
+
                                     <div class="form-group col-md-6">
                                         <label for="music_song_details_image" class="font-weight-bold">Upload Music Song
                                             Image</label>

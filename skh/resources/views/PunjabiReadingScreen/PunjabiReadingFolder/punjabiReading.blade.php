@@ -35,7 +35,8 @@
                         <table class="table table-bordered table-striped">
                             <thead>
                                 <tr>
-                                    <th>Title</th>
+                                    <th>Album Title</th>
+                                      <th> Title</th>
                                     <th>Thumbnail Big Image</th>
                                     <th>Featured Big Image</th>
                                     <th>Reading Summary Pdf</th>
@@ -53,6 +54,7 @@
                                         {{ $item->punjabireadingCategoryDetails->name }}
                                         @endif
                                     </td>
+                                                 <td>{{ $item->title }}</td>
                                     <td>
                                         @if($item->thumbnail_big_image)
                                         <div class="col-md-4 mb-3">
