@@ -30,6 +30,7 @@ class PunjabiReadingFolderController extends Controller
         $punjabireading->punjabireadingCategoriesid = $request->input('punjabireadingCategoriesid');
         $punjabireading->reading_summary_pdf = $request->input('reading_summary_pdf');
         $punjabireading->reading_video_url = $request->input('reading_video_url');
+        $punjabireading->title = $request->input('title');
         if ($request->hasFile('thumbnail_big_image')) {
             $file = $request->file('thumbnail_big_image');
             $fileName = time() . '.' . $file->getClientOriginalExtension();
@@ -55,6 +56,7 @@ class PunjabiReadingFolderController extends Controller
         $punjabireading->punjabireadingCategoriesid = $request->input('punjabireadingCategoriesid');
         $punjabireading->reading_summary_pdf = $request->input('reading_summary_pdf');
         $punjabireading->reading_video_url = $request->input('reading_video_url');
+        $punjabireading->title = $request->input('title');
         if ($request->hasFile('thumbnail_big_image')) {
             $file = $request->file('thumbnail_big_image');
             $fileName = time() . '.' . $file->getClientOriginalExtension();
