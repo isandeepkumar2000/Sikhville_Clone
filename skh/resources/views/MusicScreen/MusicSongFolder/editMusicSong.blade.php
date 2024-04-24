@@ -40,10 +40,7 @@
                                 <input type="text" name="song_size" class="form-control" value="{{ $musicSong->song_size }}">
                             </div>
 
-                            <div class="form-group mb-3">
-                                <label for="song_path">Song Link</label>
-                                <input type="text" name="song_path" class="form-control" value="{{ $musicSong->song_path }}">
-                            </div>
+                          
 
                             <div class="form-group mb-3">
                                 <label for="song_duration">Song Duration Link</label>

@@ -42,12 +42,7 @@
                                         <label for="song_size">Song Size</label>
                                         <input type="text" name="song_size" class="form-control" required>
                                     </div>
-                                    <div class="form-group mb-3">
-                                        <label for="song_path">Song Link</label>
-                                        <div class="input-group">
-                                            <input type="text" name="song_path" class="form-control" required>
-                                        </div>
-                                    </div>
+                                 
                                     <div class="form-group mb-3">
                                         <label for="song_duration">Song Timing</label>
                                         <input type="text" name="song_duration" class="form-control">

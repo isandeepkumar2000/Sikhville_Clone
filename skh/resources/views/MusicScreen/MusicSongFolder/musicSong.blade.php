@@ -37,7 +37,7 @@
                                     <th>Albums</th>
                                     <th>Song Name</th>
                                     <th>Song Size</th>
-                                    <th>Song Path</th>
+                              
                                     <th>Song Duration</th>
                                     <th>Music Composers</th>
                                     <th>Music Lyrics</th>
@@ -64,18 +64,7 @@
                                     </td>
                                     <td>{{ $item->song_name }}</td>
                                     <td>{{ $item->song_size }}</td>
-                                    <td>
-                                        @if (!empty($item->song_path))
-                                        <div class="audio-player">
-                                            <audio controls>
-                                                <source src="{{ url($item->song_path) }}" type="audio/mpeg">
-                                                Your browser does not support the audio element.
-                                            </audio>
-                                        </div>
-                                        @else
-                                        <p>No song available.</p>
-                                        @endif
-                                    </td>
+                               
                                     <td>{{ $item->song_duration }}</td>
                                     <td>{{ $item->music_composers_by }}</td>
                                     <td>{{ $item->music_lyrics_by }}</td>
