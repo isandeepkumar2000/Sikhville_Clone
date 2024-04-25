@@ -40,7 +40,10 @@
                                 <input type="text" name="song_size" class="form-control" value="{{ $musicSong->song_size }}">
                             </div>
 
-                          
+                            <div class="form-group mb-3">
+                                <label for="song_path">Internal Song Link</label>
+                                <input type="text" name="song_path" class="form-control" value="{{ $musicSong->song_path }}">
+                            </div>
 
                             <div class="form-group mb-3">
                                 <label for="song_duration">Song Duration Link</label>
@@ -96,10 +99,7 @@
                                         <input type="text" name="amazon" class="form-control" value="{{ $musicSong->amazon }}">
                                     </div>
 
-                                    <div class="form-group mb-3">
-                                        <label for="internal_music_link">Internal Music Link</label>
-                                        <input type="text" name="internal_music_link" class="form-control" value="{{ $musicSong->internal_music_link }}">
-                                    </div>
+                                
 
                         </div>
                         <div class="mb-3">

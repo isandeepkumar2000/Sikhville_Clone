@@ -42,7 +42,12 @@
                                         <label for="song_size">Song Size</label>
                                         <input type="text" name="song_size" class="form-control" required>
                                     </div>
-                                 
+                                    <div class="form-group mb-3">
+                                        <label for="song_path">Internal Song Link</label>
+                                        <div class="input-group">
+                                            <input type="text" name="song_path" class="form-control" required>
+                                        </div>
+                                    </div>
                                     <div class="form-group mb-3">
                                         <label for="song_duration">Song Timing</label>
                                         <input type="text" name="song_duration" class="form-control">
@@ -92,10 +97,6 @@
                                         <input type="text" name="amazon" class="form-control">
                                     </div>
 
-                                     <div class="form-group mb-3">
-                                        <label for="internal_music_link">Internal Music Link</label>
-                                        <input type="text" name="internal_music_link" class="form-control">
-                                    </div>
 
 
                                     

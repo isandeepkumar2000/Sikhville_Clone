@@ -37,7 +37,7 @@
                                     <th>Albums</th>
                                     <th>Song Name</th>
                                     <th>Song Size</th>
-                              
+                                    <th>Internal Song Link</th>
                                     <th>Song Duration</th>
                                     <th>Music Composers</th>
                                     <th>Music Lyrics</th>
@@ -49,7 +49,6 @@
                                     <th>Youtube</th>
                                     <th>Apple</th>
                                     <th>Amazon</th>
-                                    <th>Internal Music Link</th>
                                     <th>Edit</th>
                                     <th>Delete</th>
                                 </tr>
@@ -64,7 +63,18 @@
                                     </td>
                                     <td>{{ $item->song_name }}</td>
                                     <td>{{ $item->song_size }}</td>
-                               
+                                    <td>
+                                        @if (!empty($item->song_path))
+                                        <div class="audio-player">
+                                            <audio controls>
+                                                <source src="{{ url($item->song_path) }}" type="audio/mpeg">
+                                                Your browser does not support the audio element.
+                                            </audio>
+                                        </div>
+                                        @else
+                                        <p>No song available.</p>
+                                        @endif
+                                    </td>
                                     <td>{{ $item->song_duration }}</td>
                                     <td>{{ $item->music_composers_by }}</td>
                                     <td>{{ $item->music_lyrics_by }}</td>
@@ -92,7 +102,7 @@
                                     <td>{{ $item->youtube }}</td>
                                     <td>{{ $item->apple }}</td>
                                     <td>{{ $item->amazon }}</td>
-                                    <td>{{ $item->internal_music_link }}</td>
+                                    {{-- <td>{{ $item->internal_music_link }}</td> --}}
                                     
                                     <td>
                                         <a href="{{ url('edit_music_song_list/' . $item->id) }}" class="btn btn-warning btn-sm">
