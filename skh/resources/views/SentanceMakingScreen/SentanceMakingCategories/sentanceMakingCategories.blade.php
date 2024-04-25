@@ -18,8 +18,9 @@
                                 <thead>
                                     <tr>
                                         <th>Name</th>
+                                          <th>Title</th>
                                               <th>Game Link</th>
-                                               <th>Title</th>
+                                      
                                                     <th>Image</th>
                                                           <th>Long Description</th>
                                                                 <th>Short Description</th>
