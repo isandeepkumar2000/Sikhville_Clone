@@ -22,6 +22,7 @@ class SentanceMakingCategoriesController extends Controller
     {
         $sentancemakingCategories = new Sentancemakingcategories();
         $sentancemakingCategories->name = $request->input('name');
+        $sentancemakingCategories->title = $request->input('title');
         $sentancemakingCategories->game_play_link = $request->input('game_play_link');
         $sentancemakingCategories->long_description = $request->input('long_description');
         $sentancemakingCategories->short_description = $request->input('short_description');
@@ -50,6 +51,7 @@ class SentanceMakingCategoriesController extends Controller
         $sentancemakingCategories = Sentancemakingcategories::find($id);
         $sentancemakingCategories->name = $request->input('name');
         $sentancemakingCategories->game_play_link = $request->input('game_play_link');
+        $sentancemakingCategories->title = $request->input('title');
         $sentancemakingCategories->long_description = $request->input('long_description');
         $sentancemakingCategories->short_description = $request->input('short_description');
 

@@ -26,8 +26,7 @@
                                 <tbody>
                                     @foreach ($shabdkosh as $item)
                                         <tr>
-                                            <td>{{ $item->title }}</td>
-                                           
+                                            <td>{{ $item->title }}</td>                                       
    <td>
                                         @if($item->thumbnail_short_image)
                                         <div class="col-md-4 mb-3">
@@ -45,8 +44,6 @@
                                         <p>No  image available</p>
                                         @endif
                                     </td>
-
-
 
                                             <td>{{ $item->shabdkosh_video_url }}</td>
                                             <td>{{ $item->short_description }}</td>

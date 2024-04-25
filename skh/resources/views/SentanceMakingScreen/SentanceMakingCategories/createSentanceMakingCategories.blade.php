@@ -21,27 +21,35 @@
                             <div class="form-group mb-3">
                                 <label for="">Name
                                     </label>
-                                <input type="text" name="name" class="form-control" required>
+                                <input type="text" name="name" class="form-control" >
                             </div>
+                            
+
+   <div class="form-group mb-3">
+                                <label for=""> Title
+                                    </label>
+                                <input type="text" name="title" class="form-control" >
+                            </div>
+
                              <div class="form-group mb-3">
                                 <label for="">Game Link
                                     </label>
-                                <input type="text" name="game_play_link" class="form-control" required>
+                                <input type="text" name="game_play_link" class="form-control" >
                             </div>
                              <div class="form-group md-3">
                                 <label for="featuredGameImage">Upload Image:</label>
                                 <input type="file" class="form-control-file" id="thumbnail_image" name="thumbnail_image"
-                                    required>
+                                    >
                             </div>
                              <div class="form-group mb-3">
                                 <label for="">Long Description 
                                     </label>
-                                <input type="text" name="long_description" class="form-control" required>
+                                <input type="text" name="long_description" class="form-control" >
                             </div>
                              <div class="form-group mb-3">
                                 <label for="">Short Description 
                                     </label>
-                                <input type="text" name="short_description" class="form-control" required>
+                                <input type="text" name="short_description" class="form-control" >
                             </div>
 
                             <div class="form-group mb-3">

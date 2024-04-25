@@ -19,6 +19,7 @@
                                     <tr>
                                         <th>Name</th>
                                               <th>Game Link</th>
+                                               <th>Title</th>
                                                     <th>Image</th>
                                                           <th>Long Description</th>
                                                                 <th>Short Description</th>
@@ -30,6 +31,7 @@
                                     @foreach ($sentancemakingCategories as $item)
                                         <tr>
                                             <td>{{ $item->name }}</td>
+                                             <td>{{ $item->title }}</td>
                                              <td>{{ $item->game_play_link }}</td>
                                            <td>
                                         @if($item->thumbnail_image)

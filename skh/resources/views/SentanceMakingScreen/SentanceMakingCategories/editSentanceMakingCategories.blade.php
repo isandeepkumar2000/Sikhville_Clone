@@ -22,6 +22,14 @@
                                     </label>
                                 <input type="text" name="name" class="form-control"  value = "{{ $sentancemakingCategories->name }}">
                             </div>
+                            
+ <div class="form-group mb-3">
+                                <label for=""> Title
+                                    </label>
+                                <input type="text" name="title" class="form-control"  value = "{{ $sentancemakingCategories->title }}">
+                            </div>
+
+
                              <div class="form-group mb-3">
                                 <label for="">Game Link
                                     </label>

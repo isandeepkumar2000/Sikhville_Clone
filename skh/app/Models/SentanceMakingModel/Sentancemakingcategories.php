@@ -11,7 +11,7 @@ class Sentancemakingcategories extends Model
     use HasFactory;
     public $table = 'sentance_making';
     protected $fillable = [
-        'name', 'game_play_link', 'thumbnail_image', 'long_description' ,'short_description'
+        'name', 'game_play_link', 'thumbnail_image', 'long_description', 'short_description', 'title'
     ];
 
     protected $casts = [
