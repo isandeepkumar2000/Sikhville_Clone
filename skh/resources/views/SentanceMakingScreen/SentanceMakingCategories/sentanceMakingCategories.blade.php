@@ -7,7 +7,7 @@
                 <div class="card">
 
                     <div class="card-header d-flex justify-content-between align-items-center">
-    All Categories
+                         All Categories
                         <a style="margin-left: 35px" href="{{ url('add_sentance_making_categories_list') }}"
                             class="btn btn-primary float-end">Add
                             </a>

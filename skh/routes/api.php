@@ -3,7 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\ApiController;
-
+use App\Http\Controllers\GetInTouchController\GetInTouchController;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
@@ -29,3 +29,4 @@ Route::get("homepage_imageslider_list", [ApiController::class, "showhomepageslid
 Route::get("dynamicpage_list", [ApiController::class, "showDynamicPageList"]);
 Route::get("dynamicpage_details/{id}", [ApiController::class, "showDynamicPageListid"]);
 Route::get("supportreview_list", [ApiController::class, "showSupportReviewList"]);
+Route::post('contact', [GetInTouchController::class, 'getInTouch']);
